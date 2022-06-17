@@ -1,0 +1,75 @@
+package com.team.domain;
+
+import java.sql.Timestamp;
+
+public class MemberDTO {
+	//데이터를 전달할 수 있게끔 멤버변수를 생성
+	
+	//멤버변수 정의
+	//폼에서 태그이랑 DB의 열이름이랑 일치하게 한것처럼 멤버변수도 열이름이랑 일치
+	private String id;
+	private String pass;
+	private String name;
+	private Timestamp date; //value값을 now()로 입력했으니 필요없는 듯, 회원가입 DB 잘 입력된다
+	//추가
+	private	String email;
+	private	String address;
+	private	String phone;
+	private	String mobile;
+	//추가 우편번호검색 우편번호 postcode, 상세주소 address2
+	
+	//멤버함수 메서드 정의
+	//멤버변수를 외부에서 접근할 수 있게 메서드 정의 set() get()
+	//Alt + Shift + S => R
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
+	public String getPass() {
+		return pass;
+	}
+	public void setPass(String pass) {
+		this.pass = pass;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public Timestamp getDate() {
+		return date;
+	}
+	public void setDate(Timestamp date) {
+		this.date = date;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	public String getPhone() {
+		return phone;
+	}
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+	public String getMobile() {
+		return mobile;
+	}
+	public void setMobile(String mobile) {
+		this.mobile = mobile;
+	}
+	
+
+
+}

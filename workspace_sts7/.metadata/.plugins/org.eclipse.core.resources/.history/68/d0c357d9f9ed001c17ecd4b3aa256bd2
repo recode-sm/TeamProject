@@ -1,0 +1,8 @@
+package com.team.service;
+
+import com.team.domain.MemberDTO;
+
+public class ReservationService {
+	//추상메서드 정의
+	public void reservation(MemberDTO memberDTO);
+}

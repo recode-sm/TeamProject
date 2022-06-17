@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+		
+<!-- 	객체생성 -->
+<!-- 		객체를 controller에 넘겨주기 작업(이때까지는 controller 페이지에서 new활용해서 객체생성)-->
+
+<!-- 	private 활용하기 위해서 생성자를 사용 or set 메서드 활용 -->
+
+<!-- 	set메서드를 활용하지 않은 경우 -->
+<!-- 	<bean id="memberController" class="com.itwillbs.constroller.MemberController"> -->
+<!-- 		기본생성자가 없기때문에 에러 -->
+<!-- 		ref는 참조변수 -->
+<!-- 		memberService형태의 생성자를 통해서 호출 -->
+<!-- 		MemberController에 만든 생성자 -->
+<!--	public MemberController(MemberService memberService) -->
+<!-- 		생성자 부분 -->
+<!-- 		<constructor-arg ref="memberService"></constructor-arg> -->
+<!-- 	</bean> -->
+		
+		
+<!-- 	set메서드 활용 -->
+		<bean id="memberController" class="com.itwillbs.constroller.MemberController">
+<!-- 	private MemberService(객체) memberService; 로 xml에서 생성한 객체를 넘겨줘야한다. -->
+<!-- 		public void setMemberService(MemberService memberService) set을 뺴고 이름을 표현 -->
+			<property name="memberService" ref="memberService"></property>
+<!-- 		name="memberService" => setMemberService를 말한다 -->
+<!--  		ref="memberService" => ref는 참조값이 들어오는 부분 -->
+<!-- 		즉, 참조값은 아래의 id가 "memberService"인 MemberServiceImpl 클래스 값을 넣는다 -->
+<!--		그리고 넣은 값을 가지고 public void setMemberService(MemberService memberService)의 -->
+<!--		memberService 변수로 가지고 간다. -->
+		</bean>
+		
+		<bean id="memberService" class="com.itwillbs.service.MemberServiceImpl">
+<!-- 		set 메서드의 이름인 memberDAO를 통해서 ref memberDAO값을 전달 -->
+			<property name="memberDAO" ref="memberDAO"></property>
+		</bean>
+		
+<!-- 	객체 생성 후 참조 값을 넘겨준다. -->
+		<bean id="memberDAO" class="com.itwillbs.dao.MemberDAOImpl">
+			<property name="dataSource" ref="dataSource"></property>
+		</bean>
+		
+<!-- 		디비연결 -->
+		<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+			<property name="driverClassName" value="com.mysql.cj.jdbc.Driver"></property>
+			<property name="url" value="jdbc:mysql://localhost:3306/jspdb7?serverTimezone=Asia/Seoul"></property>
+			<property name="username" value="root"></property>
+			<property name="password" value="1234"></property>
+		</bean>
+
+</beans>

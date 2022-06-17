@@ -1,0 +1,26 @@
+package com.team.controller;
+
+import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.team.domain.MemberDTO;
+import com.team.service.MemberService;
+
+@Controller //주소맵핑
+public class MemberController {
+	
+	//객체생성
+	@Inject
+	private MemberService memberService;
+
+	@RequestMapping(value = "/reservation/reservation", method = RequestMethod.GET)
+	public String reservation() {
+		// /WEB-INF/views/member/reservation.jsp
+		return "redirect:/reservation/reservation";
+	}
+}

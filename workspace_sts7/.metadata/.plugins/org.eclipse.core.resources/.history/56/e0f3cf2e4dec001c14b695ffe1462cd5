@@ -1,0 +1,29 @@
+package com.itwillbs.service;
+
+import java.sql.Timestamp;
+
+import javax.inject.Inject;
+
+import org.springframework.stereotype.Service;
+
+import com.itwillbs.dao.MemberDAO;
+import com.itwillbs.domain.MemberDTO;
+
+@Service
+public class MemberServiceImpl implements MemberService{
+	
+	//객체생성
+	@Inject
+	private MemberDAO memberDAO;
+	
+	@Override
+	public void insertMember(MemberDTO memberDTO) {
+		System.out.println("MemberServiceImpl insertMember()");
+		//날짜
+		//시스템에 있는 날짜를 set하겠다.
+		memberDTO.setDate(new Timestamp(System.currentTimeMillis()));
+		//메서드 호출
+		memberDAO.insertMember(memberDTO);
+		
+	}
+}

@@ -1,0 +1,209 @@
+package com.itwillbs.controller;
+
+import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.itwillbs.domain.MemberDTO;
+import com.itwillbs.service.MemberService;
+import com.itwillbs.service.MemberServiceImpl;
+
+@Controller //controller 어노테이션을 붙임으로 해서 가상
+public class MemberController {
+	//	root-context.xml에서 MemberServiceImpl 객체생성 (spring 폴더에 있다)
+	//	MemberController에 부모인터페이스(MemberService) 변수(멤버변수)에 전달
+	
+	//부모 인터페이스변수(멤버변수) => 멤버변수는 일반적으로 private으로 은닉한다.
+	private MemberService memberService;
+	
+	//xml에서 set메서드 통해서 멤버변수에 값을 전달
+	@Inject
+	public void setMemberService(MemberService memberService) {
+		this.memberService = memberService;
+	}
+	
+	//xml에서 생성자를 통해서 멤버변수에 값을 전달
+	//set을 활용하지 않더라도 private 멤버변수가 생성자를 통해 정상작동
+//	@Inject //주입
+//	public MemberController(MemberService memberService) {
+//		//생성자
+//		//멤버변수 = xml에서 전달받은 매개변수
+//		this.memberService=memberService;
+//	}
+	
+//http://localhost:8080/myweb/member/insert -> 시작점이 해당 가상주소	
+
+	@RequestMapping(value = "/member/insert", method = RequestMethod.GET)
+	public String insert() {
+		System.out.println("MemberController insert()");
+		// /member/insert 검색하면 get 방식으로 return 되는 member/insertForm 페이지 연결
+		
+//		/WEB-INF/views/member/insertForm.jsp
+//		RequestDispatcher dispatcher=request.getRequestDispatcher("home.jsp");
+//		dispatcher.forward(request, response);
+		return "member/insertForm";
+	}
+	
+	//http://localhost:8080/myweb/member/insertPro
+	@RequestMapping(value = "/member/insertPro", method = RequestMethod.POST)
+//	public String insertPro(HttpServletRequest request) { //request를 받아서 쓰겠다
+	public String insertPro(MemberDTO memberDTO) { //자동으로 받기 위해
+		//MemberDTO를 해놓으면 알아서 request getParameter를 통해 정보를 받아와서 memberDTO에 저장
+		//폼에 파라미터 이름, MemberDTO 멤버변수 이름이 일치해야 자동으로 값이 저장
+		System.out.println("MemberController insertPro()");
+//		//파라미터 가져오기
+//		String id = request.getParameter("id");
+//		String pass = request.getParameter("pass");
+//		String name = request.getParameter("name");
+//		//MemberDTO 객체생성
+//		MemberDTO memberDTO = new MemberDTO();
+//		//set메서드 호출 파라미터값 저장
+//		memberDTO.setId(id);
+//		memberDTO.setPass(pass);
+//		memberDTO.setName(name);
+		System.out.println(memberDTO.getId());
+		System.out.println(memberDTO.getPass());
+		System.out.println(memberDTO.getName());
+		
+		//디비에 insert()
+		//화면 jsp
+		//주소매핑 MemberController 패키지 com.itwillbs.controller
+		//처리작업 MemberService 패키지 com.itwillbs.service 파일 MemberServiceImpl 
+		//디비작업 MemberDAO 패키지 com.itwillbs.dao 파일 MemberServiceImpl (인터페이스 상속 Implements 약자)
+		
+		//1.MemberServiceImpl 객체생성
+		//	insertMember(memberDTO) 메서드호출()
+		//	MemberController에서 MemberServiceImpl파일 필요로 해서 객체생성 메서드호출
+		//	MemberController에서 MemberServiceImpl파일 의존해서 객체생성 메서드호출
+		//	MemberController는 MemberServiceImpl에 의존하는 관계(의존관계)
+		
+		//인터페이스 활용 위해 주석
+//		MemberServiceImpl memberServiceImpl=new MemberServiceImpl();
+//		memberServiceImpl.insertMember(memberDTO);
+		
+		
+		//2.공통된 틀을 준비해서 => 틀에 맞추어서 각 클래스 파일 만들기
+		//	부모의 공통된 틀(메서드틀, 추상메서드) : 인터페이스(클래스를 만들기 위한 틀) => 상속 받은 클래스(부모 틀에 맞추어서 만듦)
+		//	패키지 com.itwillbs.service 부모인터페이스 MemberService 만들기
+		//	부모인터페이스를 상속받은 MemberServiceImpl 만들기
+		//	부모=자식 객체생성 MemberService = MemberServiceImpl
+		
+		//스프링 활용 위해 주석
+//		MemberService memberService = new MemberServiceImpl(); //업캐스팅
+//		memberService.insertMember(memberDTO);
+		//MemberService memberService, memberService.insertMember(memberDTO); 은
+		//동일하기 때문에 수정이 필요하지 않고 자식 클래스인 MemberServiceImpl(); 부분만 
+		//수정하면 되기 때문에 작업량이 확 준다.
+		
+		
+		//3.스프링에서 객체생성하는 방법 
+		//	스프링 파일인 xml에서 객체생성 => 해당 객체를 사용하는 파일들에게 전달
+		//	xml 파일만 수정하면 가져다 쓰는 곳은 수정할 필요가 없어져서 효율적
+		//	스프링 파일 root-context.xml(sevlet-context에서 해도 문제없지만 일반적으로 root사용) 에서 객체생성해서
+		//	root-context.xml에서 MemberServiceImpl 객체생성 (spring 폴더에 있다)
+		//	xml파일에서 객체생성하고 부모 인터페이스에 전달
+		//	MemberController에 부모인터페이스(MemberService) 변수(멤버변수)에 전달
+		//	메서드를 계속 만들어서 활용하지 않고 변수활용
+		//	xml MemberServiceImpl객체생성 MemberController 전달(의존관계 주입:DI(Dependency Injection))
+		
+		// insertMember(memberDTO) 메서드 호출
+		memberService.insertMember(memberDTO);
+		
+		
+//		return "member/loginForm";
+		//주소는 insertPro인데, 화면은 loginForm이 나온다.
+		//그래서 주소를 변경하면서 이동
+//		response.sendRedirect()
+		return "redirect:/member/login";
+	}
+	
+	//위 설정에 따라 아래 주소로 이동
+	//http://localhost:8080/myweb/member/login => member/loginForm.jsp  GET방식
+	@RequestMapping(value = "/member/login", method = RequestMethod.GET)
+	public String login() {
+		System.out.println("MemberController login()");
+		// /member/insert 검색하면 get 방식으로 return 되는 member/insertForm 페이지 연결
+		
+		return "member/loginForm";
+	}
+	
+	// /member/loginPro POST => member/main 가상주소 이동
+	@RequestMapping(value = "/member/loginPro", method = RequestMethod.POST)
+	public String loginPro(MemberDTO memberDTO,HttpSession session) {
+		System.out.println("MemberController loginPro()");
+		System.out.println(memberDTO.getId());
+		System.out.println(memberDTO.getPass());
+		//로그인 처리
+		MemberDTO memberDTO2=memberService.userCheck(memberDTO);
+		if(memberDTO2!=null) {
+			//세션값 생성
+			session.setAttribute("id", memberDTO.getId());
+		}
+		return "redirect:/member/main";
+	}
+	
+	// /member/main GET => /member/main.jsp 이동
+	@RequestMapping(value = "/member/main", method = RequestMethod.GET)
+	public String main() {
+		
+		System.out.println("MemberController main()");
+		return "member/main";
+	}
+	
+	// /member/logout GET => 가상주소 /member/main
+	@RequestMapping(value = "/member/logout", method = RequestMethod.GET)
+	public String logout() {
+		
+		System.out.println("MemberController logout()");
+		return "redirect:/member/main"; //주소 이름이 변경되어야 하니까 redirect
+	}
+	
+	// /member/info GET => member/info.jsp
+	@RequestMapping(value = "/member/info", method = RequestMethod.GET)
+	public String info() {
+		
+		System.out.println("MemberController info()");
+		return "member/info";
+	}
+	
+	// /member/update GET => member/updateForm.jsp
+	@RequestMapping(value = "/member/update", method = RequestMethod.GET)
+	public String update() {
+		
+		System.out.println("MemberController update()");
+		return "member/updateForm";
+	}
+	
+	// /member/updatePro POST => 가상주소 /member/main
+	@RequestMapping(value = "/member/updatePro", method = RequestMethod.POST)
+	public String updatePro() {
+		System.out.println("MemberController updatePro()");
+		return "redirect:/member/main";
+	}
+	
+	// /member/delete GET => member/deleteForm.jsp
+	@RequestMapping(value = "/member/delete", method = RequestMethod.GET)
+	public String delete() {
+		
+		System.out.println("MemberController delete()");
+		return "member/deleteForm";
+	}
+	
+	// /member/deletePro POST => 가상주소 /member/main
+	@RequestMapping(value = "/member/deletePro", method = RequestMethod.POST)
+	public String deletePro() {
+		System.out.println("MemberController deletePro()");
+		return "redirect:/member/main";
+	}
+	
+	// /member/list GET => member/list.jsp
+	@RequestMapping(value = "/member/list", method = RequestMethod.GET)
+	public String list() {
+		System.out.println("MemberController list()");
+		return "member/list";
+	}
+}
+

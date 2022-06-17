@@ -1,0 +1,15 @@
+package com.itwillbs.service;
+
+import org.springframework.stereotype.Service;
+
+import com.itwillbs.domain.MemberDTO;
+
+@Service
+public class MemberServiceImpl implements MemberService{
+
+	@Override
+	public void insertMember(MemberDTO memberDTO) {
+		System.out.println("MemberServiceImpl insertMember()");
+	}
+
+}

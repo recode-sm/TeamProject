@@ -120,7 +120,7 @@
 
 				<div class="menu">
 					<ul>
-						<li><a href="/locate/locate.asp"><span>BRANCH</span><span class="ov">지점</span></a></li>
+						<li><a href="<%=request.getContextPath() %>/locate/locate"><span>BRANCH</span><span class="ov">지점</span></a></li>
 						<li><a href="<%=request.getContextPath() %>/reservation/reservation"><span>RESERVATION</span><span class="ov">대관</span></a></li>
 						<li><a href="/comm/match/match_apply.asp"><span>MATCHING</span><span class="ov">매치/용병</span></a></li>
 						<!--<li><a href="# "onClick="alert('준비중입니다.')"><a href="/hcup/hcup.asp"><span>H-CUP</span><span class="ov">H-컵</span></a></li>-->
@@ -238,21 +238,9 @@ $(".layer_dim").on("click",function(e){
 		});
 	});
 </script>
+
 	<!-- Footer -->
-	<footer id="footer">
-		<div class="footer_wrap">
-			<span class="logo"></span>
-			<div class="foot_util">
-				<ul>
-					<li><a href="/member/privacy.asp">개인정보처리방침</a></li>
-					<li><a href="/member/tos.asp">이용약관</a></li>
-					<li><a href="/member/emailcollection.asp">이메일무단수집거부</a></li>
-				</ul>
-			</div>
-			<p class="info">서울시 성동구 왕십리로 58 FORHU 709호(성수동 1가)<span>TEL : 02-332-7807</span><span>FAX : 02-2061-0373</span></p>
-			<p class="copy">COPYRIGHTⓒHNS. ALLRIGHT RESERVED</p>
-		</div>
-	</footer>
+		<jsp:include page="./include/footer.jsp"></jsp:include>
 	<!-- //Footer -->
 </div>
 

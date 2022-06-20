@@ -78,42 +78,11 @@
 		<a href="#container">Skip to content</a>
 	</nav>
 	<!-- //Skip Navigation -->
+	
 	<!-- Header -->
-	<section id="header">
-		<div class="header">
-			<h1><a href="<%=request.getContextPath() %>"><span class="hide">HM FUTSAL PARK</span></a></h1>
-			<button type="button" class="btn_nav"><span class="hide">Nav button</span></button>
-			<nav>
-				<div class="nav_wrap">
-					<ul>
-						<li>
-							<!--<a href="https://www.aia.co.kr/ko/index.html" class="aia" target="_blank"><span class="hide">AIA Vitaliity</span></a>-->
-							<a href="https://www.facebook.com/HMfutsalpark/" class="face" target="_blank"><span class="hide">facebook</span> </a>
-							<a href="https://www.instagram.com/hmfutsalpark/" class="insta" target="_blank"><span class="hide">instagram</span></a>
-						</li>
-						<li><a href="/locate/locate.asp">지점</a></li>
-						<li><a href="<%=request.getContextPath() %>/reservation/reservation">대관</a></li>
-						<li><a href="/comm/match/match_apply.asp">매치/용병</a></li>
-						<li><a href="/hcup/eng/hcup.asp" class="f_hvn"><!--<a href="# "onClick="alert('준비중입니다.')" class="f_hvn">-->H-CUP</a></li>
-						<li><a href="/league/league.asp" class="f_hvn">H-LEAGUE</a></li>
-						<li><a href="<%=request.getContextPath() %>/notice/notice">고객센터</a></li>
-						<li><a href="/about/company.asp" class="f_hvn">HNS</a></li>
-					</ul>
-				</div>
-				<div class="util">
-					<ul>
-						<li class="face"><a href="https://www.facebook.com/HMfutsalpark/" target="_blank"><span class="hide">facebook</span></a></li>
-						<li class="insta"><a href="https://www.instagram.com/hmfutsalpark/" target="_blank"><span class="hide">instagram</span></a></li>
-
-						
-						<li class="login"><a href="https://hmfutsalpark.com/member/login.asp">MEMBER LOGIN</a></li>
-						
-					</ul>
-				</div>
-			</nav>
-		</div>
-	</section>
+		<jsp:include page="../include/header.jsp"></jsp:include>
 	<!-- //Header -->
+	
 <FORM name="form" method="post">
 <input type="hidden" name="branch_code" value="HM0009">
 <input type="hidden" name="reg_date" value="2022-06-16">
@@ -730,20 +699,7 @@ function ok(){
 
 </script>
 	<!-- Footer -->
-	<footer id="footer">
-		<div class="footer_wrap">
-			<span class="logo"></span>
-			<div class="foot_util">
-				<ul>
-					<li><a href="/member/privacy.asp">개인정보처리방침</a></li>
-					<li><a href="/member/tos.asp">이용약관</a></li>
-					<li><a href="/member/emailcollection.asp">이메일무단수집거부</a></li>
-				</ul>
-			</div>
-			<p class="info">서울시 성동구 왕십리로 58 FORHU 709호(성수동 1가)<span>TEL : 02-332-7807</span><span>FAX : 02-2061-0373</span></p>
-			<p class="copy">COPYRIGHTⓒHNS. ALLRIGHT RESERVED</p>
-		</div>
-	</footer>
+		<jsp:include page="../include/footer.jsp"></jsp:include>
 	<!-- //Footer -->
 </div>
 

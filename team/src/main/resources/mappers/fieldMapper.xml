@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.itwillbs.team.fieldMapper">
+
+	<insert id="insertField">
+		insert into member(f_num,f_name,f_type,district,paddress,f_photo) 
+		values(#{f_num},#{f_name},#{f_type},#{district},#{paddress},#{f_photo})
+	</insert>
+
+</mapper>

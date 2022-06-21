@@ -27,7 +27,7 @@
 						<li class="insta"><a href="https://www.instagram.com/hmfutsalpark/" target="_blank"><span class="hide">instagram</span></a></li>
 
 						
-						<li class="login"><a href="https://hmfutsalpark.com/member/login.asp">MEMBER LOGIN</a></li>
+						<li class="login"><a href="<%=request.getContextPath() %>/locate/locate">MEMBER LOGIN</a></li>
 						
 					</ul>
 				</div>

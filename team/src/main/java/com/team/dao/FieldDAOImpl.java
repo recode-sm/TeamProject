@@ -2,8 +2,11 @@ package com.team.dao;
 
 import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
+import org.springframework.stereotype.Repository;
+
 import com.team.domain.FieldDTO;
 
+@Repository
 public class FieldDAOImpl implements FieldDAO {
 
 	@Inject

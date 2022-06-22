@@ -1,0 +1,9 @@
+create table field(
+f_num int,
+f_name varchar(40),
+f_type varchar(40),
+district varchar(40),
+paddress varchar(40),
+f_photo  varchar(20),
+price  varchar(20)
+);

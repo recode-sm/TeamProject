@@ -5,8 +5,8 @@
 <mapper namespace="com.itwillbs.team.fieldMapper">
 
 	<insert id="insertField">
-		insert into member(f_num,f_name,f_type,district,paddress,f_photo) 
-		values(#{f_num},#{f_name},#{f_type},#{district},#{paddress},#{f_photo})
+		insert into field(f_num,f_name,f_type,district,paddress,price) 
+		values(#{f_num},#{f_name},#{f_type},#{district},#{paddress},#{price})
 	</insert>
 
 </mapper>

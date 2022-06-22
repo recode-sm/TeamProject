@@ -133,7 +133,7 @@
 				
 			</div>
 				<div>	
-					<form action="${pageContext.request.contextPath}/locate/fieldPro" method="post">
+					<form action="${pageContext.request.contextPath}/locate/fieldPro" method="post" enctype="multipart/form-data">
 						<div align="center" style="width: 1020px; height: auto; margin: 0px auto; overflow: auto;" >
 						
 							<div style="float: left; margin-right: 20px;" align="center"  >
@@ -144,26 +144,26 @@
 									<label for="input-file"> 
 										구장사진 등록
 									</label>	
-									<input type="file" id="input-file" onchange="readURL(this);" style="display: none;">
+									<input type="file" name="f_photo" id="input-file" onchange="readURL(this);" style="display: none;">
 									
 								</span>
 							</div>
 							<div style="float: left;">
 								<table border="1" style="width: 500px; height: 300px;">
 									<tr><th>구장정보</th><th>내용</th></tr>
-									<tr><td>구장번호</td><td><input type="text" style="width: 100%;"></td></tr>
-									<tr><td>구장이름</td><td><input type="text" style="width: 100%;"></td></tr>
-									<tr><td>구장종류</td><td><input type="text" style="width: 100%;"></td></tr>
+									<tr><td>구장번호</td><td><input type="text" name="f_num" style="width: 100%;"></td></tr>
+									<tr><td>구장이름</td><td><input type="text" name="f_name" style="width: 100%;"></td></tr>
+									<tr><td>구장종류</td><td><input type="text" name="f_type" style="width: 100%;"></td></tr>
 									<tr><td>구(지역)</td>
 									<td>
-										<select>
-										<option>구장지역 선택</option>
-										<option>서울</option>
-										<option>부산</option>
+										<select name="district">
+										<option >구장지역 선택</option>
+										<option value="서울">서울</option>
+										<option value="부산">부산</option>
 										</select>									
 									</td></tr>
-									<tr><td>상세주소</td><td><input type="text" style="width: 100%;"></td></tr>
-									<tr><td>가격</td><td><input type="text" style="width: 100%;"></td></tr>			
+									<tr><td>상세주소</td><td><input type="text" name="paddress" style="width: 100%;"></td></tr>
+									<tr><td>가격</td><td><input type="text" name="price" style="width: 100%;"></td></tr>			
 								</table>
 								<input type="submit" value="등록">
 							</div>																											

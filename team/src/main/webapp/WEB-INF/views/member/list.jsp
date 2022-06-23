@@ -8,6 +8,22 @@
 <title>jsp4/list.jsp</title>
 </head>
 <body>
+<%
+//session "id" 가져오기
+// String id=(String)session.getAttribute("id");
+// 세션값이 없으면 => loginForm.jsp이동
+// if(id==null){
+// 	response.sendRedirect("loginForm.jsp");
+// }else{
+// 	if(!(id.equals("admin"))){
+// 		response.sendRedirect("main.jsp");
+// 	}
+// }
+
+// if문, for문 => 태그
+// JSTL 프로그램 설치
+// JSTL : Jsp Standard Tag Library => jsp 표준 태그 함수 제공
+%>
 
 <c:if test="${ empty sessionScope.id }">
 	<c:redirect url="/member/login"/>
@@ -20,21 +36,22 @@
 </c:if>
 
 <table border="1">
-	<tr><td>아이디</td><td>비밀번호</td>
-		<td>이름</td><td>전화번호</td>
-		<td>소속팀</td><td>이메일</td>
-		<td>우편번호</td><td>주소</td>
-		<td>가입날짜</td>
-	</tr>
+<tr><td>아이디</td><td>비밀번호</td><td>이름</td><td>가입날짜</td></tr>
 
-	<c:forEach var="memberDTO" items="${ memberList }">
-		<tr><td>${ memberDTO.id }</td><td>${ memberDTO.pass }</td>
-			<td>${ memberDTO.name }</td><td>${ memberDTO.phone }</td>
-			<td>${ memberDTO.team }</td><td>${ memberDTO.email }</td>
-			<td>${ memberDTO.postcode }</td><td>${ memberDTO.address }</td>
-			<td>${ memberDTO.date }</td>
-		</tr>
-	</c:forEach>
+<%-- 방법1. <c:forEach var="i" begin="1" end="10"> --%>
+<%-- 방법2. <c:forEach var="변수" items="배열"> --%>
+<c:forEach var="memberDTO" items="${ memberList }">
+	<tr><td>${ memberDTO.id }</td><td>${ memberDTO.pass }</td>
+		<td>${ memberDTO.name }</td><td>${ memberDTO.date }</td></tr>
+</c:forEach>
+<%
+// while(rs.next()){
+	%>
+	<tr><td><%//=rs.getString("id") %></td><td><%//=rs.getString("pass") %></td>
+	    <td><%//=rs.getString("name") %></td><td><%//=rs.getTimestamp("date") %></td></tr>
+	<%
+// }
+%>
 </table>
 </body>
 </html>

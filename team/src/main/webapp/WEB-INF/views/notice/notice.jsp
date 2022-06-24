@@ -107,7 +107,7 @@
 						<li class="insta"><a href="https://www.instagram.com/hmfutsalpark/" target="_blank"><span class="hide">instagram</span></a></li>
 
 						
-						<li class="login"><a href="https://hmfutsalpark.com/member/login.asp">MEMBER LOGIN</a></li>
+						<li class="login"><a href="/member/insertForm">로그인</a></li>
 						
 					</ul>
 				</div>

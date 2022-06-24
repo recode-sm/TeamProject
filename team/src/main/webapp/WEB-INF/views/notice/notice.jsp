@@ -107,7 +107,7 @@
 						<li class="insta"><a href="https://www.instagram.com/hmfutsalpark/" target="_blank"><span class="hide">instagram</span></a></li>
 
 						
-						<li class="login"><a href="/member/insertForm">로그인</a></li>
+						<li class="login"><a href="https://hmfutsalpark.com/member/login.asp">MEMBER LOGIN</a></li>
 						
 					</ul>
 				</div>
@@ -131,7 +131,7 @@
 				<ul class="t03">
 					<li class="on"><a href="comm_notice.asp">공지사항</a></li>
 					<li><a href="comm_faq.asp">FAQ</a></li>
-					<li><a href="comm_gallery.asp">갤러리</a></li>
+					<li><a href="<%=request.getContextPath() %>/notice/write">커뮤니티</a></li>
 				</ul>
 			</div>
 

@@ -10,11 +10,11 @@
 	</insert>
 
 	<select id="userCheck" resultType="com.team.domain.MemberDTO">
-		SELECT * FROM member WHERE id=#{id} and pass=#{pass}
+		SELECT * FROM user WHERE id=#{id} and pass=#{pass}
 	</select>
 	
 	<select id="getMember" resultType="com.team.domain.MemberDTO">
-		SELECT * FROM member WHERE id=#{id}
+		SELECT * FROM user WHERE id=#{id}
 	</select>
 	
 	<update id="updateMember">
@@ -26,7 +26,7 @@
 	</delete>
 	
 	<select id="getMemberList" resultType="com.team.domain.MemberDTO">
-		SELECT * FROM member 
+		SELECT * FROM user 
 	</select>
 
 </mapper>

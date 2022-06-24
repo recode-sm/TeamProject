@@ -27,9 +27,9 @@ public class BoardServiceImpl implements BoardService{
 				
 		// max(num)+1
 		if(boardDAO.getMaxNum()==null) {
-			boardDTO.setNum(1);
+			boardDTO.setB_num(1);
 		}else {
-			boardDTO.setNum(boardDAO.getMaxNum()+1);
+			boardDTO.setB_num(boardDAO.getMaxNum()+1);
 		}
 		
 		//메서드 호출

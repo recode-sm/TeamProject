@@ -45,7 +45,7 @@ public class BoardController {
 	//http://localhost:8080/myweb2/board/list?pageNum=2
 	//http://localhost:8080/myweb2/board/list
 	@RequestMapping(value = "/notice/list", method = RequestMethod.GET)
-	public String list(HttpServletRequest request, Model model, HttpSession session) {
+	public String list(HttpServletRequest request, Model model) {
 		int pageSize = 10;
 		String pageNum = request.getParameter("pageNum");
 		if(pageNum==null) {
@@ -72,18 +72,18 @@ public class BoardController {
 		pageDTO.setEndPage(endPage);
 		pageDTO.setPageCount(pageCount);
 		
-		// 아이디 불러오기
-		String id = (String)session.getAttribute("id");
-		MemberDTO memberDTO = memberService.getMember(id);
-			
 		model.addAttribute("boardList", boardList);
 		model.addAttribute("pageDTO", pageDTO);
-		model.addAttribute("memberDTO", memberDTO);
+		
+		// 아이디 불러오기
+//		String id = (String)session.getAttribute("id");
+//		MemberDTO memberDTO = memberService.getMember(id);
+//		model.addAttribute("memberDTO", memberDTO);
 			
 		// /WEB-INF/views/board/list.jsp
 		return "/notice/list";
 	}
-		
+//		
 	//http://localhost:8080/myweb2/board/content?Num=2
 	@RequestMapping(value = "/notice/content", method = RequestMethod.GET)
 	public String content(HttpServletRequest request, Model model) {
@@ -99,14 +99,23 @@ public class BoardController {
 	
 	
 	@RequestMapping(value = "/notice/update", method = RequestMethod.GET)
-	public String update() {
+	public String update(HttpServletRequest request, Model model) {
+		int b_num = Integer.parseInt(request.getParameter("b_num"));
+		
+		String id = request.getParameter("id");
+		String pass = request.getParameter("pass");
+		String subject = request.getParameter("subject");
+		String content = request.getParameter("content");
+		
+		BoardDTO boardDTO = boardService.getBoard(b_num);
+		
 		// /WEB-INF/views/notice/writeForm.jsp
-		return "/notice/update";
+		return "/notice/updateForm";
 	}
 	
 	@RequestMapping(value = "/notice/updatePro", method = RequestMethod.POST)
 	public String updatePro(BoardDTO boardDTO) {
-		boardService.insertBoard(boardDTO);
+		boardService.updateBoard(boardDTO);
 		return "redirect:/notice/list";
 	}
 

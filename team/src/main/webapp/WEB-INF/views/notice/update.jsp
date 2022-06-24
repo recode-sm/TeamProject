@@ -11,13 +11,13 @@
 <article>
 <h1>Notice Write</h1>
 <%-- "<%=request.getContextPath() %>/member/insertPro" --%>
-<form action="${pageContext.request.contextPath}/notice/writePro" method="post">
+<form action="${pageContext.request.contextPath}/notice/updatePro" method="post">
 <input type="hidden" name="pass" value="1111">
 <table id="notice">
-<tr><td>작성자</td><td><input type="text" name="name" value="A" readonly></td></tr>
-<tr><td>제목</td><td><input type="text" name="subject"></td></tr>
+<tr><td>작성자</td><td><input type="text" name="id" value="${boardDTO.id}" readonly></td></tr>
+<tr><td>제목</td><td><input type="text" name="subject" value="${boardDTO.subject}"></td></tr>
 <tr><td>내용</td>
-	<td><textarea name ="content" rows ="10" cols ="20"></textarea></td></tr>
+	<td><textarea name ="content" rows ="10" cols ="20">${boardDTO.content}</textarea></td></tr>
 </table>
 
 <div id="table_search">

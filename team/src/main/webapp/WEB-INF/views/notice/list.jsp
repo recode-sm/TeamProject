@@ -15,21 +15,21 @@
 <table border="1">
 <tr><td>번호</td><td>글쓴이</td><td>제목</td><td>등록일</td><td>조회</td></tr>
 <c:forEach var="boardDTO" items="${boardList}">
-<tr><td>${boardDTO.b_num }</td><td>${boardDTO.name}</td>
-<td><a href="${pageContext.request.contextPath}/notice/content?num=${boardDTO.b_num}">
+<tr><td>${boardDTO.b_num}</td><td>${boardDTO.id}</td>
+<td><a href="${pageContext.request.contextPath}/notice/content?b_num=${boardDTO.b_num}">
      ${boardDTO.subject}</a></td>
     <td>${boardDTO.date}</td>
     <td>${boardDTO.readcount}</td></tr>
 </c:forEach>
-</table>
 
 <!-- 로그인 제어 -->
 <c:if test ="{ ! empty sessionScope.id }">
 	<div id="table_search">
 	<input type="button" value="글쓰기" class="btn" 
     onclick="location.href='writeForm.jsp'">
-</div>
+	</div>
 </c:if>
+</table>
 
 
 <c:if test="${startPage > pageBlock}">

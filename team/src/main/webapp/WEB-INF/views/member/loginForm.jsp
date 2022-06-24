@@ -4,101 +4,251 @@
 <html>
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
-<meta charset="UTF-8">
-<title>회원 가입</title>
-<script type="text/javascript">
-
-function loginForm(){
-	
-	var userId = $("#userId").val();
-	var userPw = $("#password").val();
-	var userPwCheck = $("#passwordCheck").val();
-	var nickName = $("#nickname").val();
-	var email = $("#email").val();
-	
-	if(!userId){
-		alert("아이디 입력은 필수입니다.");
-		$("#userId").focus();
-	}else if(!userPw){
-		alert("비밀번호 입력은 필수입니다.");
-		$("#password").focus();
-	}else if(!userPwCheck){
-		alert("비밀번호 확인 입력은 필수입니다.");
-		$("#passwordCheck").focus();
-	}else if(userPw != userPwCheck){
-		alert("비밀번호가 맞지 않습니다.");
-		$("#userPwCheck").focus();		
-	}else if(!nickName){
-		alert("닉네임 입력은 필수입니다.");
-		$("#nickname").focus();
-	}else if(!email){
-		alert("이메일 입력은 필수입니다.");
-		$("#email").focus();
-	}else {
-		loginForm()
-	}
-	
+<style>
+body {
+   font: 13px/20px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+   color: #333333;
+   background: #596778;
 }
 
-function loginForm(){
+.signUp {
+   position: relative;
+   margin: 50px auto;
+   width: 280px;
+   padding: 33px 25px 29px;
+   background: #FFFFFF;
+   border-bottom: 1px solid #C4C4C4;
+   border-radius: 5px;
+   -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+}
+
+.signUp:before,
+.signUp:after {
+   content: '';
+   position: absolute;
+   bottom: 1px;
+   left: 0;
+   right: 0;
+   height: 10px;
+   background: inherit;
+   border-bottom: 1px solid #D2D2D2;
+   border-radius: 4px;
+}
+
+.signUp:after {
+   bottom: 3px;
+   border-color: #DCDCDC;
+}
+
+.signUpTitle {
+   margin: -25px -25px 25px;
+   padding: 15px 25px;
+   line-height: 35px;
+   font-size: 26px;
+   font-weight: 300;
+   color: #777;
+   text-align: center;
+   text-shadow: 0 1px rgba(255, 255, 255, 0.75);
+   background: #F7F7F7;
+}
+
+.signUpTitle:before {
+   content: '';
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   height: 8px;
+   background: #C4E17F;
+   border-radius: 5px 5px 0 0;
+   background-image: -webkit-linear-gradient(left, #C4E17F, #C4E17F 12.5%, #F7FDCA 12.5%, #F7FDCA 25%, #FECF71 25%, #FECF71 37.5%, #F0776C 37.5%, #F0776C 50%, #DB9DBE 50%, #db9CBE 62.5%, #C49CDE 62.5%, #C49CDE 75%, #669AE1 75%, #669AE1 87.5%, #62C2E4 87.5%, #62C2E4);
+   background-image: -moz-linear-gradient(left, #c4e17f, #C4E17F 12.5%, #F7FDCA 12.5%, #F7FDCA 25%, #FECF71 25%, #FECF71 37.5%, #F0776C 37.5%, #F0776C 50%, #DB9DBE 50%, #DB9CBE 62.5%, #C49CDE 62.5%, #C49CDE 75%, #669AE1 75%, #669AE1 87.5%, #62C2E4 87.5%, #62C2E4);
+   background-image: -o-linear-gradient(left, #C4E17F, #C4E17F 12.5%, #F7FDCC 12.5%, #F7FDCA 25%, #FECF71 25%, #FECF71 37.5%, #F0776C 37.5%, #F0776C 50%, #DB9DBE 50%, #DB9DBE 62.5%, #C49CDE 62.5%, #C49CDE 75%, #669AE1 75%, #669AE1 87.5%, #62C2E4 87.5%, #62C2E4);
+   background-image: linear-gradient(to right, #C4E17F, #C4E17F 12.5%, #F7FDCA 12.5%, #F7FDCA 25%, #FECF71 25%, #FECF71 37.5%, #F0776C 37.5%, #F0776C 50%, #DB9DBE 50%, #DB9CBE 62.5%, #c49cde 62.5%, #C49CDE 75%, #669AE1 75%, #669AE1 87.5%, #62c2e4 87.5%, #62C2E4);
+}
+
+input {
+   font-family: inherit;
+   color: inherit;
+   -webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+   box-sizing: border-box;
+}
+
+.signUpInput {
+   width: 100%;
+   height: 50px;
+   margin-bottom: 25px;
+   padding: 0 15px 2px;
+   font-size: 17px;
+   background: white;
+   border: 2px solid #EBEBEB;
+   border-radius: 4px;
+   -webkit-box-shadow: inset 0 -2px #EBEBEB;
+   box-shadow: inset 0 -2px #EBEBEB;
+}
+
+.signUpInput:focus {
+   border-color: #62C2E4;
+   outline: none;
+   -webkit-box-shadow: inset 0 -2px #62C2E4;
+   box-shadow: inset 0 -2px #62C2E4;
+}
+
+.lt-ie9 .signUpInput {
+   line-height: 48px;
+}
+
+.loginButton {
+   position: relative;
+   vertical-align: top;
+   width: 100%;
+   height: 54px;
+   padding: 0;
+   font-size: 22px;
+   color: white;
+   text-align: center;
+   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+   background: #CCCCFF;
+   border: 0;
+   border-bottom: 2px solid #D76B60;
+   border-radius: 5px;
+   cursor: pointer;
+   -webkit-box-shadow: inset 0 -2px #D76B60;
+   box-shadow: inset 0 -2px #D76B60;
+}
+
+.loginButton:active {
+   top: 1px;
+   outline: none;
+   -webkit-box-shadow: none;
+   box-shadow: none;
+}
+
+.signUpButton {
+   position: relative;
+   vertical-align: top;
+   width: 100%;
+   height: 54px;
+   padding: 0;
+   font-size: 18px;
+   color: white;
+   text-align: center;
+   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+   background: #F0776C;
+   border: 0;
+   border-bottom: 2px solid #D76B60;
+   border-radius: 5px;
+   cursor: pointer;
+   -webkit-box-shadow: inset 0 -2px #D76B60;
+   box-shadow: inset 0 -2px #D76B60;
+}
+
+.signUpButton:active {
+   top: 1px;
+   outline: none;
+   -webkit-box-shadow: none;
+   box-shadow: none;
+}
+
+:-moz-placeholder {
+   color: #AAAAAA;
+   font-weight: 300;
+}
+
+::-moz-placeholder {
+   color: #AAAAAA;
+   opacity: 1;
+   font-weight: 300;
+}
+
+::-webkit-input-placeholder {
+   color: #AAAAAA;
+   font-weight: 300;
+}
+
+:-ms-input-placeholder {
+   color: #AAAAAA;
+   font-weight: 300;
+}
+
+::-moz-focus-inner {
+   border: 0;
+   padding: 0;
+}
+</style>
+
+<script type="text/javascript">
+
+// function loginValidation(){
 	
-	$.ajax({
+// 	var userId = $("#userId").val();
+// 	var password = $("#password").val();
+	
+// 	if(!userId){
+// 		alert("아이디를 입력하세요.");
+// 		$("#userId").focus();
+// 		return false;
+// 	}else if(!password){
+// 		alert("비밀번호를 입력하세요.");
+// 		$("#password").focus();
+// 		return false;
+// 	}else {
+// 		login(userId,password);
+// 	}
+	
+// }
+
+// 로그인 제어는 controller에서 수행
+// function login(userId,password){
+	
+// 	$.ajax({
 		
-		url : "/jquery/signUp",
-		type:'POST',
-		data :  $("#registerform").serialize(),
-		success:function(data){
-			if(data == 1){
-				alert("회원가입이 완료됐습니다.^^");
-				location.href = "/member/loginForm"
-			}else if(data == 2){
-				alert("이미 존재하는 아이디입니다.");
-				return false;
-			}else if(data == 3){
-				alert("이미 존재하는 닉네임입니다.");
-				return false;
-			}
-		}
+// 		url : "/jquery/login",
+// 		type : 'POST',
+// 		data : { userId : userId, 
+// 				password : password	
+// 		},
+// 		success:function(data){
+// 			if(data == 2){
+// 				alert("아이디 혹은 비밀번호가 맞지 않습니다.");
+// 				return false;
+// 			}else if(data == 3){
+// 				location.href="/views/member";
+// 			}
+// 		}
 		
-	})
+// 	})
+	
+// }
+
+// function enterKeyCheck(){
+	
+//  if(event.keyCode == 13)
+// 	  {
+// 	 loginValidation();
+// 	  }
+	
+	
 }
 
 </script>
+
 </head>
-<body style="background-color:#f0f5f3">
-<form action="<%=request.getContextPath() %>/member/loginPro" method="post">
-        <div class="fieldlabel"><label for="userId">*아이디</label></div>
-        <div class="formfield"><input type="text" id="userId" name="userId" maxlength="20" value=""></div>
-        
-        <div class="fieldlabel"><label for="password">*패스워드</label></div>
-        <div class="formfield">
-<input type="password" id="password" name="password" maxlength="20" autocomplete="off">
-</div>
+<body>
 
-        <div class="fieldlabel"><label for="passwordCheck">패스워드확인</label></div>
-        <div class="formfield">
-        
-<input type="password" id="passwordCheck" name="passwordCheck" maxlength="20" autocomplete="off">
-</div>
-       
-        <div class="fieldlabel"><label for="nickname">*닉네임</label></div>
-        <div class="formfield"><input type="text" id="nickname" name="nickname" maxlength="20" value=""></div>
+<!-- 변경 사항 -->
+<!-- 1. 로그인과 인서트 form이 바뀌어서 수정함(그외에도 명칭 변경 필요) -->
+<!-- 2. button을 submit으로 변경함 -->
+<!-- 3. form action 추가함 -->
+<form class="signUp" id="signupForm" action="<%=request.getContextPath() %>/member/loginPro" method="post">
+   <h1 class="signUpTitle">로그인</h1>
+   <input type="text" id="id" name="id" class="signUpInput" placeholder="ID" autofocus onkeyup="enterKeyCheck()">
+   <input type="password" id="pass" name="pass" class="signUpInput" placeholder="Password" onkeyup="enterKeyCheck()">
+   <input type="submit" value="로그인"  class="loginButton">
+   <input type="button" value="회원가입" class="signUpButton">
+</form>
 
-        <div class="fieldlabel"><label for="email">*이메일</label></div>
-        <div class="formfield"><input type="text" id="email" name="email" size="20" maxlength="20" 
-             value="" autocomplete="off"><span>@</span>
-            <input id="domain" list="domains" name="domain" placeholder="도메인입력/선택">
-            <datalist id="domains">
-                <option value="naver.com">
-                <option value="daum.net">
-                <option value="gmail.com">
-                <option value="yahoo.co.kr">
-            </datalist>
-        </div>
-       
-        <div class="btnfield">
-            <input type="button" onclick="loginForm()" value="회원가입">
-        </div>
-    </form>
 </body>
 </html>

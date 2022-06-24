@@ -3,36 +3,25 @@ package com.team.domain;
 import java.sql.Timestamp;
 
 public class BoardDTO {
-	 private int num;
-	 private String name;
-	 private String pass;
-	 private String subject;
-	 private String content;
-	 private int readcount;
-	 private Timestamp date;
-	 //파일
-	 private String file;
-	 	 
-	// alt shift s => r
-	  
-	public String getFile() {
-		return file;
-	}
-	public void setFile(String file) {
-		this.file = file;
-	}
+	private int b_num;
+	private String id; // name => id 수정
+	private String pass; // 추가
+	private String subject;
+	private String content;
+	private int readcount;
+	private Timestamp date; // 추가
 	
-	public int getNum() {
-		return num;
+	public int getB_num() {
+		return b_num;
 	}
-	public void setNum(int num) {
-		this.num = num;
+	public void setB_num(int b_num) {
+		this.b_num = b_num;
 	}
-	public String getName() {
-		return name;
+	public String getId() {
+		return id;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setId(String id) {
+		this.id = id;
 	}
 	public String getPass() {
 		return pass;
@@ -64,5 +53,5 @@ public class BoardDTO {
 	public void setDate(Timestamp date) {
 		this.date = date;
 	}
-
+	
 }

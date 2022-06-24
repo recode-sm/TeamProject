@@ -50,7 +50,7 @@ public class BoardDAOImpl implements BoardDAO{
 		
 		@Override
 		public void updateBoard(BoardDTO boardDTO) {
-			sqlSession.insert(namespace+".updateBoard", boardDTO);
+			sqlSession.update(namespace+".updateBoard", boardDTO);
 		}
 		
 

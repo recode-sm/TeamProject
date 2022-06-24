@@ -15,7 +15,7 @@
 <form action="${pageContext.request.contextPath}/notice/writePro" method="post">
 <input type="hidden" name="pass" value="1111">
 <table id="notice">
-<tr><td>작성자</td><td><input type="text" name="id" value="${memberDTO.id}" readonly></td></tr>
+<tr><td>작성자</td><td><input type="text" name="id" ></td></tr>
 <tr><td>제목</td><td><input type="text" name="subject"></td></tr>
 <tr><td>내용</td>
 	<td><textarea name ="content" rows ="10" cols ="20"></textarea></td></tr>

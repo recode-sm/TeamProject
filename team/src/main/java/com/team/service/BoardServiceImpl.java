@@ -71,7 +71,6 @@ public class BoardServiceImpl implements BoardService{
 	
 	@Override
 	public void updateBoard(BoardDTO boardDTO) {
-		System.out.println("MemberServiceImpl updateBoard()");
 		//날짜 
 		boardDTO.setDate(new Timestamp(System.currentTimeMillis()));
 		//메서드 호출

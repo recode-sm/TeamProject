@@ -101,13 +101,9 @@ public class BoardController {
 	@RequestMapping(value = "/notice/update", method = RequestMethod.GET)
 	public String update(HttpServletRequest request, Model model) {
 		int b_num = Integer.parseInt(request.getParameter("b_num"));
-		
-		String id = request.getParameter("id");
-		String pass = request.getParameter("pass");
-		String subject = request.getParameter("subject");
-		String content = request.getParameter("content");
-		
+			
 		BoardDTO boardDTO = boardService.getBoard(b_num);
+		model.addAttribute("boardDTO",boardDTO);
 		
 		// /WEB-INF/views/notice/writeForm.jsp
 		return "/notice/updateForm";
@@ -115,6 +111,7 @@ public class BoardController {
 	
 	@RequestMapping(value = "/notice/updatePro", method = RequestMethod.POST)
 	public String updatePro(BoardDTO boardDTO) {
+		System.out.println("update");
 		boardService.updateBoard(boardDTO);
 		return "redirect:/notice/list";
 	}

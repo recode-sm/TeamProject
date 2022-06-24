@@ -1,15 +1,13 @@
 package com.team.controller;
 
+import java.io.File;
+import java.io.IOException;
 import javax.inject.Inject;
-import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.multipart.MultipartHttpServletRequest;
-import org.springframework.web.multipart.support.MultipartFilter;
-
-import com.google.protobuf.compiler.PluginProtos.CodeGeneratorResponse.File;
 import com.team.domain.FieldDTO;
 import com.team.service.FieldService;
 
@@ -21,36 +19,36 @@ public class LocateController {
 
 	@RequestMapping(value = "/locate/locate", method = RequestMethod.GET)
 	public String locate() {
+		System.out.println("/locate/locate");
 		// /WEB-INF/views/notice/notice.jsp
 		return "/locate/locateForm";
 	}
 
 	@RequestMapping(value = "/locate/fieldPro", method = RequestMethod.POST)
-	public String fieldPro(FieldDTO fieldDTO, MultipartHttpServletRequest request) {
+	public String fieldPro(@RequestParam String f_num, @RequestParam String f_name, @RequestParam String f_type,
+			@RequestParam String district, @RequestParam String paddress, @RequestParam String price, @RequestParam MultipartFile f_photo)
+			throws IOException {
+		FieldDTO fieldDTO = new FieldDTO();
+//		String photo= f_photo.getOriginalFilename();
 		
-		MultipartFile file = request.getFile("f_photo");
+		fieldDTO.setF_num(Integer.parseInt(f_num));
+		fieldDTO.setF_name(f_name);
+		fieldDTO.setF_type(f_type);
+		fieldDTO.setDistrict(district);
+		fieldDTO.setPaddress(paddress);
+		fieldDTO.setF_photo(f_photo.getOriginalFilename());
+		fieldDTO.setPrice(Integer.parseInt(price));
 		
-		String path = request.getSession().getServletContext().getRealPath("/resources/");
-		System.out.println("Path : " + path);
+		String path = "D:\\workspace_sts7\\team\\src\\main\\webapp\\resources\\img";
+
+		File saveFile = new File(path, "name.gif");
+
+		f_photo.transferTo(saveFile);
 		
-		String name =  file.getOriginalFilename();
-		
-		File dest = new  File(path+File.separator+name);
-		
-		file.transferTo(dest);
-//		String path = mhsr.getServletContext().getRealPath("/upload");
-		//업로드할 파일명
-//        MultipartFile upload = mhsr.getFile("upload");
-//		String name =  upload.getOriginalFilename();
-		//파일을 저장할 위치 셋업
-		
-		//업로드 처리!
-		
-		
-		
-		
+		System.out.println(f_photo.getOriginalFilename());
 		
 		fieldService.insertFeild(fieldDTO);
+
 		// /WEB-INF/views/notice/notice.jsp
 		return "redirect:/";
 	}

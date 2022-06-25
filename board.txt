@@ -4,7 +4,7 @@ pass VARCHAR(20),
 name VARCHAR(20),
 phone VARCHAR(20),
 team VARCHAR(20),
-emai VARCHAR(40),
+email VARCHAR(40),
 postcode VARCHAR(20),
 address VARCHAR(40),
 date datetime

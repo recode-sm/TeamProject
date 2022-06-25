@@ -2,7 +2,7 @@ package com.team.domain;
 
 public class PageDTO {
 	private int pageSize = 10;
-	private String pageNum;
+	private String pageNum = "1";
 	private int currentPage;
 	private int startRow;
 	private int endRow;

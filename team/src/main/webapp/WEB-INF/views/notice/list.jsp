@@ -16,9 +16,11 @@
 <tr><td>번호</td><td>글쓴이</td><td>제목</td><td>등록일</td><td>조회</td></tr>
 <c:forEach var="boardDTO" items="${boardList}">
 <tr><td>${boardDTO.b_num}</td><td>${boardDTO.id}</td>
-<td><a href="${pageContext.request.contextPath}/notice/content?b_num=${boardDTO.b_num}">
+<%-- <td><a href="${pageContext.request.contextPath}/notice/content?b_num=${boardDTO.b_num}"> --%>
+<%--      ${boardDTO.subject}</a></td> --%>
+<td><a href="${pageContext.request.contextPath}/notice/listPro?b_num=${boardDTO.b_num}">
      ${boardDTO.subject}</a></td>
-    <td>${boardDTO.date}</td>
+    <td>${boardDTO.b_date}</td>
     <td>${boardDTO.readcount}</td></tr>
 </c:forEach>
 

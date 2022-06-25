@@ -9,7 +9,7 @@ public class BoardDTO {
 	private String subject;
 	private String content;
 	private int readcount;
-	private Timestamp date; // 추가
+	private Timestamp b_date; // 추가
 	
 	public int getB_num() {
 		return b_num;
@@ -47,11 +47,11 @@ public class BoardDTO {
 	public void setReadcount(int readcount) {
 		this.readcount = readcount;
 	}
-	public Timestamp getDate() {
-		return date;
+	public Timestamp getB_date() {
+		return b_date;
 	}
-	public void setDate(Timestamp date) {
-		this.date = date;
+	public void setB_date(Timestamp b_date) {
+		this.b_date = b_date;
 	}
 	
 }

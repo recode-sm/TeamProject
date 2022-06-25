@@ -1,25 +1,9 @@
-CREATE TABLE member (
-id VARCHAR(20),
-pass VARCHAR(20),
-name VARCHAR(20),
-phone VARCHAR(20),
-team VARCHAR(20),
-email VARCHAR(40),
-postcode VARCHAR(20),
-address VARCHAR(40),
-date datetime
-);
-
 CREATE TABLE board(
-b_num INT,
-id VARCHAR(20),
-subject VARCHAR(40),
-content VARCHAR(500),
-readcount INT,
-b_date datetime,
-pass varchar(20)
+b_num INT NOT NULL,
+id VARCHAR(20) NOT NULL,
+subject VARCHAR(40) NULL,
+content VARCHAR(500) NULL,
+readcount  INT NULL
+pass varchar(20) null,
+date datetime null
 );
-
-ALTER TABLE member ADD CONSTRAINT PK_MEMBER PRIMARY KEY (id);
-
-ALTER TABLE board ADD CONSTRAINT PK_BOARD PRIMARY KEY (b_num);

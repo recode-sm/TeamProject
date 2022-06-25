@@ -5,8 +5,8 @@
 <mapper namespace="com.team.board.BoardMapper">
 
 	<insert id="insertBoard">
-	insert into board(b_num,id,pass,subject,content,readcount,date) 
-	values(#{b_num},#{id},#{pass},#{subject},#{content},#{readcount},#{date})
+	insert into board(b_num,id,pass,subject,content,readcount,b_date) 
+	values(#{b_num},#{id},#{pass},#{subject},#{content},#{readcount},#{b_date})
 	</insert>
 	
 	<select id="getMaxNum" resultType="java.lang.Integer">
@@ -25,12 +25,16 @@
 		select * from board where b_num=#{b_num}
 	</select>
 	
+	<update id="updateBoard">
+		update board set subject=#{subject}, content=#{content} where b_num=#{b_num}
+	</update>
+	
 	<delete id="deleteBoard" parameterType="int">
 		delete from board where b_num=#{b_num}
 	</delete>
 	
-	<update id="updateBoard">
-		update board set subject=#{subject}, content=#{content} where b_num=#{b_num}
+	<update id="updateReadcount">
+		update board set readcount = readcount + 1 where b_num = #{b_num}
 	</update>
 
 </mapper>

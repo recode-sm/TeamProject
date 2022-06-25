@@ -5,6 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+</head>
 <title>update</title>
 
 
@@ -23,6 +24,7 @@
 
 <h1>Update</h1>
 <form action="${pageContext.request.contextPath}/notice/updatePro" method="post">
+<input type="hidden" name="b_num" value="${boardDTO.b_num}">
 <input type="hidden" name="pass" value="1111">
 <table id="notice">
 <tr><td>작성자</td><td><input type="text" name="id" value="${boardDTO.id}" readonly></td></tr>

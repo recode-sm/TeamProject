@@ -23,7 +23,7 @@ public class BoardServiceImpl implements BoardService{
 		// name pass subject content => 폼에서 가져옴
 		// num readcount date => 값 설정
 		boardDTO.setReadcount(0);
-		boardDTO.setDate(new Timestamp(System.currentTimeMillis()));
+		boardDTO.setB_date(new Timestamp(System.currentTimeMillis()));
 				
 		// max(num)+1
 		if(boardDAO.getMaxNum()==null) {
@@ -68,13 +68,20 @@ public class BoardServiceImpl implements BoardService{
 		boardDAO.deleteBoard(b_num);
 	}
 	
-	
 	@Override
 	public void updateBoard(BoardDTO boardDTO) {
+		System.out.println("ServiceUpdate");
 		//날짜 
-		boardDTO.setDate(new Timestamp(System.currentTimeMillis()));
+		boardDTO.setB_date(new Timestamp(System.currentTimeMillis()));
 		//메서드 호출
 		boardDAO.updateBoard(boardDTO);
 	}
+	
+	@Override
+	public void updateReadcount(int b_num) {
+		boardDAO.updateReadcount(b_num);
+	}
+	
+	
 	
 } 

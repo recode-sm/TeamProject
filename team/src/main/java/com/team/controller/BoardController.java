@@ -72,8 +72,10 @@ public class BoardController {
 		pageDTO.setEndPage(endPage);
 		pageDTO.setPageCount(pageCount);
 		
+		
 		model.addAttribute("boardList", boardList);
 		model.addAttribute("pageDTO", pageDTO);
+		
 		
 		// 아이디 불러오기
 //		String id = (String)session.getAttribute("id");
@@ -83,6 +85,15 @@ public class BoardController {
 		// /WEB-INF/views/board/list.jsp
 		return "/notice/list";
 	}
+	
+	@RequestMapping(value = "/notice/listPro", method = RequestMethod.GET)
+	public String listPro(HttpServletRequest request,Model model) {
+		int b_num = Integer.parseInt(request.getParameter("b_num"));
+		model.addAttribute("b_num", b_num);
+		boardService.updateReadcount(b_num);
+		return "redirect:/notice/content";
+	}
+	
 //		
 	//http://localhost:8080/myweb2/board/content?Num=2
 	@RequestMapping(value = "/notice/content", method = RequestMethod.GET)
@@ -103,6 +114,7 @@ public class BoardController {
 		int b_num = Integer.parseInt(request.getParameter("b_num"));
 			
 		BoardDTO boardDTO = boardService.getBoard(b_num);
+		System.out.println(boardDTO.getB_num());
 		model.addAttribute("boardDTO",boardDTO);
 		
 		// /WEB-INF/views/notice/writeForm.jsp
@@ -112,6 +124,10 @@ public class BoardController {
 	@RequestMapping(value = "/notice/updatePro", method = RequestMethod.POST)
 	public String updatePro(BoardDTO boardDTO) {
 		System.out.println("update");
+		System.out.println(boardDTO.getB_num());
+		System.out.println(boardDTO.getContent());
+		System.out.println(boardDTO.getSubject());
+		
 		boardService.updateBoard(boardDTO);
 		return "redirect:/notice/list";
 	}
@@ -120,7 +136,7 @@ public class BoardController {
 	public String delete(HttpServletRequest request, Model model) {
 		int b_num = Integer.parseInt(request.getParameter("b_num"));
 		boardService.deleteBoard(b_num);
-		return "/notice/delete";
+		return "/notice/list";
 	}
 	
 }

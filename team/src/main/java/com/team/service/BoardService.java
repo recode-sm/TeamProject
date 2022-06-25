@@ -18,7 +18,10 @@ public interface BoardService {
 //	BoardDTO boardDTO = boardService.getBoard(num);	
 	public BoardDTO getBoard(int b_num);
 	
+	public void updateBoard(BoardDTO boardDTO);
+	
+	public void updateReadcount(int b_num);
+	
 	public void deleteBoard(int b_num);
 	
-	public void updateBoard(BoardDTO boardDTO);
 }

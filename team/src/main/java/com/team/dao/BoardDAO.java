@@ -20,10 +20,11 @@ public interface BoardDAO {
 	
 	public BoardDTO getBoard(int b_num);
 	
-	public void deleteBoard(int b_num);
-	
 	// 리턴할형없음 updateBoard(BoardDTO boardDTO) 메서드 정의 
 	public void updateBoard(BoardDTO boardDTO);
 	
+	public void deleteBoard(int b_num);
+	
+	public void updateReadcount(int b_num);
 	
 }

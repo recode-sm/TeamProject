@@ -7,6 +7,6 @@
 <title>delete</title>
 </head>
 <body>
-
+<input type="hidden" name="b_num" value="${boardDTO.b_num}">
 </body>
 </html>

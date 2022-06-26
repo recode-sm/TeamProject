@@ -44,14 +44,21 @@ public class BoardDAOImpl implements BoardDAO{
 		}
 		
 		@Override
+		public void updateBoard(BoardDTO boardDTO) {
+			System.out.println("dao update");
+			sqlSession.update(namespace+".updateBoard", boardDTO);
+		}
+		
+		@Override
 		public void deleteBoard(int b_num) {
 			sqlSession.delete(namespace+".deleteBoard", b_num);
 		}
 		
 		@Override
-		public void updateBoard(BoardDTO boardDTO) {
-			sqlSession.update(namespace+".updateBoard", boardDTO);
+		public void updateReadcount(int b_num) {
+			sqlSession.update(namespace+".updateReadcount", b_num);
 		}
+		
 		
 
 

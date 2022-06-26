@@ -45,5 +45,6 @@
 <c:if test="${pageDTO.endPage < pageDTO.pageCount} ">
 	<a href="${pageContext.request.contextPath}/notice/list?pageNum=${pageDTO.startPage-pageDTO.pageBlock}"></a>
 </c:if>
+	<a href="<%=request.getContextPath() %>/notice/write">글쓰기</a>
 </body>
 </html>

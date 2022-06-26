@@ -24,7 +24,7 @@ onclick="location.href='${pageContext.request.contextPath}/notice/update?b_num=$
 <input type="button" value="글삭제" 
 onclick="location.href='${pageContext.request.contextPath}/notice/delete?b_num=${boardDTO.b_num}'">
 <input type="button" value="글목록" 
-onclick="'${pageContext.request.contextPath}/notice/list'"></td></tr>
+onclick="location.href='${pageContext.request.contextPath}/notice/list'"></td></tr>
 </table>
 
 </article>

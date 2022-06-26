@@ -8,20 +8,6 @@
 </head>
 <title>update</title>
 
-
-<!-- //세션값 가져오기 -->
-<!-- String id=(String)session.getAttribute("id"); -->
-<!-- // 세션값이 없으면 (id null 이면 ) login.jsp 이동 -->
-<!-- if(id==null){ -->
-<!-- 	response.sendRedirect("../member/login.jsp"); -->
-<!-- } -->
-
-<!-- // BoardDAO 객체생성 -->
-<!-- BoardDAO boardDAO=new BoardDAO(); -->
-<!-- // BoardDTO boardDTO = getBoard(num) 메서드 호출 -->
-<!-- BoardDTO boardDTO=boardDAO.getBoard(num); -->
-
-
 <h1>Update</h1>
 <form action="${pageContext.request.contextPath}/notice/updatePro" method="post">
 <input type="hidden" name="b_num" value="${boardDTO.b_num}">

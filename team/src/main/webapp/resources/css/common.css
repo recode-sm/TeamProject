@@ -178,9 +178,9 @@ a.rollover:hover img.on		{display:none;}
 /*#wrapper #header nav .nav_wrap ul li	{display:inline-block; position:relative; padding:0 38px; vertical-align:top; -webkit-transition:all 0.3s ease-out; -moz-transition:all 0.3s ease-out; -ms-transition:all 0.3s ease-out; -o-transition:all 0.3s ease-out; transition:all 0.3s ease-out;}*/
 /*CHAMPIONSHIP 적용시*/
 #wrapper #header nav .nav_wrap ul li	{display:inline-block; position:relative; padding:0 30px; vertical-align:top; -webkit-transition:all 0.3s ease-out; -moz-transition:all 0.3s ease-out; -ms-transition:all 0.3s ease-out; -o-transition:all 0.3s ease-out; transition:all 0.3s ease-out;}
-#wrapper #header nav .nav_wrap ul li:first-child	{padding-left:0;}
-#wrapper #header nav .nav_wrap ul li:first-child a	{width:146px; background:url('/images/common/nav_aia.png') no-repeat center center; background-size:100% auto}
-#wrapper #header nav .nav_wrap ul li:first-child a:after	{display:none}
+/* #wrapper #header nav .nav_wrap ul li:first-child	{padding-left:0;} */
+/* #wrapper #header nav .nav_wrap ul li:first-child a	{width:146px; background:url('/images/common/nav_aia.png') no-repeat center center; background-size:100% auto} */
+/* #wrapper #header nav .nav_wrap ul li:first-child a:after	{display:none} */
 #wrapper #header nav .nav_wrap ul li a.face	{display:none}
 #wrapper #header nav .nav_wrap ul li a.insta	{display:none}
 #wrapper #header nav .nav_wrap ul li a	{display:block; height:85px; color:#fff; font-size:20px; font-weight:700; line-height:85px; text-decoration:none; -webkit-transition:all 0.3s ease-out; -moz-transition:all 0.3s ease-out; -ms-transition:all 0.3s ease-out; -o-transition:all 0.3s ease-out; transition:all 0.3s ease-out;}

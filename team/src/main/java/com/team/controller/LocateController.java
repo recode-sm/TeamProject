@@ -19,34 +19,37 @@ public class LocateController {
 
 	@RequestMapping(value = "/locate/locate", method = RequestMethod.GET)
 	public String locate() {
-		System.out.println("/locate/locate");
 		// /WEB-INF/views/notice/notice.jsp
-		return "/locate/locateForm";
+		return "/locate/locate";
+	}
+	
+	@RequestMapping(value = "/locate/field", method = RequestMethod.GET)
+	public String field() {
+		// /WEB-INF/views/notice/notice.jsp
+		return "/locate/fieldForm";
 	}
 
 	@RequestMapping(value = "/locate/fieldPro", method = RequestMethod.POST)
-	public String fieldPro(@RequestParam String f_num, @RequestParam String f_name, @RequestParam String f_type,
-			@RequestParam String district, @RequestParam String paddress, @RequestParam String price, @RequestParam MultipartFile f_photo)
-			throws IOException {
+	public String fieldPro(@RequestParam String f_name, @RequestParam String district,
+			@RequestParam String f_address, @RequestParam String terms, @RequestParam String price,
+			@RequestParam MultipartFile f_img) throws IOException {
 		FieldDTO fieldDTO = new FieldDTO();
-//		String photo= f_photo.getOriginalFilename();
-		
-		fieldDTO.setF_num(Integer.parseInt(f_num));
+		String imgName= f_img.getOriginalFilename();
+			
+//		fieldDTO.setF_num(Integer.parseInt(f_num));
 		fieldDTO.setF_name(f_name);
-		fieldDTO.setF_type(f_type);
 		fieldDTO.setDistrict(district);
-		fieldDTO.setPaddress(paddress);
-		fieldDTO.setF_photo(f_photo.getOriginalFilename());
+		fieldDTO.setF_address(f_address);
+		fieldDTO.setTerms(terms);
+		fieldDTO.setF_img(imgName);
 		fieldDTO.setPrice(Integer.parseInt(price));
-		
-		String path = "D:\\workspace_sts7\\team\\src\\main\\webapp\\resources\\img";
 
-		File saveFile = new File(path, "name.gif");
+		String path = "D:\\STS\\team\\src\\main\\webapp\\resources\\img";
 
-		f_photo.transferTo(saveFile);
-		
-		System.out.println(f_photo.getOriginalFilename());
-		
+		File saveFile = new File(path, imgName);
+
+		f_img.transferTo(saveFile);
+
 		fieldService.insertFeild(fieldDTO);
 
 		// /WEB-INF/views/notice/notice.jsp

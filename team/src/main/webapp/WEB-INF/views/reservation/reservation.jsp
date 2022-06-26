@@ -3,42 +3,12 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-	<title>HM FUTSAL PARK</title>
-	<meta name="keywords" content="HM FUTSAL PARK">
-	<meta name="description" content="프리미엄 풋살장 HM풋살파크, 전국 11개 지점, 대관 예약, 전국 규모 컵 대회 및 리그 대회 주최">
-	<meta property="og:type" content="website">
-	<meta property="og:image" content="https://hmfutsalpark.com/images/common/link_profile.png">
-	<meta property="og:title" content="HM FUTSAL PARK">
-	<meta property="og:description" content="프리미엄 풋살장 HM풋살파크">
-	<meta property="og:url" content="https://hmfutsalpark.com">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta charset="UTF-8">
+<title>HM FUTSAL PARK</title>
 	<!-- 공통css -->
 	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/resources/css/common.css">
-	<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700" rel="stylesheet">
-
-	<link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-icon-57x57.png">
-	<link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-icon-60x60.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-icon-72x72.png">
-	<link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-icon-76x76.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="/favicon/apple-icon-114x114.png">
-	<link rel="apple-touch-icon" sizes="120x120" href="/favicon/apple-icon-120x120.png">
-	<link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-icon-144x144.png">
-	<link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple-icon-152x152.png">
-	<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-icon-180x180.png">
-	<link rel="icon" type="image/png" sizes="192x192"  href="/favicon/android-icon-192x192.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-	<link rel="manifest" href="/favicon/manifest.json">
-	<meta name="msapplication-TileColor" content="#2c3c57">
-	<meta name="msapplication-TileImage" content="/favicon/ms-icon-144x144.png">
-	<meta name="theme-color" content="#2c3c57">
-	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-	<!--[if lt IE 9]><script type="text/javascript" src="/js/libs/html5.js"></script><![endif]-->
-	<!--[if lt IE 9]><script type="text/javascript" src="/js/libs/respond.min.js"></script><![endif]-->
 	<!-- //공통css -->
+	
 	<!-- 공통js -->
 	<script type="text/javascript" src="<%=request.getContextPath() %>/resources/js/libs/jquery.min.js"></script>
 	<script type="text/javascript" src="<%=request.getContextPath() %>/resources/js/libs/jquery-ui.min.js"></script>
@@ -73,46 +43,8 @@
 
 <div id="wrapper">
 
-	<!-- Skip Navigation -->
-	<nav class="skip_nav">
-		<a href="#container">Skip to content</a>
-	</nav>
-	<!-- //Skip Navigation -->
 	<!-- Header -->
-	<section id="header">
-		<div class="header">
-			<h1><a href="<%=request.getContextPath() %>"><span class="hide">HM FUTSAL PARK</span></a></h1>
-			<button type="button" class="btn_nav"><span class="hide">Nav button</span></button>
-			<nav>
-				<div class="nav_wrap">
-					<ul>
-						<li>
-							<!--<a href="https://www.aia.co.kr/ko/index.html" class="aia" target="_blank"><span class="hide">AIA Vitaliity</span></a>-->
-							<a href="https://www.facebook.com/HMfutsalpark/" class="face" target="_blank"><span class="hide">facebook</span> </a>
-							<a href="https://www.instagram.com/hmfutsalpark/" class="insta" target="_blank"><span class="hide">instagram</span></a>
-						</li>
-						<li><a href="/locate/locate.asp">지점</a></li>
-						<li><a href="<%=request.getContextPath() %>/reservation/reservation">대관</a></li>
-						<li><a href="/comm/match/match_apply.asp">매치/용병</a></li>
-						<li><a href="/hcup/eng/hcup.asp" class="f_hvn"><!--<a href="# "onClick="alert('준비중입니다.')" class="f_hvn">-->H-CUP</a></li>
-						<li><a href="/league/league.asp" class="f_hvn">H-LEAGUE</a></li>
-						<li><a href="<%=request.getContextPath() %>/notice/notice">고객센터</a></li>
-						<li><a href="/about/company.asp" class="f_hvn">HNS</a></li>
-					</ul>
-				</div>
-				<div class="util">
-					<ul>
-						<li class="face"><a href="https://www.facebook.com/HMfutsalpark/" target="_blank"><span class="hide">facebook</span></a></li>
-						<li class="insta"><a href="https://www.instagram.com/hmfutsalpark/" target="_blank"><span class="hide">instagram</span></a></li>
-
-						
-						<li class="login"><a href="https://hmfutsalpark.com/member/login.asp">MEMBER LOGIN</a></li>
-						
-					</ul>
-				</div>
-			</nav>
-		</div>
-	</section>
+		<jsp:include page="../include/header.jsp"></jsp:include>
 	<!-- //Header -->
 <FORM name="form" method="post">
 <input type="hidden" name="branch_code" value="HM0009">
@@ -730,20 +662,7 @@ function ok(){
 
 </script>
 	<!-- Footer -->
-	<footer id="footer">
-		<div class="footer_wrap">
-			<span class="logo"></span>
-			<div class="foot_util">
-				<ul>
-					<li><a href="/member/privacy.asp">개인정보처리방침</a></li>
-					<li><a href="/member/tos.asp">이용약관</a></li>
-					<li><a href="/member/emailcollection.asp">이메일무단수집거부</a></li>
-				</ul>
-			</div>
-			<p class="info">서울시 성동구 왕십리로 58 FORHU 709호(성수동 1가)<span>TEL : 02-332-7807</span><span>FAX : 02-2061-0373</span></p>
-			<p class="copy">COPYRIGHTⓒHNS. ALLRIGHT RESERVED</p>
-		</div>
-	</footer>
+		<jsp:include page="../include/footer.jsp"></jsp:include>
 	<!-- //Footer -->
 </div>
 

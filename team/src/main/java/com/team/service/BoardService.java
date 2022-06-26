@@ -1,7 +1,6 @@
 package com.team.service;
 
 import java.util.List;
-
 import com.team.domain.PageDTO;
 import com.team.domain.BoardDTO;
 

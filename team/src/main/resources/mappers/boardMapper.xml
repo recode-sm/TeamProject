@@ -5,8 +5,8 @@
 <mapper namespace="com.team.board.BoardMapper">
 
 	<insert id="insertBoard">
-	insert into board(b_num,id,pass,subject,content,readcount,b_date) 
-	values(#{b_num},#{id},#{pass},#{subject},#{content},#{readcount},#{b_date})
+	insert into board(b_num,id,subject,content,readcount,b_date) 
+	values(#{b_num},#{id},#{subject},#{content},#{readcount},#{b_date})
 	</insert>
 	
 	<select id="getMaxNum" resultType="java.lang.Integer">

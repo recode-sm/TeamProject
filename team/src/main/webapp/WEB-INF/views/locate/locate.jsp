@@ -4,42 +4,13 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta charset="UTF-8">
 	<title>HM FUTSAL PARK</title>
-	<meta name="keywords" content="HM FUTSAL PARK">
-	<meta name="description" content="프리미엄 풋살장 HM풋살파크, 전국 11개 지점, 대관 예약, 전국 규모 컵 대회 및 리그 대회 주최">
-	<meta property="og:type" content="website">
-	<meta property="og:image" content="https://hmfutsalpark.com/images/common/link_profile.png">
-	<meta property="og:title" content="HM FUTSAL PARK">
-	<meta property="og:description" content="프리미엄 풋살장 HM풋살파크">
-	<meta property="og:url" content="https://hmfutsalpark.com">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<!-- 공통css -->
 	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/resources/css/common.css">
 	<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700" rel="stylesheet">
-
-	<link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-icon-57x57.png">
-	<link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-icon-60x60.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-icon-72x72.png">
-	<link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-icon-76x76.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="/favicon/apple-icon-114x114.png">
-	<link rel="apple-touch-icon" sizes="120x120" href="/favicon/apple-icon-120x120.png">
-	<link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-icon-144x144.png">
-	<link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple-icon-152x152.png">
-	<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-icon-180x180.png">
-	<link rel="icon" type="image/png" sizes="192x192"  href="/favicon/android-icon-192x192.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-	<link rel="manifest" href="/favicon/manifest.json">
-	<meta name="msapplication-TileColor" content="#2c3c57">
-	<meta name="msapplication-TileImage" content="/favicon/ms-icon-144x144.png">
-	<meta name="theme-color" content="#2c3c57">
-	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-	<!--[if lt IE 9]><script type="text/javascript" src="/js/libs/html5.js"></script><![endif]-->
-	<!--[if lt IE 9]><script type="text/javascript" src="/js/libs/respond.min.js"></script><![endif]-->
 	<!-- //공통css -->
+	
 	<!-- 공통js -->
 	<script type="text/javascript" src="<%=request.getContextPath() %>/resources/js/libs/jquery.min.js"></script>
 	<script type="text/javascript" src="<%=request.getContextPath() %>/resources/js/libs/jquery-ui.min.js"></script>
@@ -74,12 +45,6 @@
 
 <div id="wrapper">
 
-	<!-- Skip Navigation -->
-	<nav class="skip_nav">
-		<a href="#container">Skip to content</a>
-	</nav>
-	<!-- //Skip Navigation -->
-	
 	<!-- Header -->
 		<jsp:include page="../include/header.jsp"></jsp:include>
 	<!-- //Header -->
@@ -116,14 +81,48 @@
 					<div class="btn_wrap">
 						<a href="#" class="open"><span>전체지점보기</span></a>
 						<a href="#" class="closed"><span>전체지점닫기</span></a>
-					</div>
 
+					</div>
+						
 					<div class="loca_list">
 						<a href="#" class="btn_closed">전체지점닫기</a>
-						<ul>
-							<li><a href="#">서울, 경기 지역</a><ul><li><a href="locate_info.asp?code=HM0048">더피치 인하점</a></li><li><a href="locate_info.asp?code=HM0001">동대문점</a></li><li><a href="locate_info.asp?code=HM0003">서수원점</a></li><li><a href="locate_info.asp?code=HM0034">시흥점</a></li><li><a href="locate_info.asp?code=HM0002">안산 고잔점</a></li><li><a href="locate_info.asp?code=HM0045">인천 청라점</a></li><li><a href="locate_info.asp?code=HM0004">일산점</a></li></ul></li><li><a href="#">대전, 충청 지역</a><ul><li><a href="locate_info.asp?code=HM0049">더피치 천안신방점</a></li></ul></li><li><a href="#">부산, 경상 지역</a><ul><li><a href="locate_info.asp?code=HM0031">부산 북구점</a></li><li><a href="locate_info.asp?code=HM0008">울산 남구점</a></li><li><a href="locate_info.asp?code=HM0024">울산 북구점</a></li><li><a href="locate_info.asp?code=HM0009">창원점</a></li></ul></li><li><a href="#">광주, 전라 지역</a><ul><li><a href="locate_info.asp?code=HM0010">전주 완산점</a></li></ul></li><li><a href="#">제주 지역</a><ul><li><a href="locate_info.asp?code=HM0033">가천대학교 운동장</a></li><li><a href="locate_info.asp?code=HM0028">GLOBAL ARENA (Japan)</a></li><li><a href="locate_info.asp?code=HM0032">Seogwipo, JEJU</a></li></ul></li>
-						</ul>
-					</div>
+							<ul>
+								<li><a href="${pageContext.request.contextPath}/locate/field">구장등록</a>
+								<li><a href="#">서울, 경기 지역</a>
+									<ul>
+										<li><a href="locate_info.asp?code=HM0048">더피치 인하점</a></li>
+										<li><a href="locate_info.asp?code=HM0001">동대문점</a></li>
+										<li><a href="locate_info.asp?code=HM0003">서수원점</a></li>
+										<li><a href="locate_info.asp?code=HM0034">시흥점</a></li>
+										<li><a href="locate_info.asp?code=HM0002">안산 고잔점</a></li>
+										<li><a href="locate_info.asp?code=HM0045">인천 청라점</a></li>
+										<li><a href="locate_info.asp?code=HM0004">일산점</a></li>
+									</ul></li>
+								<li><a href="#">대전, 충청 지역</a>
+								<ul>
+										<li><a href="locate_info.asp?code=HM0049">더피치 천안신방점</a></li>
+									</ul></li>
+								<li><a href="#">부산, 경상 지역</a>
+								<ul>
+										<li><a href="locate_info.asp?code=HM0031">부산 북구점</a></li>
+										<li><a href="locate_info.asp?code=HM0008">울산 남구점</a></li>
+										<li><a href="locate_info.asp?code=HM0024">울산 북구점</a></li>
+										<li><a href="locate_info.asp?code=HM0009">창원점</a></li>
+									</ul></li>
+								<li><a href="#">광주, 전라 지역</a>
+								<ul>
+										<li><a href="locate_info.asp?code=HM0010">전주 완산점</a></li>
+									</ul></li>
+								<li><a href="#">제주 지역</a>
+								<ul>
+										<li><a href="locate_info.asp?code=HM0033">가천대학교 운동장</a></li>
+										<li><a href="locate_info.asp?code=HM0028">GLOBAL
+												ARENA (Japan)</a></li>
+										<li><a href="locate_info.asp?code=HM0032">Seogwipo,
+												JEJU</a></li>
+									</ul></li>
+							</ul>
+						</div>
 				</div>
 				<!-- //전체지점 보기 -->
 

@@ -1,4 +1,3 @@
-<!--
 function getByteLength(tobj, size, dispObj){
 
    var ls_str     =  tobj.value;	// 이벤트가 일어난 컨트롤의 value 값

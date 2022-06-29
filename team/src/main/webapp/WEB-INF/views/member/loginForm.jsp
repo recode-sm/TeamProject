@@ -19,19 +19,19 @@
 	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/resources/css/common.css">
 	<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700" rel="stylesheet">
 
-	<link rel="apple-touch-icon" sizes="57x57" href="/resources/loginimg/apple-icon-57x57.png">
-	<link rel="apple-touch-icon" sizes="60x60" href="/resources/loginimg/apple-icon-60x60.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="/resources/loginimg/apple-icon-72x72.png">
-	<link rel="apple-touch-icon" sizes="76x76" href="/resources/loginimg/apple-icon-76x76.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="/resources/loginimg/apple-icon-114x114.png">
-	<link rel="apple-touch-icon" sizes="120x120" href="/resources/loginimg/apple-icon-120x120.png">
-	<link rel="apple-touch-icon" sizes="144x144" href="/resources/loginimg/apple-icon-144x144.png">
-	<link rel="apple-touch-icon" sizes="152x152" href="/resources/loginimg/apple-icon-152x152.png">
-	<link rel="apple-touch-icon" sizes="180x180" href="/resources/loginimg/apple-icon-180x180.png">
-	<link rel="icon" type="image/png" sizes="192x192"  href="/resources/loginimg/android-icon-192x192.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="/resources/loginimg/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="96x96" href="/resources/loginimg/favicon-96x96.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="/resources/loginimg/favicon-16x16.png">
+	<link rel="apple-touch-icon" sizes="57x57" href="<%=request.getContextPath() %>/resources/loginimg/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="<%=request.getContextPath() %>/resources/loginimg/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="<%=request.getContextPath() %>/resources/loginimg/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="<%=request.getContextPath() %>/resources/loginimg/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="<%=request.getContextPath() %>/resources/loginimg/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="<%=request.getContextPath() %>/resources/loginimg/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="<%=request.getContextPath() %>/resources/loginimg/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="<%=request.getContextPath() %>/resources/loginimg/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="<%=request.getContextPath() %>/resources/loginimg/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="/<%=request.getContextPath() %>resources/loginimg/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="<%=request.getContextPath() %>/resources/loginimg/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="<%=request.getContextPath() %>/resources/loginimg/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="<%=request.getContextPath() %>/resources/loginimg/favicon-16x16.png">
 	<link rel="manifest" href="/favicon/manifest.json">
 	<meta name="msapplication-TileColor" content="#2c3c57">
 	<meta name="msapplication-TileImage" content="/favicon/ms-icon-144x144.png">
@@ -40,9 +40,9 @@
 	<!--[if lt IE 9]><script type="text/javascript" src="/js/libs/html5.js"></script><![endif]-->
 	<!--[if lt IE 9]><script type="text/javascript" src="/js/libs/respond.min.js"></script><![endif]-->
 
-	<script type="text/javascript" src="/resources/js/libs/jquery.min.js"></script>
-	<script type="text/javascript" src="/resources/js/common/common.js"></script>
-	<script type="text/javascript" src="/resources/js/common/form_check.js"></script>
+	<script type="text/javascript" src="<%=request.getContextPath() %>/resources/js/libs/jquery.min.js"></script>
+	<script type="text/javascript" src="<%=request.getContextPath() %>/resources/js/common/common.js"></script>
+	<script type="text/javascript" src="<%=request.getContextPath() %>/resources/js/common/form_check.js"></script>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-116234591-1"></script>
 	<script>
@@ -54,7 +54,7 @@
 	</script>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 
-	<link rel="stylesheet" type="text/css" href="/resources/css/content.css">
+	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/resources/css/content.css">
 </head>
 
 <script language="Javascript">

@@ -25,7 +25,7 @@ public class ReservationController {
 			String id = (String)session.getAttribute("id");
 			
 			// phone 값 가져오기
-			MemberDTO memberDTO = reservationService.getPhone(id);
+//			MemberDTO memberDTO = reservationService.getPhone(id);
 			
 			model.addAttribute("memberDTO", memberDTO);
 

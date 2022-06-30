@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.team.reservation.reservationMapper">
+
+	<select id="getFeildList_sel" resultType="com.team.domain.FieldDTO">
+		select distinct district from field order by district
+	</select>
+
+	<select id="getFeildList_sel1" resultType="com.team.domain.FieldDTO">
+		select f_name, f_num from field where district = #{sel} order by f_name desc
+	</select>
+
+</mapper>

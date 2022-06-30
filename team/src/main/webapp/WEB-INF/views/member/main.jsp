@@ -21,11 +21,9 @@ ${ sessionScope.id }님 로그인 하셨습니다.<br>
 
 <c:if test="${ !empty sessionScope.id }">
 	<c:if test="${ sessionScope.id == 'admin' }">
-		<a href="<%=request.getContextPath() %>/member/list">회원목록</a><br>
+		<a href="<%=request.getContextPath() %>/member/list">회원목록</a>
 	</c:if>
 </c:if>
-
-<a href="<%=request.getContextPath() %>">메인페이지로 가기</a><br>
 
 </body>
 </html>

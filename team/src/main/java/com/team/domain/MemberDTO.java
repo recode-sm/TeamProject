@@ -5,6 +5,7 @@ import java.sql.Timestamp;
 public class MemberDTO {
 	private String id;
 	private String pass;
+	private String pass1;
 	private String name;
 	private String phone;
 	private String team;

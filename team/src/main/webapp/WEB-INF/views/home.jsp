@@ -42,11 +42,7 @@
 				<div class="util">
 					<ul>
 
-						<li class="login">
-							<a href="<%=request.getContextPath() %>/member/login">MEMBER LOGIN</a> |
-							<a href="<%=request.getContextPath() %>/member/logout">MEMBER LOGOUT</a> |
-							<a href="<%=request.getContextPath() %>/member/info">MEMBER INFO</a> 
-						</li>
+						<li class="login"><a href="<%=request.getContextPath() %>/member/login">MEMBER LOGIN</a></li>
 						
 					</ul>
 				</div>

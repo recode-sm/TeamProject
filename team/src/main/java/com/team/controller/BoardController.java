@@ -1,5 +1,6 @@
 package com.team.controller;
 
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -136,7 +137,7 @@ public class BoardController {
 	public String delete(HttpServletRequest request, Model model) {
 		int b_num = Integer.parseInt(request.getParameter("b_num"));
 		boardService.deleteBoard(b_num);
-		return "/notice/list";
+		return "redirect:/notice/list";
 	}
 	
 }

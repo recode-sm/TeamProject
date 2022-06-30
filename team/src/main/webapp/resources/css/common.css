@@ -469,6 +469,8 @@ table	th,	table	td	{border:0 none}
 
 .pager_wrap a	{display:inline-block; margin-left:8px; width:79px; height:41px; border:1px solid #cecece; background:#fff; color:#afafaf; font-size:16px; line-height:41px; vertical-align:top; letter-spacing:0}
 .pager_wrap a:hover	{border:1px solid #2c3c57; color:#2c3c57; text-decoration:none}
+.pager_wrap a {margin-bottom: 20px;}
+
 
 .pager_wrap a.btn_page	{}
 .pager_wrap a.btn_page.prev	{margin:0; background:#fff url('/images/common/icn_page_prev.png') no-repeat center center;}

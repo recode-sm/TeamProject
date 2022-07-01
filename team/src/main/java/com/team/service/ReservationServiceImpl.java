@@ -8,6 +8,8 @@ import org.springframework.stereotype.Service;
 
 import com.team.dao.ReservationDAO;
 import com.team.domain.FieldDTO;
+import com.team.domain.MemberDTO;
+import com.team.domain.ReservDTO;
 
 @Service
 public class ReservationServiceImpl implements ReservationService{
@@ -26,6 +28,25 @@ public class ReservationServiceImpl implements ReservationService{
 		
 		return reservationDAO.getFieldList_sel1(sel);
 	}
+
+	@Override
+	public MemberDTO getPhone(String id) {
+		
+		return reservationDAO.getPhone(id);
+	}
+
+	@Override
+	public FieldDTO getFiled(int f_num) {
+		return reservationDAO.getField(f_num);
+	}
+
+	@Override
+	public void insertReserv(ReservDTO reservDTO) {
+		reservationDAO.insertReserv(reservDTO);
+		
+	}
+
+	
 	
 	
 }

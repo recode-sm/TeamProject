@@ -1,5 +1,7 @@
 package com.team.dao;
 
+import java.util.List;
+
 import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
@@ -19,4 +21,10 @@ public class FieldDAOImpl implements FieldDAO {
 		sqlSession.insert(namespace + ".insertField", fieldDTO);
 	}
 
+	@Override
+	public List<FieldDTO> getFieldList() {
+		return sqlSession.selectList(namespace + ".getFieldList");
+	}
+
+	
 }

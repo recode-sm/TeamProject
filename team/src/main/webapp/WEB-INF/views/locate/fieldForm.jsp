@@ -137,7 +137,7 @@
 										</select>									
 									</td></tr>
 									<tr><td>상세주소</td><td><input type="text" name="f_address" style="width: 100%;"></td></tr>
-									<tr><td>약관</td><td><input type="text" name="terms" style="width: 100%;"></td></tr>
+									<tr><td>약관</td><td><textarea rows="" cols="" name="terms" style="width: 100%;"></textarea></td></tr>
 									<tr><td>가격</td><td><input type="text" name="price" style="width: 100%;"></td></tr>			
 								</table>
 								<input type="submit" value="등록" class="but" style="margin-right: 130px; float: right;">

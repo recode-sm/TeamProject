@@ -9,6 +9,13 @@ public class FieldDTO {
 	private String f_img;
 	private int price;
 	
+	
+	public int getPrice() {
+		return price;
+	}
+	public void setPrice(int price) {
+		this.price = price;
+	}
 	public int getF_num() {
 		return f_num;
 	}
@@ -45,12 +52,7 @@ public class FieldDTO {
 	public void setF_img(String f_img) {
 		this.f_img = f_img;
 	}
-	public int getPrice() {
-		return price;
-	}
-	public void setPrice(int price) {
-		this.price = price;
-	}
+	
 
 	
 }

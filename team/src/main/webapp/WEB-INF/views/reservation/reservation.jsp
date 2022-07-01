@@ -67,19 +67,19 @@
 	//JSONArray nextMonthResData = (JSONArray)request.getAttribute("nextMonthResData");
 
 		//예약가능 요일 (일~월, 가능0 불가능1)
-		char[] possibleDay = {'0','1','1','0','0','0','0'};
+		char[] possibleDay = {'0','0','0','0','0','0','0'};
 		//예약가능 시간 (start time~end time) end - start = 이용가능시
 		int startTime = 8;
 		int endTime = 22;
 		//총 이용 가능 시간
 		int totalUsingTime = endTime - startTime;
 		//시간당 가격
-		int price = 60000;
+// 		int price = 0;
 		
 	%>
 
 	//예약이 가득찬 날들의 배열
-	var thisMonthFullDateList = new Array();
+// 	var thisMonthFullDateList = new Array();
 	// <c:forEach items="${thisMonthFullDateList}" var = "date">
 //	 	thisMonthFullDateList.push(${date});
 	// </c:forEach>
@@ -93,7 +93,8 @@
 	//today 보조. 고정
 	var date = new Date();
 
-	var selectedCell;
+	var selectedDayCell;
+	var selectedTimeCell;
 
 	//오늘에 해당하는 월
 	var realMonth = date.getMonth()+1; 
@@ -188,15 +189,15 @@
 		    	row = calendar.insertRow();
 		    }
 		    
-//	         if(today.getFullYear()==date.getFullYear()&&today.getMonth()==date.getMonth()&&i==date.getDate()) 
-//	         {
-//	             cell.bgColor = "#BCF1B1"; //오늘날짜배경색
-//	         }
+// 	         if(today.getFullYear()==date.getFullYear()&&today.getMonth()==date.getMonth()&&i==date.getDate()) 
+// 	         {
+// 	             cell.bgColor = "#BCF1B1"; //오늘날짜배경색
+// 	         }
 			
 			//예약불가일 색상변경 (오늘 이전 또는 30일 이후) 및 사용자가 직접 지정한 경우
 			etp = exchangeToPosibleDay(cnt)*1;
 			
-			if (nowMonth == realMonth && i <= realToDay) {
+			if (nowMonth == realMonth && i < realToDay) {
 				noCount = noCount + 1;
 	   		} else if (nowMonth > realMonth && i > realToDay) {
 	        	noCount = noCount + 1;
@@ -204,6 +205,7 @@
 	        	noCount = noCount + 1;
 	        }
 			
+
 			if (noCount > 0){
 				cell.style.backgroundColor = "#E0E0E0";
 				cell.innerHTML = "<font color='#C6C6C6' >" + i + "</font>";
@@ -224,19 +226,22 @@
 // 					inputField.value = clickedYMD;
 
 					$("#selectedDate1").text(clickedYMD);
-					$("#selectedDate2").text(clickedYMD);
+// 					$("#selectedDate2").text(clickedYMD);
+					$("#selectedDate2").val(clickedYMD);
 					
 					//선택된 월, 일 변수 저장
 					selectedMonth = today.getMonth() + 1;
 					selectedDate = this.getAttribute('id');
 				
+					
 					//선택된 셀 색 변화
-					if(selectedCell != null){
-						selectedCell.bgColor = "#FFFFFF";
+					if(selectedDayCell != null){
+						selectedDayCell.bgColor = "";
 					}
 					
-					selectedCell = this;
+					selectedDayCell = this;
 					this.bgColor = "#fbedaa";
+				
 			   	
 					//time table 생성
 					timeTableMaker(today.getMonth() + 1,this.getAttribute('id'));
@@ -245,21 +250,21 @@
 		}
 		//예약이 가득찬 날인 경우 cell 비활성화 및 색상 변경
 //	 	checkMonth = thisMonth(nowMonth, realMonth); 의문
-		fullDate = [];
+// 		fullDate = [];
 //	 	if(checkMonth == 0){
 //	 		fullDate = thisMonthFullDateList;
 //	 	}
 //	 	if(checkMonth == 1){
 //	 		fullDate = nextMonthFullDateList;;
 //	 	}
-		for (var i = 0; i < fullDate.length; i++){
-			console.log("꽉 찬날 : " + fullDate[i]);
-			cell = document.getElementById(fullDate[i]);
-			console.log("꽉 찬날 : " + cell.innerHTML);
-			cell.style.backgroundColor = "#E0E0E0";
-			cell.style.color = '#C6C6C6';
-			cell.onclick = function(){};
-		}
+// 		for (var i = 0; i < fullDate.length; i++){
+// 			console.log("꽉 찬날 : " + fullDate[i]);
+// 			cell = document.getElementById(fullDate[i]);
+// 			console.log("꽉 찬날 : " + cell.innerHTML);
+// 			cell.style.backgroundColor = "#E0E0E0";
+// 			cell.style.color = '#C6C6C6';
+// 			cell.onclick = function(){};
+// 		}
 		
 	//달의 마지막날 뒤 행의 빈 공간을 셀로 채우기
 		if(cnt % 7 != 0){
@@ -270,6 +275,7 @@
 	}
 		
 	//사용자가 입력한 예약불가능 일자와 대조하기 위해 0~7의 환형 계산구조
+	//char 타입 배열의 0, 1값을 int로 사용하기 위해 바꾼 것인듯
 	function exchangeToPosibleDay(num){
 		result = num % 7;
 		result -= 1;
@@ -278,6 +284,7 @@
 		}
 		return result; 
 	}
+	
 	//이번달이면 0 리턴, 다음달이면 1 리턴
 	function thisMonth(todayMonth, realMonth){
 		console.log("todayMonth : " + todayMonth + ", realMonth : " + realMonth);
@@ -291,143 +298,211 @@
 
 	// ---------------- time table --------------------------
 
-	var price = 60000;
-	var startTime = "8";
+// 	var price = document.getElementById('tPrice').value();
+	var startTime = "0";
 	var endTime = "22";
 	//선택된 시간중 가장 빠른/늦은 시간;
 	var selectedFirstTime = 24*1;
 	var selectedFinalTime = 0*1;
 
 	//예약시간표를 만들 table객체 획득
+	//달력 onclick function => timeTableMaker(today.getMonth() + 1,this.getAttribute('id'));
 	function timeTableMaker(selectedMonth, selectedDate){
 		row = null
 		cnt = 0;
 		
-		month = selectedMonth;
-		date = selectedDate;
+// 		month = selectedMonth;
+// 		date = selectedDate;
 		var timeTable = document.getElementById("timeTable");
 		
 		row = timeTable.insertRow();
 		
-		//테이블 초기화
+		//테이블 초기화 => 실시하지 않으면 시간 테이블이 여러개 생성
 		while(timeTable.rows.length > 1){
 			timeTable.deleteRow(timeTable.rows.length-1);
 		}
 		
 		for (i = 0; i < endTime - startTime; i=i+2){
+			
 			//곱해서 숫자타입으로 변환
 			cellTime = startTime*1 + i;
-			
-			cellStartTimeText = cellTime + ":00";
-			cellEndTimeText = (cellTime + 2) + ":00";
-			inputCellText = cellStartTimeText + " ~ " +  cellEndTimeText;
-			
-			//셀 입력을 위해 테이블 개행
-// 			row = timeTable.insertRow();
-			//해당 row의 셀 생성
-			cell = row.insertCell();
-			//cell에 id 부여
-			cell.setAttribute('id', cellTime);
-			//셀에 입력
-			cell.innerHTML = inputCellText;
-//	 		selectedCell.bgColor = "#FFFFFF";
-//	 		cell.innerHTML = "<font color='#C6C6C6' >" + inputCellText + "</font>";
-
- 			cell.align = "center";
+				
+			if(date.getDate() == selectedDate){
+				if(date.getHours() < cellTime){
+				
+					cellStartTimeText = cellTime + ":00";
+					cellEndTimeText = (cellTime + 2) + ":00";
+					inputCellText = cellStartTimeText + " ~ " +  cellEndTimeText;
+					
+					//해당 row의 셀 생성
+					cell = row.insertCell();
+					//cell에 cellTime 값을 가진 id 부여
+					cell.setAttribute('id', cellTime);
+					//셀에 입력
+					cell.innerHTML = inputCellText;
+	//	 	 		selectedCell.bgColor = "#FFFFFF";
+	//		 		cell.innerHTML = "<font color='#C6C6C6' >" + inputCellText + "</font>";
 	
-			//셀 생성 후 count 증가
-			cnt = cnt + 1;
- 			
-		  	//일주일 입력 완료시 개행
-		    if (cnt % 3 == 0){
-		    	row = timeTable.insertRow();
-		    }
+		 			cell.align = "center";
 			
-			//클릭이벤
-				cell.onclick = function(){
-					cellTime = this.getAttribute('id');
-					cellTime = cellTime*1;
-					console.log("first : " + selectedFirstTime + ", selectedFinalTime : " + selectedFinalTime + ", selected : " + cellTime);
-		 			//예약일시 입력처리
-		//  			if (selectedFirstTime != 24 && selectedFinalTime != 0){
-		//  				if(cellTime < selectedFirstTime - 1){
-		//  					alert("연속한 시간만 예약가능합니다.");
-		//  					return false;
-		//  				}
-		// 				if (cellTime > selectedFinalTime + 1){
-		//  					alert("연속한 시간만 예약가능합니다.");
-		//  					console.log(cellTime + ">" + selectedFinalTime + 1)
-		//  					return false;
-		//  				}
-		//  			}
+					//셀 생성 후 count 증가
+					cnt = cnt + 1;
 		 			
-					this.bgColor = "#fbedaa";
+				  	//일주일 입력 완료시 개행
+				    if (cnt % 3 == 0){
+				    	row = timeTable.insertRow();
+				    }
 					
-					if (cellTime < selectedFirstTime) {
-						selectedFirstTime = cellTime
-					}
-					if (cellTime > selectedFinalTime) {
-						selectedFinalTime = cellTime
-					}
-				
-					//하단의 예약일시에 시간 표시
-					resTime  = selectedFirstTime + ":00 ~ " + (selectedFinalTime + 2) + ":00";
-				
-// 					resTimeForm = document.getElementById("selectedTime");
-// 					resTimeForm.value = resTime;
-					
-					$("#selectedTime").text(resTime);
-					
-					//하단의 결제정보에 가격정보 표시
-// 					useTime = (selectedFinalTime + 1) - selectedFirstTime;
-					
-// 					useTimeForm = document.getElementById("totalPrice");
-// 					useTimeForm.value = useTime * price;
-					
-					$("#totalPrice").text(price);
-					
+					//클릭이벤
+						cell.onclick = function(){
+							cellTime = this.getAttribute('id'); //cellTime 값을 cellTime 변수에 저장
+							cellTime = cellTime*1;
+				 			
+							this.bgColor = "#fbedaa";
+							
+	//	 					if (cellTime < selectedFirstTime) {
+	//	 						selectedFirstTime = cellTime
+	//	 					}
+	//	 					if (cellTime > selectedFinalTime) {
+	//	 						selectedFinalTime = cellTime
+	//	 					}
+	
+							//선택된 셀 색 변화
+							if(selectedTimeCell != null){
+								selectedTimeCell.bgColor = "";
+							}
+						
+							selectedTimeCell = this;
+							this.bgColor = "#fbedaa";
+							
+							//하단의 예약일시에 시간 표시
+							resTime  = selectedFirstTime + ":00 ~ " + (selectedFinalTime + 2) + ":00";
+							
+	//	 					resTimeForm = document.getElementById("selectedTime");
+	//	 					resTimeForm.value = resTime;
+	
+							selectedTime = cellTime + ":00 ~ " + (cellTime + 2) + ":00";
+							
+							$("#selectedTime").val(selectedTime);
+							
+							//하단의 결제정보에 가격정보 표시
+	//	 					useTime = (selectedFinalTime + 1) - selectedFirstTime;
+							
+	//	 					useTimeForm = document.getElementById("totalPrice");
+	//	 					useTimeForm.value = useTime * price;
+							
+							$("#totalPrice").text(price);
+						}
 				}
+			}else{
+				cellStartTimeText = cellTime + ":00";
+				cellEndTimeText = (cellTime + 2) + ":00";
+				inputCellText = cellStartTimeText + " ~ " +  cellEndTimeText;
+				
+				//해당 row의 셀 생성
+				cell = row.insertCell();
+				//cell에 cellTime 값을 가진 id 부여
+				cell.setAttribute('id', cellTime);
+				//셀에 입력
+				cell.innerHTML = inputCellText;
+//	 	 		selectedCell.bgColor = "#FFFFFF";
+//		 		cell.innerHTML = "<font color='#C6C6C6' >" + inputCellText + "</font>";
+
+	 			cell.align = "center";
+		
+				//셀 생성 후 count 증가
+				cnt = cnt + 1;
+	 			
+			  	//일주일 입력 완료시 개행
+			    if (cnt % 3 == 0){
+			    	row = timeTable.insertRow();
+			    }
+				
+				//클릭이벤
+					cell.onclick = function(){
+						cellTime = this.getAttribute('id'); //cellTime 값을 cellTime 변수에 저장
+						cellTime = cellTime*1;
+			 			
+						this.bgColor = "#fbedaa";
+						
+//	 					if (cellTime < selectedFirstTime) {
+//	 						selectedFirstTime = cellTime
+//	 					}
+//	 					if (cellTime > selectedFinalTime) {
+//	 						selectedFinalTime = cellTime
+//	 					}
+
+						//선택된 셀 색 변화
+						if(selectedTimeCell != null){
+							selectedTimeCell.bgColor = "";
+						}
+					
+						selectedTimeCell = this;
+						this.bgColor = "#fbedaa";
+						
+						//하단의 예약일시에 시간 표시
+						resTime  = selectedFirstTime + ":00 ~ " + (selectedFinalTime + 2) + ":00";
+						
+//	 					resTimeForm = document.getElementById("selectedTime");
+//	 					resTimeForm.value = resTime;
+
+						selectedTime = cellTime + ":00 ~ " + (cellTime + 2) + ":00";
+						
+						$("#selectedTime").val(selectedTime);
+						
+						//하단의 결제정보에 가격정보 표시
+//	 					useTime = (selectedFinalTime + 1) - selectedFirstTime;
+						
+//	 					useTimeForm = document.getElementById("totalPrice");
+//	 					useTimeForm.value = useTime * price;
+						
+						$("#totalPrice").text(price);
+					}
 			}
+		}
 		
 		//JSON으로 테이블 td 핸들링
 		//이번달 0 다음달 1
-		nowMonth = today.getMonth()+1;
-		checkMonth = thisMonth(nowMonth, realMonth);
-		var json = [];
-		if(checkMonth == 0){
+// 		nowMonth = today.getMonth()+1;
+// 		checkMonth = thisMonth(nowMonth, realMonth);
+// 		var json = [];
+// 		if(checkMonth == 0){
 	<%-- 		json = <%//=thisMonthResData%>; --%>
-		} else {
+// 		} else {
 	<%-- 		json = <%//=nextMonthResData%>; --%>
-		}
+// 		}
 
-		for(i = 0; i < Object.keys(json).length; i++){
-			if (date == json[i].date){
-				jsonObject = json[i];
-				for(j = 0; j < jsonObject.startNum.length; j++){
-					startNum = jsonObject.startNum[j];
-					shareTime = jsonObject.shareTime[j];
-					console.log("startNum: " + startNum + ", shareTime : " + shareTime);
-					for(k = startNum; k < startNum*1 + shareTime; k++){
-						cell = timeTable.rows[k].cells[0];
-						cell.style.backgroundColor = "#E0E0E0";
-						cell.style.color = '#C6C6C6';
-						cell.onclick = function(){};
-					}
-				}
-			}
-		}
+// 		for(i = 0; i < Object.keys(json).length; i++){
+// 			if (date == json[i].date){
+// 				jsonObject = json[i];
+// 				for(j = 0; j < jsonObject.startNum.length; j++){
+// 					startNum = jsonObject.startNum[j];
+// 					shareTime = jsonObject.shareTime[j];
+// 					console.log("startNum: " + startNum + ", shareTime : " + shareTime);
+// 					for(k = startNum; k < startNum*1 + shareTime; k++){
+// 						cell = timeTable.rows[k].cells[0];
+// 						cell.style.backgroundColor = "#E0E0E0";
+// 						cell.style.color = '#C6C6C6';
+// 						cell.onclick = function(){};
+// 					}
+// 				}
+// 			}
+// 		}
 	}
 
 	//날짜 클릭시 예약시간 및 결제정보 초기화
 	function selectedTimeAndTotalPriceInit(){
 
-		$("#selectedDate1").text();
-		$("#selectedDate2").text();
+		$("#selectedDate1").text("");
+		$("#selectedDate2").text("");
 		
 // 		useTimeForm = document.getElementById("totalPrice");
 // 		useTimeForm.value = "";
-		$("#selectedTime").text();
-		$("#totalPrice").text();
+		
+		$("#selectedTime").text("");
+		$("#totalPrice").text("");
+		
+		$("#timeTable").text("");
 		
 		selectedFirstTime = 24*1;
 		selectedFinalTime = 0*1;
@@ -435,24 +510,25 @@
 
 	//시간표 초기화
 	function tableinit(){
-		timeTableMaker(selectedMonth, selectedDate);
+// 		timeTableMaker(selectedMonth, selectedDate);
 		selectedTimeAndTotalPriceInit();
 		buildCalendar();
 	}
+	
+	
 	</script>
 	
 	
 	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
+// 	  window.dataLayer = window.dataLayer || [];
+// 	  function gtag(){dataLayer.push(arguments);}
+// 	  gtag('js', new Date());
 
-	  gtag('config', 'UA-116234591-1');
+// 	  gtag('config', 'UA-116234591-1');
 	</script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 
 	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/resources/css/content.css?v=201811160138">
-	
 	
 </head> 
 
@@ -469,10 +545,10 @@
 	<!-- Header -->
 		<jsp:include page="../include/header.jsp"></jsp:include>
 	<!-- //Header -->
-<FORM name="form" method="post">
-<input type="hidden" name="branch_code" value="HM0009">
+<FORM name="form" method="post" action="<%=request.getContextPath() %>/reservation/reservationPro">
+<input type="hidden" name="f_num" value="${fieldDTO.f_num }">
 <input type="hidden" name="reg_date" value="2022-06-16">
-<input type="hidden" name="total_price" value="0">
+
 
 <script language="Javascript">
 	$(document).ready(function() {
@@ -491,7 +567,7 @@
 				<h2>대관</h2>
 				
 					<video id="video01" autoplay="" playsinline="" muted="" loop="" height="460" width="100%" title="video element"> 
-						<source src="<%=request.getContextPath() %>/resources/files/banner/reservation.mp4" type="video/mp4"> 
+						<source src="<%=request.getContextPath() %>/resources/files/banner/reservation1.mp4" type="video/mp4"> 
 <!-- 						574 134 -->
 					</video>
 				
@@ -500,7 +576,7 @@
 			<div class="tab_wrap">
 				<ul>
 				
-					<li class="on"><a href="/rese/rese.asp">대관예약</a></li>
+					<li class="on"><a href="<%=request.getContextPath() %>/reservation/select">대관예약</a></li>
 					
 						<li><a href="/rese/rese_pwd.asp">예약확인</a></li>
 						
@@ -570,9 +646,9 @@
 						<div id="calendarDiv"> 
 							<table id="calendar" align="center">
 								<tr>
-									<td align="center"><label onclick="prevCalendar()"> ◀ </label></td>
+									<td align="center"><label onclick="javascript:prevCalendar(); tableinit();"> ◀ </label></td>
 									<td colspan="5" align="center" id="calendarTitle">yyyy년 m월</td>
-									<td align="center"><label onclick="nextCalendar()"> ▶ </label></td>
+									<td align="center"><label onclick="javascript:nextCalendar(); tableinit();"> ▶ </label></td>
 								</tr>
 								<tr>
 									<td align="center"><font color ="#F79DC2">일</td>
@@ -599,7 +675,7 @@
 							<div class="t_wrap">
 								<div>
 									<span class="tit">시간 선택</span>
-									<span class="t_help"><font color=red>*기본 2시간, 다중 선택 가능합니다.</font></span>
+									<span class="t_help"><font color=red>*기본 2시간, 다중 선택은 불가능합니다.</font></span>
 								</div>
 									<table id="timeTable" align="center"></table>
 <!-- 							<div class="t_wrap total"> -->
@@ -625,36 +701,46 @@
 								<tbody>
 									<tr>
 										<th scope="row">신청자</th>
-										<td>
+										<td id = "memberName">
 <!-- 										<input type="text"  name="cm_name" placeholder="이름을 입력하세요" style="width:100%"> -->
+											<input type="text" name="id" readonloy value="${id }">
 										</td>
 									</tr>
 									<tr>
 										<th scope="row">연락처</th>
-										<td>
+										<td id = "memberPhone" >
 <!-- 											<div class="phone"> -->
 <!-- 											<input type="text"  name="htel1" maxlength=3 value="" class="numberOnly" /><span>-</span> -->
 <!-- 											<input type="text"  name="htel2" maxlength=4 value="" class="numberOnly" /><span>-</span> -->
 <!-- 											<input type="text"  name="htel3" maxlength=4 value="" class="numberOnly" /> -->
 <!-- 											</div> -->
+											<input type="text" name="phone" readonloy value="${memberDTO.phone }">
 										</td>
 									</tr>
 									<tr>
-										<th scope="row">예약일자</th>
-										<td id="selectedDate2"></td>
+										<th scope="row" >예약일자</th>
+										<td>
+										<input name="r_date" type="text" id="selectedDate2" value="" readonly>
+										
+										</td>
 										
 									</tr>
 									<tr>
-										<th scope="row">선택구장</th>
-										<td id="stadiumBottom"></td>
+										<th scope="row" >선택구장</th>
+										<td id="stadiumBottom">
+										<input type="text" name="f_name" readonly value="${fieldDTO.f_name }">
+										</td>
 									</tr>
 									<tr>
 										<th scope="row">예약시간</th>
-										<td id="selectedTime">예약시간 선택 없음</td>
+										<td><input type="text" id="selectedTime" name="start_time" value="선택된 시간이 없습니다"></td>
+										
 									</tr>
 									<tr>
-										<th scope="row">총 결제금액</th>
-										<td><span class="price"  id="totalPrice"></span>원</td>
+										<th>총 결제금액</th>
+										<td>
+										<input type="text" name="price" id="price" readonly value="${fieldDTO.price}">원</td>
+										
 									</tr>
 									<tr>
 										<th scope="row">메모</th>
@@ -674,7 +760,7 @@
 							</span>
 
 							<div class="btn_wrap">
-								<button type="button" class="btn_big gray" onClick="ok();">대관예약하기</button>
+								<button type="submit" class="btn_big gray">대관예약하기</button>
 							</div>
 
 						</div>

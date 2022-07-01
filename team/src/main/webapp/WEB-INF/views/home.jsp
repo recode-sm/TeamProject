@@ -42,7 +42,11 @@
 				<div class="util">
 					<ul>
 
-						<li class="login"><a href="<%=request.getContextPath() %>/member/login">MEMBER LOGIN</a></li>
+						<li class="login">
+							<a href="<%=request.getContextPath() %>/member/login">MEMBER LOGIN</a> |
+							<a href="<%=request.getContextPath() %>/member/logout">MEMBER LOGOUT</a> |
+							<a href="<%=request.getContextPath() %>/member/info">MEMBER INFO</a> 
+						</li>
 						
 					</ul>
 				</div>
@@ -58,7 +62,7 @@
 				<div class="menu">
 					<ul>
 						<li><a href="<%=request.getContextPath() %>/locate/locate"><span>BRANCH</span><span class="ov">지점</span></a></li>
-						<li><a href="<%=request.getContextPath() %>/reservation/reservation"><span>RESERVATION</span><span class="ov">대관</span></a></li>
+						<li><a href="<%=request.getContextPath() %>/reservation/select"><span>RESERVATION</span><span class="ov">대관</span></a></li>
 						<li><a href="/comm/match/match_apply.asp"><span>MATCHING</span><span class="ov">매치/용병</span></a></li>
 						<li><a href="/hcup/eng/hcup.asp"><span>H-CUP</span><span class="ov">H-컵</span></a></li>
 						<li><a href="/league/league.asp"><span>H-LEAGUE</span><span class="ov">H-리그</span></a></li>

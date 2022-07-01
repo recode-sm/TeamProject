@@ -9,4 +9,5 @@
 		values(#{f_name},#{district},#{f_address},#{terms},#{f_img},#{price})
 	</insert>
 
+
 </mapper>

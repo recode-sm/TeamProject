@@ -8,8 +8,8 @@
 <head>
 <meta charset="UTF-8">
 <title>list</title>
-	<!-- 공통css -->
-	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/resources/css/common.css">
+	<!-- 공통css 코드 변경 후 적용이 안바뀌면 확장자 뒤에 ?after붙여주세요 --> 
+	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/resources/css/common.css?after2">
 	<!-- //공통css -->
 	
 	<!-- 공통js -->
@@ -90,9 +90,41 @@
 	
 	<div class = "pager_wrap">
 	
-	<div class="write">
-		<a href="<%=request.getContextPath() %>/notice/write">글쓰기</a>
-	</div>
+<!-- 	<div class="search"> -->
+<!-- 		<form action="" method="post"> -->
+<!-- 		<span class="select" style="width:100px"> -->
+<!-- 			<label for="select01">제목</label> -->
+<!-- 			<select id="select01" name="searchType" class="select_box"> -->
+<!-- 				<option value="title" >제목</option> -->
+<!-- 				<option value="content" >내용</option> -->
+<!-- 				<option value="writer" >글쓴이</option> -->
+<!-- 				<option value="titcont" >제목+내용</option> -->
+<!-- 			</select> -->
+<!-- 		</span> -->
+<!-- 		<input type="text" id="searchstr" title="" name="searchstr" value="" style="width:200px" /> -->
+<!-- 		<button type="input" class="btn_search" onclick="Fn_Search(); return false;"></button> -->
+<!-- 		</form> -->
+<!-- 	</div> -->
+	<form action="" method="post">
+		<div class="search-wrap">
+			<select class="select-box" name="searchType">
+				<option value="title" >제목</option>
+				<option value="content" >내용</option>
+				<option value="writer" >글쓴이</option>
+				<option value="titcont" >제목+내용</option> 
+			</select>
+			<input type="text" class="search-input" name="searchName">
+			
+			<button type="submit" class="search-btn">검색</button>
+		</div>
+	</form>
+	
+	<c:if test="${ !empty sessionScope.id }">
+		<div class="write">
+			<a href="<%=request.getContextPath() %>/notice/write">글쓰기</a>
+		</div>
+	</c:if>
+	
 	<span class = "page">
 	<c:if test="${startPage > pageBlock}">
 		<a  href="${pageContext.request.contextPath}/notice/list?pageNum=${pageDTO.startPage-pageDTO.pageBlock}"></a>
@@ -118,12 +150,6 @@
 	<!-- //Footer 끝-->
 </div>
 
-<<<<<<< Updated upstream
-<c:if test="${pageDTO.endPage < pageDTO.pageCount} ">
-	<a href="${pageContext.request.contextPath}/notice/list?pageNum=${pageDTO.startPage-pageDTO.pageBlock}"></a>
-</c:if>
-=======
 <iframe name="HiddenFrame" style="display:none;"></iframe>
->>>>>>> Stashed changes
 </body>
 </html>

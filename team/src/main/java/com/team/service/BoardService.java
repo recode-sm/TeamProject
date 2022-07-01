@@ -1,9 +1,9 @@
 package com.team.service;
 
 import java.util.List;
-
 import com.team.domain.PageDTO;
 import com.team.domain.BoardDTO;
+import com.team.domain.MemberDTO;
 
 public interface BoardService {
 	//추상메서드 정의
@@ -24,4 +24,5 @@ public interface BoardService {
 	
 	public void deleteBoard(int b_num);
 	
+	public BoardDTO userCheck(BoardDTO boardDTO);
 }

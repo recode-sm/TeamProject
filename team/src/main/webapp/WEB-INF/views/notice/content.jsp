@@ -74,19 +74,23 @@
 <tr><td class="tit">글제목</td><td colspan="3">${boardDTO.subject}</td></tr>
 <tr><td class="info_text">글내용</td><td colspan="3">${boardDTO.content}</td></tr>
 <tr><td colspan="4">
-  
-<input type="button" value="글수정" 
-onclick="location.href='${pageContext.request.contextPath}/notice/update?b_num=${boardDTO.b_num}'">
-<input type="button" value="글삭제" 
-onclick="location.href='${pageContext.request.contextPath}/notice/delete?b_num=${boardDTO.b_num}'">
+
+<c:if test="${ !empty sessionScope.id }">
+	<c:if test="${ (sessionScope.id eq boardDTO.id)}">
+	<input type="button" value="글수정" 
+	onclick="location.href='${pageContext.request.contextPath}/notice/update?b_num=${boardDTO.b_num}'">
+	<input type="button" value="글삭제" 
+	onclick="location.href='${pageContext.request.contextPath}/notice/delete?b_num=${boardDTO.b_num}'">
+	</c:if>
+</c:if>
 <input type="button" value="글목록" 
-onclick="'${pageContext.request.contextPath}/notice/list'"></td></tr>
+	onclick="location.href='${pageContext.request.contextPath}/notice/list'"></td></tr>
 </table>
 </div>
 </div> <!-- Contents 끝-->
 </section>
 
-<!-- Footer -->
+<!-- Footer d-->
 	<jsp:include page="../include/footer.jsp"></jsp:include>
 <!-- //Footer 끝-->
 

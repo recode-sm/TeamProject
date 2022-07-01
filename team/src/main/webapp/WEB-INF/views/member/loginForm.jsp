@@ -247,7 +247,9 @@ input {
    <input type="text" id="id" name="id" class="signUpInput" placeholder="ID" autofocus onkeyup="enterKeyCheck()">
    <input type="password" id="pass" name="pass" class="signUpInput" placeholder="Password" onkeyup="enterKeyCheck()">
    <input type="submit" value="로그인"  class="loginButton">
-   <input type="button" value="회원가입" class="signUpButton">
+   <input type="button" value="회원가입" class="signUpButton" onclick="location.href='<%=request.getContextPath() %>/member/insert'">
+   															
+   
 </form>
 
 </body>

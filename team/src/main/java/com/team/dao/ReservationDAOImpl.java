@@ -8,6 +8,8 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
 import com.team.domain.FieldDTO;
+import com.team.domain.MemberDTO;
+import com.team.domain.ReservDTO;
 
 @Repository
 public class ReservationDAOImpl implements ReservationDAO{
@@ -27,6 +29,23 @@ public class ReservationDAOImpl implements ReservationDAO{
 	
 		return sqlSession.selectList(namespace+".getFeildList_sel1",sel);
 	}
+	@Override
+	public MemberDTO getPhone(String id) {
+		return sqlSession.selectOne(namespace+".getPhone",id);
+	}
+	@Override
+	public FieldDTO getField(int f_num) {
+		
+		return sqlSession.selectOne(namespace+".getField",f_num);
+	}
+	
+	@Override
+	public void insertReserv(ReservDTO reservDTO) {
+		sqlSession.selectOne(namespace+".insertReserv",reservDTO);
+		
+	}
+	
+	
 	
 	
 	

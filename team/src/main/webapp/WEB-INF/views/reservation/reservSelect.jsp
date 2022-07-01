@@ -81,11 +81,6 @@
 	<!-- Header -->
 		<jsp:include page="../include/header.jsp"></jsp:include>
 	<!-- //Header -->
-<FORM name="form" method="post">
-<input type="hidden" name="branch_code" value="HM0009">
-<input type="hidden" name="reg_date" value="2022-06-16">
-<input type="hidden" name="total_price" value="0">
-
 <script language="Javascript">
 	$(document).ready(function() {
 		// 모바일 slide up / down 버튼
@@ -102,14 +97,16 @@
 		        	$('#select03').find("option").remove();
 		        	$('#select03').append("<option>"+"전체"+"</option>");
 		        	$.each(rdata,function(index,item){
-						$('#select03').append("<option>"+item.f_name+"</option>");
+						$('#select03').append("<option value="+item.f_num+">"+item.f_name+"</option>");
 		        	});
 		        	}
 		        });
 		  
 		   		});
 			
-		
+		function ok(){
+			document.getElementById('frm').submit();
+		}
 		
 	});
 </script>
@@ -130,24 +127,23 @@
 			<div class="tab_wrap">
 				<ul>
 				
-					<li class="on"><a href="/rese/rese.asp">대관예약</a></li>
+					<li class="on"><a href="<%=request.getContextPath() %>/reservation/select">대관예약</a></li>
 					
 						<li><a href="/rese/rese_pwd.asp">예약확인</a></li>
 						
 				</ul>
 			</div>
-
+<form id="frm" method="GET" action="<%=request.getContextPath() %>/reservation/reservation"> 
 		<div class="rese_wrap">
 				<h3 class="h_tit">구장선택</h3>
 
 				<div class="rese_start">
 					<p class="tit">지점을 선택해주세요.</p>
 					<div class="start_wrap">
-						<div class="cont">
-							<form name="form" method="get" action="rese_form.asp"> 
+						<div class="cont"> 
 							<span class="select" style="width:100%" >
 								<label for="select02">지역선택</label>
-								<select id="select02" name="branch_code1" >
+								<select id="select02" name="select02" >
 									<option value="">지역선택</option>
 										<c:forEach items="${getFieldList_sel}" var="dis">
 									<option value="${dis.district }">${dis.district }</option>
@@ -156,16 +152,16 @@
 							</span>
 							<span class="select" style="width:100%" >
 								<label for="select03">구장선택</label>
-								<select id="select03" name="branch_code2" >
+								<select id="select03" name="select03" >
 									<option value="">구장선택</option>
 								</select>
 							</span>
 					
-
+</form>
 							<div class="btn_wrap">
-								<a href="javascript:;" onCLick="ok();" class="btn_big">대관예약 시작하기</a>
+								<input type="submit" class="btn_big" value="대관예약 시작하기">
 							</div>
-							</form>
+							
 						</div>
 					</div>
 				</div>
@@ -174,7 +170,7 @@
 		</div>
 			
 	</section>
-</FORM>
+
 <!-- //Contents -->
 <script>
 // $(function(){

@@ -74,7 +74,7 @@
 		//총 이용 가능 시간
 		int totalUsingTime = endTime - startTime;
 		//시간당 가격
-		int price = 60000;
+// 		int price = 0;
 		
 	%>
 
@@ -226,7 +226,8 @@
 // 					inputField.value = clickedYMD;
 
 					$("#selectedDate1").text(clickedYMD);
-					$("#selectedDate2").text(clickedYMD);
+// 					$("#selectedDate2").text(clickedYMD);
+					$("#selectedDate2").val(clickedYMD);
 					
 					//선택된 월, 일 변수 저장
 					selectedMonth = today.getMonth() + 1;
@@ -297,7 +298,7 @@
 
 	// ---------------- time table --------------------------
 
-	var price = 60000;
+// 	var price = document.getElementById('tPrice').value();
 	var startTime = "0";
 	var endTime = "22";
 	//선택된 시간중 가장 빠른/늦은 시간;
@@ -382,7 +383,7 @@
 	
 							selectedTime = cellTime + ":00 ~ " + (cellTime + 2) + ":00";
 							
-							$("#selectedTime").text(selectedTime);
+							$("#selectedTime").val(selectedTime);
 							
 							//하단의 결제정보에 가격정보 표시
 	//	 					useTime = (selectedFinalTime + 1) - selectedFirstTime;
@@ -447,7 +448,7 @@
 
 						selectedTime = cellTime + ":00 ~ " + (cellTime + 2) + ":00";
 						
-						$("#selectedTime").text(selectedTime);
+						$("#selectedTime").val(selectedTime);
 						
 						//하단의 결제정보에 가격정보 표시
 //	 					useTime = (selectedFinalTime + 1) - selectedFirstTime;
@@ -544,10 +545,10 @@
 	<!-- Header -->
 		<jsp:include page="../include/header.jsp"></jsp:include>
 	<!-- //Header -->
-<FORM name="form" method="post">
-<input type="hidden" name="branch_code" value="HM0009">
+<FORM name="form" method="post" action="<%=request.getContextPath() %>/reservation/reservationPro">
+<input type="hidden" name="f_num" value="${fieldDTO.f_num }">
 <input type="hidden" name="reg_date" value="2022-06-16">
-<input type="hidden" name="total_price" value="0">
+
 
 <script language="Javascript">
 	$(document).ready(function() {
@@ -575,7 +576,7 @@
 			<div class="tab_wrap">
 				<ul>
 				
-					<li class="on"><a href="/rese/rese.asp">대관예약</a></li>
+					<li class="on"><a href="<%=request.getContextPath() %>/reservation/select">대관예약</a></li>
 					
 						<li><a href="/rese/rese_pwd.asp">예약확인</a></li>
 						
@@ -702,36 +703,44 @@
 										<th scope="row">신청자</th>
 										<td id = "memberName">
 <!-- 										<input type="text"  name="cm_name" placeholder="이름을 입력하세요" style="width:100%"> -->
-											${id}
+											<input type="text" name="id" readonloy value="${id }">
 										</td>
 									</tr>
 									<tr>
 										<th scope="row">연락처</th>
-										<td id = "memberPhone">
+										<td id = "memberPhone" >
 <!-- 											<div class="phone"> -->
 <!-- 											<input type="text"  name="htel1" maxlength=3 value="" class="numberOnly" /><span>-</span> -->
 <!-- 											<input type="text"  name="htel2" maxlength=4 value="" class="numberOnly" /><span>-</span> -->
 <!-- 											<input type="text"  name="htel3" maxlength=4 value="" class="numberOnly" /> -->
 <!-- 											</div> -->
-											${ memberDTO.phone }
+											<input type="text" name="phone" readonloy value="${memberDTO.phone }">
 										</td>
 									</tr>
 									<tr>
-										<th scope="row">예약일자</th>
-										<td id="selectedDate2"></td>
+										<th scope="row" >예약일자</th>
+										<td>
+										<input name="r_date" type="text" id="selectedDate2" value="" readonly>
+										
+										</td>
 										
 									</tr>
 									<tr>
-										<th scope="row">선택구장</th>
-										<td id="stadiumBottom"></td>
+										<th scope="row" >선택구장</th>
+										<td id="stadiumBottom">
+										<input type="text" name="f_name" readonly value="${fieldDTO.f_name }">
+										</td>
 									</tr>
 									<tr>
 										<th scope="row">예약시간</th>
-										<td id="selectedTime">예약시간 선택 없음</td>
+										<td><input type="text" id="selectedTime" name="start_time" value="선택된 시간이 없습니다"></td>
+										
 									</tr>
 									<tr>
-										<th scope="row">총 결제금액</th>
-										<td><span class="price"  id="totalPrice"></span>원</td>
+										<th>총 결제금액</th>
+										<td>
+										<input type="text" name="price" id="price" readonly value="${fieldDTO.price}">원</td>
+										
 									</tr>
 									<tr>
 										<th scope="row">메모</th>
@@ -751,7 +760,7 @@
 							</span>
 
 							<div class="btn_wrap">
-								<button type="button" class="btn_big gray" onClick="ok();">대관예약하기</button>
+								<button type="submit" class="btn_big gray">대관예약하기</button>
 							</div>
 
 						</div>

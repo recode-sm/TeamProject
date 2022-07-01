@@ -62,7 +62,7 @@
 				<div class="menu">
 					<ul>
 						<li><a href="<%=request.getContextPath() %>/locate/locate"><span>BRANCH</span><span class="ov">지점</span></a></li>
-						<li><a href="<%=request.getContextPath() %>/reservation/reservation"><span>RESERVATION</span><span class="ov">대관</span></a></li>
+						<li><a href="<%=request.getContextPath() %>/reservation/select"><span>RESERVATION</span><span class="ov">대관</span></a></li>
 						<li><a href="/comm/match/match_apply.asp"><span>MATCHING</span><span class="ov">매치/용병</span></a></li>
 						<li><a href="/hcup/eng/hcup.asp"><span>H-CUP</span><span class="ov">H-컵</span></a></li>
 						<li><a href="/league/league.asp"><span>H-LEAGUE</span><span class="ov">H-리그</span></a></li>

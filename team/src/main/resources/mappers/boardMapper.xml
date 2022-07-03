@@ -5,8 +5,8 @@
 <mapper namespace="com.team.board.BoardMapper">
 
 	<insert id="insertBoard">
-	insert into board(b_num,id,pass,subject,content,readcount,b_date) 
-	values(#{b_num},#{id},#{pass},#{subject},#{content},#{readcount},#{b_date})
+	insert into board(b_num,id,subject,content,readcount,b_date) 
+	values(#{b_num},#{id},#{subject},#{content},#{readcount},#{b_date})
 	</insert>
 	
 	<select id="getMaxNum" resultType="java.lang.Integer">
@@ -37,4 +37,7 @@
 		update board set readcount = readcount + 1 where b_num = #{b_num}
 	</update>
 
+	<select id="userCheck" resultType="com.team.domain.BoardDTO">
+		select id from board where id = #{id}
+	</select>
 </mapper>

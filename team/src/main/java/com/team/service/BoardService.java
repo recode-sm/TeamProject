@@ -1,14 +1,10 @@
 package com.team.service;
 
 import java.util.List;
-
-import org.springframework.stereotype.Service;
-
 import com.team.domain.PageDTO;
 import com.team.domain.BoardDTO;
 import com.team.domain.MemberDTO;
 
-@Service
 public interface BoardService {
 	//추상메서드 정의
 	public void insertBoard(BoardDTO boardDTO);

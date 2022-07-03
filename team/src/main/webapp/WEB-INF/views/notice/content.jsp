@@ -86,32 +86,9 @@
 <input type="button" value="글목록" 
 	onclick="location.href='${pageContext.request.contextPath}/notice/list'"></td></tr>
 </table>
-
-
-
-<!-- 댓글쓰기창 -->
-<form action="${pageContext.request.contextPath}/notice/cmtPro" method="post">
-<table>
-<tr><td><input type="hidden" name="b_num" value="${boardDTO.b_num}"></td></tr>
-<tr><td>작성자</td><td><input type="text" name="id" value="${id}" readonly></td></tr>
-<tr><td>내용</td><td><textarea name="content" placeholder="댓글을 입력해주세요"></textarea></td></tr>
-</table>
-<input type="submit" value="댓글작성" class="btn">
-</form>
-
-<!-- 댓글목록 -->
-<table>
-<tr><<td>${commetDTO.c_num}</td></tr>
-<tr><td>댓글작성자</td><td>${commetDTO.id}</td></tr>
-<tr><td>댓글내용</td><td>${commetDTO.comment}</td></tr>
-<tr><td>시간</td><td>${commetDTO.c_date}</td></tr>
-</table>
-
-</div><!-- view wrap 끝 -->
-</div><!-- Contents 끝-->
+</div>
+</div> <!-- Contents 끝-->
 </section>
-
-
 
 <!-- Footer d-->
 	<jsp:include page="../include/footer.jsp"></jsp:include>

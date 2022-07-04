@@ -24,4 +24,8 @@
 		insert into reservation(id,f_num,f_name,start_time,r_date,total_price) 
 		values (#{id},#{f_num},#{f_name},#{start_time},#{r_date},#{total_price})
 	</insert>
+	
+	<select id="getDateList" resultType="com.team.domain.DateDTO">
+		select * from management where date=#{sel} and status=1
+	</select>
 </mapper>

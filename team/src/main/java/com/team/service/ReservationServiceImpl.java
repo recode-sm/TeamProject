@@ -7,6 +7,7 @@ import javax.inject.Inject;
 import org.springframework.stereotype.Service;
 
 import com.team.dao.ReservationDAO;
+import com.team.domain.DateDTO;
 import com.team.domain.FieldDTO;
 import com.team.domain.MemberDTO;
 import com.team.domain.ReservDTO;
@@ -44,6 +45,13 @@ public class ReservationServiceImpl implements ReservationService{
 	public void insertReserv(ReservDTO reservDTO) {
 		reservationDAO.insertReserv(reservDTO);
 		
+	}
+	
+	@Override
+	public List<DateDTO> getDateList(String sel) {
+		System.out.println("getDateList()");
+		
+		return reservationDAO.getDateList(sel);
 	}
 
 	

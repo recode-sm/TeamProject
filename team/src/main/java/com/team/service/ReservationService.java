@@ -2,6 +2,7 @@ package com.team.service;
 
 import java.util.List;
 
+import com.team.domain.DateDTO;
 import com.team.domain.FieldDTO;
 import com.team.domain.MemberDTO;
 import com.team.domain.ReservDTO;
@@ -14,4 +15,5 @@ public interface ReservationService {
 	public MemberDTO getPhone(String id);
 	public FieldDTO getFiled(int f_num);
 	public void insertReserv(ReservDTO reservDTO);
+	public List<DateDTO> getDateList(String sel);
 }

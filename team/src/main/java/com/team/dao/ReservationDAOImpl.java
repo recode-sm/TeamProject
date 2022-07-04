@@ -52,9 +52,4 @@ public class ReservationDAOImpl implements ReservationDAO{
 		
 		return sqlSession.selectList(namespace+".getDateList",sel);
 	}
-	
-	
-	
-	
-	
 }

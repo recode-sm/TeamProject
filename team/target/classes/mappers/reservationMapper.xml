@@ -25,7 +25,9 @@
 		values (#{id},#{f_num},#{f_name},#{start_time},#{r_date},#{total_price})
 	</insert>
 	
+<!-- 	조건절 구장(Field) 추가 필요, 확인해야함 -->
 	<select id="getDateList" resultType="com.team.domain.DateDTO">
+<!-- 		select * from management where date=#{sel} and status=1 and f_name=#{f_name} -->
 		select * from management where date=#{sel} and status=1
 	</select>
 </mapper>

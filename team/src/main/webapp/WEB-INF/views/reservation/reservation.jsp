@@ -99,9 +99,6 @@
 	//오늘에 해당하는 실제 월
 	var realMonth = date.getMonth()+1; 
 	var realToDay = date.getDate()
-	
-	//현재 보고 있는 월
-	var nowMonth = today.getMonth()+1;
 
 	//예약가능 요일 계산해 배열 (일~월, 가능0 불가능1)
 	const possibleDay = "<%=possibleDay%>";
@@ -127,6 +124,7 @@
 			return false;
 		}
 		today = new Date(today.getFullYear(), today.getMonth()+1, today.getDate());
+		
 		buildCalendar();
 	}
 
@@ -138,7 +136,7 @@
 		var lastDate = new Date(today.getFullYear(), today.getMonth()+1, 0);
 		
 		//현재 참조중인 월 
-		var nowMonth = today.getMonth()+1;
+		var nowMonth = today.getMonth()+1; //nextCalendar()에서 today 변수를 getMonth+1 했으므로 +2가 된 상황
 		//이번달이면 0, 다음달이면 1 리턴
 		monthEquals = thisMonth(nowMonth, realMonth);
 		
@@ -238,10 +236,10 @@
 			    	clickedYear = today.getFullYear(); 
 			    	clickedMonth = ( 1 + today.getMonth() );
 			    	clickedDate = this.getAttribute('id');
-			    	clickedDate = clickedDate >= 10 ? clickedDate : '0' + clickedDate;
-			    	clickedMonth = clickedMonth >= 10 ? clickedMonth : '0' + clickedMonth;
+// 			    	clickedDate = clickedDate >= 10 ? clickedDate : '0' + clickedDate;
+// 			    	clickedMonth = clickedMonth >= 10 ? clickedMonth : '0' + clickedMonth;
 			    	
-			    	clickedYMD = clickedYear + "-" + clickedMonth + "-" + clickedDate;
+			    	clickedYMD = clickedYear + "년" + clickedMonth + "월" + clickedDate + "일";
 			
 			    	//하단에 예약일시 표시
 					$("#selectedDate1").text(clickedYMD);
@@ -306,9 +304,9 @@
 	}
 	
 	//이번달이면 0 리턴, 다음달이면 1 리턴
-	function thisMonth(todayMonth, realMonth){
-		console.log("todayMonth : " + todayMonth + ", realMonth : " + realMonth);
-		if (todayMonth*1 == realMonth*1){
+	function thisMonth(todayMonth, dateMonth){
+		console.log("todayMonth : " + todayMonth + ", dateMonth : " + dateMonth);
+		if (todayMonth*1 == dateMonth*1){
 			return 0;
 		} 
 		return 1;
@@ -325,7 +323,7 @@
 	var selectedFinalTime = 0*1;
 
 	console.log(thisMonthResDate);
-	
+
 	//예약시간표를 만들 table객체 획득
 	//달력 onclick function => timeTableMaker(today.getMonth() + 1,this.getAttribute('id'));
 	function timeTableMaker(selectedMonth, selectedDate){
@@ -341,11 +339,11 @@
 			timeTable.deleteRow(timeTable.rows.length-1);
 		}
 		
-		//예약된 시간인 경우 cell 비활성화 및 색상 변경
 		//표시된 월과 실제 월 비교, 같으면 0값
+		var nowMonth = today.getMonth()+1;
 		checkMonth = thisMonth(nowMonth, realMonth);
 		console.log(checkMonth);
-		
+
 		for(i = 0; i < endTime - startTime; i=i+2){
 			//곱해서 숫자타입으로 변환, 시작시간
 			cellTime = startTime*1 + i;		
@@ -353,6 +351,7 @@
 			cellStartTimeText = cellTime + ":00";
 			cellEndTimeText = (cellTime + 2) + ":00";
 			inputCellText = cellStartTimeText + " ~ " +  cellEndTimeText;
+
 			
 			//오늘날짜 = 선택한날짜 
 			if(date.getDate() == selectedDate && checkMonth == 0){
@@ -396,6 +395,7 @@
 						inputTime.value = selectedTime;
 					});
 				  	
+					//예약된 시간인 경우 셀 비활성화 및 색상 변경
 					for (var s = 0; s < thisMonthResDate.length; s++){
 						
 						if(cellTime == thisMonthResDate[s]){
@@ -445,6 +445,7 @@
 					inputTime.value = selectedTime;
 				});
 				
+				//예약된 시간인 경우 셀 비활성화 및 색상 변경
 				for (var s = 0; s < thisMonthResDate.length; s++){
 					
 					if(cellTime == thisMonthResDate[s]){
@@ -596,7 +597,7 @@
 							<table id="calendar" align="center">
 								<tr>
 									<td align="center"><label onclick="javascript:prevCalendar(); tableinit();"> ◀ </label></td>
-									<td colspan="5" align="center" id="calendarTitle">yyyy년 m월</td>
+									<td colspan="5" align="center" id="calendarTitle">yyyy년 mm월</td>
 									<td align="center"><label onclick="javascript:nextCalendar(); tableinit();"> ▶ </label></td>
 								</tr>
 								<tr>

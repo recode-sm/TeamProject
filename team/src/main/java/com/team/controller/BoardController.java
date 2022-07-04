@@ -94,14 +94,13 @@ public class BoardController {
 	@RequestMapping(value = "/notice/content", method = RequestMethod.GET)
 	public String content(HttpServletRequest request, Model model, HttpSession session) {
 		int b_num = Integer.parseInt(request.getParameter("b_num"));
-
 		BoardDTO boardDTO = boardService.getBoard(b_num);
-
 		model.addAttribute("boardDTO", boardDTO);
+		
 		String id=(String)session.getAttribute("id");
 		boardService.userCheck(boardDTO);
 
-		// /WEB-INF/views/board/content.jsp
+		// /WEB-INF/views/notice/content.jsp
 		return "notice/content";
 	}
 

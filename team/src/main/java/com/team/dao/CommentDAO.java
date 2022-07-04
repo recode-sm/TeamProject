@@ -8,4 +8,6 @@ public interface CommentDAO {
 	
 	// commentDAO.getMaxNum()
 	public Integer getMaxNum();
+	
+	public CommentDTO getBoard(int b_num);
 }

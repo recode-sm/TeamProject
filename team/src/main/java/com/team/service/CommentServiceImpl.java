@@ -25,4 +25,9 @@ public class CommentServiceImpl implements CommentService {
 		
 		commentDAO.insertComment(commentDTO);
 	}
+	
+	@Override
+	public CommentDTO getBoard(int b_num) {
+		return commentDAO.getBoard(b_num);
+	}
 }

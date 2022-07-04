@@ -13,7 +13,7 @@
 <!-- 							<a href="https://www.instagram.com/hmfutsalpark/" class="insta" target="_blank"><span class="hide">instagram</span></a> -->
 						</li>
 						<li><a href="<%=request.getContextPath() %>/locate/locate">지점</a></li>
-						<li><a href="<%=request.getContextPath() %>/reservation/reservation">대관</a></li>
+						<li><a href="<%=request.getContextPath() %>/reservation/select">대관</a></li>
 <!-- 						<li><a href="/comm/match/match_apply.asp">매치/용병</a></li> -->
 <!-- 						<li><a href="/league/league.asp" class="f_hvn">H-LEAGUE</a></li> -->
 						<li><a href="<%=request.getContextPath() %>/notice/notice">고객센터</a></li>

@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import com.team.domain.PageDTO;
 import com.team.domain.BoardDTO;
+import com.team.domain.CommentDTO;
 import com.team.domain.MemberDTO;
 
 @Service
@@ -28,5 +29,7 @@ public interface BoardService {
 	
 	public void deleteBoard(int b_num);
 	
-	public BoardDTO userCheck(BoardDTO boardDTO);
+	public BoardDTO userCheck(BoardDTO boardDTO2);
+	
+	public List<CommentDTO> getCommentList(int b_num);
 }

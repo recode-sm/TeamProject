@@ -4,6 +4,8 @@ import javax.inject.Inject;
 import org.springframework.stereotype.Service;
 
 import java.sql.Timestamp;
+import java.util.List;
+
 import com.team.dao.CommentDAO;
 import com.team.domain.CommentDTO;
 
@@ -26,8 +28,6 @@ public class CommentServiceImpl implements CommentService {
 		commentDAO.insertComment(commentDTO);
 	}
 	
-	@Override
-	public CommentDTO getBoard(int b_num) {
-		return commentDAO.getBoard(b_num);
-	}
+
+	
 }

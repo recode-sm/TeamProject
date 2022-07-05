@@ -5,15 +5,13 @@
 <mapper namespace="com.team.comment.CommentMapper">
 
 	<insert id="insertComment">
-		insert into comment(c_num,b_num,id,content,c_date) 
-		values(#{c_num},#{b_num},#{id},#{content},#{c_date})
+		insert into comment(b_num,id,content,c_date) 
+		values(#{b_num},#{id},#{content},#{c_date})
 	</insert>
 	
 	<select id="getMaxNum" resultType="java.lang.Integer">
 		select max(c_num) from comment
 	</select>
-	
-	<select id="getComment" resultType="com.team.domain.CommentDTO">
-		select * from comment where b_num=#{b_num}
-	</select>
+
+
 </mapper>

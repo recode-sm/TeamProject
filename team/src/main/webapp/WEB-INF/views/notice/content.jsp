@@ -9,6 +9,7 @@
 <title>content</title>
 	<!-- 공통css -->
 	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/resources/css/common.css">
+	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/resources/css/content.css?after7">
 	<!-- //공통css -->
 	
 	<!-- 공통js -->
@@ -63,17 +64,20 @@
 			</ul>
 		</div>
 
-<div class = "view_wrap">
-<h1>게시판 글 가져오기</h1>
+<div class = "notice_wrap view">
+<h3 class="h_tit">커뮤니티</h3>
+<div class="view_wrap">
+<div class="top">
+	<p class="tit">${boardDTO.subject}</p>
+	<dl>
+	<dt>글번호</dt> <dd>${boardDTO.b_num}</dd>
+    <dt>등록일</dt> <dd><fmt:formatDate pattern="yyyy-MM-dd" value="${boardDTO.b_date }"/></dd>
+	<dt>작성자</dt><dd>${boardDTO.id}</dd>
+    <dt>조회수</dt> <dd>${boardDTO.readcount}</dd>
+    </dl>
+</div>
+<div class="info_text"><p>${boardDTO.content}</p></div>
 
-<table border="1">
-<tr><td>글번호</td><td>${boardDTO.b_num}</td>
-    <td>등록일</td><td><fmt:formatDate pattern="yyyy-MM-dd" value="${boardDTO.b_date }"/></td></tr>
-<tr><td>글쓴이</td><td>${boardDTO.id}</td>
-    <td>조회수</td><td>${boardDTO.readcount}</td></tr>
-<tr><td class="tit">글제목</td><td colspan="3">${boardDTO.subject}</td></tr>
-<tr><td class="info_text">글내용</td><td colspan="3">${boardDTO.content}</td></tr>
-<tr><td colspan="4">
 
 <c:if test="${ !empty sessionScope.id }">
 	<c:if test="${ (sessionScope.id eq boardDTO.id)}">
@@ -83,31 +87,52 @@
 	onclick="location.href='${pageContext.request.contextPath}/notice/delete?b_num=${boardDTO.b_num}'">
 	</c:if>
 </c:if>
-<input type="button" value="글목록" 
-	onclick="location.href='${pageContext.request.contextPath}/notice/list'"></td></tr>
-</table>
+
+<div class="btn_wrap right">
+<!-- <input class="btn_middle" type="button" value="글목록"  -->
+<%-- 	onclick="location.href='${pageContext.request.contextPath}/notice/list'"> --%>
+<a href="${pageContext.request.contextPath}/notice/list" class="btn_middle">목록으로</a>
+
+</div>
+</div>
 
 
 
-<!-- 댓글쓰기창 -->
-<form action="${pageContext.request.contextPath}/notice/cmtPro" method="post">
-<table>
-<tr><td>작성자</td><td><input type="text" name="id" value="${id}" readonly></td></tr>
-<tr><td>내용</td><td><textarea name="content" placeholder="댓글을 입력해주세요"></textarea></td></tr>
-</table>
+<!-- 댓글쓰기창, 로그인 제어 -->
+<c:if test="${ !empty sessionScope.id }">
+	<div class="cmt_wrap">
+	<form action="${pageContext.request.contextPath}/notice/cmtPro" method="post">
+	<table class="cmt_table">
+	<tr><td><input type="hidden" name="id" value="${id}" readonly></td></tr>
+	<tr><td><textarea name="content" placeholder="댓글을 입력해주세요" style="width:100%;"></textarea></td></tr>
+	</table>
 <!-- board.b_num 받아옴 -->
-<tr><td><input type="hidden" name="b_num" value="${boardDTO.b_num}"></td></tr>
-<input type="submit" value="댓글작성" class="btn">
-</form>
+	<tr><td><input type="hidden" name="b_num" value="${boardDTO.b_num}"></td></tr>
+	<input type="submit" value="댓글작성" class="btn">
+	</form>
+	</div>
+</c:if>
 
 <!-- 댓글목록 -->
+<div class="list_pn">
 <table>
-<tr><<td>${commetDTO.c_num}</td></tr>
-<tr><td>댓글작성자</td><td>${commetDTO.id}</td></tr>
-<tr><td>댓글내용</td><td>${commetDTO.comment}</td></tr>
-<tr><td>시간</td><td>${commetDTO.c_date}</td></tr>
+<c:if test="${!empty commentList }">
+<c:forEach var="commentDTO" items="${commentList }" >
+	<colgroup>
+		<col style="width:178px" class="w01"/>
+		<col style="" />
+	</colgroup>
+	<tbody>
+	<tr>
+	<th><span>${commentDTO.id}</span></th>
+	<td>${commentDTO.content}</td>
+	<td>${commentDTO.c_date}</td>
+	</tr>
+	</tbody>
+</c:forEach>
+</c:if>
 </table>
-
+</div>
 </div><!-- view wrap 끝 -->
 </div><!-- Contents 끝-->
 </section>

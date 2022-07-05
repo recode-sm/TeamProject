@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import com.team.domain.PageDTO;
 import com.team.domain.BoardDTO;
+import com.team.domain.CommentDTO;
 import com.team.domain.MemberDTO;
 import com.team.service.BoardService;
 
@@ -94,12 +95,14 @@ public class BoardController {
 	@RequestMapping(value = "/notice/content", method = RequestMethod.GET)
 	public String content(HttpServletRequest request, Model model, HttpSession session) {
 		int b_num = Integer.parseInt(request.getParameter("b_num"));
+		String id=(String)session.getAttribute("id");
 		BoardDTO boardDTO = boardService.getBoard(b_num);
 		model.addAttribute("boardDTO", boardDTO);
+		List<CommentDTO> commentList = boardService.getCommentList(b_num);
+		BoardDTO boardDTO2 = new BoardDTO();
 		
-		String id=(String)session.getAttribute("id");
-		boardService.userCheck(boardDTO);
-
+		boardService.userCheck(boardDTO2);
+		model.addAttribute("commentList", commentList);
 		// /WEB-INF/views/notice/content.jsp
 		return "notice/content";
 	}

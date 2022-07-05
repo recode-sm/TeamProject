@@ -1666,6 +1666,14 @@
 	.mail_wrap p	{font-size:15px; line-height:20px;}
 }
 
+.cmt_wrap {
+	margin-top: 17px;
+/* 	border-top: 1px solid #d5d8dd; */
+}
+
+.cmt_table td:first-child {
+	padding: 30px 10px;
+}
 
 /* 아이패드 프로 리그 이미지 */
 @media screen and (max-width:1024px)	{
@@ -1675,4 +1683,6 @@
 
 .league_cont .flex-video {position: relative;padding-top: 1.5625rem;padding-bottom: 56.55%;height: 0;overflow: hidden;}
 .league_cont .flex-video iframe {position: absolute;width: 100%;height: 100%;display: block;}
+
+
 

@@ -1,5 +1,7 @@
 package com.team.dao;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
@@ -25,9 +27,7 @@ public class CommentDAOImpl implements CommentDAO{
 		return sqlSession.selectOne(namespace + ".getMaxNum");
 	}
 	
-	@Override
-	public CommentDTO getBoard(int b_num) {
-		return sqlSession.selectOne(namespace + ".getBoard", b_num);
-	}
+	
+	
 		
 }

@@ -78,7 +78,8 @@
 		<tr><td>${boardDTO.b_num}</td><td>${boardDTO.id}</td>
 <%-- <td><a href="${pageContext.request.contextPath}/notice/content?b_num=${boardDTO.b_num}"> --%>
 <%--      ${boardDTO.subject}</a></td> --%>
-		<td><a href="${pageContext.request.contextPath}/notice/listPro?b_num=${boardDTO.b_num}">
+		<td><input type="hidden" value="${boardDTO.b_num }"><a href="${pageContext.request.contextPath}/notice/listPro?b_num=${boardDTO.b_num}">
+		
      	${boardDTO.subject}</a></td>
    		<td><fmt:formatDate pattern="yyyy-MM-dd" value="${boardDTO.b_date }"/></td> 
    		<td>${boardDTO.readcount}</td></tr>
@@ -119,6 +120,7 @@
 		</div>
 	</form>
 	
+<!-- 글쓰기 로그인제어 -->
 	<c:if test="${ !empty sessionScope.id }">
 		<div class="write">
 			<a href="<%=request.getContextPath() %>/notice/write">글쓰기</a>

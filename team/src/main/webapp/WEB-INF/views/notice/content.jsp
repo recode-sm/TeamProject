@@ -13,29 +13,29 @@
 	<!-- //공통css -->
 	
 	<!-- 공통js -->
-	<script type="text/javascript" src="<%=request.getContextPath() %>/resources/js/libs/jquery.min.js"></script>
-	<script type="text/javascript" src="<%=request.getContextPath() %>/resources/js/libs/jquery-ui.min.js"></script>
-	<script type="text/javascript" src="<%=request.getContextPath() %>/resources/js/datepicker.js"></script>
-	<script type="text/javascript" src="<%=request.getContextPath() %>/resources/js/common/common.js"></script>
-	<script type="text/javascript" src="<%=request.getContextPath() %>/resources/js/common/form_check.js"></script>
-	<!-- //공통js -->
+<%-- 	<script type="text/javascript" src="<%=request.getContextPath() %>/resources/js/libs/jquery.min.js"></script> --%>
+<%-- 	<script type="text/javascript" src="<%=request.getContextPath() %>/resources/js/libs/jquery-ui.min.js"></script> --%>
+<%-- 	<script type="text/javascript" src="<%=request.getContextPath() %>/resources/js/datepicker.js"></script> --%>
+<%-- 	<script type="text/javascript" src="<%=request.getContextPath() %>/resources/js/common/common.js"></script> --%>
+<%-- 	<script type="text/javascript" src="<%=request.getContextPath() %>/resources/js/common/form_check.js"></script> --%>
+<!-- 	<!-- //공통js --> 
  
-	<link rel="stylesheet" href="<%=request.getContextPath() %>/resources/themes/classic.css">
-	<link rel="stylesheet" href="<%=request.getContextPath() %>/resources/themes/classic.date.css">
-	<link rel="stylesheet" href="<%=request.getContextPath() %>/resources/themes/classic.time.css">
-	<script src="/admincms/js/pickadate.js-3.5.6/lib/picker.js"></script>
-	<script src="/admincms/js/pickadate.js-3.5.6/lib/picker.date.js"></script>
-	<script src="/admincms/js/pickadate.js-3.5.6/lib/picker.time.js"></script>
-	<script src="/admincms/js/pickadate.js-3.5.6/lib/legacy.js"></script>
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-116234591-1"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
+<%-- 	<link rel="stylesheet" href="<%=request.getContextPath() %>/resources/themes/classic.css"> --%>
+<%-- 	<link rel="stylesheet" href="<%=request.getContextPath() %>/resources/themes/classic.date.css"> --%>
+<%-- 	<link rel="stylesheet" href="<%=request.getContextPath() %>/resources/themes/classic.time.css"> --%>
+<!-- 	<script src="/admincms/js/pickadate.js-3.5.6/lib/picker.js"></script> -->
+<!-- 	<script src="/admincms/js/pickadate.js-3.5.6/lib/picker.date.js"></script> -->
+<!-- 	<script src="/admincms/js/pickadate.js-3.5.6/lib/picker.time.js"></script> -->
+<!-- 	<script src="/admincms/js/pickadate.js-3.5.6/lib/legacy.js"></script> -->
+<!-- 	<!-- Global site tag (gtag.js) - Google Analytics --> 
+<!-- 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-116234591-1"></script> -->
+<!-- 	<script> -->
+<!-- 	  window.dataLayer = window.dataLayer || []; -->
+<!-- 	  function gtag(){dataLayer.push(arguments);} -->
+<!-- 	  gtag('js', new Date()); -->
 
-	  gtag('config', 'UA-116234591-1');
-	</script>
+<!-- 	  gtag('config', 'UA-116234591-1'); -->
+<!-- 	</script> -->
 </head>
 <body>
 <div id="wrapper">
@@ -76,46 +76,40 @@
     <dt>조회수</dt> <dd>${boardDTO.readcount}</dd>
     </dl>
 </div>
-<div class="info_text"><p>${boardDTO.content}</p></div>
+<div class="info_text" style="word-break: break-all;">${boardDTO.content}</div>
 
-
-<c:if test="${ !empty sessionScope.id }">
-	<c:if test="${ (sessionScope.id eq boardDTO.id)}">
-	<input type="button" value="글수정" 
-	onclick="location.href='${pageContext.request.contextPath}/notice/update?b_num=${boardDTO.b_num}'">
-	<input type="button" value="글삭제" 
-	onclick="location.href='${pageContext.request.contextPath}/notice/delete?b_num=${boardDTO.b_num}'">
-	</c:if>
-</c:if>
 
 <div class="btn_wrap right">
-<!-- <input class="btn_middle" type="button" value="글목록"  -->
-<%-- 	onclick="location.href='${pageContext.request.contextPath}/notice/list'"> --%>
-<a href="${pageContext.request.contextPath}/notice/list" class="btn_middle">목록으로</a>
-
+	<c:if test="${ !empty sessionScope.id }">
+		<c:if test="${ (sessionScope.id eq boardDTO.id)}">
+		<a href="${pageContext.request.contextPath}/notice/update?b_num=${boardDTO.b_num}" class="btn_middle">수정</a>
+		<a href="${pageContext.request.contextPath}/notice/delete?b_num=${boardDTO.b_num}" class="btn_middle">삭제</a>
+		</c:if>
+	</c:if>
+	<a href="${pageContext.request.contextPath}/notice/list" class="btn_middle">목록</a>
 </div>
 </div>
-
-
 
 <!-- 댓글쓰기창, 로그인 제어 -->
 <c:if test="${ !empty sessionScope.id }">
 	<div class="cmt_wrap">
 	<form action="${pageContext.request.contextPath}/notice/cmtPro" method="post">
 	<table class="cmt_table">
-	<tr><td><input type="hidden" name="id" value="${id}" readonly></td></tr>
+	<tr><td><input type="text" name="id" value="${id}" readonly></td></tr>
 	<tr><td><textarea name="content" placeholder="댓글을 입력해주세요" style="width:100%;"></textarea></td></tr>
 	</table>
 <!-- board.b_num 받아옴 -->
 	<tr><td><input type="hidden" name="b_num" value="${boardDTO.b_num}"></td></tr>
-	<input type="submit" value="댓글작성" class="btn">
+	<div class="btn_wrap right">
+	<input type="submit" value="댓글작성" class="btn_middle">
+	</div>
 	</form>
 	</div>
 </c:if>
 
 <!-- 댓글목록 -->
 <div class="list_pn">
-<table>
+<table border="1">
 <c:if test="${!empty commentList }">
 <c:forEach var="commentDTO" items="${commentList }" >
 	<colgroup>

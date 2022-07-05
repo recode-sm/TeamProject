@@ -9,33 +9,10 @@
 <meta charset="UTF-8">
 <title>list</title>
 	<!-- 공통css 코드 변경 후 적용이 안바뀌면 확장자 뒤에 ?after붙여주세요 --> 
-	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/resources/css/common.css?after2">
+	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/resources/css/common.css?after3">
+	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/resources/css/content.css?after8">
 	<!-- //공통css -->
-	
-	<!-- 공통js -->
-	<script type="text/javascript" src="<%=request.getContextPath() %>/resources/js/libs/jquery.min.js"></script>
-	<script type="text/javascript" src="<%=request.getContextPath() %>/resources/js/libs/jquery-ui.min.js"></script>
-	<script type="text/javascript" src="<%=request.getContextPath() %>/resources/js/datepicker.js"></script>
-	<script type="text/javascript" src="<%=request.getContextPath() %>/resources/js/common/common.js"></script>
-	<script type="text/javascript" src="<%=request.getContextPath() %>/resources/js/common/form_check.js"></script>
-	<!-- //공통js -->
- 
-	<link rel="stylesheet" href="<%=request.getContextPath() %>/resources/themes/classic.css">
-	<link rel="stylesheet" href="<%=request.getContextPath() %>/resources/themes/classic.date.css">
-	<link rel="stylesheet" href="<%=request.getContextPath() %>/resources/themes/classic.time.css">
-	<script src="/admincms/js/pickadate.js-3.5.6/lib/picker.js"></script>
-	<script src="/admincms/js/pickadate.js-3.5.6/lib/picker.date.js"></script>
-	<script src="/admincms/js/pickadate.js-3.5.6/lib/picker.time.js"></script>
-	<script src="/admincms/js/pickadate.js-3.5.6/lib/legacy.js"></script>
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-116234591-1"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
 
-	  gtag('config', 'UA-116234591-1');
-	</script>
 </head>
 <body>
 <!-- model.addAttribute("boardList", boardList); -->
@@ -90,42 +67,27 @@
 </div>
 	
 	<div class = "pager_wrap">
-	
-<!-- 	<div class="search"> -->
-<!-- 		<form action="" method="post"> -->
-<!-- 		<span class="select" style="width:100px"> -->
-<!-- 			<label for="select01">제목</label> -->
-<!-- 			<select id="select01" name="searchType" class="select_box"> -->
+<!-- 게시글 검색폼 -->
+<!-- 	<form action="" method="post"> -->
+<!-- 		<div class="search-wrap"> -->
+<!-- 			<select class="select-box" name="searchType"> -->
 <!-- 				<option value="title" >제목</option> -->
 <!-- 				<option value="content" >내용</option> -->
 <!-- 				<option value="writer" >글쓴이</option> -->
-<!-- 				<option value="titcont" >제목+내용</option> -->
+<!-- 				<option value="titcont" >제목+내용</option>  -->
 <!-- 			</select> -->
-<!-- 		</span> -->
-<!-- 		<input type="text" id="searchstr" title="" name="searchstr" value="" style="width:200px" /> -->
-<!-- 		<button type="input" class="btn_search" onclick="Fn_Search(); return false;"></button> -->
-<!-- 		</form> -->
-<!-- 	</div> -->
-	<form action="" method="post">
-		<div class="search-wrap">
-			<select class="select-box" name="searchType">
-				<option value="title" >제목</option>
-				<option value="content" >내용</option>
-				<option value="writer" >글쓴이</option>
-				<option value="titcont" >제목+내용</option> 
-			</select>
-			<input type="text" class="search-input" name="searchName">
+<!-- 			<input type="text" class="search-input" name="searchName"> -->
 			
-			<button type="submit" class="search-btn">검색</button>
-		</div>
-	</form>
+<!-- 			<button type="submit" class="search-btn">검색</button> -->
+<!-- 		</div> -->
+<!-- 	</form> -->
 	
 <!-- 글쓰기 로그인제어 -->
+		<div class="btn_wrap right">
 	<c:if test="${ !empty sessionScope.id }">
-		<div class="write">
-			<a href="<%=request.getContextPath() %>/notice/write">글쓰기</a>
-		</div>
+			<a href="<%=request.getContextPath() %>/notice/write" class="btn_middle">글쓰기</a>
 	</c:if>
+		</div>
 	
 	<span class = "page">
 	<c:if test="${startPage > pageBlock}">

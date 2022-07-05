@@ -25,7 +25,6 @@ public class PayController {
 		
 	}
 	
-	
 	@ResponseBody
 	@PostMapping(value="/order", consumes="application/json", 
                  produces={MediaType.TEXT_PLAIN_VALUE})
@@ -38,7 +37,7 @@ public class PayController {
 	public String payment(PayDTO payDTO) {
 		
 		payService.insertPay(payDTO);
-		return "/payment/payment";
+		return "/home";
 	}
 	
 	

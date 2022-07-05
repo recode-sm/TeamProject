@@ -21,8 +21,8 @@
 	</select>
 	
 	<insert id="insertReserv">
-		insert into reservation(id,f_num,f_name,start_time,r_date,total_price) 
-		values (#{id},#{f_num},#{f_name},#{start_time},#{r_date},#{total_price})
+		insert into reservation(r_num,id,f_num,start_time,end_time,r_date,total_price) 
+		values (#{r_num},#{id},#{f_num},#{start_time},#{end_time},#{r_date},#{total_price})
 	</insert>
 	
 	<select id="getDateList" resultType="com.team.domain.DateDTO">

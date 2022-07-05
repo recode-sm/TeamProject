@@ -42,7 +42,13 @@ public class ReservationDAOImpl implements ReservationDAO{
 	
 	@Override
 	public void insertReserv(ReservDTO reservDTO) {
+		
+		reservDTO.setStart_time(reservDTO.getStart_time().substring(0, 2));
+		System.out.println("starttime"+reservDTO.getStart_time());
+		reservDTO.setEnd_time(reservDTO.getStart_time().substring(6, 8));
+		System.out.println("endtime"+reservDTO.getEnd_time());
 		sqlSession.selectOne(namespace+".insertReserv",reservDTO);
+		
 		
 	}
 	

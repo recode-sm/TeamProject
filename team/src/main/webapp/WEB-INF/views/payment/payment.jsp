@@ -13,19 +13,9 @@
 <body>
 
 <script>
-    var merchant_uid = "";
-    var name = "";
-    var amount = 0;
-    
-    // click 이벤트
-    $(".itemSection").on("click", ".orderBtn", function(){
-        // 서로 다른 결제건에 주문번호가 중복되지 않도록 주문번호에 현재시간 정보를 넣어줌
-        d = new Date();
-        merchant_uid = "order" + d.getTime();
-        name = $(this).parent().siblings(".itemTitle").children().text();
-        amount = $(this).parent().siblings(".itemPrice").children().attr("data-price");
-        iamport();
-    });
+    var merchant_uid = merchant_uid;
+    var itemName = ${fieldDTO.f_name};
+    var amount = ${fieldDTO.price};
 
     IMP.init('imp50478053');
     function iamport(){
@@ -38,9 +28,9 @@
         // 상품에서 관리하는 주문번호를 전달 - 바뀌어야됨
         merchant_uid : merchant_uid,
         // 결제창에 삽입할 상품명 - 바뀌어야됨
-        name : name,
+        name : ${fieldDTO.f_name },
         // 금액 - 바뀌어야됨
-        amount : amount,
+        amount : ${fieldDTO.price},
         // 구매자 이메일
         buyer_email : 'iamport@siot.do',
         // 구매자 번호
@@ -55,7 +45,7 @@
             if(rsp.success){
             	 $.ajax({
                      type: 'post',
-                     url: '/order',	// 주소
+                     url: '/reservation',	// 주소
                      headers: {
                          "Content-Type":"application/json",
                          "X-HTTP-Method-Override":"POST"
@@ -64,8 +54,8 @@
                      // 비동기 요청으로 주문번호, 상품명, 가격을 DB에 넣도록 요청
                      data: JSON.stringify({
                          merchant_uid: merchant_uid,
-                         itemName: name,
-                         amount: amount
+                         itemName: ${fieldDTO.f_name },
+                         amount: ${fieldDTO.price}
                      }),
                      success: function(){
                          alert(name + " 결제가 완료되었습니다.");

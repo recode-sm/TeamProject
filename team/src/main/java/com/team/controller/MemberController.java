@@ -60,23 +60,17 @@ public class MemberController {
 	@RequestMapping(value = "/member/main", method = RequestMethod.GET)
 	public String main () {
 		
-		// 일단 main 으로 넘긴 뒤 추후에 home으로 변경
-		return "member/main";
-		
 		// 메인 페이지(home.jsp)로 이동
-//		return "home";
+		return "home";
 	}
 	
 	@RequestMapping(value = "/member/logout", method = RequestMethod.GET)
 	public String logout (HttpSession session) {
 		// 로그아웃(세션 초기화)
 		session.invalidate();
-		
-		// 일단 main 으로 넘긴 뒤 추후에 home으로 변경
-		return "member/main";
-		
+				
 		// 메인 페이지(home.jsp)로 이동
-//		return "home";
+		return "home";
 
 	}
 	

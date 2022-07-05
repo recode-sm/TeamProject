@@ -54,7 +54,7 @@
 	</script>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 
-	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>resources/css/content.css">
+	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/resources/css/content.css">
 </head>
 
 <script type="text/javascript">

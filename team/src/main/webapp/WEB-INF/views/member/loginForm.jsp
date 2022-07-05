@@ -34,7 +34,7 @@
 	<link rel="icon" type="image/png" sizes="16x16" href="<%=request.getContextPath() %>/resources/loginimg/favicon-16x16.png">
 	<link rel="manifest" href="/favicon/manifest.json">
 	<meta name="msapplication-TileColor" content="#2c3c57">
-	<meta name="msapplication-TileImage" content="/favicon/ms-icon-144x144.png">
+	<meta name="msapplication-TileImage" content="<%=request.getContextPath() %>/resources/loginimg/ms-icon-144x144.png">
 	<meta name="theme-color" content="#2c3c57">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 	<!--[if lt IE 9]><script type="text/javascript" src="/js/libs/html5.js"></script><![endif]-->

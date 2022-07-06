@@ -48,13 +48,15 @@ public class ReservationServiceImpl implements ReservationService{
 	}
 	
 	@Override
-	public List<DateDTO> getDateList(String sel) {
+	public List<DateDTO> getDateList(DateDTO dateDTO) {
 		System.out.println("getDateList()");
 		
-		return reservationDAO.getDateList(sel);
+		return reservationDAO.getDateList(dateDTO);
 	}
 
-	
-	
-	
+	@Override
+	public ReservDTO getReservation(String s_id) {
+
+		return reservationDAO.getReservation(s_id);
+	}
 }

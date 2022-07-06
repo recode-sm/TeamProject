@@ -28,6 +28,17 @@ public class CommentServiceImpl implements CommentService {
 		commentDAO.insertComment(commentDTO);
 	}
 	
+	@Override
+	public CommentDTO getComment(int c_num) {
+		return commentDAO.getComment(c_num);
+	}
+	
+	@Override
+	public void updateComment(CommentDTO commentDTO) {
+		commentDTO.setC_date(new Timestamp(System.currentTimeMillis()));
+		commentDAO.updateComment(commentDTO);
+	}
+	
 
 	
 }

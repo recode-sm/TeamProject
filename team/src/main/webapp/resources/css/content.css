@@ -1675,6 +1675,10 @@
 	padding: 30px 10px;
 }
 
+.ui dividing header {
+	margin-top: 50px;
+}
+
 /* 아이패드 프로 리그 이미지 */
 @media screen and (max-width:1024px)	{
 	.league_locate_wrap .view_wrap .charge_wrap .cont img {width:100%;}

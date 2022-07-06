@@ -27,6 +27,15 @@ public class CommentDAOImpl implements CommentDAO{
 		return sqlSession.selectOne(namespace + ".getMaxNum");
 	}
 	
+	@Override
+	public CommentDTO getComment(int c_num) {
+		return sqlSession.selectOne(namespace + ".getComment", c_num);
+	}
+	
+	@Override
+	public void updateComment(CommentDTO commentDTO) {
+		sqlSession.update(namespace + ".updateComment", commentDTO);
+	}
 	
 	
 		

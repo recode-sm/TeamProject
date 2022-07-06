@@ -2,16 +2,19 @@ package com.team.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 import java.util.UUID;
 
 import javax.annotation.Resource;
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
+
 import com.team.domain.FieldDTO;
 import com.team.service.FieldService;
 
@@ -25,21 +28,24 @@ public class LocateController {
 	private String uploadPath;
 
 	@RequestMapping(value = "/locate/locate", method = RequestMethod.GET)
-	public String locate() {
+	public String locate(Model model) {
+
+		List<FieldDTO> fieldList = fieldService.getFieldList();
+
+		model.addAttribute("fieldList",fieldList);
 		// /WEB-INF/views/notice/notice.jsp
-		return "/locate/locate";
+		return "locate/locate";
 	}
 
 	@RequestMapping(value = "/locate/field", method = RequestMethod.GET)
 	public String field() {
 		// /WEB-INF/views/notice/notice.jsp
-		return "/locate/fieldForm";
+		return "locate/fieldForm";
 	}
 
 	@RequestMapping(value = "/locate/fieldPro", method = RequestMethod.POST)
 	public String fieldPro(HttpServletRequest request, MultipartFile f_img) throws IOException {
 		FieldDTO fieldDTO = new FieldDTO();
-		String imgName = f_img.getOriginalFilename();
 
 		fieldDTO.setF_name(request.getParameter("f_name"));
 		fieldDTO.setDistrict(request.getParameter("district"));
@@ -47,12 +53,12 @@ public class LocateController {
 		fieldDTO.setTerms(request.getParameter("terms"));
 		fieldDTO.setPrice(Integer.parseInt(request.getParameter("price")));
 
-		UUID uuid=UUID.randomUUID();
-		String fileName=uuid.toString()+"_"+f_img.getOriginalFilename();
-		File uploadFile=new File(uploadPath,fileName);
+		UUID uuid = UUID.randomUUID();
+		String fieldName = uuid.toString() + "_" + f_img.getOriginalFilename();
+		File uploadFile = new File(uploadPath, fieldName);
 		FileCopyUtils.copy(f_img.getBytes(), uploadFile);
 
-		fieldDTO.setF_img(imgName);
+		fieldDTO.setF_img(fieldName);
 
 		fieldService.insertFeild(fieldDTO);
 

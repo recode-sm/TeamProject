@@ -73,8 +73,11 @@ public class ReservationController {
 		return "redirect:/reservation/Result";
 	}
 	@RequestMapping(value = "/reservation/Result", method = RequestMethod.GET)
-	public String reserResult(HttpServletRequest request,Model model) throws Exception{
-
+	public String reserResult(HttpSession session,HttpServletRequest request,Model model) throws Exception{
+		String s_id = (String)session.getAttribute("id");
+		ReservDTO reservDTO = reservationService.getResult(s_id);
+		model.addAttribute("reservDTO",reservDTO);
+		
 		
 		return "/reservation/reservResult";
 	}

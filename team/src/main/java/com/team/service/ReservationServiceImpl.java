@@ -60,6 +60,12 @@ public class ReservationServiceImpl implements ReservationService{
 		
 		return reservationDAO.getDateList(dateDTO);
 	}
+
+	@Override
+	public ReservDTO getResult(String s_id) {
+		
+		return reservationDAO.getResult(s_id);
+	}
 	
 	
 }

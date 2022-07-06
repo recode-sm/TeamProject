@@ -36,4 +36,10 @@
 	<select id="getDateList" resultType="com.team.domain.DateDTO">
 		select * from reservation where r_date=#{date} and f_num=#{f_num}
 	</select>
+	
+	<select id="getResult" resultType="com.team.domain.ReservDTO">
+		select r.r_num,r.id,r.f_num,r.f_name,r.start_time,r.r_date,r.total_price,m.phone 
+		 from reservation r join member m  ON r.id=m.id
+		 where r.id=#{s_id} and r_num=(select max(r_num) from reservation where r.id=#{s_id})
+	</select>
 </mapper>

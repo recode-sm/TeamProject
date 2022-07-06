@@ -113,8 +113,8 @@
 										<td id = "memberName" name="id">${reservList.id }</td>
 										<td id = "fieldName" name="f_name">${reservList.f_name }</td>
 										<td id = "date" name="r_date">${reservList.r_date }</td>
-										<td id = "date" name="r_date">${reservList.start_time }</td>
-										<td id = "date" name="r_date">${reservList.total_price }원</td>
+										<td id = "time" name="start_time">${reservList.start_time }</td>
+										<td id = "price" name="total_price">${reservList.total_price }원</td>
 									</tr>
 								</c:forEach>
 								</tbody>

@@ -632,12 +632,7 @@
 									<span class="t_help"><font color=red>*기본 2시간, 다중 선택은 불가능합니다.</font></span>
 								</div>
 									<table id="timeTable" align="center"></table>
-<!-- 							<div class="t_wrap total"> -->
-<!-- 								<span class="tit">합계</span> -->
-<!-- 								<span class="total"><b id="totalPrice"></b>원  -->
-<!-- 								<span class="i_txt">(구장대여 <b id="rentCountView">0</b>시간 <b id="rentPriceView">0</b>원 + 옵션선택 <b id="optionPriceView">0</b>원)</span> -->
-<!-- 								</span> -->
-<!-- 							</div> -->
+
 							</div>
 						</div>
 						
@@ -657,7 +652,7 @@
 										<th scope="row">신청자</th>
 										<td id = "memberName">
 <!-- 										<input type="text"  name="cm_name" placeholder="이름을 입력하세요" style="width:100%"> -->
-											<input type="text" name="id" readonloy value="${id }" style="border:0 solid black;">
+											<input type="text" name="id" readonly value="${id }" style="border:0 solid black;">
 										</td>
 									</tr>
 									<tr>
@@ -668,7 +663,7 @@
 <!-- 											<input type="text"  name="htel2" maxlength=4 value="" class="numberOnly" /><span>-</span> -->
 <!-- 											<input type="text"  name="htel3" maxlength=4 value="" class="numberOnly" /> -->
 <!-- 											</div> -->
-											<input type="text" name="phone" readonloy value="${memberDTO.phone }" style="border:0 solid black;">
+											<input type="text" name="phone" readonly value="${memberDTO.phone }" style="border:0 solid black;">
 										</td>
 									</tr>
 									<tr>

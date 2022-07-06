@@ -10,6 +10,13 @@ public class ReservDTO {
 	private String end_time;
 	private int total_price;
 	private String r_date;
+	private String phone;
+	public String getPhone() {
+		return phone;
+	}
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
 	public int getR_num() {
 		return r_num;
 	}

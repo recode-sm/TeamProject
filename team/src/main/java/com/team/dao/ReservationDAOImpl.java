@@ -60,6 +60,11 @@ public class ReservationDAOImpl implements ReservationDAO{
 		
 		return sqlSession.selectList(namespace+".getDateList",dateDTO);
 	}
+	@Override
+	public ReservDTO getResult(String s_id) {
+		
+		return sqlSession.selectOne(namespace+".getResult",s_id);
+	}
 	
 	
 	

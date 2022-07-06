@@ -48,6 +48,8 @@ public class MemberServiceImpl implements MemberService {
 	public List<MemberDTO> getMemberList() {
 		return memberDAO.getMemberList();
 	}
+
+
 	
 	
 }

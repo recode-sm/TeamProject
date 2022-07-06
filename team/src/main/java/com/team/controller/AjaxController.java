@@ -1,6 +1,8 @@
 package com.team.controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.team.domain.DateDTO;
 import com.team.domain.FieldDTO;
 import com.team.service.ReservationService;
 
@@ -31,6 +34,22 @@ public class AjaxController {
 		entity = new ResponseEntity<List<FieldDTO>>(fieldList,HttpStatus.OK);
 		return entity;
 		
+	}
+	@RequestMapping(value = "/reservation/jsonDate", method = RequestMethod.GET)
+	public ResponseEntity<List<DateDTO>> reservation(HttpServletRequest request) throws Exception {
+		ResponseEntity<List<DateDTO>> entity = null;	
+		int num = Integer.parseInt(request.getParameter("num"));
+		String sel=request.getParameter("date");
+		DateDTO dateDTO = new DateDTO();
+		dateDTO.setF_num(num);
+		dateDTO.setDate(sel);
+		System.out.println(num);
+		System.out.println(sel);
+		
+		List<DateDTO> dateList = reservationService.getDateList(dateDTO);
+		
+		entity = new ResponseEntity<List<DateDTO>>(dateList,HttpStatus.OK);
+		return entity;			
 	}
 	
 }

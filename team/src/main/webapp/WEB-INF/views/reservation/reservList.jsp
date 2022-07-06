@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -51,21 +51,20 @@
 	<link rel="stylesheet" href="<%=request.getContextPath() %>/resources/themes/classic.css">
 	<link rel="stylesheet" href="<%=request.getContextPath() %>/resources/themes/classic.date.css">
 	<link rel="stylesheet" href="<%=request.getContextPath() %>/resources/themes/classic.time.css">
-	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/resources/css/content.css">
-	
 	<script src="/admincms/js/pickadate.js-3.5.6/lib/picker.js"></script>
 	<script src="/admincms/js/pickadate.js-3.5.6/lib/picker.date.js"></script>
 	<script src="/admincms/js/pickadate.js-3.5.6/lib/picker.time.js"></script>
 	<script src="/admincms/js/pickadate.js-3.5.6/lib/legacy.js"></script>
-	
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-116234591-1"></script>
 	
 	
 	
-<script src="http://code.jquery.com/jquery-latest.min.js"></script>
-<script>
-</script>
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+	
+	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/resources/css/content.css?v=201811160138">
+	
 </head> 
 
 
@@ -73,51 +72,15 @@
 
 <div id="wrapper">
 
-	<!-- Skip Navigation -->
-	<nav class="skip_nav">
-		<a href="#container">Skip to content</a>
-	</nav>
-	<!-- //Skip Navigation -->
 	<!-- Header -->
 		<jsp:include page="../include/header.jsp"></jsp:include>
 	<!-- //Header -->
-<script language="Javascript">
-	$(document).ready(function() {
-		// 모바일 slide up / down 버튼
-		$('.btn_oc').on('click', function() {
-			$(this).next().toggleClass("on");
-		});
-		$('#select02').change(function(){
-		    $.ajax({
-		    	type: 'GET',
-		        url: '${pageContext.request.contextPath}/reservation/select_sel',
-		        data: {'sel' : $('#select02 option:selected').val()},
-		        datatype : 'json',
-		        success:function(rdata){
-		        	$('#select03').find("option").remove();
-		        	$('#select03').append("<option value=0>"+"전체"+"</option>");
-		        	$.each(rdata,function(index,item){
-						$('#select03').append("<option value="+item.f_num+">"+item.f_name+"</option>");
-		        	});
-		        	}
-		        });
-		  
-		   		});
-			
-		$('#frm').submit(function(){
-			
-			document.getElementById('frm').submit();
-			
-		});
-		
-	});
-</script>
 
 	<section id="container">
 		<!-- Contents -->
 		<div class="content">
 			<div class="sub_top">
-				<h2>대관</h2>
+				<h2>예약확인</h2>
 				
 					<video id="video01" autoplay="" playsinline="" muted="" loop="" height="460" width="100%" title="video element"> 
 						<source src="<%=request.getContextPath() %>/resources/files/banner/reservation.mp4" type="video/mp4"> 
@@ -125,54 +88,46 @@
 					</video>
 				
 			</div>
-
 			<div class="tab_wrap">
 				<ul>
 				
-					<li class="on"><a href="<%=request.getContextPath() %>/reservation/select">대관예약</a></li>
-					<li><a href="<%=request.getContextPath() %>/reservation/Check_C">예약확인</a></li>
+					<li><a href="<%=request.getContextPath() %>/reservation/select">대관예약</a></li>
+					
+					<li class="on"><a href="<%=request.getContextPath() %>/reservation/Check_C">예약확인</a></li>
 						
 				</ul>
 			</div>
-<form id="frm" method="GET" action="<%=request.getContextPath() %>/reservation/reservation"> 
-		<div class="rese_wrap">
-				<h3 class="h_tit">구장선택</h3>
 
-				<div class="rese_start">
-					<p class="tit">지점을 선택해주세요.</p>
-					<div class="start_wrap">
-						<div class="cont"> 
-							<span class="select" style="width:100%" >
-								<label for="select02">지역선택</label>
-								<select id="select02" name="select02" >
-									<option value="">지역선택</option>
-										<c:forEach items="${getFieldList_sel}" var="dis">
-									<option value="${dis.district }">${dis.district }</option>
+						<div class="int_wrap">
+							<div class="table_wrap">
+								<table>
+								<colgroup>
+									<col style="width:25%" />
+									<col style="" />
+								</colgroup>
+								<tbody>
+								<tr><th>아이디</th><th>구장명</th><th>예약날짜</th><th>예약시간</th><th>결제가격</th></tr>
+								<c:forEach var="reservList" items="${reservList}">
+									<tr>
+										
+										<td id = "memberName" name="id">${reservList.id }</td>
+										<td id = "fieldName" name="f_name">${reservList.f_name }</td>
+										<td id = "date" name="r_date">${reservList.r_date }</td>
+										<td id = "date" name="r_date">${reservList.start_time }</td>
+										<td id = "date" name="r_date">${reservList.total_price }원</td>
+									</tr>
 								</c:forEach>
-								</select>
-							</span>
-							<span class="select" style="width:100%" >
-								<label for="select03">구장선택</label>
-								<select id="select03" name="select03" >
-									<option value="">구장선택</option>
-								</select>
-							</span>
-					
-</form>
-							<div class="btn_wrap">
-								<input type="submit" class="btn_big" value="대관예약 시작하기">
+								</tbody>
+								</table>
 							</div>
-							
 						</div>
 					</div>
-				</div>
-
-			</div>
-		</div>
+			</section>
 			
-	</section>
+		
+			<!-- //Contents -->
 
-<!-- //Contents -->
+
 <script>
 // $(function(){
 // 	getCalendar('2022-06-16'); 

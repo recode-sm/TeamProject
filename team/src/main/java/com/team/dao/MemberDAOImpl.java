@@ -7,6 +7,7 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
+import com.team.domain.DateDTO;
 import com.team.domain.MemberDTO;
 
 @Repository
@@ -47,6 +48,11 @@ public class MemberDAOImpl implements MemberDAO {
 		return sqlSession.selectList(namespace + ".getMemberList");
 	}
 
-	
+	@Override
+	public List<DateDTO> getDateList(String sel) {
+		System.out.println("getDateList()");
+		
+		return sqlSession.selectList(namespace+".getDateList",sel);
+	}
 
 }

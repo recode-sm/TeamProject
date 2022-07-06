@@ -24,10 +24,26 @@
 					<ul>
 <!-- 						<li class="face"><a href="https://www.facebook.com/HMfutsalpark/" target="_blank"><span class="hide">facebook</span></a></li> -->
 <!-- 						<li class="insta"><a href="https://www.instagram.com/hmfutsalpark/" target="_blank"><span class="hide">instagram</span></a></li> -->
+						<%
 
+							String id=(String)session.getAttribute("id");
+							if(id==null){
+
+						%>
 						
-						<li class="login"><a href="https://hmfutsalpark.com/member/login.asp">MEMBER LOGIN</a></li>
+							<li class="login"><a href="<%=request.getContextPath() %>/member/login">MEMBER LOGIN</a></li>
+							<li class="login"><a href="<%=request.getContextPath() %>/member/insert">MEMBER JOIN</a></li>
 						
+						<%
+							}else{
+								%>
+								<li class="login"><a href="<%=request.getContextPath() %>/member/info">MEMBER INFO</a></li>
+							<li class="login"><a href="<%=request.getContextPath() %>/member/logout">MEMBER LOGOUT</a></li>
+							
+								<%
+							}
+							 %>
+												
 					</ul>
 				</div>
 			</nav>

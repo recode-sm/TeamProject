@@ -4,7 +4,7 @@ public class ReservDTO {
 
 	private int r_num;
 	private int f_num;
-	private String id; // name => id 수정
+	private String id;
 	private String f_name; // 추가
 	private String start_time;
 	private String end_time;

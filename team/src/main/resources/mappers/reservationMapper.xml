@@ -4,6 +4,10 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.team.reservation.reservationMapper">
 
+	<select id="getReserv" resultType="com.team.domain.ReservDTO">
+		select * from reservation where id=#{id}
+	</select>
+
 	<select id="getFeildList_sel" resultType="com.team.domain.FieldDTO">
 		select distinct district from field order by district
 	</select>
@@ -24,4 +28,12 @@
 		insert into reservation(id,f_num,f_name,start_time,r_date,total_price) 
 		values (#{id},#{f_num},#{f_name},#{start_time},#{r_date},#{total_price})
 	</insert>
+	
+	<update id="updateTime">
+		update management set status=0 where f_num=#{f_num}
+	</update>
+	
+	<select id="getDateList" resultType="com.team.domain.DateDTO">
+		select * from reservation where r_date=#{date} and f_num=#{f_num}
+	</select>
 </mapper>

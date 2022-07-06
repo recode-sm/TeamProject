@@ -18,7 +18,7 @@
 *	{margin:0; padding:0;}
 html,body	{min-height:100%; height:100%}
 html	{min-height:100%}
-body	{*overflow-y:; min-width:320px; color:#403d3f; font-size:18px; font-family:'Nanum Gothic','NanumBarunGothic','AppleGothic','Dotum', sans-serif; font-weight:normal; line-height:26px; -webkit-text-size-adjust:none; word-spacing:0; letter-spacing:-0.3px}
+body	{*overflow-y:auto; min-width:320px; color:#403d3f; font-size:18px; font-family:'Nanum Gothic','NanumBarunGothic','AppleGothic','Dotum', sans-serif; font-weight:normal; line-height:26px; -webkit-text-size-adjust:none; word-spacing:0; letter-spacing:-0.3px}
 body.hidden	{overflow:hidden; padding-right:17px}
 
 a			{color:#000; text-decoration:none}
@@ -27,7 +27,7 @@ a:hover	{text-decoration:none}
 a:active	{text-decoration:none}
 
 img	{border:0 none;}
-ol,	ul/*,	li*/	{list-style-type:none}
+ol,	ul/*, li*/	{list-style-type:none;}
 h1,	h2,	h3,	h4,	h5,	h6	{font-weight:normal}
 hr	{border:0; clear:both}
 table th	{font-weight:normal}
@@ -542,7 +542,7 @@ table	th,	table	td	{border:0 none}
 
 	#wrapper #header nav .util	{position:absolute; top:0; right:0; left:56px; width:auto}
 	#wrapper #header nav .util li.login	{display:block; margin:0; padding:0; border:0;}
-	#wrapper #header nav .util li.login a	{display:block; margin-right:14px; padding-right:86px; font-size:30px; font-family:'HN_hvc'; height:133px; background:url(../img/icon_login_m.png') no-repeat center right; background-size:50px auto; line-height:133px; text-align:right}
+	#wrapper #header nav .util li.login a	{display:block; margin-right:14px; padding-right:86px; font-size:30px; font-family:'HN_hvc'; height:133px; background:url('../img/icon_login_m.png') no-repeat center right; background-size:50px auto; line-height:133px; text-align:right;}
 
 	#wrapper #header nav .util li.logout	{display:block; margin:0; padding:0; border:0;}
 	#wrapper #header nav .util li.logout a	{margin-right:14px; font-size:30px; font-family:'HN_hvc'; height:133px; background-size:50px auto; line-height:133px; text-align:right}

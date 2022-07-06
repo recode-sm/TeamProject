@@ -71,6 +71,7 @@
 
 <body>
 
+
 <div id="wrapper">
 
 	<!-- Skip Navigation -->
@@ -87,22 +88,7 @@
 		$('.btn_oc').on('click', function() {
 			$(this).next().toggleClass("on");
 		});
-		$('#select02').change(function(){
-		    $.ajax({
-		    	type: 'GET',
-		        url: '${pageContext.request.contextPath}/reservation/select_sel',
-		        data: {'sel' : $('#select02 option:selected').val()},
-		        datatype : 'json',
-		        success:function(rdata){
-		        	$('#select03').find("option").remove();
-		        	$('#select03').append("<option value=0>"+"전체"+"</option>");
-		        	$.each(rdata,function(index,item){
-						$('#select03').append("<option value="+item.f_num+">"+item.f_name+"</option>");
-		        	});
-		        	}
-		        });
-		  
-		   		});
+		
 			
 		$('#frm').submit(function(){
 			
@@ -117,7 +103,7 @@
 		<!-- Contents -->
 		<div class="content">
 			<div class="sub_top">
-				<h2>대관</h2>
+				<h2>예약확인</h2>
 				
 					<video id="video01" autoplay="" playsinline="" muted="" loop="" height="460" width="100%" title="video element"> 
 						<source src="<%=request.getContextPath() %>/resources/files/banner/reservation.mp4" type="video/mp4"> 
@@ -129,48 +115,42 @@
 			<div class="tab_wrap">
 				<ul>
 				
-					<li class="on"><a href="<%=request.getContextPath() %>/reservation/select">대관예약</a></li>
-					<li><a href="<%=request.getContextPath() %>/reservation/Check_C">예약확인</a></li>
+					<li><a href="<%=request.getContextPath() %>/reservation/select">대관예약</a></li>
+					<li class="on"><a href="<%=request.getContextPath() %>/reservation/Check_C">예약확인</a></li>
 						
 				</ul>
 			</div>
-<form id="frm" method="GET" action="<%=request.getContextPath() %>/reservation/reservation"> 
+		<form id="frm" method="POST" action="<%=request.getContextPath() %>/reservation/CheckPro"> 
 		<div class="rese_wrap">
-				<h3 class="h_tit">구장선택</h3>
+				<h3 class="h_tit">회원정보입력</h3>
 
 				<div class="rese_start">
-					<p class="tit">지점을 선택해주세요.</p>
+					<p class="tit">비밀번호를 입력해주세요.</p>
 					<div class="start_wrap">
 						<div class="cont"> 
-							<span class="select" style="width:100%" >
-								<label for="select02">지역선택</label>
-								<select id="select02" name="select02" >
-									<option value="">지역선택</option>
-										<c:forEach items="${getFieldList_sel}" var="dis">
-									<option value="${dis.district }">${dis.district }</option>
-								</c:forEach>
-								</select>
-							</span>
-							<span class="select" style="width:100%" >
-								<label for="select03">구장선택</label>
-								<select id="select03" name="select03" >
-									<option value="">구장선택</option>
-								</select>
-							</span>
-					
-</form>
-							<div class="btn_wrap">
-								<input type="submit" class="btn_big" value="대관예약 시작하기">
-							</div>
 							
-						</div>
-					</div>
-				</div>
+							아이디  <input type="text" name="id" style="width:100%" value=${id }>
+							
+							비밀번호  <input type="password" name="pass" style="width:100%">
+					
 
-			</div>
-		</div>
-			
-	</section>
+							<div class="btn_wrap">
+								
+							</div>
+							<input type="submit" class="btn_big" value="예약 확인하기">
+						</div>
+						
+					</div>
+					
+				</div>
+				
+				</div>
+			</form>
+		
+			</section>
+		
+		
+
 
 <!-- //Contents -->
 <script>

@@ -1,7 +1,9 @@
 package com.team.dao;
 
 import java.util.List;
+import java.util.Map;
 
+import com.team.domain.DateDTO;
 import com.team.domain.FieldDTO;
 import com.team.domain.MemberDTO;
 import com.team.domain.ReservDTO;
@@ -13,4 +15,6 @@ public interface ReservationDAO {
 	public MemberDTO getPhone(String id);
 	public FieldDTO getField(int f_num);
 	void insertReserv(ReservDTO reservDTO);
+	public List<ReservDTO> getReservList(String id);
+	public List<DateDTO> getDateList(DateDTO dateDTO);
 }

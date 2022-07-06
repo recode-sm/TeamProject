@@ -12,6 +12,7 @@
 	<select id="userCheck" resultType="com.team.domain.MemberDTO">
 		SELECT * FROM member WHERE id=#{id} and pass=#{pass}
 	</select>
+
 	
 	<select id="getMember" resultType="com.team.domain.MemberDTO">
 		SELECT * FROM member WHERE id=#{id}

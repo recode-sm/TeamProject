@@ -2,6 +2,7 @@ package com.team.dao;
 
 import java.util.List;
 
+import com.team.domain.DateDTO;
 import com.team.domain.MemberDTO;
 
 public interface MemberDAO {
@@ -23,4 +24,6 @@ public interface MemberDAO {
 	
 	// 전체 회원 정보 가져오기
 	public List<MemberDTO> getMemberList();
+	
+	public List<DateDTO> getDateList(String sel);
 }

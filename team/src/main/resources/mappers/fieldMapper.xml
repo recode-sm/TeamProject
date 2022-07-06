@@ -8,5 +8,9 @@
 		insert into field(f_name,district,f_address,terms,f_img,price) 
 		values(#{f_name},#{district},#{f_address},#{terms},#{f_img},#{price})
 	</insert>
-
+	
+	<select id="getFieldList" resultType="com.team.domain.FieldDTO">
+		select * from field
+	</select>
+	
 </mapper>

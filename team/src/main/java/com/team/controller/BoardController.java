@@ -1,15 +1,20 @@
 package com.team.controller;
 
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import com.team.domain.PageDTO;
 import com.team.domain.BoardDTO;
+import com.team.domain.CommentDTO;
+import com.team.domain.MemberDTO;
 import com.team.service.BoardService;
 
 @Controller // 주소맵핑
@@ -25,8 +30,9 @@ public class BoardController {
 	}
 
 	@RequestMapping(value = "/notice/write", method = RequestMethod.GET)
-	public String insert() {
+	public String insert(HttpSession session) {
 		// /WEB-INF/views/notice/writeForm.jsp
+		String id=(String)session.getAttribute("id");
 		return "/notice/writeForm";
 	}
 
@@ -39,7 +45,7 @@ public class BoardController {
 	// http://localhost:8080/myweb2/board/list?pageNum=2
 	// http://localhost:8080/myweb2/board/list
 	@RequestMapping(value = "/notice/list", method = RequestMethod.GET)
-	public String list(HttpServletRequest request, Model model) {
+	public String list(HttpServletRequest request, Model model, HttpSession session) {
 		int pageSize = 10;
 		String pageNum = request.getParameter("pageNum");
 		if (pageNum == null) {
@@ -68,6 +74,9 @@ public class BoardController {
 
 		model.addAttribute("boardList", boardList);
 		model.addAttribute("pageDTO", pageDTO);
+		
+		String id=(String)session.getAttribute("id");
+		
 
 		// /WEB-INF/views/board/list.jsp
 		return "/notice/list";
@@ -78,28 +87,33 @@ public class BoardController {
 		int b_num = Integer.parseInt(request.getParameter("b_num"));
 		model.addAttribute("b_num", b_num);
 		boardService.updateReadcount(b_num);
+		
 		return "redirect:/notice/content";
 	}
 
 	// http://localhost:8080/myweb2/board/content?Num=2
 	@RequestMapping(value = "/notice/content", method = RequestMethod.GET)
-	public String content(HttpServletRequest request, Model model) {
+	public String content(HttpServletRequest request, Model model, HttpSession session) {
 		int b_num = Integer.parseInt(request.getParameter("b_num"));
-
+		String id=(String)session.getAttribute("id");
 		BoardDTO boardDTO = boardService.getBoard(b_num);
-
 		model.addAttribute("boardDTO", boardDTO);
-
-		// /WEB-INF/views/board/content.jsp
+		List<CommentDTO> commentList = boardService.getCommentList(b_num);
+		BoardDTO boardDTO2 = new BoardDTO();
+		
+		boardService.userCheck(boardDTO2);
+		model.addAttribute("commentList", commentList);
+		// /WEB-INF/views/notice/content.jsp
 		return "notice/content";
 	}
 
 	@RequestMapping(value = "/notice/update", method = RequestMethod.GET)
-	public String update(HttpServletRequest request, Model model) {
+	public String update(HttpServletRequest request, Model model, HttpSession session) {
 		int b_num = Integer.parseInt(request.getParameter("b_num"));
 
 		BoardDTO boardDTO = boardService.getBoard(b_num);
 		model.addAttribute("boardDTO", boardDTO);
+		String id=(String)session.getAttribute("id");
 
 		// /WEB-INF/views/notice/writeForm.jsp
 		return "/notice/updateForm";
@@ -116,7 +130,7 @@ public class BoardController {
 	public String delete(HttpServletRequest request, Model model) {
 		int b_num = Integer.parseInt(request.getParameter("b_num"));
 		boardService.deleteBoard(b_num);
-		return "/notice/list";
+		return "redirect:/notice/list";
 	}
 
 }

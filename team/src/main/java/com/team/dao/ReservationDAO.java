@@ -14,5 +14,6 @@ public interface ReservationDAO {
 	public MemberDTO getPhone(String id);
 	public FieldDTO getField(int f_num);
 	void insertReserv(ReservDTO reservDTO);
-	public List<DateDTO> getDateList(String sel);
+	List<DateDTO> getDateList(DateDTO dateDTO);
+	public ReservDTO getReservation(String s_id);
 }

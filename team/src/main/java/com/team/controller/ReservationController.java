@@ -75,5 +75,14 @@ public class ReservationController {
 		
 		return "/reservation/reservResult";
 	}
+
+	@RequestMapping(value = "/reservation/list", method = RequestMethod.GET)
+	public String reservList(HttpSession session,HttpServletRequest request,Model model) throws Exception{
+		String id = (String)session.getAttribute("id");
+		System.out.println(id);
+		List<ReservDTO> reservList = reservationService.getReservList(id);
+		model.addAttribute("reservList",reservList);
+		return "/reservation/reservList";
+	}
 }
 

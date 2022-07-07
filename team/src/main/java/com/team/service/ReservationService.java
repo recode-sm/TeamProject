@@ -15,6 +15,7 @@ public interface ReservationService {
 	public MemberDTO getPhone(String id);
 	public FieldDTO getFiled(int f_num);
 	public void insertReserv(ReservDTO reservDTO);
+	public List<ReservDTO> getReservList(String id);
 	public List<DateDTO> getDateList(DateDTO dateDTO);
 	public ReservDTO getReservation(String s_id);
 }

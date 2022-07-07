@@ -59,4 +59,11 @@ public class ReservationServiceImpl implements ReservationService{
 
 		return reservationDAO.getReservation(s_id);
 	}
+	
+	@Override
+	public List<ReservDTO> getReservList(String id) {
+	
+		return reservationDAO.getReservList(id);
+	}
+
 }

@@ -54,10 +54,10 @@
 	</script>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 
-	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/resources/css/content.css">
+	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>resources/css/content.css">
 </head>
 
-<script type="text/javascript">
+<script language="Javascript">
 	$(document).ready(function() {
 		$('html').addClass('memb');
 	});
@@ -70,14 +70,14 @@
 		<!-- Contents -->
 		<div class="content">
 			<div class="member_wrap">
-				<h1 onclick ="document.location.href='<%=request.getContextPath() %>/';"><span class="hide">HM SPORTS</span></h1>
+				<h1 onclick = "document.location.href='<%=request.getContextPath() %>/';"><span class="hide">HM SPORTS</span></h1>
 
 				<form name="frmJoin" action="<%=request.getContextPath() %>/member/insertPro" method="post" >
 				<div class="join_wrap info">
 					<dl>
 						<dt>아이디(이메일) <span>(필수)</span></dt>
 						<dd>
-							<input type="text"  name="id" style=" width:100%" />
+							<input type="text"  name="id" style="width:100%" />
 							<span class="t_help">이미 사용중이거나 탈퇴한 이메일 입니다.</span>
 						</dd>
 						<dt>비밀번호 <span>(필수)</span></dt>
@@ -95,23 +95,110 @@
 							<input type="text"  name="name" style="width:100%" />
 							<span class="t_help">필수 항목 입니다.</span>
 						</dd>
+						<dt>휴대전화 <span>(필수)</span></dt>
+						<dd> 
+							<div class="phone">
+							<input type="text"  name="htel1" maxlength=3 class="numberOnly" /><span>-</span>
+							<input type="text"  name="htel2" maxlength=4 class="numberOnly" /><span>-</span>
+							<input type="text"  name="htel3" maxlength=4 class="numberOnly" />
+							<span class="t_help">필수 항목 입니다.</span>
+							</div>
+							<div class="auth_wrap2"> 
+								<span>휴대전화 인증번호 전송</span> <button id="cnfm1" type="button" class="btn_middle" onClick="cnfm_sms();">전송</button> 
+							</div>
+						</dd>
+						<dt>본인 문자 인증 <span>(필수)</span></dt>
+						<dd>
+							<div class="auth_wrap">
+								<input type="text" id="sms_cnfm" title="" name="sms_cnfm" placeholder="인증번호 입력"/> 
+								<button id="cnfm2" type="button" class="btn_middle" onClick="cnfm_sms_no();" >인증</button>
+								<span id="mail_cnfm_success" class="succes">인증성공!</span> 
+								<span id="mail_send_success" class="t_help">본인확인용 인증번호를 문자로 발송했습니다.(유효시간 30분)<br />인증번호가 오지 않으면 입력하신 정보가 정확한지 확인하여 주세요.</span>
+							</div>
+						</dd>
  					</dl>
- 					</div>
- 					
+<script>
+function cnfm_sms(){ 
+	var frm = document.frmJoin;
+ 
+	if (frm.htel1.value == "") {
+		alert("[휴대전화]을 입력하세요.");
+		frm.htel1.focus();
+		return;
+	} 
+
+	if (frm.htel2.value == "") {
+		alert("[휴대전화]을 입력하세요.");
+		frm.htel2.focus();
+		return;
+	} 
+
+	if (frm.htel3.value == "") {
+		alert("[휴대전화]을 입력하세요.");
+		frm.htel3.focus();
+		return;
+	} 
+	var htel = frm.htel1.value+frm.htel2.value+frm.htel3.value
+	window.open("join_confirm_sms_send.asp?htel="+htel,"HiddenFrame");
+}
+function cnfm_sms_no(e){ 
+	var frm = document.frmJoin;
+ 
+	if (frm.sms_cnfm.value == "") {
+		alert("[문자 인증 수신번호]을 입력하세요.");
+		frm.sms_cnfm.focus();
+		return;
+	}  
+
+	window.open("join_confirm_sms_ok.asp?sms_cnfm="+frm.sms_cnfm.value  ,"HiddenFrame");
+} 
+
+function not_sms_cnfmed(){
+	$("#sms_cnfm").val('');
+	$("#sms_cnfm").focus();
+}
+</script>
 					<div class="btn_wrap">
+<<<<<<< HEAD
 						<input type="button" class="btn_middle"  onclick="checkForm()" value="가입하기">
+=======
+						<input type="button" class="btn_middle" onCLick="checkForm();" value="가입하기">
+>>>>>>> a5e61538dcbcb65e7938992fd593f2bfdd1fd8eb
 					</div>
-					</form>
 					
+					</form>
+
 					<div class="bot_info">
 						<span class="logo"><em class="hide">HM SPORTS</em></span>
 						<p class="copy">COPYRIGHT©  HM SPORTS. ALLRIGHT RESERVED</p>
 					</div>
+
+
 				</div>
 			</div>
+
+			<!-- Layer popup - 가입완료 -->
+			<div class="layer_popup find" id="">
+				<div class="layer_cont">
+					<div class="find_comp comp">
+						<p><em>흠스포</em>님 회원가입을 축하합니다.<br />회원님의 아이디는 <span>hmsports1</span> 입니다.</p>
+
+						<div class="btn_wrap">
+							<button type="button" class="btn_middle">확인</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- //Layer popup - 가입완료 -->
+
+			<div class="layer_dim"></div>
+
+		</div>
+		<!-- //Contents -->
 	</section>
+
  
-<script type="text/javascript">
+<SCRIPT>
 function CheckEmail(mStr){
 	var frm = document.frmJoin;
 	if (mStr !== "etc") {
@@ -132,14 +219,12 @@ function checkForm(){
 		frm.id.focus();
 		return;
 	}
-	var pos2 = frm.id.value.indexOf('@');
-	if (pos2 == -1) {
-		alert("[이메일]을 형식 입력하세요.");
-		frm.id.focus();
+	if (EmptyChk(frm.pass.value) < 4) {
+		alert("[비밀번호]는 4이상 입력되어야 합니다.");
+		frm.pass.focus();
 		return;
 	}
-	
-	if (frm.pass.value.length < 4) {
+	if (EmptyChk(frm.pass.value) < 4) {
 		alert("[비밀번호]는 4이상 입력되어야 합니다.");
 		frm.pass.focus();
 		return;
@@ -153,32 +238,54 @@ function checkForm(){
 		alert("[이름]을 입력하세요.");
 		frm.name.focus();
 		return;
+	}  
+	if (frm.htel1.value == "") {
+		alert("[핸드폰번호]를 입력하세요.");
+		frm.htel1.focus();
+		return;
 	}
+	if (frm.htel2.value == "") {
+		alert("[핸드폰번호]를 입력하세요.");
+		frm.htel2.focus();
+		return;
+	}
+	if (frm.htel3.value == "") {
+		alert("[핸드폰번호]를 입력하세요.");
+		frm.htel3.focus();
+		return;
+	} 
+	/*
+	if (CheckEmailTail(frm.email1.value) == false) {
+		alert("[이메일] 형식이 맞지 않습니다.");
+		frm.email1.value = "";
+		frm.email1.focus();
+		return;
+	}
+	if (CheckEmailTail(frm.email2.value) == false) {
+		alert("[이메일] 형식이 맞지 않습니다.");
+		frm.email2.value = "";
+		frm.email2.focus();
+		return;
+	}
+	*/
+ 
+	frm.target="HiddenFrame";
 	frm.submit();
 }
+//-->
+</SCRIPT>
 
-$(document).ready(function(){
-	$('#dup').click(function(){
-		$.ajax({
-			url:'${pageContext.request.contextPath}/member/msg',
-			data:{'id':$('#id').val()},
-			success:function(rdata){
-				if(rdata=="iddup"){
-					rdata="아이디 중복";
-				}else{
-					rdata="아이디 사용가능";
-				}
-				$('#dupdiv').html(rdata);
-			}
-		});
-	});
-});
-
-</script>
 	<!-- Footer -->
 	<footer id="footer">
 		<div class="footer_wrap">
 			<span class="logo"></span>
+			<div class="foot_util">
+				<ul>
+					<li><a href="/member/privacy.asp">개인정보처리방침</a></li>
+					<li><a href="/member/tos.asp">이용약관</a></li>
+					<li><a href="/member/emailcollection.asp">이메일무단수집거부</a></li>
+				</ul>
+			</div>
 			<p class="info">서울시 성동구 왕십리로 58 FORHU 709호(성수동 1가)<span>TEL : 02-332-7807</span><span>FAX : 02-2061-0373</span></p>
 			<p class="copy">COPYRIGHTⓒHNS. ALLRIGHT RESERVED</p>
 		</div>

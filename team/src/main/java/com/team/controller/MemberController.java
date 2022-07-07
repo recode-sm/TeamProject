@@ -27,17 +27,12 @@ public class MemberController {
 	}
 	
 	@RequestMapping(value = "/member/insertPro", method = RequestMethod.POST)
-	public String insertPro (MemberDTO memberDTO) {
-		// DB에 회원정보 insert
-		MemberDTO memberDTO2 = memberService.userCheck(memberDTO);
+	public String insertPro(MemberDTO memberDTO) {
+		//디비 insertMember() 메서드호출
 		
-		if (memberDTO2 != null) {
-			// 일치
-			memberService.insertMember(memberDTO);
-			return "redirect:/member/login";
-		}
-		// 로그인 페이지로 이동
-		return "member/insertMsg";
+		memberService.insertMember(memberDTO);
+		
+		return "redirect:/member/login";
 	}
 	
 	@RequestMapping(value = "/member/login", method = RequestMethod.GET)

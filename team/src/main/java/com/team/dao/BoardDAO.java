@@ -2,7 +2,6 @@ package com.team.dao;
 
 import java.util.List;
 import com.team.domain.BoardDTO;
-import com.team.domain.CommentDTO;
 import com.team.domain.PageDTO;
 
 public interface BoardDAO {
@@ -26,7 +25,5 @@ public interface BoardDAO {
 	public void deleteBoard(int b_num);
 
 	public void updateReadcount(int b_num);
-	
-	public BoardDTO userCheck(BoardDTO boardDTO2);
-	public List<CommentDTO> getCommentList(int b_num);
+
 }

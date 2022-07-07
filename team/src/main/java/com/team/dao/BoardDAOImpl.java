@@ -6,7 +6,6 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 import com.team.domain.PageDTO;
 import com.team.domain.BoardDTO;
-import com.team.domain.CommentDTO;
 
 @Repository
 public class BoardDAOImpl implements BoardDAO {
@@ -43,6 +42,7 @@ public class BoardDAOImpl implements BoardDAO {
 
 	@Override
 	public void updateBoard(BoardDTO boardDTO) {
+		System.out.println("dao update");
 		sqlSession.update(namespace + ".updateBoard", boardDTO);
 	}
 
@@ -56,14 +56,4 @@ public class BoardDAOImpl implements BoardDAO {
 		sqlSession.update(namespace + ".updateReadcount", b_num);
 	}
 
-	@Override
-	public BoardDTO userCheck(BoardDTO boardDTO2) {
-		return sqlSession.selectOne(namespace + ".userCheck", boardDTO2);
-	}
-	@Override
-	public List<CommentDTO> getCommentList(int b_num) {
-		return sqlSession.selectList(namespace + ".getCommentList", b_num);
-	}
-	
-	
 }

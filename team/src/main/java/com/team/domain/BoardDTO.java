@@ -2,8 +2,6 @@ package com.team.domain;
 
 import java.sql.Timestamp;
 
-import org.springframework.format.annotation.DateTimeFormat;
-
 public class BoardDTO {
 	private int b_num;
 	private String id; // name => id 수정

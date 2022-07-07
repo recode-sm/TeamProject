@@ -70,8 +70,7 @@
 		<!-- Contents -->
 		<div class="content">
 			<div class="member_wrap">
-			<a href="<%=request.getContextPath() %>/"><img src="<%=request.getContextPath() %>/resources/img/chams.png"></a>
-				<h1 onclick = "document.location.href='<%=request.getContextPath() %>/';"><span class="hide">HM SPORTS</span></h1>
+				<h1 img="<%=request.getContextPath() %>/resources/img/chams.png" onclick ="document.location.href='<%=request.getContextPath() %>/';"><span class="hide">HM SPORTS</span></h1>
 
 				<form name="frmJoin" action="<%=request.getContextPath() %>/member/insertPro" method="post" >
 				<div class="join_wrap info">
@@ -158,6 +157,23 @@ function checkForm(){
 	}
 	frm.submit();
 }
+
+$(document).ready(function(){
+	$('#dup').click(function(){
+		$.ajax({
+			url:'${pageContext.request.contextPath}/member/msg',
+			data:{'id':$('#id').val()},
+			success:function(rdata){
+				if(rdata=="iddup"){
+					rdata="아이디 중복";
+				}else{
+					rdata="아이디 사용가능";
+				}
+				$('#dupdiv').html(rdata);
+			}
+		});
+	});
+});
 
 </script>
 	<!-- Footer -->

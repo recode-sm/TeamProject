@@ -4,6 +4,10 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.team.reservation.reservationMapper">
 
+	<select id="getReserv" resultType="com.team.domain.ReservDTO">
+		select * from reservation where id=#{id}
+	</select>
+	
 	<select id="getFeildList_sel" resultType="com.team.domain.FieldDTO">
 		select distinct district from field order by district
 	</select>
@@ -21,7 +25,20 @@
 	</select>
 	
 	<insert id="insertReserv">
-		insert into reservation(id,f_num,f_name,start_time,r_date,total_price) 
-		values (#{id},#{f_num},#{f_name},#{start_time},#{r_date},#{total_price})
+		insert into reservation(id,f_num,time,r_date,total_price) 
+		values (#{id},#{f_num},#{time},#{r_date},#{total_price})
 	</insert>
+	
+<!-- 	조건절 구장(Field) 추가 필요, 확인해야함 -->
+	<select id="getDateList" resultType="com.team.domain.DateDTO">
+		select * from reservation where r_date=#{date} and f_num=#{f_num}
+	</select>
+	
+	<select id="getReservation" resultType="com.team.domain.ReservDTO">
+		select r.r_num,r.id,r.f_num,f.f_name,r.time,r.r_date,r.total_price,m.phone
+		 from reservation r join member m ON r.id=m.id
+		 join field f ON f.f_num=r.f_num
+		 where r.id=#{s_id} and r_num=(select max(r_num) from reservation where r.id=#{s_id})
+	</select>
+	
 </mapper>

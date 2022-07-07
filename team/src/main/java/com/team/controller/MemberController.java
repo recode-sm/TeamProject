@@ -163,4 +163,26 @@ public class MemberController {
 		// 회원 리스트 페이지(list.jsp)로 이동
 		return "member/list";
 	}
+
+	@RequestMapping(value = "/reservation/Check_C", method = RequestMethod.GET)
+	public String reserCheck_C(HttpSession session,HttpServletRequest request,Model model) throws Exception{
+		// DB 작업
+		String id=(String)session.getAttribute("id");
+			return "/reservation/reservCheck_C";
+	}
+
+	@RequestMapping(value = "/reservation/CheckPro", method = RequestMethod.POST)
+	public String reservCheckPro(HttpServletRequest request,MemberDTO memberDTO) throws Exception{
+		request.getParameter("id");
+		MemberDTO memberDTO2 = memberService.userCheck(memberDTO);
+		
+		if(memberDTO2!=null) {
+			//아이디 비밀번호 일치
+			//수정작업
+			return "redirect:/reservation/list";
+		}else {
+			//아이디 비밀번호 틀림
+			return "member/pass_msg";
+		}
+	}
 }

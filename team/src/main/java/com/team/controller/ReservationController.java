@@ -1,5 +1,6 @@
 package com.team.controller;
 
+import java.util.List;
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -52,21 +53,37 @@ public class ReservationController {
 	public String reservationPro(HttpServletRequest request,Model model) throws Exception{
 		ReservDTO reservDTO = new ReservDTO();
 		reservDTO.setF_num(Integer.parseInt(request.getParameter("f_num")));
-		reservDTO.setF_name(request.getParameter("f_name"));
+//		reservDTO.setF_name(request.getParameter("f_name"));
 		reservDTO.setId(request.getParameter("id"));
 		reservDTO.setR_date(request.getParameter("r_date"));
-		reservDTO.setStart_time(request.getParameter("start_time"));
-		reservDTO.setTotal_price(Integer.parseInt(request.getParameter("price")));
+		reservDTO.setTime(request.getParameter("time"));
+		reservDTO.setTotal_price(request.getParameter("price"));
 		
 		reservationService.insertReserv(reservDTO);
 		
-		return "redirect:/reservation/Result";
+		return "redirect:/reservation/reservResult";
 	}
-	@RequestMapping(value = "/reservation/Result", method = RequestMethod.GET)
-	public String reserResult(HttpServletRequest request,Model model) throws Exception{
-
+	
+	@RequestMapping(value = "/reservation/reservResult", method = RequestMethod.GET)
+	public String reserResult(HttpServletRequest request,HttpSession session,Model model) throws Exception{
+		
+		String s_id = (String)session.getAttribute("id");
+		ReservDTO reservDTO = reservationService.getReservation(s_id);
+		model.addAttribute("reservDTO", reservDTO);
+		
+		System.out.println(reservDTO.getTime());
+		System.out.println(reservDTO.getTotal_price());
 		
 		return "/reservation/reservResult";
+	}
+
+	@RequestMapping(value = "/reservation/list", method = RequestMethod.GET)
+	public String reservList(HttpSession session,HttpServletRequest request,Model model) throws Exception{
+		String id = (String)session.getAttribute("id");
+		System.out.println(id);
+		List<ReservDTO> reservList = reservationService.getReservList(id);
+		model.addAttribute("reservList",reservList);
+		return "/reservation/reservList";
 	}
 }
 

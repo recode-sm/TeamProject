@@ -95,6 +95,14 @@
 							<input type="text"  name="name" style="width:100%" />
 							<span class="t_help">필수 항목 입니다.</span>
 						</dd>
+						<dt>휴대전화 <span>(필수)</span></dt>
+						<dd> 
+							<div class="phone">
+							<input type="text"  name="htel1" maxlength=3 class="numberOnly" /><span>-</span>
+							<input type="text"  name="htel2" maxlength=4 class="numberOnly" /><span>-</span>
+							<input type="text"  name="htel3" maxlength=4 class="numberOnly" />
+							<span class="t_help">필수 항목 입니다.</span>
+							</div>
  					</dl>
  					</div>
  					
@@ -154,25 +162,23 @@ function checkForm(){
 		frm.name.focus();
 		return;
 	}
+	if (frm.htel1.value == "") {
+		alert("[핸드폰번호]를 입력하세요.");
+		frm.htel1.focus();
+		return;
+	}
+	if (frm.htel2.value == "") {
+		alert("[핸드폰번호]를 입력하세요.");
+		frm.htel2.focus();
+		return;
+	}
+	if (frm.htel3.value == "") {
+		alert("[핸드폰번호]를 입력하세요.");
+		frm.htel3.focus();
+		return;
+	} 	
 	frm.submit();
 }
-
-$(document).ready(function(){
-	$('#dup').click(function(){
-		$.ajax({
-			url:'${pageContext.request.contextPath}/member/msg',
-			data:{'id':$('#id').val()},
-			success:function(rdata){
-				if(rdata=="iddup"){
-					rdata="아이디 중복";
-				}else{
-					rdata="아이디 사용가능";
-				}
-				$('#dupdiv').html(rdata);
-			}
-		});
-	});
-});
 
 </script>
 	<!-- Footer -->

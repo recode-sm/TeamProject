@@ -25,7 +25,11 @@ ${ sessionScope.id }님 로그인 하셨습니다.<br>
 	</c:if>
 </c:if>
 
+<<<<<<< HEAD
 <a href="<%=request.getContextPath() %>">메인페이지로 가기</a><br>
+=======
+<%-- <a href="<%=request.getContextPath() %>">메인페이지로 가기</a><br> --%>
+>>>>>>> Base
 
 </body>
 </html>

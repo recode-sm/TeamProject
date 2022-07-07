@@ -11,7 +11,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+<<<<<<< HEAD
 import com.team.domain.DateDTO;
+=======
+>>>>>>> Base
 import com.team.domain.FieldDTO;
 import com.team.service.ReservationService;
 
@@ -34,6 +37,7 @@ public class AjaxController {
 		
 	}
 	
+<<<<<<< HEAD
 	@RequestMapping(value = "/reservation/jsonDate", method = RequestMethod.GET)
 	public ResponseEntity<List<DateDTO>> reservation(HttpServletRequest request) throws Exception {
 		ResponseEntity<List<DateDTO>> entity = null;		
@@ -57,4 +61,6 @@ public class AjaxController {
 		entity = new ResponseEntity<List<DateDTO>>(dateList,HttpStatus.OK);
 		return entity;			
 	}
+=======
+>>>>>>> Base
 }

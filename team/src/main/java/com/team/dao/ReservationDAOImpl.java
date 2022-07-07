@@ -7,7 +7,10 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
+<<<<<<< HEAD
 import com.team.domain.DateDTO;
+=======
+>>>>>>> Base
 import com.team.domain.FieldDTO;
 import com.team.domain.MemberDTO;
 import com.team.domain.ReservDTO;
@@ -46,6 +49,7 @@ public class ReservationDAOImpl implements ReservationDAO{
 		
 	}
 	
+<<<<<<< HEAD
 	@Override
 	public List<DateDTO> getDateList(DateDTO dateDTO) {
 		System.out.println("getDateList()");
@@ -57,6 +61,10 @@ public class ReservationDAOImpl implements ReservationDAO{
 		
 		return sqlSession.selectOne(namespace+".getReservation",s_id);
 	}
+=======
+	
+	
+>>>>>>> Base
 	
 	
 }

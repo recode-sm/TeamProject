@@ -59,10 +59,16 @@
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-116234591-1"></script>
 	
+<<<<<<< HEAD
+=======
+	
+	
+>>>>>>> Base
 	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 	<script>
 	<%
 	//JSON 형식으로 달의 날자별 예약현황을 전송받음
+<<<<<<< HEAD
 // 	JSONArray thisMonthResData = ${dateList };
 	
 		//예약가능 요일 (일~월, 가능0 불가능1)
@@ -76,6 +82,23 @@
 // 		int price = 60000;
 	%>
 
+=======
+	//JSONArray thisMonthResData = (JSONArray)request.getAttribute("thisMonthResData");
+	//JSONArray nextMonthResData = (JSONArray)request.getAttribute("nextMonthResData");
+
+		//예약가능 요일 (일~월, 가능0 불가능1)
+		char[] possibleDay = {'0','0','0','0','0','0','0'};
+		//예약가능 시간 (start time~end time) end - start = 이용가능시
+		int startTime = 8;
+		int endTime = 22;
+		//총 이용 가능 시간
+		int totalUsingTime = endTime - startTime;
+		//시간당 가격
+// 		int price = 0;
+		
+	%>
+
+>>>>>>> Base
 	//예약이 가득찬 날들의 배열
 // 	var thisMonthFullDateList = new Array();
 	// <c:forEach items="${thisMonthFullDateList}" var = "date">
@@ -86,8 +109,11 @@
 //	 	nextMonthFullDateList.push(${date});
 	// </c:forEach>
 
+<<<<<<< HEAD
 	var thisMonthResDate = new Array();
 
+=======
+>>>>>>> Base
 	//date객체 획득. 가변
 	var today = new Date();
 	//today 보조. 고정
@@ -96,7 +122,11 @@
 	var selectedDayCell;
 	var selectedTimeCell;
 
+<<<<<<< HEAD
 	//오늘에 해당하는 실제 월
+=======
+	//오늘에 해당하는 월
+>>>>>>> Base
 	var realMonth = date.getMonth()+1; 
 	var realToDay = date.getDate()
 
@@ -124,7 +154,10 @@
 			return false;
 		}
 		today = new Date(today.getFullYear(), today.getMonth()+1, today.getDate());
+<<<<<<< HEAD
 		
+=======
+>>>>>>> Base
 		buildCalendar();
 	}
 
@@ -136,7 +169,11 @@
 		var lastDate = new Date(today.getFullYear(), today.getMonth()+1, 0);
 		
 		//현재 참조중인 월 
+<<<<<<< HEAD
 		var nowMonth = today.getMonth()+1; //nextCalendar()에서 today 변수를 getMonth+1 했으므로 +2가 된 상황
+=======
+		var nowMonth = today.getMonth()+1;
+>>>>>>> Base
 		//이번달이면 0, 다음달이면 1 리턴
 		monthEquals = thisMonth(nowMonth, realMonth);
 		
@@ -170,8 +207,14 @@
 			noCount = 0;
 			cell = row.insertCell();
 			//cell에 id 부여
+<<<<<<< HEAD
 			cell.setAttribute('id', i*1);
 			cell.innerHTML = i*1;
+=======
+			cell.setAttribute('id', i);
+			cell.innerHTML = i;
+			//cell.innerHTML = '<label onclick="prevCalendar()">' + i + '</label>';
+>>>>>>> Base
 			cell.align = "center";
 			
 			//셀 생성 후 count 증가
@@ -205,6 +248,7 @@
 	        	noCount = noCount + 1;
 	        }
 			
+<<<<<<< HEAD
 			if (noCount > 0){
 				cell.style.backgroundColor = "#E0E0E0";
 				cell.innerHTML = "<font color='#C6C6C6' >" + i + "</font>";
@@ -253,10 +297,43 @@
 					selectedDate = this.getAttribute('id');
 					
 					//선택되었던 셀 색 변화
+=======
+
+			if (noCount > 0){
+				cell.style.backgroundColor = "#E0E0E0";
+				cell.innerHTML = "<font color='#C6C6C6' >" + i + "</font>";
+			} else {
+				cell.onclick = function(){
+					selectedTimeAndTotalPriceInit();
+					//선택된 날의 연, 월, 일 계산 (일자의 경우 id속성 참조)
+			    	clickedYear = today.getFullYear();
+			    	clickedMonth = ( 1 + today.getMonth() );
+			    	clickedDate = this.getAttribute('id');
+			    	clickedDate = clickedDate >= 10 ? clickedDate : '0' + clickedDate;
+			    	clickedMonth = clickedMonth >= 10 ? clickedMonth : '0' + clickedMonth;
+			    	
+			    	clickedYMD = clickedYear + "-" + clickedMonth + "-" + clickedDate;
+			
+			    	//하단에 예약일시 표시
+// 					inputField = document.getElementById("selectedDate1");
+// 					inputField.value = clickedYMD;
+
+					$("#selectedDate1").text(clickedYMD);
+// 					$("#selectedDate2").text(clickedYMD);
+					$("#selectedDate2").val(clickedYMD);
+					
+					//선택된 월, 일 변수 저장
+					selectedMonth = today.getMonth() + 1;
+					selectedDate = this.getAttribute('id');
+				
+					
+					//선택된 셀 색 변화
+>>>>>>> Base
 					if(selectedDayCell != null){
 						selectedDayCell.bgColor = "";
 					}
 					
+<<<<<<< HEAD
 					//선택한 셀 색 변화
 					selectedDayCell = this;
 					this.bgColor = "#fbedaa";
@@ -267,6 +344,17 @@
 			}
 		}
 		
+=======
+					selectedDayCell = this;
+					this.bgColor = "#fbedaa";
+				
+			   	
+					//time table 생성
+					timeTableMaker(today.getMonth() + 1,this.getAttribute('id'));
+				}
+			}
+		}
+>>>>>>> Base
 		//예약이 가득찬 날인 경우 cell 비활성화 및 색상 변경
 //	 	checkMonth = thisMonth(nowMonth, realMonth); 의문
 // 		fullDate = [];
@@ -305,11 +393,21 @@
 	}
 	
 	//이번달이면 0 리턴, 다음달이면 1 리턴
+<<<<<<< HEAD
 	function thisMonth(todayMonth, dateMonth){
 		console.log("todayMonth : " + todayMonth + ", dateMonth : " + dateMonth);
 		if (todayMonth*1 == dateMonth*1){
 			return 0;
 		} 
+=======
+	function thisMonth(todayMonth, realMonth){
+		console.log("todayMonth : " + todayMonth + ", realMonth : " + realMonth);
+		if (todayMonth*1 == realMonth*1){
+			console.log("이번달 이구요")
+			return 0;
+		} 
+		console.log("다음달 이구요")
+>>>>>>> Base
 		return 1;
 	}
 
@@ -318,19 +416,31 @@
 // 	var price = document.getElementById('tPrice').value();
 	var startTime = "0";
 	var endTime = "22";
+<<<<<<< HEAD
 	
+=======
+>>>>>>> Base
 	//선택된 시간중 가장 빠른/늦은 시간;
 	var selectedFirstTime = 24*1;
 	var selectedFinalTime = 0*1;
 
+<<<<<<< HEAD
 	console.log(thisMonthResDate);
 
+=======
+>>>>>>> Base
 	//예약시간표를 만들 table객체 획득
 	//달력 onclick function => timeTableMaker(today.getMonth() + 1,this.getAttribute('id'));
 	function timeTableMaker(selectedMonth, selectedDate){
 		row = null
 		cnt = 0;
+<<<<<<< HEAD
 
+=======
+		
+// 		month = selectedMonth;
+// 		date = selectedDate;
+>>>>>>> Base
 		var timeTable = document.getElementById("timeTable");
 		
 		row = timeTable.insertRow();
@@ -340,6 +450,7 @@
 			timeTable.deleteRow(timeTable.rows.length-1);
 		}
 		
+<<<<<<< HEAD
 		//표시된 월과 실제 월 비교, 같으면 0값
 		var nowMonth = today.getMonth()+1;
 		checkMonth = thisMonth(nowMonth, realMonth);
@@ -361,15 +472,38 @@
 					//해당 row의 셀 생성
 					cell = row.insertCell();
 
+=======
+		for (i = 0; i < endTime - startTime; i=i+2){
+			
+			//곱해서 숫자타입으로 변환
+			cellTime = startTime*1 + i;
+				
+			if(date.getDate() == selectedDate){
+				if(date.getHours() < cellTime){
+				
+					cellStartTimeText = cellTime + ":00";
+					cellEndTimeText = (cellTime + 2) + ":00";
+					inputCellText = cellStartTimeText + " ~ " +  cellEndTimeText;
+					
+					//해당 row의 셀 생성
+					cell = row.insertCell();
+>>>>>>> Base
 					//cell에 cellTime 값을 가진 id 부여
 					cell.setAttribute('id', cellTime);
 					//셀에 입력
 					cell.innerHTML = inputCellText;
+<<<<<<< HEAD
+=======
+	//	 	 		selectedCell.bgColor = "#FFFFFF";
+	//		 		cell.innerHTML = "<font color='#C6C6C6' >" + inputCellText + "</font>";
+	
+>>>>>>> Base
 		 			cell.align = "center";
 			
 					//셀 생성 후 count 증가
 					cnt = cnt + 1;
 		 			
+<<<<<<< HEAD
 				  	//3줄 입력 완료시 개행
 				    if (cnt % 3 == 0){
 				    	row = timeTable.insertRow();
@@ -415,11 +549,74 @@
 				
 				//셀에 입력
 				cell.innerHTML = inputCellText;
+=======
+				  	//일주일 입력 완료시 개행
+				    if (cnt % 3 == 0){
+				    	row = timeTable.insertRow();
+				    }
+					
+					//클릭이벤
+						cell.onclick = function(){
+							cellTime = this.getAttribute('id'); //cellTime 값을 cellTime 변수에 저장
+							cellTime = cellTime*1;
+				 			
+							this.bgColor = "#fbedaa";
+							
+	//	 					if (cellTime < selectedFirstTime) {
+	//	 						selectedFirstTime = cellTime
+	//	 					}
+	//	 					if (cellTime > selectedFinalTime) {
+	//	 						selectedFinalTime = cellTime
+	//	 					}
+	
+							//선택된 셀 색 변화
+							if(selectedTimeCell != null){
+								selectedTimeCell.bgColor = "";
+							}
+						
+							selectedTimeCell = this;
+							this.bgColor = "#fbedaa";
+							
+							//하단의 예약일시에 시간 표시
+							resTime  = selectedFirstTime + ":00 ~ " + (selectedFinalTime + 2) + ":00";
+							
+	//	 					resTimeForm = document.getElementById("selectedTime");
+	//	 					resTimeForm.value = resTime;
+	
+							selectedTime = cellTime + ":00 ~ " + (cellTime + 2) + ":00";
+							
+							$("#selectedTime").val(selectedTime);
+							
+							//하단의 결제정보에 가격정보 표시
+	//	 					useTime = (selectedFinalTime + 1) - selectedFirstTime;
+							
+	//	 					useTimeForm = document.getElementById("totalPrice");
+	//	 					useTimeForm.value = useTime * price;
+							
+							$("#totalPrice").text(price);
+						}
+				}
+			}else{
+				cellStartTimeText = cellTime + ":00";
+				cellEndTimeText = (cellTime + 2) + ":00";
+				inputCellText = cellStartTimeText + " ~ " +  cellEndTimeText;
+				
+				//해당 row의 셀 생성
+				cell = row.insertCell();
+				//cell에 cellTime 값을 가진 id 부여
+				cell.setAttribute('id', cellTime);
+				//셀에 입력
+				cell.innerHTML = inputCellText;
+//	 	 		selectedCell.bgColor = "#FFFFFF";
+//		 		cell.innerHTML = "<font color='#C6C6C6' >" + inputCellText + "</font>";
+
+>>>>>>> Base
 	 			cell.align = "center";
 		
 				//셀 생성 후 count 증가
 				cnt = cnt + 1;
 	 			
+<<<<<<< HEAD
 			  	//3줄 입력 완료시 개행
 			    if (cnt % 3 == 0){
 			    	row = timeTable.insertRow();
@@ -460,10 +657,88 @@
 				}
 			}
 		}
+=======
+			  	//일주일 입력 완료시 개행
+			    if (cnt % 3 == 0){
+			    	row = timeTable.insertRow();
+			    }
+				
+				//클릭이벤
+					cell.onclick = function(){
+						cellTime = this.getAttribute('id'); //cellTime 값을 cellTime 변수에 저장
+						cellTime = cellTime*1;
+			 			
+						this.bgColor = "#fbedaa";
+						
+//	 					if (cellTime < selectedFirstTime) {
+//	 						selectedFirstTime = cellTime
+//	 					}
+//	 					if (cellTime > selectedFinalTime) {
+//	 						selectedFinalTime = cellTime
+//	 					}
+
+						//선택된 셀 색 변화
+						if(selectedTimeCell != null){
+							selectedTimeCell.bgColor = "";
+						}
+					
+						selectedTimeCell = this;
+						this.bgColor = "#fbedaa";
+						
+						//하단의 예약일시에 시간 표시
+						resTime  = selectedFirstTime + ":00 ~ " + (selectedFinalTime + 2) + ":00";
+						
+//	 					resTimeForm = document.getElementById("selectedTime");
+//	 					resTimeForm.value = resTime;
+
+						selectedTime = cellTime + ":00 ~ " + (cellTime + 2) + ":00";
+						
+						$("#selectedTime").val(selectedTime);
+						
+						//하단의 결제정보에 가격정보 표시
+//	 					useTime = (selectedFinalTime + 1) - selectedFirstTime;
+						
+//	 					useTimeForm = document.getElementById("totalPrice");
+//	 					useTimeForm.value = useTime * price;
+						
+						$("#totalPrice").text(price);
+					}
+			}
+		}
+		
+		//JSON으로 테이블 td 핸들링
+		//이번달 0 다음달 1
+// 		nowMonth = today.getMonth()+1;
+// 		checkMonth = thisMonth(nowMonth, realMonth);
+// 		var json = [];
+// 		if(checkMonth == 0){
+	<%-- 		json = <%//=thisMonthResData%>; --%>
+// 		} else {
+	<%-- 		json = <%//=nextMonthResData%>; --%>
+// 		}
+
+// 		for(i = 0; i < Object.keys(json).length; i++){
+// 			if (date == json[i].date){
+// 				jsonObject = json[i];
+// 				for(j = 0; j < jsonObject.startNum.length; j++){
+// 					startNum = jsonObject.startNum[j];
+// 					shareTime = jsonObject.shareTime[j];
+// 					console.log("startNum: " + startNum + ", shareTime : " + shareTime);
+// 					for(k = startNum; k < startNum*1 + shareTime; k++){
+// 						cell = timeTable.rows[k].cells[0];
+// 						cell.style.backgroundColor = "#E0E0E0";
+// 						cell.style.color = '#C6C6C6';
+// 						cell.onclick = function(){};
+// 					}
+// 				}
+// 			}
+// 		}
+>>>>>>> Base
 	}
 
 	//날짜 클릭시 예약시간 및 결제정보 초기화
 	function selectedTimeAndTotalPriceInit(){
+<<<<<<< HEAD
 		//날짜초기화
 		$("#selectedDate1").text("");
 		inputDate = document.getElementById("selectedDate2");
@@ -472,19 +747,55 @@
 		inputTime = document.getElementById("selectedTime");
 		inputTime.value = "";
 		//시간테이블 초기화
+=======
+
+		$("#selectedDate1").text("");
+		$("#selectedDate2").text("");
+		
+// 		useTimeForm = document.getElementById("totalPrice");
+// 		useTimeForm.value = "";
+		
+		$("#selectedTime").text("");
+		$("#totalPrice").text("");
+		
+>>>>>>> Base
 		$("#timeTable").text("");
 		
 		selectedFirstTime = 24*1;
 		selectedFinalTime = 0*1;
 	}
 
+<<<<<<< HEAD
 	//다음달 달력 표시시 시간표 초기화
 	function tableinit(){
 		selectedTimeAndTotalPriceInit();
 		buildCalendar();
 	}
+=======
+	//시간표 초기화
+	function tableinit(){
+// 		timeTableMaker(selectedMonth, selectedDate);
+		selectedTimeAndTotalPriceInit();
+		buildCalendar();
+	}
+	
+	
+	</script>
+	
+	
+	<script>
+// 	  window.dataLayer = window.dataLayer || [];
+// 	  function gtag(){dataLayer.push(arguments);}
+// 	  gtag('js', new Date());
+
+// 	  gtag('config', 'UA-116234591-1');
+>>>>>>> Base
 	</script>
 
+<<<<<<< HEAD
+=======
+	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/resources/css/content.css?v=201811160138">
+>>>>>>> Base
 	
 </head> 
 
@@ -501,7 +812,11 @@
 		<jsp:include page="../include/header.jsp"></jsp:include>
 	<!-- //Header -->
 <FORM name="form" method="post" action="<%=request.getContextPath() %>/reservation/reservationPro">
+<<<<<<< HEAD
 <input type="hidden" id="f_num" name="f_num" value="${fieldDTO.f_num }">
+=======
+<input type="hidden" name="f_num" value="${fieldDTO.f_num }">
+>>>>>>> Base
 <input type="hidden" name="reg_date" value="2022-06-16">
 
 
@@ -601,7 +916,11 @@
 							<table id="calendar" align="center">
 								<tr>
 									<td align="center"><label onclick="javascript:prevCalendar(); tableinit();"> ◀ </label></td>
+<<<<<<< HEAD
 									<td colspan="5" align="center" id="calendarTitle">yyyy년 mm월</td>
+=======
+									<td colspan="5" align="center" id="calendarTitle">yyyy년 m월</td>
+>>>>>>> Base
 									<td align="center"><label onclick="javascript:nextCalendar(); tableinit();"> ▶ </label></td>
 								</tr>
 								<tr>
@@ -687,7 +1006,11 @@
 									</tr>
 									<tr>
 										<th scope="row">예약시간</th>
+<<<<<<< HEAD
 										<td><input type="text" id="selectedTime" name="time" value="선택된 시간이 없습니다"></td>
+=======
+										<td><input type="text" id="selectedTime" name="start_time" value="선택된 시간이 없습니다"></td>
+>>>>>>> Base
 										
 									</tr>
 									<tr>
@@ -726,6 +1049,211 @@
 	</section>
 </FORM>
 
+<<<<<<< HEAD
+=======
+<script>
+// $(function(){
+// 	getCalendar('2022-06-16'); 
+// 	getTime();
+// });
+
+// function addCommas(str){
+// 	str = ""+str+"";
+// 	var retValue = "";
+// 	for(i=0; i<str.length; i++){
+// 		if(i > 0 && (i%3)==0) {
+// 			retValue = str.charAt(str.length - i -1) + "," + retValue;
+// 		}
+// 		else {
+// 			retValue = str.charAt(str.length - i -1) + retValue;
+// 		}
+// 	}
+// 	return retValue;
+// }
+
+// function delCommas(str){
+// 	str = ""+str+"";
+// 	var retValue = "";
+// 	retValue = str.replace(",","");
+// 	retValue = retValue.replace(",",""); 
+// 	return retValue;
+// }
+
+// function getCalendar(v){
+// 	var stadium_code = document.form.stadium_code.value; 
+// 	$.get("ajax_calendar.asp?stadium_code="+stadium_code+"&reqdate="+v , function(r){ 
+// 		$("#calendarDiv").html(r);
+// 	});
+// }
+
+// function getCalendarByStadium(e){
+// 	var stadium_code = e.value;
+// 	var v; 
+// 	v = $("#regdate").text();
+// 	v = v.replace(".","-");
+// 	v = v.replace(".","-"); 
+ 
+// 	$.get("ajax_calendar.asp?stadium_code="+stadium_code+"&reqdate="+v , function(r){ 
+// 		$("#calendarDiv").html(r);
+// 	});
+// }
+
+// function getTime(){
+// 	var reqdate = document.form.reg_date.value;
+// 	var stadium_code = document.form.stadium_code.value;
+// 	//window.open("ajax_time.asp?reqdate="+reqdate+"&stadium_code="+stadium_code );
+// 	$.get("ajax_time.asp?reqdate="+reqdate+"&stadium_code="+stadium_code+"&branch_code=HM0009", function(r){ 
+// 		$("#timeDiv").html(r);
+// 		calc();
+// 	}); 
+// } 
+
+// function showStadiumName(e){
+// 	$("#stadiumBottom").text($(e).find("option[value='" + $(e).val() + "']").text());
+// }
+
+// function chgDate(e, v){
+// 	var nv = v.replace("-",".");
+// 	nv = nv.replace("-",".");
+// 	$("#regdate").text(nv);
+// 	$("#dateBottom").text(nv);
+// 	document.form.reg_date.value=v;
+// 	getTime(); 
+// 	$(".buts").removeClass("on");
+// 	$(e).parent().children(".buts").addClass("on");
+// }
+
+// function setTime(e){ 
+// 	if ($(e).parent().children(".r_time_no_check").prop("checked"))
+// 	{
+// 		$(e).removeClass("on");
+// 		$(e).parent().children(".r_time_no_check").prop("checked",false);
+// 	}else{
+// 		$(e).addClass("on");
+// 		$(e).parent().children(".r_time_no_check").prop("checked",true);
+
+// 	}
+// 	calc();
+// }
+
+// function calc(){
+// 	var rent_price = 0 ;
+// 	var rent_count = 0 ;
+// 	var shour
+// 	var timestr = "";
+// 	var optstr = "";
+
+// 	$(".r_time_no_check:checkbox:checked").each(function(){
+// 		rent_price = rent_price + parseInt($(this).attr("alt"));
+
+// 		var t = $(this).val().split("|");
+// 		var stime = t[1];
+// 		var etime = t[2];
+// 		timestr = timestr + stime + "~" + etime + "<BR>";
+
+// 		rent_count ++;
+// 	});
+
+// 	var option_price = 0 ;
+// 	$(".opt_total").each(function(){
+// 		option_price = option_price + parseInt($(this).val()); 
+// 	});
+	
+// 	$(".opt_cnt").each(function(){
+// 		if (parseInt($(this).val())>0)
+// 		{
+// 			optstr = optstr + $(this).parent().children(".opt_name").val() + " : " + $(this).val() + "<BR>"; 
+// 		}
+// 	});
+
+// 	var total_price = rent_price + option_price;
+
+// 	$("#rentPriceView").text(addCommas(rent_price));
+// 	$("#rentCountView").text(addCommas(rent_count));
+// 	$("#optionPriceView").text(addCommas(option_price)); 
+// 	$("#totalPriceView").text(addCommas(total_price));
+
+// 	$("#priceBottom").text(addCommas(total_price));
+// 	$("#timeBottom").html(timestr);
+// 	$("#optionBottom").html(optstr);
+// 	document.form.total_price.value=total_price;
+// }
+
+// function selOpt1(e){
+// 	var c;
+// 	var opts = e.value;  
+// 	var optArr = opts.split("||");
+// 	$(e).parent().parent().children(".opt_idx").val(optArr[0]); 
+// 	$(e).parent().parent().children(".opt_price").val(optArr[1]);  
+// 	$(e).parent().parent().children(".opt_name").val(optArr[2]);  
+// 	var price = parseInt(optArr[1]); 
+
+// 	var cnt = parseInt($(e).parent().parent().children(".opt_c").val()); 
+// 	$(e).parent().parent().children(".price").children(".priceView").text(addCommas(price*cnt)); 
+// 	$(e).parent().parent().children(".opt_total").val(price*cnt);  
+
+// 	c = e.text();
+// 	$(e).parent().parent().find("label").text(c);
+
+// 	calc();
+// }
+// function selOpt2(e){
+// 	var cnt = parseInt(e.value);  
+// 	$(e).parent().children(".opt_cnt").val(cnt);  
+
+// 	var price = parseInt($(e).parent().children(".opt_price").val()); 
+// 	$(e).parent().children(".price").children(".priceView").text(addCommas(price*cnt)); 
+// 	$(e).parent().children(".opt_total").val(price*cnt);  
+	
+// 	calc();
+// }
+
+// function cloneOpt(e, v){  
+// 	var a,b;
+
+// 	a=$(".opt_list").length;
+// 	a++;
+
+// 	var clon = $(e).parent().parent().parent().clone();
+
+// 	clon.find("label").attr("for","opt"+a);
+// 	clon.find("select").attr("id","opt"+a);
+
+//  	clon.find(".opt_idx").val("");
+// 	clon.find(".opt_name").val("");
+// 	clon.find(".opt_price").val("0");
+// 	clon.find(".opt_cnt").val("0");
+// 	clon.find(".opt_c").val("0"); 
+// 	clon.find(".priceView").text("0"); 
+
+// 	clon.attr('data-id', 1);
+
+// 	b = clon.find("select option:eq(0)").text();
+// 	clon.find("select option:eq(0)").prop("selected", true);
+// 	clon.find("label").text(b);
+
+// 	$(e).parent().parent().parent().parent().append(clon);  
+// }
+// function removeOpt(e){
+// 	var a =$(e).parent().parent().parent().attr("data-id");
+// 	if(a > 0) {
+// 		$(e).parent().parent().parent().remove(); 
+// 		calc();
+// 	}
+// }
+
+// function tog(v){
+// 	$("."+v).toggle();
+// }
+
+// function ok(){ 
+// 	document.form.target="HiddenFrame";
+// 	document.form.action="rese_form_ok.asp";
+// 	document.form.submit();
+// }
+
+</script>
+>>>>>>> Base
 	<!-- Footer -->
 		<jsp:include page="../include/footer.jsp"></jsp:include>
 	<!-- //Footer -->

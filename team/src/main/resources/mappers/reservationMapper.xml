@@ -21,6 +21,7 @@
 	</select>
 	
 	<insert id="insertReserv">
+<<<<<<< HEAD
 		insert into reservation(id,f_num,time,r_date,total_price) 
 		values (#{id},#{f_num},#{time},#{r_date},#{total_price})
 	</insert>
@@ -37,4 +38,9 @@
 		 where r.id=#{s_id} and r_num=(select max(r_num) from reservation where r.id=#{s_id})
 	</select>
 	
+=======
+		insert into reservation(id,f_num,f_name,start_time,r_date,total_price) 
+		values (#{id},#{f_num},#{f_name},#{start_time},#{r_date},#{total_price})
+	</insert>
+>>>>>>> Base
 </mapper>

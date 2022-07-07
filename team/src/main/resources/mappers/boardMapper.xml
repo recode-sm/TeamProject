@@ -37,6 +37,7 @@
 		update board set readcount = readcount + 1 where b_num = #{b_num}
 	</update>
 
+<<<<<<< HEAD
 	<select id="userCheck" resultType="com.team.domain.BoardDTO">
 		select id from board where id = #{id}
 	</select>
@@ -44,4 +45,6 @@
 	<select id="getCommentList" resultType="com.team.domain.CommentDTO">
 		select * from comment where b_num=#{b_num}
 	</select>
+=======
+>>>>>>> Base
 </mapper>

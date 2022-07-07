@@ -2,7 +2,10 @@ package com.team.dao;
 
 import java.util.List;
 
+<<<<<<< HEAD
 import com.team.domain.DateDTO;
+=======
+>>>>>>> Base
 import com.team.domain.FieldDTO;
 import com.team.domain.MemberDTO;
 import com.team.domain.ReservDTO;
@@ -14,6 +17,9 @@ public interface ReservationDAO {
 	public MemberDTO getPhone(String id);
 	public FieldDTO getField(int f_num);
 	void insertReserv(ReservDTO reservDTO);
+<<<<<<< HEAD
 	List<DateDTO> getDateList(DateDTO dateDTO);
 	public ReservDTO getReservation(String s_id);
+=======
+>>>>>>> Base
 }

@@ -2,7 +2,10 @@ package com.team.dao;
 
 import java.util.List;
 import com.team.domain.BoardDTO;
+<<<<<<< HEAD
 import com.team.domain.CommentDTO;
+=======
+>>>>>>> Base
 import com.team.domain.PageDTO;
 
 public interface BoardDAO {
@@ -26,7 +29,11 @@ public interface BoardDAO {
 	public void deleteBoard(int b_num);
 
 	public void updateReadcount(int b_num);
+<<<<<<< HEAD
 	
 	public BoardDTO userCheck(BoardDTO boardDTO2);
 	public List<CommentDTO> getCommentList(int b_num);
+=======
+
+>>>>>>> Base
 }

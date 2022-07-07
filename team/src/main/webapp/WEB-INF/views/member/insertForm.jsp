@@ -54,10 +54,17 @@
 	</script>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 
+<<<<<<< HEAD
 	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>resources/css/content.css">
 </head>
 
 <script language="Javascript">
+=======
+	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/resources/css/content.css">
+</head>
+
+<script type="text/javascript">
+>>>>>>> Base
 	$(document).ready(function() {
 		$('html').addClass('memb');
 	});
@@ -70,14 +77,22 @@
 		<!-- Contents -->
 		<div class="content">
 			<div class="member_wrap">
+<<<<<<< HEAD
 				<h1 onclick = "document.location.href='<%=request.getContextPath() %>/';"><span class="hide">HM SPORTS</span></h1>
+=======
+				<h1 onclick ="document.location.href='<%=request.getContextPath() %>/';"><span class="hide">HM SPORTS</span></h1>
+>>>>>>> Base
 
 				<form name="frmJoin" action="<%=request.getContextPath() %>/member/insertPro" method="post" >
 				<div class="join_wrap info">
 					<dl>
 						<dt>아이디(이메일) <span>(필수)</span></dt>
 						<dd>
+<<<<<<< HEAD
 							<input type="text"  name="id" style="width:100%" />
+=======
+							<input type="text"  name="id" style=" width:100%" />
+>>>>>>> Base
 							<span class="t_help">이미 사용중이거나 탈퇴한 이메일 입니다.</span>
 						</dd>
 						<dt>비밀번호 <span>(필수)</span></dt>
@@ -95,6 +110,7 @@
 							<input type="text"  name="name" style="width:100%" />
 							<span class="t_help">필수 항목 입니다.</span>
 						</dd>
+<<<<<<< HEAD
 						<dt>휴대전화 <span>(필수)</span></dt>
 						<dd> 
 							<div class="phone">
@@ -164,10 +180,21 @@ function not_sms_cnfmed(){
 					
 					</form>
 
+=======
+ 					</dl>
+ 					</div>
+ 					
+					<div class="btn_wrap">
+						<input type="button" class="btn_middle"  onclick="checkForm()" value="가입하기">
+					</div>
+					</form>
+					
+>>>>>>> Base
 					<div class="bot_info">
 						<span class="logo"><em class="hide">HM SPORTS</em></span>
 						<p class="copy">COPYRIGHT©  HM SPORTS. ALLRIGHT RESERVED</p>
 					</div>
+<<<<<<< HEAD
 
 
 				</div>
@@ -195,6 +222,13 @@ function not_sms_cnfmed(){
 
  
 <SCRIPT>
+=======
+				</div>
+			</div>
+	</section>
+ 
+<script type="text/javascript">
+>>>>>>> Base
 function CheckEmail(mStr){
 	var frm = document.frmJoin;
 	if (mStr !== "etc") {
@@ -215,12 +249,23 @@ function checkForm(){
 		frm.id.focus();
 		return;
 	}
+<<<<<<< HEAD
 	if (EmptyChk(frm.pass.value) < 4) {
 		alert("[비밀번호]는 4이상 입력되어야 합니다.");
 		frm.pass.focus();
 		return;
 	}
 	if (EmptyChk(frm.pass.value) < 4) {
+=======
+	var pos2 = frm.id.value.indexOf('@');
+	if (pos2 == -1) {
+		alert("[이메일]을 형식 입력하세요.");
+		frm.id.focus();
+		return;
+	}
+	
+	if (frm.pass.value.length < 4) {
+>>>>>>> Base
 		alert("[비밀번호]는 4이상 입력되어야 합니다.");
 		frm.pass.focus();
 		return;
@@ -234,6 +279,7 @@ function checkForm(){
 		alert("[이름]을 입력하세요.");
 		frm.name.focus();
 		return;
+<<<<<<< HEAD
 	}  
 	if (frm.htel1.value == "") {
 		alert("[핸드폰번호]를 입력하세요.");
@@ -271,10 +317,35 @@ function checkForm(){
 //-->
 </SCRIPT>
 
+=======
+	}
+	frm.submit();
+}
+
+$(document).ready(function(){
+	$('#dup').click(function(){
+		$.ajax({
+			url:'${pageContext.request.contextPath}/member/msg',
+			data:{'id':$('#id').val()},
+			success:function(rdata){
+				if(rdata=="iddup"){
+					rdata="아이디 중복";
+				}else{
+					rdata="아이디 사용가능";
+				}
+				$('#dupdiv').html(rdata);
+			}
+		});
+	});
+});
+
+</script>
+>>>>>>> Base
 	<!-- Footer -->
 	<footer id="footer">
 		<div class="footer_wrap">
 			<span class="logo"></span>
+<<<<<<< HEAD
 			<div class="foot_util">
 				<ul>
 					<li><a href="/member/privacy.asp">개인정보처리방침</a></li>
@@ -282,6 +353,8 @@ function checkForm(){
 					<li><a href="/member/emailcollection.asp">이메일무단수집거부</a></li>
 				</ul>
 			</div>
+=======
+>>>>>>> Base
 			<p class="info">서울시 성동구 왕십리로 58 FORHU 709호(성수동 1가)<span>TEL : 02-332-7807</span><span>FAX : 02-2061-0373</span></p>
 			<p class="copy">COPYRIGHTⓒHNS. ALLRIGHT RESERVED</p>
 		</div>

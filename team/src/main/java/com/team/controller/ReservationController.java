@@ -52,6 +52,7 @@ public class ReservationController {
 	public String reservationPro(HttpServletRequest request,Model model) throws Exception{
 		ReservDTO reservDTO = new ReservDTO();
 		reservDTO.setF_num(Integer.parseInt(request.getParameter("f_num")));
+<<<<<<< HEAD
 //		reservDTO.setF_name(request.getParameter("f_name"));
 		reservDTO.setId(request.getParameter("id"));
 		reservDTO.setR_date(request.getParameter("r_date"));
@@ -72,6 +73,21 @@ public class ReservationController {
 		
 		System.out.println(reservDTO.getTime());
 		System.out.println(reservDTO.getTotal_price());
+=======
+		reservDTO.setF_name(request.getParameter("f_name"));
+		reservDTO.setId(request.getParameter("id"));
+		reservDTO.setR_date(request.getParameter("r_date"));
+		reservDTO.setStart_time(request.getParameter("start_time"));
+		reservDTO.setTotal_price(Integer.parseInt(request.getParameter("price")));
+		
+		reservationService.insertReserv(reservDTO);
+		
+		return "redirect:/reservation/Result";
+	}
+	@RequestMapping(value = "/reservation/Result", method = RequestMethod.GET)
+	public String reserResult(HttpServletRequest request,Model model) throws Exception{
+
+>>>>>>> Base
 		
 		return "/reservation/reservResult";
 	}

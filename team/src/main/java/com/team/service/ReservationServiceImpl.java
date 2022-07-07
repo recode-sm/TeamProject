@@ -7,7 +7,10 @@ import javax.inject.Inject;
 import org.springframework.stereotype.Service;
 
 import com.team.dao.ReservationDAO;
+<<<<<<< HEAD
 import com.team.domain.DateDTO;
+=======
+>>>>>>> Base
 import com.team.domain.FieldDTO;
 import com.team.domain.MemberDTO;
 import com.team.domain.ReservDTO;
@@ -46,6 +49,7 @@ public class ReservationServiceImpl implements ReservationService{
 		reservationDAO.insertReserv(reservDTO);
 		
 	}
+<<<<<<< HEAD
 	
 	@Override
 	public List<DateDTO> getDateList(DateDTO dateDTO) {
@@ -59,4 +63,10 @@ public class ReservationServiceImpl implements ReservationService{
 
 		return reservationDAO.getReservation(s_id);
 	}
+=======
+
+	
+	
+	
+>>>>>>> Base
 }

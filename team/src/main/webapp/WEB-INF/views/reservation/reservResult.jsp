@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<<<<<<< HEAD
 	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/resources/css/reservResult.css">
 	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/resources/css/content.css?v=201811160138">
 <meta charset="UTF-8">
@@ -131,5 +132,12 @@
 			<!-- //Contents -->
 	</section>
 </FORM>
+=======
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+>>>>>>> Base
 </body>
 </html>

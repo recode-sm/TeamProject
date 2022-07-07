@@ -70,7 +70,7 @@
 		<!-- Contents -->
 		<div class="content">
 			<div class="member_wrap">
-				<h1 img="<%=request.getContextPath() %>/resources/img/chams.png" onclick ="document.location.href='<%=request.getContextPath() %>/';"><span class="hide">HM SPORTS</span></h1>
+				<h1 onclick ="document.location.href='<%=request.getContextPath() %>/';"><span class="hide">HM SPORTS</span></h1>
 
 				<form name="frmJoin" action="<%=request.getContextPath() %>/member/insertPro" method="post" >
 				<div class="join_wrap info">

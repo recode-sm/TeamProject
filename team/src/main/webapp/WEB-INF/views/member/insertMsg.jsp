@@ -4,9 +4,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>member/insertMsg.jsp</title>
 </head>
 <body>
-
+<script type="text/javascript">
+	alert("이미 가입된 아이디 입니다.");
+	history.back();
+</script>
 </body>
 </html>

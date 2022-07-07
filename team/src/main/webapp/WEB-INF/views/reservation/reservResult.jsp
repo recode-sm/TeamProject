@@ -16,24 +16,23 @@
 <script>   
     function requestPay() {
     	IMP.init('imp50478053');
-    	alert("a");
         // IMP.request_pay(param, callback) 결제창 호출
         IMP.request_pay({ // param
             pg: "html5_inicis",
             pay_method: "card",
-            merchant_uid: "ORD20180131-0000011",
-            name: docoument.getElementById("f_name").value,
-            amount: docoument.getElementById("price").value,
-//             buyer_email: "gildong@gmail.com",
-//             buyer_name: "홍길동",
-//             buyer_tel: "010-4242-4242",
-//             buyer_addr: "서울특별시 강남구 신사동",
-//             buyer_postcode: "01181"
+            merchant_uid: 'merchant_' + new Date().getTime(),
+            name: $("#f_name").val(),
+            amount: $("#price").val(),
+			buyer_email: $("#id").val(),
+            buyer_name: $("#id").val(),
+//             buyer_tel: $("#phone").val(),
+//              buyer_addr: "서울특별시 강남구 신사동",
+//              buyer_postcode: "01181"
         }, function (rsp) { // callback
             	if (rsp.success) { // 결제 성공 시: 결제 승인 또는 가상계좌 발급에 성공한 경우
                     // jQuery로 HTTP 요청
                     jQuery.ajax({
-                        url: "", // 예: https://www.myservice.com/payments/complete
+                        url: "reservation/reservComplete", // 예: https://www.myservice.com/payments/complete
                         method: "POST",
                         headers: { "Content-Type": "application/json" },
                         data: {
@@ -108,7 +107,7 @@
 									<tr>
 										<th>총 결제금액</th>
 										<td>
-										<input type="text" name="price" id="price" readonly value="${reservDTO.total_price}원" style="width:100%; border:0 solid black;"></td>
+										<input type="text" name="price" id="price" readonly value="${reservDTO.total_price}" style="width:100%; border:0 solid black;"></td>
 										
 									</tr>
 								</tbody>

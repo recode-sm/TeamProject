@@ -99,9 +99,6 @@
 	//오늘에 해당하는 실제 월
 	var realMonth = date.getMonth()+1; 
 	var realToDay = date.getDate()
-	
-	//현재 보고 있는 월
-	var nowMonth = today.getMonth()+1;
 
 	//예약가능 요일 계산해 배열 (일~월, 가능0 불가능1)
 	const possibleDay = "<%=possibleDay%>";
@@ -127,6 +124,7 @@
 			return false;
 		}
 		today = new Date(today.getFullYear(), today.getMonth()+1, today.getDate());
+		
 		buildCalendar();
 	}
 
@@ -138,7 +136,7 @@
 		var lastDate = new Date(today.getFullYear(), today.getMonth()+1, 0);
 		
 		//현재 참조중인 월 
-		var nowMonth = today.getMonth()+1;
+		var nowMonth = today.getMonth()+1; //nextCalendar()에서 today 변수를 getMonth+1 했으므로 +2가 된 상황
 		//이번달이면 0, 다음달이면 1 리턴
 		monthEquals = thisMonth(nowMonth, realMonth);
 		
@@ -219,11 +217,12 @@
 					$.ajax({
 						url:'${pageContext.request.contextPath}/reservation/jsonDate',
 						async:false,
-						data:{'date' : $("#calendarTitle").text() + this.getAttribute('id') + "일" },
+						data:{'date' : $("#calendarTitle").text() + this.getAttribute('id') + "일", 'num' : document.getElementById("f_num").value },
 						datatype:"json",
 						success:function(rdata){
+							console.log(rdata);
 							$.each(rdata, function(index, element){ 
-									thisMonthResDate.push(element.start_time);
+									thisMonthResDate.push(element.time);
 							});
 						}
 						,error:function(request,status,error){            
@@ -238,10 +237,10 @@
 			    	clickedYear = today.getFullYear(); 
 			    	clickedMonth = ( 1 + today.getMonth() );
 			    	clickedDate = this.getAttribute('id');
-			    	clickedDate = clickedDate >= 10 ? clickedDate : '0' + clickedDate;
-			    	clickedMonth = clickedMonth >= 10 ? clickedMonth : '0' + clickedMonth;
+// 			    	clickedDate = clickedDate >= 10 ? clickedDate : '0' + clickedDate;
+// 			    	clickedMonth = clickedMonth >= 10 ? clickedMonth : '0' + clickedMonth;
 			    	
-			    	clickedYMD = clickedYear + "-" + clickedMonth + "-" + clickedDate;
+			    	clickedYMD = clickedYear + "년" + clickedMonth + "월" + clickedDate + "일";
 			
 			    	//하단에 예약일시 표시
 					$("#selectedDate1").text(clickedYMD);
@@ -306,9 +305,9 @@
 	}
 	
 	//이번달이면 0 리턴, 다음달이면 1 리턴
-	function thisMonth(todayMonth, realMonth){
-		console.log("todayMonth : " + todayMonth + ", realMonth : " + realMonth);
-		if (todayMonth*1 == realMonth*1){
+	function thisMonth(todayMonth, dateMonth){
+		console.log("todayMonth : " + todayMonth + ", dateMonth : " + dateMonth);
+		if (todayMonth*1 == dateMonth*1){
 			return 0;
 		} 
 		return 1;
@@ -325,7 +324,7 @@
 	var selectedFinalTime = 0*1;
 
 	console.log(thisMonthResDate);
-	
+
 	//예약시간표를 만들 table객체 획득
 	//달력 onclick function => timeTableMaker(today.getMonth() + 1,this.getAttribute('id'));
 	function timeTableMaker(selectedMonth, selectedDate){
@@ -341,11 +340,11 @@
 			timeTable.deleteRow(timeTable.rows.length-1);
 		}
 		
-		//예약된 시간인 경우 cell 비활성화 및 색상 변경
 		//표시된 월과 실제 월 비교, 같으면 0값
+		var nowMonth = today.getMonth()+1;
 		checkMonth = thisMonth(nowMonth, realMonth);
 		console.log(checkMonth);
-		
+
 		for(i = 0; i < endTime - startTime; i=i+2){
 			//곱해서 숫자타입으로 변환, 시작시간
 			cellTime = startTime*1 + i;		
@@ -353,6 +352,7 @@
 			cellStartTimeText = cellTime + ":00";
 			cellEndTimeText = (cellTime + 2) + ":00";
 			inputCellText = cellStartTimeText + " ~ " +  cellEndTimeText;
+
 			
 			//오늘날짜 = 선택한날짜 
 			if(date.getDate() == selectedDate && checkMonth == 0){
@@ -396,9 +396,10 @@
 						inputTime.value = selectedTime;
 					});
 				  	
+					//예약된 시간인 경우 셀 비활성화 및 색상 변경
 					for (var s = 0; s < thisMonthResDate.length; s++){
 						
-						if(cellTime == thisMonthResDate[s]){
+						if(inputCellText == thisMonthResDate[s]){
 							cell.style.backgroundColor = "#E0E0E0";
 							cell.style.color = '#C6C6C6';
 			 				$(cell).off("click");
@@ -443,11 +444,15 @@
 					
 					inputTime = document.getElementById("selectedTime");
 					inputTime.value = selectedTime;
+					
+					console.log(selectedTime);
+					console.log(thisMonthResDate);
 				});
 				
+				//예약된 시간인 경우 셀 비활성화 및 색상 변경
 				for (var s = 0; s < thisMonthResDate.length; s++){
 					
-					if(cellTime == thisMonthResDate[s]){
+					if(inputCellText == thisMonthResDate[s]){
 						cell.style.backgroundColor = "#E0E0E0";
 						cell.style.color = '#C6C6C6';
 		 				$(cell).off("click");
@@ -496,7 +501,7 @@
 		<jsp:include page="../include/header.jsp"></jsp:include>
 	<!-- //Header -->
 <FORM name="form" method="post" action="<%=request.getContextPath() %>/reservation/reservationPro">
-<input type="hidden" name="f_num" value="${fieldDTO.f_num }">
+<input type="hidden" id="f_num" name="f_num" value="${fieldDTO.f_num }">
 <input type="hidden" name="reg_date" value="2022-06-16">
 
 
@@ -596,7 +601,7 @@
 							<table id="calendar" align="center">
 								<tr>
 									<td align="center"><label onclick="javascript:prevCalendar(); tableinit();"> ◀ </label></td>
-									<td colspan="5" align="center" id="calendarTitle">yyyy년 m월</td>
+									<td colspan="5" align="center" id="calendarTitle">yyyy년 mm월</td>
 									<td align="center"><label onclick="javascript:nextCalendar(); tableinit();"> ▶ </label></td>
 								</tr>
 								<tr>
@@ -682,7 +687,7 @@
 									</tr>
 									<tr>
 										<th scope="row">예약시간</th>
-										<td><input type="text" id="selectedTime" name="start_time" value="선택된 시간이 없습니다"></td>
+										<td><input type="text" id="selectedTime" name="time" value="선택된 시간이 없습니다"></td>
 										
 									</tr>
 									<tr>

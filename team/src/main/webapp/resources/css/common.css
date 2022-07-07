@@ -74,13 +74,13 @@ input[placeholder]	{line-height:1em !important}
 
 
 .chk {display:inline-block; margin-right:17px; font-size:16px; font-weight:400; line-height:27px;}
-.chk label	{display:block; padding-left:42px; background:url('../img/bg_chk.png') no-repeat 0 center; color:#383838}
+.chk label	{display:block; padding-left:42px; background:url('/images/common/bg_chk.png') no-repeat 0 center; color:#383838}
 .chk label:hover	{color:#414141}
 .chk input[type=checkbox]	{position:absolute; left:-9999px; visibility:hidden;}
-.chk input[type=checkbox]:checked + label	{background:url('../img/bg_chk_on.png') no-repeat 0 center; color:#383838}
+.chk input[type=checkbox]:checked + label	{background:url('/images/common/bg_chk_on.png') no-repeat 0 center; color:#383838}
 
 .chk.bg label	{background:url('/images/common/bg_chk_th.png') no-repeat 4px center;}
-.chk.bg input[type=checkbox]:checked + label	{background:url('../img/bg_chk_th_on.png') no-repeat 4px center;}
+.chk.bg input[type=checkbox]:checked + label	{background:url('/images/common/bg_chk_th_on.png') no-repeat 4px center;}
 
 .chk_typeb {display:inline-block; margin-left:8px;}
 .chk_typeb label	{display:block; padding:0 11px; color:#414141; color:#666; font-size:13px; line-height:30px; border:1px solid #d1d9dc; background:#fff; border-radius:20px; cursor:pointer}
@@ -89,17 +89,17 @@ input[placeholder]	{line-height:1em !important}
 .chk_typeb input[type=checkbox]:checked + label	{border:1px solid #1b64bc; background:#1b64bc; color:#fff}
 
 .rdo	{display:inline-block; margin-right:10px; width:auto; color:#414141; line-height:24px; font-size:14px;}
-.rdo label	{display:block; padding-left:25px; background:url('../img/bg_rdo.png') no-repeat 4px center; color:#414141}
+.rdo label	{display:block; padding-left:25px; background:url('/images/common/bg_rdo.png') no-repeat 4px center; color:#414141}
 .rdo label:hover	{color:#888}
 .rdo input[type=radio]	{position:absolute; left:-9999px; visibility:hidden;}
-.rdo input[type=radio]:checked + label	{background:url('../img/bg_rdo_on.png') no-repeat 4px center; color:#414141}
+.rdo input[type=radio]:checked + label	{background:url('/images/common/bg_rdo_on.png') no-repeat 4px center; color:#414141}
 
 input.txt	{height:24px; margin:0; padding:7px 9px 7px 9px; border:1px solid #999; background:#fff; color:#4c4c4c; font-size:13px; line-height:24px; vertical-align:middle}
 input.txt:focus	{border-color:#000}
 select	{margin:0; border:1px solid #999; line-height:22px; height:22px; color:#a6a6a6; font-weight:bold;}
 
 .select {display:inline-block; position:relative; padding:0; height:40px; border:1px solid #e0e0e0; background:#fff; box-sizing:border-box; -moz-box-sizing:border-box}
-.select:after	{content:""; display:block; position:absolute; right:12px; top:50%; margin-top:-4px; width:13px; height:8px; background:url('../img/select_arrow.png') no-repeat center center; background-size:11px auto;}
+.select:after	{content:""; display:block; position:absolute; right:12px; top:50%; margin-top:-4px; width:13px; height:8px; background:url('/images/common/select_arrow.png') no-repeat center center; background-size:11px auto;}
 .select label {position:absolute; top:0px; right:20px; bottom:0; left:10px; color:#404040; font-size:16px; line-height:38px; text-align:left;}
 .select select {position:relative; z-index:1; padding:0 4px; width:100%; height:38px; line-height:38px; vertical-align:top; opacity:0; filter:alpha(opacity=0);}
 
@@ -159,14 +159,14 @@ a.rollover:hover img.on		{display:none;}
 #wrapper #container	{position:relative; margin:0 auto; padding:0; background:#fff}
 #wrapper #container .content	{position:relative; margin:0 auto; padding:0; min-height:500px}
 #wrapper #container .content:after	{content:""; display:block; clear:both}
-#wrapper #container .content > div	{margin:0 auto; max-width:1200px}
+#wrapper #container .content > div	{margin:0 auto 20px; max-width:1200px}
 
 
 /* GNB */
 #wrapper #header	{position:fixed; z-index:90; top:0; right:0; left:0;}
 #wrapper #header .header	{position:relative; margin:0 auto;}
 #wrapper #header .header h1	{display:block; position:absolute; z-index:10; top:0; left:0; top:0; left:50%; margin-left:-896px; width:185px; height:184px; -webkit-transition:all 0.3s ease-out; -moz-transition:all 0.3s ease-out; -ms-transition:all 0.3s ease-out; -o-transition:all 0.3s ease-out; transition:all 0.3s ease-out;}
-#wrapper #header .header h1 a	{display:block; width:185px; height:184px; background:url('../img/logo.jpg') no-repeat 0 0; -webkit-transition:all 0.3s ease-out; -moz-transition:all 0.3s ease-out; -ms-transition:all 0.3s ease-out; -o-transition:all 0.3s ease-out; transition:all 0.3s ease-out;}
+#wrapper #header .header h1 a	{display:block; width:185px; height:184px; background:url('/images/common/logo.jpg') no-repeat 0 0; -webkit-transition:all 0.3s ease-out; -moz-transition:all 0.3s ease-out; -ms-transition:all 0.3s ease-out; -o-transition:all 0.3s ease-out; transition:all 0.3s ease-out;}
 #wrapper #header .header .btn_nav	{display:none}
 
 #wrapper #header nav	{position:absolute; top:65px; right:0; left:0; height:85px; background:rgba(0, 0, 0, 0.46); -webkit-transition:all 0.3s ease-out; -moz-transition:all 0.3s ease-out; -ms-transition:all 0.3s ease-out; -o-transition:all 0.3s ease-out; transition:all 0.3s ease-out;}
@@ -178,9 +178,9 @@ a.rollover:hover img.on		{display:none;}
 /*#wrapper #header nav .nav_wrap ul li	{display:inline-block; position:relative; padding:0 38px; vertical-align:top; -webkit-transition:all 0.3s ease-out; -moz-transition:all 0.3s ease-out; -ms-transition:all 0.3s ease-out; -o-transition:all 0.3s ease-out; transition:all 0.3s ease-out;}*/
 /*CHAMPIONSHIP 적용시*/
 #wrapper #header nav .nav_wrap ul li	{display:inline-block; position:relative; padding:0 30px; vertical-align:top; -webkit-transition:all 0.3s ease-out; -moz-transition:all 0.3s ease-out; -ms-transition:all 0.3s ease-out; -o-transition:all 0.3s ease-out; transition:all 0.3s ease-out;}
-#wrapper #header nav .nav_wrap ul li:first-child	{padding-left:0;}
-#wrapper #header nav .nav_wrap ul li:first-child a	{width:146px; background:url('../img/nav_aia.png') no-repeat center center; background-size:100% auto}
-#wrapper #header nav .nav_wrap ul li:first-child a:after	{display:none}
+/* #wrapper #header nav .nav_wrap ul li:first-child	{padding-left:0;} */
+/* #wrapper #header nav .nav_wrap ul li:first-child a	{width:146px; background:url('/images/common/nav_aia.png') no-repeat center center; background-size:100% auto} */
+/* #wrapper #header nav .nav_wrap ul li:first-child a:after	{display:none} */
 #wrapper #header nav .nav_wrap ul li a.face	{display:none}
 #wrapper #header nav .nav_wrap ul li a.insta	{display:none}
 #wrapper #header nav .nav_wrap ul li a	{display:block; height:85px; color:#fff; font-size:20px; font-weight:700; line-height:85px; text-decoration:none; -webkit-transition:all 0.3s ease-out; -moz-transition:all 0.3s ease-out; -ms-transition:all 0.3s ease-out; -o-transition:all 0.3s ease-out; transition:all 0.3s ease-out;}
@@ -192,17 +192,17 @@ a.rollover:hover img.on		{display:none;}
 #wrapper #header nav .util li	{display:inline-block; margin-left:19px; height:44px; vertical-align:top}
 #wrapper #header nav .util li:first-child	{margin-left:0}
 #wrapper #header nav .util li a	{display:block; width:44px; height:44px; line-height:44px}
-#wrapper #header nav .util li.face a	{background:url('../img/icon_facebook.png') no-repeat center center; background-size:27px 27px}
-#wrapper #header nav .util li.insta a	{background:url('../img/icon_instagram.png') no-repeat center center; background-size:27px 27px}
+#wrapper #header nav .util li.face a	{background:url('/images/common/icon_facebook.png') no-repeat center center; background-size:27px 27px}
+#wrapper #header nav .util li.insta a	{background:url('/images/common/icon_instagram.png') no-repeat center center; background-size:27px 27px}
 #wrapper #header nav .util li.login	{margin-left:24px; padding-left:24px; border-left:2px solid #b1b1b1}
-#wrapper #header nav .util li.login a	{padding-right:32px; width:auto; background:url('../img/icon_login.png') no-repeat right center; color:#fff; font-size:12px;}
+#wrapper #header nav .util li.login a	{padding-right:32px; width:auto; background:url('/images/common/icon_login.png') no-repeat right center; color:#fff; font-size:12px;}
 #wrapper #header nav .util li.logout	{margin-left:24px; padding-left:24px; border-left:2px solid #dcdcdc}
 #wrapper #header nav .util li.logout a	{display:inline-block; width:auto; color:#fff; font-size:12px;}
-#wrapper #header nav .util li.logout a.mypage	{padding-right:27px; background:url('../img/icon_mypage.png') no-repeat right center; background-size:auto 18px;}
-#wrapper #header nav .util li.logout a.logout	{padding-right:32px; margin-left:20px; background:url('../images/icon_logout.png') no-repeat right center; background-size:auto 18px;}
+#wrapper #header nav .util li.logout a.mypage	{padding-right:27px; background:url('/images/common/icon_mypage.png') no-repeat right center; background-size:auto 18px;}
+#wrapper #header nav .util li.logout a.logout	{padding-right:32px; margin-left:20px; background:url('/images/common/icon_logout.png') no-repeat right center; background-size:auto 18px;}
 
 #wrapper #header.fixed .header h1	{top:0; width:85px; height:85px}
-#wrapper #header.fixed .header h1 a	{width:85px; height:85px; background:url('../images/logo_t.png') no-repeat 0 0;}
+#wrapper #header.fixed .header h1 a	{width:85px; height:85px; background:url('/images/common/logo_t.png') no-repeat 0 0;}
 #wrapper #header.fixed nav	{top:0}
 #wrapper #header.fixed nav .nav_wrap	{margin-left:-770px}
 
@@ -210,7 +210,7 @@ a.rollover:hover img.on		{display:none;}
 /* Footer */
 #wrapper #footer	{position:relative; margin-top:110px; padding:63px 0 85px 0; background:#414141;}
 #wrapper #footer .footer_wrap	{position:relative; margin:0 auto; width:1200px}
-#wrapper #footer .footer_wrap .logo	{position:absolute; top:17px; left:0; width:268px; height:50px; background:url('../img/logo_footer.png') no-repeat 0 0;}
+#wrapper #footer .footer_wrap .logo	{position:absolute; top:17px; left:0; width:268px; height:50px; background:url('/images/common/logo_footer.png') no-repeat 0 0;}
 #wrapper #footer .footer_wrap .foot_util	{padding-left:365px}
 #wrapper #footer .footer_wrap .foot_util ul	{margin:0 auto; max-width:1100px;}
 #wrapper #footer .footer_wrap .foot_util ul:after	{content:""; display:block; clear:both}
@@ -262,7 +262,7 @@ a.rollover:hover img.on		{display:none;}
 .layer_popup h1.title	{padding-top:58px; color:#000; font-size:34px; line-height:50px; text-align:center}
 .layer_popup h1.title.line	{margin:0 -50px; padding:0 50px; border-bottom:1px solid #e1e1e1; font-size:20px; font-family:'Nanum Gothic','AppleGothic','Dotum', sans-serif; font-weight:400; line-height:44px; text-align:left}
 .layer_popup h1.h_bar	{}
-.layer_popup .btn_closed	{display:block; position:absolute; top:0; right:0; width:60px; height:60px; background:url('../img/btn_pop_closed.png') no-repeat center center}
+.layer_popup .btn_closed	{display:block; position:absolute; top:0; right:0; width:60px; height:60px; background:url('/images/common/btn_pop_closed.png') no-repeat center center}
 .layer_popup .layer_cont	{margin-top:25px; padding:0 10px}
 .layer_popup .layer_cont .btn_wrap	{margin-top:25px}
 .layer_popup .layer_cont .btn_wrap.side	{text-align:center}
@@ -326,7 +326,7 @@ button.dis:hover	span	span	{background-position:right 0}
 .btn_big:hover	{background:#003f96 !important}
 
 .btn_red	{display:inline-block; position:relative; margin-top:38px; padding:0 32px; height:60px; background:#d20c26; color:#fff; font-size:18px; line-height:60px; text-align:center}
-.btn_red.go span	{display:inline-block; padding-right:20px; background:url('../img/btn_find_arr.png') no-repeat right center; line-height:60px}
+.btn_red.go span	{display:inline-block; padding-right:20px; background:url('/images/common/btn_find_arr.png') no-repeat right center; line-height:60px}
 
 
 /* Button Align */
@@ -393,7 +393,7 @@ table	th,	table	td	{border:0 none}
 .table_wrap.list table tbody tr td	{padding:9px 0; height:32px; border:0; border-bottom:1px solid #d5d8dd; color:#383838; font-size:16px; line-height:32px}
 .table_wrap.list table tbody tr td.al_left	{padding:9px 10px}
 .table_wrap.list table tbody tr td a.tit	{overflow:hidden; display:inline-block; color:#2c3c57; height:32px; line-height:32px; vertical-align:top}
-.table_wrap.list table tbody tr td a.tit.secret	{padding-right:25px; background:url('../img/icon_secret.png') no-repeat right center}
+.table_wrap.list table tbody tr td a.tit.secret	{padding-right:25px; background:url('/images/common/icon_secret.png') no-repeat right center}
 .table_wrap.list table tbody tr td .state	{display:inline-block; width:56px; background:#2c3c57; font-size:16px; color:#fff; line-height:32px; vertical-align:top; border-radius:5px}
 .table_wrap.list table tbody tr td .state.wait	{background:#b73535}
 .table_wrap.list table tbody tr td .state.end	{background:#b73535}
@@ -414,7 +414,7 @@ table	th,	table	td	{border:0 none}
 .table_wrap.form table tbody tr td .rdo label	{background-position:4px 8px}
 .table_wrap.form table tbody tr td .chk	{line-height:29px}
 .table_wrap.form table tbody tr td .chk label	{background-position:4px 8px}
-.table_wrap.form table tbody tr td .btn_calendar	{display:inline-block; margin-right:3px; width:30px; height:29px; background:url('../img/btn_calendar.jpg') no-repeat 0 0; vertical-align:top}
+.table_wrap.form table tbody tr td .btn_calendar	{display:inline-block; margin-right:3px; width:30px; height:29px; background:url('/images/common/btn_calendar.jpg') no-repeat 0 0; vertical-align:top}
 .table_wrap.form table tbody tr td .chk_wrap.mr0 .chk	{margin-right:0}
 .table_wrap.form table tbody tr td .info	{position:relative;}
 .table_wrap.form table tbody tr td .info dl:after	{content:""; display:block; clear:both}
@@ -457,7 +457,6 @@ table	th,	table	td	{border:0 none}
 .bullet_list li ul	{padding:20px 0}
 .bullet_list li ul li	{padding-left:0}
 
-
 /* 페이징 */
 .pager_wrap	{position:relative; margin-top:42px; font-size:0; line-height:0; text-align:center; letter-spacing:-10px}
 .pager_wrap .search	{position:relative; margin-bottom:42px; font-size:0; line-height:0}
@@ -465,14 +464,16 @@ table	th,	table	td	{border:0 none}
 .pager_wrap .search .select label		{height:41px; line-height:41px; letter-spacing:0}
 .pager_wrap .search .select select	{height:41px; line-height:41px}
 .pager_wrap .search input		{width:235px; height:43px; border:1px solid #d0d0d0; border-left:0; border-right:0}
-.pager_wrap .search button	{width:69px; height:43px; vertical-align:top; background:#2c3c57 url('../img/icon_search.png') no-repeat center center}
+.pager_wrap .search button	{width:69px; height:43px; vertical-align:top; background:#2c3c57 url('/images/common/icon_search.png') no-repeat center center}
 
 .pager_wrap a	{display:inline-block; margin-left:8px; width:79px; height:41px; border:1px solid #cecece; background:#fff; color:#afafaf; font-size:16px; line-height:41px; vertical-align:top; letter-spacing:0}
 .pager_wrap a:hover	{border:1px solid #2c3c57; color:#2c3c57; text-decoration:none}
+.write a {margin-bottom: 20px; position:relative; left: 500px;}
+
 
 .pager_wrap a.btn_page	{}
-.pager_wrap a.btn_page.prev	{margin:0; background:#fff url('../img/icn_page_prev.png') no-repeat center center;}
-.pager_wrap a.btn_page.next	{margin:0; background:#fff url('../img/icn_page_next.png') no-repeat center center;}
+.pager_wrap a.btn_page.prev	{margin:0; background:#fff url('/images/common/icn_page_prev.png') no-repeat center center;}
+.pager_wrap a.btn_page.next	{margin:0; background:#fff url('/images/common/icn_page_next.png') no-repeat center center;}
 
 .pager_wrap .page	{display:inline-block; margin:0 22px; text-align:center; vertical-align:top}
 .pager_wrap .page a	{position:relative; width:41px; height:41px;}
@@ -492,7 +493,7 @@ table	th,	table	td	{border:0 none}
 @media screen and (max-width:1860px)	{
 	/* Header */
 	#wrapper #header .header h1	{top:65px; left:7px; margin:0; width:85px; height:85px}
-	#wrapper #header .header h1 a	{width:85px; height:85px; background:url('../img/logo_t.png') no-repeat 0 0;}
+	#wrapper #header .header h1 a	{width:85px; height:85px; background:url('/images/common/logo_t.png') no-repeat 0 0;}
 
 	#wrapper #header nav .nav_wrap	{left:125px; margin:0 !important; width:900px}
 	/*hcup*/
@@ -523,8 +524,8 @@ table	th,	table	td	{border:0 none}
 	/* Header */
 	#wrapper #header .header	{height:85px; background:rgba(0, 0, 0, 0.45); -webkit-transition:all 0.3s ease-out; -moz-transition:all 0.3s ease-out; -ms-transition:all 0.3s ease-out; -o-transition:all 0.3s ease-out; transition:all 0.3s ease-out;}
 	#wrapper #header .header h1	{top:23px !important; left:19px; width:201px !important; height:38px !important}
-	#wrapper #header .header h1 a	{width:201px !important; height:38px !important; background:url('../img/logo_m.png') no-repeat 0 0 !important; background-size:100% auto !important}
-	#wrapper #header .header .btn_nav	{display:block; position:absolute; top:0; right:0; width:66px; height:85px; background:url('../img/btn_nav.png') no-repeat center center; background-size:41px auto}
+	#wrapper #header .header h1 a	{width:201px !important; height:38px !important; background:url('/images/common/logo_m.png') no-repeat 0 0 !important; background-size:100% auto !important}
+	#wrapper #header .header .btn_nav	{display:block; position:absolute; top:0; right:0; width:66px; height:85px; background:url('/images/common/btn_nav.png') no-repeat center center; background-size:41px auto}
 
 	#wrapper #header nav	{overflow-y:auto; position:fixed; top:85px !important; right:0; bottom:0; left:auto; padding-left:56px; width:490px; height:auto; background:rgba(0, 0, 0, 0.85); box-sizing:border-box; -moz-box-sizing:border-box; -webkit-transform:translate3d(100%, 0, 0); -moz-transform:translate3d(100%, 0, 0); -o-transform:translate3d(100%, 0, 0); -ms-transform:translate3d(100%, 0, 0); transform:translate3d(100%, 0, 0);}
 	#wrapper #header nav .nav_wrap	{position:relative; left:auto; padding-top:133px; width:auto;}
@@ -537,12 +538,12 @@ table	th,	table	td	{border:0 none}
 
 	#wrapper #header nav .nav_wrap ul li:first-child	{position:absolute; right:0; left:0; bottom:-94px}
 	#wrapper #header nav .nav_wrap ul li a.aia	{width:146px}
-	#wrapper #header nav .nav_wrap ul li a.face	{display:block; position:absolute; top:10px; right:90px; width:70px; height:70px; background:url('../img/icon_facebook.png') no-repeat center center; background-size:46px 46px}
-	#wrapper #header nav .nav_wrap ul li a.insta	{display:block; position:absolute; top:10px; right:20px; width:70px; height:70px; background:url('../img/icon_instagram.png') no-repeat center center; background-size:46px 46px}
+	#wrapper #header nav .nav_wrap ul li a.face	{display:block; position:absolute; top:10px; right:90px; width:70px; height:70px; background:url('/images/common/icon_facebook.png') no-repeat center center; background-size:46px 46px}
+	#wrapper #header nav .nav_wrap ul li a.insta	{display:block; position:absolute; top:10px; right:20px; width:70px; height:70px; background:url('/images/common/icon_instagram.png') no-repeat center center; background-size:46px 46px}
 
 	#wrapper #header nav .util	{position:absolute; top:0; right:0; left:56px; width:auto}
 	#wrapper #header nav .util li.login	{display:block; margin:0; padding:0; border:0;}
-	#wrapper #header nav .util li.login a	{display:block; margin-right:14px; padding-right:86px; font-size:30px; font-family:'HN_hvc'; height:133px; background:url(../img/icon_login_m.png') no-repeat center right; background-size:50px auto; line-height:133px; text-align:right}
+	#wrapper #header nav .util li.login a	{display:block; margin-right:14px; padding-right:86px; font-size:30px; font-family:'HN_hvc'; height:133px; background:url('/images/common/icon_login_m.png') no-repeat center right; background-size:50px auto; line-height:133px; text-align:right}
 
 	#wrapper #header nav .util li.logout	{display:block; margin:0; padding:0; border:0;}
 	#wrapper #header nav .util li.logout a	{margin-right:14px; font-size:30px; font-family:'HN_hvc'; height:133px; background-size:50px auto; line-height:133px; text-align:right}
@@ -652,7 +653,6 @@ table	th,	table	td	{border:0 none}
 	.table_wrap.list table tbody tr td a.tit.secret	{padding-right:15px; background-size:9px auto}
 	.table_wrap.list table tbody tr td .state	{width:37px; font-size:11px; line-height:22px; border-radius:3px}
 
-
 	/* 페이징 */
 	.pager_wrap	{margin-top:35px;}
 	.pager_wrap .search	{margin-bottom:20px;}
@@ -672,7 +672,6 @@ table	th,	table	td	{border:0 none}
 	.pager_wrap .page a	{position:relative; width:20px; height:20px;}
 	.pager_wrap .page a:first-child	{margin:0}
 	.pager_wrap .page a.on	{border:1px solid #2c3c57; background:#2c3c57; color:#fff; text-decoration:none}
-
 
 
 	/* 공통 팝업 */

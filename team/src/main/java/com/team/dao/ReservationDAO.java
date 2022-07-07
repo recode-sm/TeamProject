@@ -18,8 +18,12 @@ public interface ReservationDAO {
 	public FieldDTO getField(int f_num);
 	void insertReserv(ReservDTO reservDTO);
 <<<<<<< HEAD
+<<<<<<< HEAD
 	List<DateDTO> getDateList(DateDTO dateDTO);
 	public ReservDTO getReservation(String s_id);
 =======
 >>>>>>> Base
+=======
+	public List<DateDTO> getDateList(String sel);
+>>>>>>> parent of 65fa9d6 (결제 구현)
 }

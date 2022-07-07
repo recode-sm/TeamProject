@@ -7,6 +7,7 @@ public class ReservDTO {
 	private String id; // name => id 수정
 	private String f_name; // 추가
 <<<<<<< HEAD
+<<<<<<< HEAD
 	private String time;
 	private String total_price;
 	private String phone;
@@ -27,6 +28,11 @@ public class ReservDTO {
 	private String end_time;
 	private int total_price;
 >>>>>>> Base
+=======
+	private String start_time;
+	private String end_time;
+	private int total_price;
+>>>>>>> parent of 65fa9d6 (결제 구현)
 	private String r_date;
 	public int getR_num() {
 		return r_num;
@@ -53,6 +59,7 @@ public class ReservDTO {
 		this.f_name = f_name;
 	}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	public String getTime() {
 		return time;
 	}
@@ -62,6 +69,11 @@ public class ReservDTO {
 	public String getStart_time() {
 		return start_time;
 	}
+=======
+	public String getStart_time() {
+		return start_time;
+	}
+>>>>>>> parent of 65fa9d6 (결제 구현)
 	public void setStart_time(String start_time) {
 		this.start_time = start_time;
 	}
@@ -76,7 +88,10 @@ public class ReservDTO {
 	}
 	public void setTotal_price(int total_price) {
 		this.total_price = total_price;
+<<<<<<< HEAD
 >>>>>>> Base
+=======
+>>>>>>> parent of 65fa9d6 (결제 구현)
 	}
 	public String getR_date() {
 		return r_date;
@@ -86,7 +101,10 @@ public class ReservDTO {
 	}
 	
 <<<<<<< HEAD
+<<<<<<< HEAD
 	
 =======
 >>>>>>> Base
+=======
+>>>>>>> parent of 65fa9d6 (결제 구현)
 }

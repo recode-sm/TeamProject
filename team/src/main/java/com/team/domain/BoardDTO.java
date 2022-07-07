@@ -3,10 +3,13 @@ package com.team.domain;
 import java.sql.Timestamp;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 import org.springframework.format.annotation.DateTimeFormat;
 
 =======
 >>>>>>> Base
+=======
+>>>>>>> parent of 65fa9d6 (결제 구현)
 public class BoardDTO {
 	private int b_num;
 	private String id; // name => id 수정

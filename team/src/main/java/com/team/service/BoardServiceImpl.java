@@ -6,9 +6,12 @@ import javax.inject.Inject;
 import org.springframework.stereotype.Service;
 import com.team.domain.BoardDTO;
 <<<<<<< HEAD
+<<<<<<< HEAD
 import com.team.domain.CommentDTO;
 =======
 >>>>>>> Base
+=======
+>>>>>>> parent of 65fa9d6 (결제 구현)
 import com.team.domain.PageDTO;
 import com.team.dao.BoardDAO;
 
@@ -82,6 +85,7 @@ public class BoardServiceImpl implements BoardService {
 		boardDAO.updateReadcount(b_num);
 	}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	
 	@Override
 	public BoardDTO userCheck(BoardDTO boardDTO2) {
@@ -95,4 +99,7 @@ public class BoardServiceImpl implements BoardService {
 =======
 
 >>>>>>> Base
+=======
+
+>>>>>>> parent of 65fa9d6 (결제 구현)
 }

@@ -129,6 +129,9 @@
 >>>>>>> Base
 	var realMonth = date.getMonth()+1; 
 	var realToDay = date.getDate()
+	
+	//현재 보고 있는 월
+	var nowMonth = today.getMonth()+1;
 
 	//예약가능 요일 계산해 배열 (일~월, 가능0 불가능1)
 	const possibleDay = "<%=possibleDay%>";
@@ -155,9 +158,12 @@
 		}
 		today = new Date(today.getFullYear(), today.getMonth()+1, today.getDate());
 <<<<<<< HEAD
+<<<<<<< HEAD
 		
 =======
 >>>>>>> Base
+=======
+>>>>>>> parent of 65fa9d6 (결제 구현)
 		buildCalendar();
 	}
 
@@ -170,10 +176,14 @@
 		
 		//현재 참조중인 월 
 <<<<<<< HEAD
+<<<<<<< HEAD
 		var nowMonth = today.getMonth()+1; //nextCalendar()에서 today 변수를 getMonth+1 했으므로 +2가 된 상황
 =======
 		var nowMonth = today.getMonth()+1;
 >>>>>>> Base
+=======
+		var nowMonth = today.getMonth()+1;
+>>>>>>> parent of 65fa9d6 (결제 구현)
 		//이번달이면 0, 다음달이면 1 리턴
 		monthEquals = thisMonth(nowMonth, realMonth);
 		
@@ -261,12 +271,11 @@
 					$.ajax({
 						url:'${pageContext.request.contextPath}/reservation/jsonDate',
 						async:false,
-						data:{'date' : $("#calendarTitle").text() + this.getAttribute('id') + "일", 'num' : document.getElementById("f_num").value },
+						data:{'date' : $("#calendarTitle").text() + this.getAttribute('id') + "일" },
 						datatype:"json",
 						success:function(rdata){
-							console.log(rdata);
 							$.each(rdata, function(index, element){ 
-									thisMonthResDate.push(element.time);
+									thisMonthResDate.push(element.start_time);
 							});
 						}
 						,error:function(request,status,error){            
@@ -281,10 +290,10 @@
 			    	clickedYear = today.getFullYear(); 
 			    	clickedMonth = ( 1 + today.getMonth() );
 			    	clickedDate = this.getAttribute('id');
-// 			    	clickedDate = clickedDate >= 10 ? clickedDate : '0' + clickedDate;
-// 			    	clickedMonth = clickedMonth >= 10 ? clickedMonth : '0' + clickedMonth;
+			    	clickedDate = clickedDate >= 10 ? clickedDate : '0' + clickedDate;
+			    	clickedMonth = clickedMonth >= 10 ? clickedMonth : '0' + clickedMonth;
 			    	
-			    	clickedYMD = clickedYear + "년" + clickedMonth + "월" + clickedDate + "일";
+			    	clickedYMD = clickedYear + "-" + clickedMonth + "-" + clickedDate;
 			
 			    	//하단에 예약일시 표시
 					$("#selectedDate1").text(clickedYMD);
@@ -394,9 +403,15 @@
 	
 	//이번달이면 0 리턴, 다음달이면 1 리턴
 <<<<<<< HEAD
+<<<<<<< HEAD
 	function thisMonth(todayMonth, dateMonth){
 		console.log("todayMonth : " + todayMonth + ", dateMonth : " + dateMonth);
 		if (todayMonth*1 == dateMonth*1){
+=======
+	function thisMonth(todayMonth, realMonth){
+		console.log("todayMonth : " + todayMonth + ", realMonth : " + realMonth);
+		if (todayMonth*1 == realMonth*1){
+>>>>>>> parent of 65fa9d6 (결제 구현)
 			return 0;
 		} 
 =======
@@ -426,9 +441,13 @@
 
 <<<<<<< HEAD
 	console.log(thisMonthResDate);
+<<<<<<< HEAD
 
 =======
 >>>>>>> Base
+=======
+	
+>>>>>>> parent of 65fa9d6 (결제 구현)
 	//예약시간표를 만들 table객체 획득
 	//달력 onclick function => timeTableMaker(today.getMonth() + 1,this.getAttribute('id'));
 	function timeTableMaker(selectedMonth, selectedDate){
@@ -451,11 +470,14 @@
 		}
 		
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+		//예약된 시간인 경우 cell 비활성화 및 색상 변경
+>>>>>>> parent of 65fa9d6 (결제 구현)
 		//표시된 월과 실제 월 비교, 같으면 0값
-		var nowMonth = today.getMonth()+1;
 		checkMonth = thisMonth(nowMonth, realMonth);
 		console.log(checkMonth);
-
+		
 		for(i = 0; i < endTime - startTime; i=i+2){
 			//곱해서 숫자타입으로 변환, 시작시간
 			cellTime = startTime*1 + i;		
@@ -463,7 +485,6 @@
 			cellStartTimeText = cellTime + ":00";
 			cellEndTimeText = (cellTime + 2) + ":00";
 			inputCellText = cellStartTimeText + " ~ " +  cellEndTimeText;
-
 			
 			//오늘날짜 = 선택한날짜 
 			if(date.getDate() == selectedDate && checkMonth == 0){
@@ -530,10 +551,9 @@
 						inputTime.value = selectedTime;
 					});
 				  	
-					//예약된 시간인 경우 셀 비활성화 및 색상 변경
 					for (var s = 0; s < thisMonthResDate.length; s++){
 						
-						if(inputCellText == thisMonthResDate[s]){
+						if(cellTime == thisMonthResDate[s]){
 							cell.style.backgroundColor = "#E0E0E0";
 							cell.style.color = '#C6C6C6';
 			 				$(cell).off("click");
@@ -641,15 +661,11 @@
 					
 					inputTime = document.getElementById("selectedTime");
 					inputTime.value = selectedTime;
-					
-					console.log(selectedTime);
-					console.log(thisMonthResDate);
 				});
 				
-				//예약된 시간인 경우 셀 비활성화 및 색상 변경
 				for (var s = 0; s < thisMonthResDate.length; s++){
 					
-					if(inputCellText == thisMonthResDate[s]){
+					if(cellTime == thisMonthResDate[s]){
 						cell.style.backgroundColor = "#E0E0E0";
 						cell.style.color = '#C6C6C6';
 		 				$(cell).off("click");
@@ -813,10 +829,14 @@
 	<!-- //Header -->
 <FORM name="form" method="post" action="<%=request.getContextPath() %>/reservation/reservationPro">
 <<<<<<< HEAD
+<<<<<<< HEAD
 <input type="hidden" id="f_num" name="f_num" value="${fieldDTO.f_num }">
 =======
 <input type="hidden" name="f_num" value="${fieldDTO.f_num }">
 >>>>>>> Base
+=======
+<input type="hidden" name="f_num" value="${fieldDTO.f_num }">
+>>>>>>> parent of 65fa9d6 (결제 구현)
 <input type="hidden" name="reg_date" value="2022-06-16">
 
 
@@ -917,10 +937,14 @@
 								<tr>
 									<td align="center"><label onclick="javascript:prevCalendar(); tableinit();"> ◀ </label></td>
 <<<<<<< HEAD
+<<<<<<< HEAD
 									<td colspan="5" align="center" id="calendarTitle">yyyy년 mm월</td>
 =======
 									<td colspan="5" align="center" id="calendarTitle">yyyy년 m월</td>
 >>>>>>> Base
+=======
+									<td colspan="5" align="center" id="calendarTitle">yyyy년 m월</td>
+>>>>>>> parent of 65fa9d6 (결제 구현)
 									<td align="center"><label onclick="javascript:nextCalendar(); tableinit();"> ▶ </label></td>
 								</tr>
 								<tr>
@@ -1007,10 +1031,14 @@
 									<tr>
 										<th scope="row">예약시간</th>
 <<<<<<< HEAD
+<<<<<<< HEAD
 										<td><input type="text" id="selectedTime" name="time" value="선택된 시간이 없습니다"></td>
 =======
 										<td><input type="text" id="selectedTime" name="start_time" value="선택된 시간이 없습니다"></td>
 >>>>>>> Base
+=======
+										<td><input type="text" id="selectedTime" name="start_time" value="선택된 시간이 없습니다"></td>
+>>>>>>> parent of 65fa9d6 (결제 구현)
 										
 									</tr>
 									<tr>

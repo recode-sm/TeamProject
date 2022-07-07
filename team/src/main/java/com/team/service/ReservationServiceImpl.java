@@ -52,12 +52,13 @@ public class ReservationServiceImpl implements ReservationService{
 <<<<<<< HEAD
 	
 	@Override
-	public List<DateDTO> getDateList(DateDTO dateDTO) {
+	public List<DateDTO> getDateList(String sel) {
 		System.out.println("getDateList()");
 		
-		return reservationDAO.getDateList(dateDTO);
+		return reservationDAO.getDateList(sel);
 	}
 
+<<<<<<< HEAD
 	@Override
 	public ReservDTO getReservation(String s_id) {
 
@@ -69,4 +70,9 @@ public class ReservationServiceImpl implements ReservationService{
 	
 	
 >>>>>>> Base
+=======
+	
+	
+	
+>>>>>>> parent of 65fa9d6 (결제 구현)
 }

@@ -45,26 +45,30 @@ public class ReservationDAOImpl implements ReservationDAO{
 	
 	@Override
 	public void insertReserv(ReservDTO reservDTO) {
+		
+		reservDTO.setStart_time(reservDTO.getStart_time().substring(0, 2));
+		System.out.println("starttime"+reservDTO.getStart_time());
+		reservDTO.setEnd_time(reservDTO.getStart_time().substring(6, 8));
+		System.out.println("endtime"+reservDTO.getEnd_time());
 		sqlSession.selectOne(namespace+".insertReserv",reservDTO);
+		
 		
 	}
 	
 <<<<<<< HEAD
 	@Override
-	public List<DateDTO> getDateList(DateDTO dateDTO) {
+	public List<DateDTO> getDateList(String sel) {
 		System.out.println("getDateList()");
-
-		return sqlSession.selectList(namespace+".getDateList", dateDTO);
-	}
-	@Override
-	public ReservDTO getReservation(String s_id) {
 		
-		return sqlSession.selectOne(namespace+".getReservation",s_id);
+		return sqlSession.selectList(namespace+".getDateList",sel);
 	}
 =======
 	
 	
 >>>>>>> Base
+	
+	
+	
 	
 	
 }

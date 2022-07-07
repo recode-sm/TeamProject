@@ -19,8 +19,12 @@ public interface ReservationService {
 	public FieldDTO getFiled(int f_num);
 	public void insertReserv(ReservDTO reservDTO);
 <<<<<<< HEAD
+<<<<<<< HEAD
 	public List<DateDTO> getDateList(DateDTO dateDTO);
 	public ReservDTO getReservation(String s_id);
 =======
 >>>>>>> Base
+=======
+	public List<DateDTO> getDateList(String sel);
+>>>>>>> parent of 65fa9d6 (결제 구현)
 }

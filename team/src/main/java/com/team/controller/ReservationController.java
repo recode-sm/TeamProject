@@ -53,16 +53,23 @@ public class ReservationController {
 		ReservDTO reservDTO = new ReservDTO();
 		reservDTO.setF_num(Integer.parseInt(request.getParameter("f_num")));
 <<<<<<< HEAD
+<<<<<<< HEAD
 //		reservDTO.setF_name(request.getParameter("f_name"));
+=======
+		reservDTO.setF_name(request.getParameter("f_name"));
+>>>>>>> parent of 65fa9d6 (결제 구현)
 		reservDTO.setId(request.getParameter("id"));
 		reservDTO.setR_date(request.getParameter("r_date"));
-		reservDTO.setTime(request.getParameter("time"));
-		reservDTO.setTotal_price(request.getParameter("price"));
+		reservDTO.setStart_time(request.getParameter("start_time"));
+		reservDTO.setTotal_price(Integer.parseInt(request.getParameter("price")));
 		
 		reservationService.insertReserv(reservDTO);
 		
-		return "redirect:/reservation/reservResult";
+		
+		
+		return "redirect:/reservation/Result";
 	}
+<<<<<<< HEAD
 	
 	@RequestMapping(value = "/reservation/reservResult", method = RequestMethod.GET)
 	public String reserResult(HttpServletRequest request,HttpSession session,Model model) throws Exception{
@@ -88,6 +95,11 @@ public class ReservationController {
 	public String reserResult(HttpServletRequest request,Model model) throws Exception{
 
 >>>>>>> Base
+=======
+	@RequestMapping(value = "/reservation/Result", method = RequestMethod.GET)
+	public String reserResult(HttpServletRequest request,Model model) throws Exception{
+
+>>>>>>> parent of 65fa9d6 (결제 구현)
 		
 		return "/reservation/reservResult";
 	}

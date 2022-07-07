@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 <title>update</title>
 <!-- 공통css -->
@@ -37,11 +38,23 @@
 
 <!-- // 	  gtag('config', 'UA-116234591-1'); -->
 <!-- 	</script> -->
+=======
+>>>>>>> parent of 65fa9d6 (결제 구현)
 </head>
+<title>update</title>
 
-<body>
-<div id="wrapper">
+<h1>Update</h1>
+<form action="${pageContext.request.contextPath}/notice/updatePro" method="post">
+<input type="hidden" name="b_num" value="${boardDTO.b_num}">
+<input type="hidden" name="pass" value="1111">
+<table id="notice">
+<tr><td>작성자</td><td><input type="text" name="id" value="${boardDTO.id}" readonly></td></tr>
+<tr><td>제목</td><td><input type="text" name="subject" value="${boardDTO.subject}"></td></tr>
+<tr><td>내용</td>
+	<td><textarea name ="content" rows ="10" cols ="20">${boardDTO.content}</textarea></td></tr>
+</table>
 
+<<<<<<< HEAD
 <!-- Header -->
 	<jsp:include page="../include/header.jsp"></jsp:include>
 <!-- //Header 끝-->
@@ -113,11 +126,16 @@
 	<td><textarea name ="content" rows ="10" cols ="20">${boardDTO.content}</textarea></td></tr>
 </table>
 
+=======
+>>>>>>> parent of 65fa9d6 (결제 구현)
 <div id="table_search">
 <input type="submit" value="글수정" class="btn" />
 </div>
 </form>
+<<<<<<< HEAD
 >>>>>>> Base
+=======
+>>>>>>> parent of 65fa9d6 (결제 구현)
 
 </body>
 </html>

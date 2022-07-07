@@ -159,7 +159,7 @@ a.rollover:hover img.on		{display:none;}
 #wrapper #container	{position:relative; margin:0 auto; padding:0; background:#fff}
 #wrapper #container .content	{position:relative; margin:0 auto; padding:0; min-height:500px}
 #wrapper #container .content:after	{content:""; display:block; clear:both}
-#wrapper #container .content > div	{margin:0 auto 20px; max-width:1200px}
+#wrapper #container .content > div	{margin:0 auto; max-width:1200px}
 
 
 /* GNB */
@@ -179,6 +179,7 @@ a.rollover:hover img.on		{display:none;}
 /*CHAMPIONSHIP 적용시*/
 #wrapper #header nav .nav_wrap ul li	{display:inline-block; position:relative; padding:0 30px; vertical-align:top; -webkit-transition:all 0.3s ease-out; -moz-transition:all 0.3s ease-out; -ms-transition:all 0.3s ease-out; -o-transition:all 0.3s ease-out; transition:all 0.3s ease-out;}
 <<<<<<< HEAD
+<<<<<<< HEAD
 /* #wrapper #header nav .nav_wrap ul li:first-child	{padding-left:0;} */
 /* #wrapper #header nav .nav_wrap ul li:first-child a	{width:146px; background:url('/images/common/nav_aia.png') no-repeat center center; background-size:100% auto} */
 /* #wrapper #header nav .nav_wrap ul li:first-child a:after	{display:none} */
@@ -187,6 +188,11 @@ a.rollover:hover img.on		{display:none;}
 #wrapper #header nav .nav_wrap ul li:first-child a	{width:146px; background:url('../img/nav_aia.png') no-repeat center center; background-size:100% auto}
 #wrapper #header nav .nav_wrap ul li:first-child a:after	{display:none}
 >>>>>>> Base
+=======
+#wrapper #header nav .nav_wrap ul li:first-child	{padding-left:0;}
+#wrapper #header nav .nav_wrap ul li:first-child a	{width:146px; background:url('../img/nav_aia.png') no-repeat center center; background-size:100% auto}
+#wrapper #header nav .nav_wrap ul li:first-child a:after	{display:none}
+>>>>>>> parent of 65fa9d6 (결제 구현)
 #wrapper #header nav .nav_wrap ul li a.face	{display:none}
 #wrapper #header nav .nav_wrap ul li a.insta	{display:none}
 #wrapper #header nav .nav_wrap ul li a	{display:block; height:85px; color:#fff; font-size:20px; font-weight:700; line-height:85px; text-decoration:none; -webkit-transition:all 0.3s ease-out; -moz-transition:all 0.3s ease-out; -ms-transition:all 0.3s ease-out; -o-transition:all 0.3s ease-out; transition:all 0.3s ease-out;}
@@ -463,6 +469,7 @@ table	th,	table	td	{border:0 none}
 .bullet_list li ul	{padding:20px 0}
 .bullet_list li ul li	{padding-left:0}
 
+
 /* 페이징 */
 .pager_wrap	{position:relative; margin-top:42px; font-size:0; line-height:0; text-align:center; letter-spacing:-10px}
 .pager_wrap .search	{position:relative; margin-bottom:42px; font-size:0; line-height:0}
@@ -474,8 +481,6 @@ table	th,	table	td	{border:0 none}
 
 .pager_wrap a	{display:inline-block; margin-left:8px; width:79px; height:41px; border:1px solid #cecece; background:#fff; color:#afafaf; font-size:16px; line-height:41px; vertical-align:top; letter-spacing:0}
 .pager_wrap a:hover	{border:1px solid #2c3c57; color:#2c3c57; text-decoration:none}
-.write a {margin-bottom: 20px; position:relative; left: 500px;}
-
 
 .pager_wrap a.btn_page	{}
 .pager_wrap a.btn_page.prev	{margin:0; background:#fff url('../img/icn_page_prev.png') no-repeat center center;}
@@ -659,6 +664,7 @@ table	th,	table	td	{border:0 none}
 	.table_wrap.list table tbody tr td a.tit.secret	{padding-right:15px; background-size:9px auto}
 	.table_wrap.list table tbody tr td .state	{width:37px; font-size:11px; line-height:22px; border-radius:3px}
 
+
 	/* 페이징 */
 	.pager_wrap	{margin-top:35px;}
 	.pager_wrap .search	{margin-bottom:20px;}
@@ -678,6 +684,7 @@ table	th,	table	td	{border:0 none}
 	.pager_wrap .page a	{position:relative; width:20px; height:20px;}
 	.pager_wrap .page a:first-child	{margin:0}
 	.pager_wrap .page a.on	{border:1px solid #2c3c57; background:#2c3c57; color:#fff; text-decoration:none}
+
 
 
 	/* 공통 팝업 */

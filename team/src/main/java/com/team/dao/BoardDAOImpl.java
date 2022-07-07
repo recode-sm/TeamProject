@@ -7,9 +7,12 @@ import org.springframework.stereotype.Repository;
 import com.team.domain.PageDTO;
 import com.team.domain.BoardDTO;
 <<<<<<< HEAD
+<<<<<<< HEAD
 import com.team.domain.CommentDTO;
 =======
 >>>>>>> Base
+=======
+>>>>>>> parent of 65fa9d6 (결제 구현)
 
 @Repository
 public class BoardDAOImpl implements BoardDAO {
@@ -47,9 +50,13 @@ public class BoardDAOImpl implements BoardDAO {
 	@Override
 	public void updateBoard(BoardDTO boardDTO) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 		System.out.println("dao update");
 >>>>>>> Base
+=======
+		System.out.println("dao update");
+>>>>>>> parent of 65fa9d6 (결제 구현)
 		sqlSession.update(namespace + ".updateBoard", boardDTO);
 	}
 
@@ -64,6 +71,7 @@ public class BoardDAOImpl implements BoardDAO {
 	}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	@Override
 	public BoardDTO userCheck(BoardDTO boardDTO2) {
 		return sqlSession.selectOne(namespace + ".userCheck", boardDTO2);
@@ -76,4 +84,6 @@ public class BoardDAOImpl implements BoardDAO {
 	
 =======
 >>>>>>> Base
+=======
+>>>>>>> parent of 65fa9d6 (결제 구현)
 }

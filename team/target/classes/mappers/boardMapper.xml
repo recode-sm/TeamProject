@@ -38,6 +38,7 @@
 	</update>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	<select id="userCheck" resultType="com.team.domain.BoardDTO">
 		select id from board where id = #{id}
 	</select>
@@ -47,4 +48,6 @@
 	</select>
 =======
 >>>>>>> Base
+=======
+>>>>>>> parent of 65fa9d6 (결제 구현)
 </mapper>

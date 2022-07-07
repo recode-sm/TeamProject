@@ -217,11 +217,12 @@
 					$.ajax({
 						url:'${pageContext.request.contextPath}/reservation/jsonDate',
 						async:false,
-						data:{'date' : $("#calendarTitle").text() + this.getAttribute('id') + "일" },
+						data:{'date' : $("#calendarTitle").text() + this.getAttribute('id') + "일", 'num' : document.getElementById("f_num").value },
 						datatype:"json",
 						success:function(rdata){
+							console.log(rdata);
 							$.each(rdata, function(index, element){ 
-									thisMonthResDate.push(element.start_time);
+									thisMonthResDate.push(element.time);
 							});
 						}
 						,error:function(request,status,error){            
@@ -398,7 +399,7 @@
 					//예약된 시간인 경우 셀 비활성화 및 색상 변경
 					for (var s = 0; s < thisMonthResDate.length; s++){
 						
-						if(cellTime == thisMonthResDate[s]){
+						if(inputCellText == thisMonthResDate[s]){
 							cell.style.backgroundColor = "#E0E0E0";
 							cell.style.color = '#C6C6C6';
 			 				$(cell).off("click");
@@ -443,12 +444,15 @@
 					
 					inputTime = document.getElementById("selectedTime");
 					inputTime.value = selectedTime;
+					
+					console.log(selectedTime);
+					console.log(thisMonthResDate);
 				});
 				
 				//예약된 시간인 경우 셀 비활성화 및 색상 변경
 				for (var s = 0; s < thisMonthResDate.length; s++){
 					
-					if(cellTime == thisMonthResDate[s]){
+					if(inputCellText == thisMonthResDate[s]){
 						cell.style.backgroundColor = "#E0E0E0";
 						cell.style.color = '#C6C6C6';
 		 				$(cell).off("click");
@@ -497,7 +501,7 @@
 		<jsp:include page="../include/header.jsp"></jsp:include>
 	<!-- //Header -->
 <FORM name="form" method="post" action="<%=request.getContextPath() %>/reservation/reservationPro">
-<input type="hidden" name="f_num" value="${fieldDTO.f_num }">
+<input type="hidden" id="f_num" name="f_num" value="${fieldDTO.f_num }">
 <input type="hidden" name="reg_date" value="2022-06-16">
 
 
@@ -683,7 +687,7 @@
 									</tr>
 									<tr>
 										<th scope="row">예약시간</th>
-										<td><input type="text" id="selectedTime" name="start_time" value="선택된 시간이 없습니다"></td>
+										<td><input type="text" id="selectedTime" name="time" value="선택된 시간이 없습니다"></td>
 										
 									</tr>
 									<tr>

@@ -39,12 +39,20 @@ public class AjaxController {
 		ResponseEntity<List<DateDTO>> entity = null;		
 
 		System.out.println("jsonDate");
+		
+		int num=Integer.parseInt(request.getParameter("num"));
 
 		String sel=request.getParameter("date");
 		
+		System.out.println(num);
+		
 		System.out.println(sel);
 		
-		List<DateDTO> dateList = reservationService.getDateList(sel);
+		DateDTO dateDTO = new DateDTO();
+		dateDTO.setF_num(num);
+		dateDTO.setDate(sel);
+		
+		List<DateDTO> dateList = reservationService.getDateList(dateDTO);
 		
 		entity = new ResponseEntity<List<DateDTO>>(dateList,HttpStatus.OK);
 		return entity;			

@@ -6,9 +6,21 @@ public class ReservDTO {
 	private int f_num;
 	private String id; // name => id 수정
 	private String f_name; // 추가
-	private String start_time;
-	private String end_time;
-	private int total_price;
+	private String time;
+	private String total_price;
+	private String phone;
+	public String getPhone() {
+		return phone;
+	}
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+	public String getTotal_price() {
+		return total_price;
+	}
+	public void setTotal_price(String total_price) {
+		this.total_price = total_price;
+	}
 	private String r_date;
 	public int getR_num() {
 		return r_num;
@@ -34,23 +46,11 @@ public class ReservDTO {
 	public void setF_name(String f_name) {
 		this.f_name = f_name;
 	}
-	public String getStart_time() {
-		return start_time;
+	public String getTime() {
+		return time;
 	}
-	public void setStart_time(String start_time) {
-		this.start_time = start_time;
-	}
-	public String getEnd_time() {
-		return end_time;
-	}
-	public void setEnd_time(String end_time) {
-		this.end_time = end_time;
-	}
-	public int getTotal_price() {
-		return total_price;
-	}
-	public void setTotal_price(int total_price) {
-		this.total_price = total_price;
+	public void setTime(String time) {
+		this.time = time;
 	}
 	public String getR_date() {
 		return r_date;
@@ -58,5 +58,6 @@ public class ReservDTO {
 	public void setR_date(String r_date) {
 		this.r_date = r_date;
 	}
+	
 	
 }

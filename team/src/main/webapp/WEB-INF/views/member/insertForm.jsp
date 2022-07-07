@@ -99,7 +99,6 @@
  					</div>
  					
 					<div class="btn_wrap">
-<!-- 						<input type="submit" value="회원가입" class="btn_middle"> -->
 						<input type="button" class="btn_middle"  onclick="checkForm()" value="가입하기">
 					</div>
 					</form>

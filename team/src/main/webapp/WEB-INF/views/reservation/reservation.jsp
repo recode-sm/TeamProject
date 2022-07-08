@@ -532,7 +532,7 @@
 				
 					<li class="on"><a href="<%=request.getContextPath() %>/reservation/select">대관예약</a></li>
 					
-						<li><a href="/rese/rese_pwd.asp">예약확인</a></li>
+						<li><a href="<%=request.getContextPath() %>/reservation/Check_C">예약확인</a></li>
 						
 				</ul>
 			</div>

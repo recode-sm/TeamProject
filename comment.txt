@@ -1,9 +1,0 @@
-CREATE TABLE comment(
-c_num int primary key auto_increment,
-b_num int,
-content VARCHAR(500),
-c_date datetime,
-id varchar(20),
-foreign key (b_num) references board(b_num) ON DELETE CASCADE,
-foreign key (id) references member(id) ON DELETE CASCADE
-);

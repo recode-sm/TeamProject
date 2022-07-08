@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>  
+<%String id=(String)session.getAttribute("id"); %>
 	<section id="header">
 		<div class="header">
 			<h1><a href="<%=request.getContextPath() %>"><span class="hide">HM FUTSAL PARK</span></a></h1>
@@ -22,11 +24,20 @@
 				</div>
 				<div class="util">
 					<ul>
-<!-- 						<li class="face"><a href="https://www.facebook.com/HMfutsalpark/" target="_blank"><span class="hide">facebook</span></a></li> -->
-<!-- 						<li class="insta"><a href="https://www.instagram.com/hmfutsalpark/" target="_blank"><span class="hide">instagram</span></a></li> -->
-
+						<c:if test="${ empty sessionScope.id }">
+						<li class="login"><a href="<%=request.getContextPath() %>/member/login">MEMBER LOGIN</a> |</li>
+						<li class="logout"><a href="<%=request.getContextPath() %>/member/insert">MEMBER JOIN</a> |</li>
+						</c:if>
+						<c:if test="${! empty sessionScope.id }">
+						<li class="login"><a href="<%=request.getContextPath() %>/member/info">MEMBER INFO</a> |</li>
+						<li class="logout"><a href="<%=request.getContextPath() %>/member/logout">MEMBER LOGOUT</a> |</li>
+						</c:if>
+<!-- 							<li class="login"> -->
 						
-						<li class="login"><a href="https://hmfutsalpark.com/member/login.asp">MEMBER LOGIN</a></li>
+						
+<%-- 							<a href="<%=request.getContextPath() %>/member/login">MEMBER LOGIN</a> | --%>
+<%-- 							<a href="<%=request.getContextPath() %>/member/logout">MEMBER LOGOUT</a> | --%>
+<%-- 							<a href="<%=request.getContextPath() %>/member/info">MEMBER INFO</a></li> --%>
 						
 					</ul>
 				</div>

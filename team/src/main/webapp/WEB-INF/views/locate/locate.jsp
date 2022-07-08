@@ -132,7 +132,7 @@
 						<div class="cont">
 								<div class="info">
 									<span class="thumb">
-										<img src="${pageContext.request.contextPath}/resources/img/${fieldDTO.f_img}" alt="" />
+										<img src="${pageContext.request.contextPath}/resources/files/images/${fieldDTO.f_img}" alt="" />
 <!-- 										<div class="ov"> -->
 <!-- 											<ul> -->
 <!-- 											<li>#인조잔디</li><li>#국제규격</li><li>#탈의실</li><li>#주차장(무료)</li><li>#풋살화 대여</li><li>#Ex) A구장 6:6/ 7:7 구장  /  B구장 5:5 / 6:6 구장 /  C구장 3:3구장</li> -->
@@ -144,8 +144,7 @@
 										<p class="t01">${fieldDTO.f_address }</p>
 										<p class="t02"><a href="tel:010-6252-1007" class="tel">010-6252-1007</a> / <a href="tel:010-9505-6646" class="tel">010-9505-6646</a></p>
 										<div class="btn_wrap">
-											<a href="${pageContext.request.contextPath}/reservation/reservation?f_num=${fieldDTO.f_num}" class="btn_rese"><span>예약하기</span></a>
-<!-- 											<a href="/locate/locate_info.asp?code=HM0001" class="btn_info"><span>지점소개</span></a> -->
+											<a href="${pageContext.request.contextPath}/reservation/reservation?select02=${fieldDTO.district }&select03=${fieldDTO.f_num }" class="btn_rese"><span>예약하기</span></a>
 										</div>
 									</div>
 								</div>

@@ -14,12 +14,6 @@ String id=(String)session.getAttribute("id");
 <form action="<%=request.getContextPath() %>/member/deletePro" method="post">
 	아이디		:	<input type="text" name="id" value="<%=id %>" readonly><br>
 	비밀번호		:	<input type="password" name="pass"><br>
-	이름			:	<input type="text" name="name"><br>
-	전화번호		:	<input type="text" name="phone"><br>
-	팀			:	<input type="text" name="team"><br>
-	이메일		: 	<input type="email" name="email"><br>
-	우편번호		:	<input type="text" name="postcode"><br>
-	주소			:	<input type="text" name="address"><br>
 	<input type="submit" value="회원정보삭제">
 </form>	
 

@@ -9,9 +9,10 @@ public interface CommentDAO {
 	// commentDAO.getMaxNum()
 	public Integer getMaxNum();
 	
+	//	특정 댓글 조회
 	public CommentDTO getComment(int c_num);
 	
 	public void updateComment(CommentDTO commentDTO);
 	
-	
+	public void deleteComment(int c_num);
 }

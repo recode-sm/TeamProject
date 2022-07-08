@@ -39,6 +39,11 @@ public class CommentServiceImpl implements CommentService {
 		commentDAO.updateComment(commentDTO);
 	}
 	
+	@Override
+	public void deleteComment(int c_num) {
+		commentDAO.deleteComment(c_num);
+	}
+	
 
 	
 }

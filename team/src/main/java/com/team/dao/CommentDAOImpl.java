@@ -37,6 +37,11 @@ public class CommentDAOImpl implements CommentDAO{
 		sqlSession.update(namespace + ".updateComment", commentDTO);
 	}
 	
+	@Override
+	public void deleteComment(int c_num) {
+		sqlSession.delete(namespace + ".deleteComment", c_num);
+	}
+	
 	
 		
 }

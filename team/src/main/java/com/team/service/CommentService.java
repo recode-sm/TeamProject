@@ -9,5 +9,6 @@ public interface CommentService {
 	
 	public void updateComment(CommentDTO commentDTO);
 	
+	public void deleteComment(int c_num);
 
 }

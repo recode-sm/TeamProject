@@ -19,6 +19,23 @@
   	crossorigin="anonymous"></script>
 	<script src="<%=request.getContextPath() %>/resources/semantic/dist/semantic.min.js"></script>
 	<!-- //시멘틱ui 사용 -->
+	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/script/jquery-3.6.0.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+		
+		$('#cmtUp').click(function fucn1(){
+			$.ajax({
+				url:'${pageContext.request.contextPath}/notice/commentUpdate',
+				data:{content:$('#content').val()},
+				success:function(rdata){
+					$('#content').html(rdata);
+				}
+			});
+		});
+		
+	});
+	</script>
+
 </head>
 <body>
 <div id="wrapper">
@@ -83,8 +100,9 @@
 	<div class="author"><span>${commentDTO.id}</span></div>
 	<div class="text">${commentDTO.content}</div>
 	<div class="date">${commentDTO.c_date}</div>
-	<c:if test="${ (sessionScope.id eq boardDTO.id)}">
-		<a href="${pageContext.request.contextPath}/notice/commentUpdate?c_num=${commentDTO.c_num}" class="ui secondary button">수정</a>
+<!-- 	댓글 수정, 삭제 로그인 제어 -->
+	<c:if test="${ (sessionScope.id eq commentDTO.id)}">
+		<input type="button" id="cmtUp" onclick="fucn1()" class="ui secondary button" value="수정">
 		<a href="${pageContext.request.contextPath}/notice/commentDelete?c_num=${commentDTO.c_num}" class="ui secondary button">삭제</a>
 	</c:if>
 	<div class="ui dividing header"></div>
@@ -100,7 +118,7 @@
 		<form action="${pageContext.request.contextPath}/notice/cmtPro" method="post">
 		<table class="icon edit">
 			<tr><td><input type="text" name="id" value="${id}" readonly></td></tr>
-			<tr><td><textarea name="content" placeholder="댓글을 입력해주세요" style="width:100%;"></textarea></td></tr>
+			<tr><td><textarea id="content" name="content" placeholder="댓글을 입력해주세요" style="width:100%;"></textarea></td></tr>
 		</table>
 <!-- board.b_num 받아옴 -->
 		<input type="hidden" name="b_num" value="${boardDTO.b_num}">

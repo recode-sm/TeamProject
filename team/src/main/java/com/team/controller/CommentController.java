@@ -34,28 +34,28 @@ public class CommentController {
 		return "redirect:/notice/content";
 	}
 	
-	@RequestMapping(value = "/notice/commentUpdate", method = RequestMethod.GET)
-	public String update(HttpServletRequest request, Model model, HttpSession session) {
+	@RequestMapping(value = "/notice/commentDelete", method = RequestMethod.GET)
+	public String update(HttpServletRequest request, HttpSession session) {
 		int c_num = Integer.parseInt(request.getParameter("c_num"));
-
-		CommentDTO commentDTO = commentService.getComment(c_num);
-		model.addAttribute("commentDTO", commentDTO);
+		
+		String b_num = request.getParameter("b_num");
+		
+		commentService.deleteComment(c_num);
+		
 		String id=(String)session.getAttribute("id");
 
 		// /WEB-INF/views/notice/writeForm.jsp
-		return "/notice/content";
+		return "redirect:/notice/content?b_num="+b_num;
 	}
-	
-	
-	
-	@RequestMapping(value = "/notice/cmtUpdatePro", method = RequestMethod.POST)
-	public String updateCommetPro(CommentDTO commentDTO, HttpServletRequest request,Model model) {
-		int b_num = Integer.parseInt(request.getParameter("b_num"));
-		commentService.updateComment(commentDTO);
-		model.addAttribute("b_num", b_num);
-		
-		return "redirect:/notice/content";
-	}
+//	
+//	@RequestMapping(value = "/notice/cmtUpdatePro", method = RequestMethod.POST)
+//	public String updateCommetPro(CommentDTO commentDTO, HttpServletRequest request,Model model) {
+//		int b_num = Integer.parseInt(request.getParameter("b_num"));
+//		commentService.updateComment(commentDTO);
+//		model.addAttribute("b_num", b_num);
+//		
+//		return "redirect:/notice/content";
+//	}
 	
 	
 }

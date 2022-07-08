@@ -19,23 +19,6 @@
   	crossorigin="anonymous"></script>
 	<script src="<%=request.getContextPath() %>/resources/semantic/dist/semantic.min.js"></script>
 	<!-- //시멘틱ui 사용 -->
-	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/script/jquery-3.6.0.js"></script>
-	<script type="text/javascript">
-	$(document).ready(function(){
-		
-		$('#cmtUp').click(function fucn1(){
-			$.ajax({
-				url:'${pageContext.request.contextPath}/notice/commentUpdate',
-				data:{content:$('#content').val()},
-				success:function(rdata){
-					$('#content').html(rdata);
-				}
-			});
-		});
-		
-	});
-	</script>
-
 </head>
 <body>
 <div id="wrapper">
@@ -96,14 +79,13 @@
 <div class="content">
 <c:if test="${!empty commentList }">
 <c:forEach var="commentDTO" items="${commentList }" >
-	
 	<div class="author"><span>${commentDTO.id}</span></div>
-	<div class="text">${commentDTO.content}</div>
+	<div class="text"><input type="text" value="${commentDTO.content}" readonly></div>
 	<div class="date">${commentDTO.c_date}</div>
 <!-- 	댓글 수정, 삭제 로그인 제어 -->
 	<c:if test="${ (sessionScope.id eq commentDTO.id)}">
-		<input type="button" id="cmtUp" onclick="fucn1()" class="ui secondary button" value="수정">
-		<a href="${pageContext.request.contextPath}/notice/commentDelete?c_num=${commentDTO.c_num}" class="ui secondary button">삭제</a>
+		<input type="button" id="cmtUp" onclick="update()" class="ui secondary button" value="수정">
+		<input type="button" id="cmtDe" onclick="location.href='<%=request.getContextPath() %>/notice/commentDelete?c_num=${commentDTO.c_num}&b_num=${commentDTO.b_num}'" class="ui secondary button" value="삭제">
 	</c:if>
 	<div class="ui dividing header"></div>
 	

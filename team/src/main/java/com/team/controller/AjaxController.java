@@ -11,8 +11,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.team.domain.CommentDTO;
 import com.team.domain.DateDTO;
 import com.team.domain.FieldDTO;
+import com.team.service.CommentService;
 import com.team.service.ReservationService;
 
 @RestController
@@ -20,6 +22,7 @@ public class AjaxController {
 	
 	@Inject
 	private ReservationService reservationService;
+	private CommentService commentService; 
 	
 	@RequestMapping(value = "/reservation/select_sel", method = RequestMethod.GET)
 	public ResponseEntity<List<FieldDTO>> list_sel(HttpServletRequest request) throws Exception {
@@ -57,4 +60,18 @@ public class AjaxController {
 		entity = new ResponseEntity<List<DateDTO>>(dateList,HttpStatus.OK);
 		return entity;			
 	}
+	
+//	@RequestMapping(value = "/notice/commentDelete", method = RequestMethod.POST)
+//	public ResponseEntity<List<CommentDTO>> commentDelete(HttpServletRequest request) throws Exception {
+//		ResponseEntity<List<CommentDTO>> entity = null;		
+//		
+//		int c_num =Integer.parseInt(request.getParameter("c_num"));
+//		int b_num =Integer.parseInt(request.getParameter("b_num"));
+//		
+//		
+//		
+//		entity = new ResponseEntity<List<CommentDTO>>(commentList,HttpStatus.OK);
+//		return entity;
+//		
+//	}
 }

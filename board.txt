@@ -1,9 +1,0 @@
-CREATE TABLE board(
-b_num INT NOT NULL,
-id VARCHAR(20) NOT NULL,
-subject VARCHAR(40) NULL,
-content VARCHAR(500) NULL,
-readcount  INT NULL
-pass varchar(20) null,
-date datetime null
-);

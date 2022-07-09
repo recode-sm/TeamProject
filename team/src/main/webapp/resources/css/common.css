@@ -1,17 +1,17 @@
 
 /************************************************************************
- * 파일명	:common.css
- * 설명	:공통 CSS
- * 작성일	:2018.01.11
+ * �뙆�씪紐�	:common.css
+ * �꽕紐�	:怨듯넻 CSS
+ * �옉�꽦�씪	:2018.01.11
 ************************************************************************/
 
-@font-face {font-family:"HN_Th"; src:url('/font/HelveticaNeueLTStd-Th.eot'); src:local('☺'), url('/font/HelveticaNeueLTStd-Th.eot?#iefix') format("embedded-opentype"), url('/font/HelveticaNeueLTStd-Th.woff') format("woff"), url('/font/HelveticaNeueLTStd-Th.ttf') format("truetype"); }
-@font-face {font-family:"HN_Bd"; src:url('/font/HelveticaNeueLTStd-Bd.eot'); src:local('☺'), url('/font/HelveticaNeueLTStd-Bd.eot?#iefix') format("embedded-opentype"), url('/font/HelveticaNeueLTStd-Bd.woff') format("woff"), url('/font/HelveticaNeueLTStd-Bd.ttf') format("truetype"); }
-@font-face {font-family:"HN_hvc"; src:url('/font/HelveticaNeue-HeavyCond.eot'); src:local('☺'), url('/font/HelveticaNeue-HeavyCond.eot?#iefix') format("embedded-opentype"), url('/font/HelveticaNeue-HeavyCond.woff') format("woff"), url('/font/HelveticaNeue-HeavyCond.ttf') format("truetype"); }
+@font-face {font-family:"HN_Th"; src:url('/font/HelveticaNeueLTStd-Th.eot'); src:local('�샋'), url('/font/HelveticaNeueLTStd-Th.eot?#iefix') format("embedded-opentype"), url('/font/HelveticaNeueLTStd-Th.woff') format("woff"), url('/font/HelveticaNeueLTStd-Th.ttf') format("truetype"); }
+@font-face {font-family:"HN_Bd"; src:url('/font/HelveticaNeueLTStd-Bd.eot'); src:local('�샋'), url('/font/HelveticaNeueLTStd-Bd.eot?#iefix') format("embedded-opentype"), url('/font/HelveticaNeueLTStd-Bd.woff') format("woff"), url('/font/HelveticaNeueLTStd-Bd.ttf') format("truetype"); }
+@font-face {font-family:"HN_hvc"; src:url('/font/HelveticaNeue-HeavyCond.eot'); src:local('�샋'), url('/font/HelveticaNeue-HeavyCond.eot?#iefix') format("embedded-opentype"), url('/font/HelveticaNeue-HeavyCond.woff') format("woff"), url('/font/HelveticaNeue-HeavyCond.ttf') format("truetype"); }
 
-@font-face {font-family:"NanumBarunGothicL"; src:url('/font/NanumBarunGothicWebLight.eot'); src:local('☺'), url('/font/NanumBarunGothicWebLight.eot?#iefix') format("embedded-opentype"), url('/font/NanumBarunGothicWebLight.woff') format("woff"), url('/font/NanumBarunGothicWebLight.ttf') format("truetype"); }
-@font-face {font-family:"NanumBarunGothic"; src:url('/font/NanumBarunGothicWeb.eot'); src:local('☺'), url('/font/NanumBarunGothicWeb.eot?#iefix') format("embedded-opentype"), url('/font/NanumBarunGothicWeb.woff') format("woff"), url('/font/NanumBarunGothicWeb.ttf') format("truetype"); }
-@font-face {font-family:"NanumBarunGothicB"; src:url('/font/NanumBarunGothicWebBold.eot'); src:local('☺'), url('/font/NanumBarunGothicWebBold.eot?#iefix') format("embedded-opentype"), url('/font/NanumBarunGothicWebBold.woff') format("woff"), url('/font/NanumBarunGothicWebBold.ttf') format("truetype"); }
+@font-face {font-family:"NanumBarunGothicL"; src:url('/font/NanumBarunGothicWebLight.eot'); src:local('�샋'), url('/font/NanumBarunGothicWebLight.eot?#iefix') format("embedded-opentype"), url('/font/NanumBarunGothicWebLight.woff') format("woff"), url('/font/NanumBarunGothicWebLight.ttf') format("truetype"); }
+@font-face {font-family:"NanumBarunGothic"; src:url('/font/NanumBarunGothicWeb.eot'); src:local('�샋'), url('/font/NanumBarunGothicWeb.eot?#iefix') format("embedded-opentype"), url('/font/NanumBarunGothicWeb.woff') format("woff"), url('/font/NanumBarunGothicWeb.ttf') format("truetype"); }
+@font-face {font-family:"NanumBarunGothicB"; src:url('/font/NanumBarunGothicWebBold.eot'); src:local('�샋'), url('/font/NanumBarunGothicWebBold.eot?#iefix') format("embedded-opentype"), url('/font/NanumBarunGothicWebBold.woff') format("woff"), url('/font/NanumBarunGothicWebBold.ttf') format("truetype"); }
 
 
 /* common */
@@ -36,7 +36,7 @@ table th	{font-weight:normal}
 .mblock	{display:none !important}
 
 
-/* 정렬 */
+/* �젙�젹 */
 .fl_left	{float:left}
 .fl_right	{float:right}
 .fl_clear	{clear:both; height:0; font-size:0; line-height:0}
@@ -71,7 +71,6 @@ input[type=submit], input[type=button]	{cursor:pointer}
 ::-webkit-input-placeholder	{padding:2px 0 0 0; color:#bebebe; box-sizing:border-box; -moz-box-sizing:border-box;}
 :-ms-input-placeholder {color:#bebebe;}
 input[placeholder]	{line-height:1em !important}
-
 
 .chk {display:inline-block; margin-right:17px; font-size:16px; font-weight:400; line-height:27px;}
 .chk label	{display:block; padding-left:42px; background:url('/images/common/bg_chk.png') no-repeat 0 center; color:#383838}
@@ -109,7 +108,7 @@ select	{margin:0; border:1px solid #999; line-height:22px; height:22px; color:#a
 input.chk {border:0 none; margin-right:2px; vertical-align:middle;}
 input.chk.mlr	{margin:0 5px 0 16px}
 .textarea	{display:block; font-size:0; line-height:0}
-textarea	{padding:9px; border:1px solid #ddd; background:#fff; color:#383838; font-size:16px; font-family:'Nanum Gothic','맑은 고딕','AppleGothic','돋움','Dotum', sans-serif; overflow-y:auto; resize:none; -webkit-appearance:none; outline:none; box-sizing:border-box; -moz-box-sizing:border-box;}
+textarea	{padding:9px; border: 0; border-radius: 15px; outline: none; background:#fff; color:#383838; font-size:16px; font-family:'Nanum Gothic','留묒� 怨좊뵓','AppleGothic','�룍��','Dotum', sans-serif; overflow-y:auto; resize:none; -webkit-appearance:none; outline:none; box-sizing:border-box; -moz-box-sizing:border-box;}
 textarea:focus	{border-color:#bbb}
 
 
@@ -174,9 +173,9 @@ a.rollover:hover img.on		{display:none;}
 #wrapper #header nav .nav_wrap ul	{position:relative; text-align:left}
 #wrapper #header nav .nav_wrap ul:after	{content:""; display:block; clear:both}
 
-/*hcup적용*/
+/*hcup�쟻�슜*/
 /*#wrapper #header nav .nav_wrap ul li	{display:inline-block; position:relative; padding:0 38px; vertical-align:top; -webkit-transition:all 0.3s ease-out; -moz-transition:all 0.3s ease-out; -ms-transition:all 0.3s ease-out; -o-transition:all 0.3s ease-out; transition:all 0.3s ease-out;}*/
-/*CHAMPIONSHIP 적용시*/
+/*CHAMPIONSHIP �쟻�슜�떆*/
 #wrapper #header nav .nav_wrap ul li	{display:inline-block; position:relative; padding:0 30px; vertical-align:top; -webkit-transition:all 0.3s ease-out; -moz-transition:all 0.3s ease-out; -ms-transition:all 0.3s ease-out; -o-transition:all 0.3s ease-out; transition:all 0.3s ease-out;}
 /* #wrapper #header nav .nav_wrap ul li:first-child	{padding-left:0;} */
 /* #wrapper #header nav .nav_wrap ul li:first-child a	{width:146px; background:url('/images/common/nav_aia.png') no-repeat center center; background-size:100% auto} */
@@ -225,7 +224,7 @@ a.rollover:hover img.on		{display:none;}
 #wrapper #footer .footer_wrap .copy	{padding-left:365px; color:#959595; font-size:10px; font-family:'Arial'; font-weight:bold; line-height:20px;}
 
 
-/* Sub 공통 */
+/* Sub 怨듯넻 */
 .snav_wrap	{display:none}
 .snav_dim	{display:none}
 
@@ -247,7 +246,7 @@ a.rollover:hover img.on		{display:none;}
 .img	{display:block; font-size:0; line-height:0}
 
 
-/* 컨텐츠 공통 */
+/* 而⑦뀗痢� 怨듯넻 */
 .top_title	{padding:27px 30px; border:1px solid #d8dfea; background:#fff}
 .top_title h2	{color:#3158bc; font-size:32px; font-weight:bold}
 .top_title h2 span	{display:inline-block; position:relative; margin-left:15px; padding-left:17px; color:#d2dbe2; font-size:24px; font-weight:normal; line-height:34px;}
@@ -257,7 +256,7 @@ a.rollover:hover img.on		{display:none;}
 .top_title p.desc		{margin-top:5px; color:#717171; font-size:14px; line-height:20px;}
 
 
-/* 공통 팝업 */
+/* 怨듯넻 �뙘�뾽 */
 .layer_popup	{display:none; position:fixed; z-index:1000; top:50%; left:50%; padding:48px 22px; width:100%; max-width:800px; background:#fff; border-radius:10px; -webkit-transform:translate3d(-50%, -50%, 0); -moz-transform:translate3d(-50%, -50%, 0); -o-transform:translate3d(-50%, -50%, 0); -ms-transform:translate3d(-50%, -50%, 0); transform:translate3d(-50%, -50%, 0); box-sizing:border-box; -moz-box-sizing:border-box}
 .layer_popup h1.title	{padding-top:58px; color:#000; font-size:34px; line-height:50px; text-align:center}
 .layer_popup h1.title.line	{margin:0 -50px; padding:0 50px; border-bottom:1px solid #e1e1e1; font-size:20px; font-family:'Nanum Gothic','AppleGothic','Dotum', sans-serif; font-weight:400; line-height:44px; text-align:left}
@@ -272,7 +271,7 @@ a.rollover:hover img.on		{display:none;}
 
 
 
-/* 타이틀 레벨 */
+/* ���씠�� �젅踰� */
 .h1	{}
 .h_tit	{}
 .h_tit span	{}
@@ -306,7 +305,7 @@ a.rollover:hover img.on		{display:none;}
 .content .tab_wrap ul.t03_pop li:nth-child(2)	{width:33.3%}
 
 /* button */
-button	{display:inline-block; padding:0; border:0; background:transparent; font-family:'Nanum Gothic','맑은 고딕','AppleGothic','돋움','Dotum', sans-serif; text-align:center; vertical-align:middle; cursor:pointer; white-space:nowrap; -webkit-transition:all 0.25s ease-out; -moz-transition:all 0.25s ease-out; -ms-transition:all 0.25s ease-out; -o-transition:all 0.25s ease-out; transition:all 0.25s ease-out;}
+button	{display:inline-block; padding:0; border:0; background:transparent; font-family:'Nanum Gothic','留묒� 怨좊뵓','AppleGothic','�룍��','Dotum', sans-serif; text-align:center; vertical-align:middle; cursor:pointer; white-space:nowrap; -webkit-transition:all 0.25s ease-out; -moz-transition:all 0.25s ease-out; -ms-transition:all 0.25s ease-out; -o-transition:all 0.25s ease-out; transition:all 0.25s ease-out;}
 button.dis,
 button.dis	span	{cursor:default}
 button.dis:hover	span	{background-position:0 0}
@@ -450,14 +449,14 @@ table	th,	table	td	{border:0 none}
 .layer_popup .table_wrap.small table thead tr th	{padding:11px 0;}
 .layer_popup .table_wrap.small table tbody tr td	{padding:0px 0;}
 
-/* 블릿 */
+/* 釉붾┸ */
 .bullet_list	{margin-top:15px}
 .bullet_list li	{position:relative; padding-left:6px; color:#999 !important; font-size:11px; line-height:20px !important; }
 .bullet_list li .bullet	{position:absolute; display:block; top:0; left:0; color:#999 !important; text-indent:-4px}
 .bullet_list li ul	{padding:20px 0}
 .bullet_list li ul li	{padding-left:0}
 
-/* 페이징 */
+/* �럹�씠吏� */
 .pager_wrap	{position:relative; margin-top:42px; font-size:0; line-height:0; text-align:center; letter-spacing:-10px}
 .pager_wrap .search	{position:relative; margin-bottom:42px; font-size:0; line-height:0}
 .pager_wrap .search .select	{width:90px; height:43px; border:1px solid #d0d0d0; border-right:0; vertical-align:top}
@@ -653,7 +652,7 @@ table	th,	table	td	{border:0 none}
 	.table_wrap.list table tbody tr td a.tit.secret	{padding-right:15px; background-size:9px auto}
 	.table_wrap.list table tbody tr td .state	{width:37px; font-size:11px; line-height:22px; border-radius:3px}
 
-	/* 페이징 */
+	/* �럹�씠吏� */
 	.pager_wrap	{margin-top:35px;}
 	.pager_wrap .search	{margin-bottom:20px;}
 	.pager_wrap .search .select	{width:44px; height:24px;}
@@ -674,7 +673,7 @@ table	th,	table	td	{border:0 none}
 	.pager_wrap .page a.on	{border:1px solid #2c3c57; background:#2c3c57; color:#fff; text-decoration:none}
 
 
-	/* 공통 팝업 */
+	/* 怨듯넻 �뙘�뾽 */
 	.layer_popup	{margin:0 auto; padding:23px 10px; right:10px; left:10px; width:auto; -webkit-transform:translate3d(0, -50%, 0); -moz-transform:translate3d(0, -50%, 0); -o-transform:translate3d(0, -50%, 0); -ms-transform:translate3d(0, -50%, 0); transform:translate3d(0, -50%, 0);}
 	.layer_popup .btn_closed	{width:30px; height:30px; background-size:40px 40px !important}
 
@@ -699,5 +698,5 @@ table	th,	table	td	{border:0 none}
 }
 
 
-/* 기타 */
+/* 湲고� */
 #mask {background:rgba(0, 0, 0, 0.7);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#70000000,endColorstr=#70000000);position:fixed;width:100%;top:0;right:0;left:0;bottom:0;z-index:600;}

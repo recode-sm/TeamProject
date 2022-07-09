@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     
 <!DOCTYPE html>
 <html >
@@ -41,11 +42,15 @@
 			<nav>
 				<div class="util">
 					<ul>
-
 						<li class="login">
+						<c:if test="${ empty sessionScope.id }">
 							<a href="<%=request.getContextPath() %>/member/login">MEMBER LOGIN</a> |
+						</c:if> 
+						<c:if test="${!empty sessionScope.id}">
+							<a href="#">${memberDTO.id}님 반갑습니다</a>
 							<a href="<%=request.getContextPath() %>/member/logout">MEMBER LOGOUT</a> |
-							<a href="<%=request.getContextPath() %>/member/info">MEMBER INFO</a> 
+							<a href="<%=request.getContextPath() %>/member/info">MEMBER INFO</a>
+						</c:if>
 						</li>
 						
 					</ul>

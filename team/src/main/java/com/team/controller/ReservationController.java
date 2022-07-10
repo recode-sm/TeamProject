@@ -1,5 +1,6 @@
 package com.team.controller;
 
+import java.util.List;
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -74,6 +75,15 @@ public class ReservationController {
 		System.out.println(reservDTO.getTotal_price());
 		
 		return "/reservation/reservResult";
+	}
+
+	@RequestMapping(value = "/reservation/list", method = RequestMethod.GET)
+	public String reservList(HttpSession session,HttpServletRequest request,Model model) throws Exception{
+		String id = (String)session.getAttribute("id");
+		System.out.println(id);
+		List<ReservDTO> reservList = reservationService.getReservList(id);
+		model.addAttribute("reservList",reservList);
+		return "/reservation/reservList";
 	}
 }
 

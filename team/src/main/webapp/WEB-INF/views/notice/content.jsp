@@ -11,35 +11,17 @@
 	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/resources/css/common.css">
 	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/resources/css/content.css?after7">
 	<!-- //공통css -->
-	
-	<!-- 공통js -->
-<%-- 	<script type="text/javascript" src="<%=request.getContextPath() %>/resources/js/libs/jquery.min.js"></script> --%>
-<%-- 	<script type="text/javascript" src="<%=request.getContextPath() %>/resources/js/libs/jquery-ui.min.js"></script> --%>
-<%-- 	<script type="text/javascript" src="<%=request.getContextPath() %>/resources/js/datepicker.js"></script> --%>
-<%-- 	<script type="text/javascript" src="<%=request.getContextPath() %>/resources/js/common/common.js"></script> --%>
-<%-- 	<script type="text/javascript" src="<%=request.getContextPath() %>/resources/js/common/form_check.js"></script> --%>
-<!-- 	<!-- //공통js --> 
- 
-<%-- 	<link rel="stylesheet" href="<%=request.getContextPath() %>/resources/themes/classic.css"> --%>
-<%-- 	<link rel="stylesheet" href="<%=request.getContextPath() %>/resources/themes/classic.date.css"> --%>
-<%-- 	<link rel="stylesheet" href="<%=request.getContextPath() %>/resources/themes/classic.time.css"> --%>
-<!-- 	<script src="/admincms/js/pickadate.js-3.5.6/lib/picker.js"></script> -->
-<!-- 	<script src="/admincms/js/pickadate.js-3.5.6/lib/picker.date.js"></script> -->
-<!-- 	<script src="/admincms/js/pickadate.js-3.5.6/lib/picker.time.js"></script> -->
-<!-- 	<script src="/admincms/js/pickadate.js-3.5.6/lib/legacy.js"></script> -->
-<!-- 	<!-- Global site tag (gtag.js) - Google Analytics --> 
-<!-- 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-116234591-1"></script> -->
-<!-- 	<script> -->
-<!-- 	  window.dataLayer = window.dataLayer || []; -->
-<!-- 	  function gtag(){dataLayer.push(arguments);} -->
-<!-- 	  gtag('js', new Date()); -->
-
-<!-- 	  gtag('config', 'UA-116234591-1'); -->
-<!-- 	</script> -->
+	<!-- 시멘틱ui 사용 -->
+	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/resources/semantic/semantic.css">
+	<script
+  	src="https://code.jquery.com/jquery-3.1.1.min.js"
+  	integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  	crossorigin="anonymous"></script>
+	<script src="<%=request.getContextPath() %>/resources/semantic/dist/semantic.min.js"></script>
+	<!-- //시멘틱ui 사용 -->
 </head>
 <body>
 <div id="wrapper">
-
 <!-- Header -->
 	<jsp:include page="../include/header.jsp"></jsp:include>
 <!-- //Header 끝-->
@@ -59,7 +41,7 @@
 		<div class="tab_wrap">
 			<ul class="t03">
 				<li><a href="comm_notice.asp">공지사항</a></li>
-				<li><a href="comm_faq.asp">FAQ</a></li>
+				<li><a href="<%=request.getContextPath() %>/qna/list">Q&A</a></li>
 				<li class="on"><a href="<%=request.getContextPath() %>/notice/list">커뮤니티</a></li>
 			</ul>
 		</div>
@@ -90,45 +72,46 @@
 </div>
 </div>
 
-<!-- 댓글쓰기창, 로그인 제어 -->
-<c:if test="${ !empty sessionScope.id }">
-	<div class="cmt_wrap">
-	<form action="${pageContext.request.contextPath}/notice/cmtPro" method="post">
-	<table class="cmt_table">
-	<tr><td><input type="text" name="id" value="${id}" readonly></td></tr>
-	<tr><td><textarea name="content" placeholder="댓글을 입력해주세요" style="width:100%;"></textarea></td></tr>
-	</table>
-<!-- board.b_num 받아옴 -->
-	<tr><td><input type="hidden" name="b_num" value="${boardDTO.b_num}"></td></tr>
-	<div class="btn_wrap right">
-	<input type="submit" value="댓글작성" class="btn_middle">
-	</div>
-	</form>
-	</div>
-</c:if>
-
 <!-- 댓글목록 -->
-<div class="list_pn">
-<table border="1">
+<div class="ui small comments">
+<h2 class="ui dividing header">댓글</h2>
+<div class="comments">
+<div class="content">
 <c:if test="${!empty commentList }">
 <c:forEach var="commentDTO" items="${commentList }" >
-	<colgroup>
-		<col style="width:178px" class="w01"/>
-		<col style="" />
-	</colgroup>
-	<tbody>
-	<tr>
-	<th><span>${commentDTO.id}</span></th>
-	<td>${commentDTO.content}</td>
-	<td>${commentDTO.c_date}</td>
-	</tr>
-	</tbody>
+	<div class="author"><span>${commentDTO.id}</span></div>
+	<div class="text"><input type="text" value="${commentDTO.content}" readonly></div>
+	<div class="date">${commentDTO.c_date}</div>
+<!-- 	댓글 수정, 삭제 로그인 제어 -->
+	<c:if test="${ (sessionScope.id eq commentDTO.id)}">
+		<input type="button" id="cmtUp" onclick="update()" class="ui secondary button" value="수정">
+		<input type="button" id="cmtDe" onclick="location.href='<%=request.getContextPath() %>/notice/commentDelete?c_num=${commentDTO.c_num}&b_num=${commentDTO.b_num}'" class="ui secondary button" value="삭제">
+	</c:if>
+	<div class="ui dividing header"></div>
+	
 </c:forEach>
 </c:if>
-</table>
 </div>
-</div><!-- view wrap 끝 -->
-</div><!-- Contents 끝-->
+</div>
+</div>
+<!-- 댓글쓰기창, 로그인 제어 -->
+<c:if test="${ !empty sessionScope.id }">
+	<div class="ui reply form">
+		<form action="${pageContext.request.contextPath}/notice/cmtPro" method="post">
+		<table class="icon edit">
+			<tr><td><input type="text" name="id" value="${id}" readonly></td></tr>
+			<tr><td><textarea id="content" name="content" placeholder="댓글을 입력해주세요" style="width:100%;"></textarea></td></tr>
+		</table>
+<!-- board.b_num 받아옴 -->
+		<input type="hidden" name="b_num" value="${boardDTO.b_num}">
+		<div class="btn_wrap right">
+			<input type="submit" value="댓글작성" class="btn_middle">
+		</div>
+		</form>
+	</div>
+</c:if>
+</div><!-- //notice wrap view 끝 -->
+</div><!-- // Contents 끝-->
 </section>
 
 

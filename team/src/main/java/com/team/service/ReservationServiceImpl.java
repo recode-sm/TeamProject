@@ -60,8 +60,6 @@ public class ReservationServiceImpl implements ReservationService{
 
 		return reservationDAO.getReservation(s_id);
 	}
-<<<<<<< Updated upstream
-=======
 	
 	@Override
 	public List<ReservDTO> getReservList(String id) {
@@ -80,5 +78,5 @@ public class ReservationServiceImpl implements ReservationService{
 		
 		reservationDAO.payInsert(payDTO);
 	}
->>>>>>> Stashed changes
+
 }

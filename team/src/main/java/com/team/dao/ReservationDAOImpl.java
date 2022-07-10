@@ -48,6 +48,12 @@ public class ReservationDAOImpl implements ReservationDAO{
 	}
 	
 	@Override
+	public List<ReservDTO> getReservList(String id) {
+
+		return sqlSession.selectList(namespace+".getReserv",id);
+	}
+	
+	@Override
 	public List<DateDTO> getDateList(DateDTO dateDTO) {
 		System.out.println("getDateList()");
 

@@ -9,18 +9,15 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
-import org.springframework.util.FileSystemUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.team.domain.CommentDTO;
 import com.team.domain.DateDTO;
 import com.team.domain.FieldDTO;
-<<<<<<< Updated upstream
-=======
 import com.team.domain.payDTO;
 import com.team.service.CommentService;
->>>>>>> Stashed changes
 import com.team.service.ReservationService;
 
 @RestController
@@ -28,6 +25,7 @@ public class AjaxController {
 	
 	@Inject
 	private ReservationService reservationService;
+	private CommentService commentService; 
 	
 	@RequestMapping(value = "/reservation/select_sel", method = RequestMethod.GET)
 	public ResponseEntity<List<FieldDTO>> list_sel(HttpServletRequest request) throws Exception {
@@ -65,8 +63,6 @@ public class AjaxController {
 		entity = new ResponseEntity<List<DateDTO>>(dateList,HttpStatus.OK);
 		return entity;			
 	}
-<<<<<<< Updated upstream
-=======
 	
 //	@RequestMapping(value = "/notice/commentDelete", method = RequestMethod.POST)
 //	public ResponseEntity<List<CommentDTO>> commentDelete(HttpServletRequest request) throws Exception {
@@ -117,5 +113,4 @@ public class AjaxController {
 		
 		return payDTO;
 	}
->>>>>>> Stashed changes
 }

@@ -4,10 +4,6 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.team.reservation.reservationMapper">
 
-	<select id="getReserv" resultType="com.team.domain.ReservDTO">
-		select * from reservation where id=#{id}
-	</select>
-	
 	<select id="getFeildList_sel" resultType="com.team.domain.FieldDTO">
 		select distinct district from field order by district
 	</select>
@@ -40,5 +36,14 @@
 		 join field f ON f.f_num=r.f_num
 		 where r.id=#{s_id} and r_num=(select max(r_num) from reservation where r.id=#{s_id})
 	</select>
+	
+	<update id="payUpdate">
+		update reservation set status=#{status} where r_num=#{r_num}
+	</update>
+	
+	<insert id="payInsert">
+		insert into pay(imp_uid,merchant_uid,paid_amount,r_num,p_date) 
+		values (#{imp_uid},#{merchant_uid},#{paid_amount},#{r_num},#{p_date})
+	</insert>
 	
 </mapper>

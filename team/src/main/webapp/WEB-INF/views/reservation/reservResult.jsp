@@ -21,6 +21,7 @@
         IMP.request_pay({ // param
             pg: "html5_inicis",
             pay_method: "card",
+<<<<<<< Updated upstream
             merchant_uid: "ORD20180131-0000011",
             name: docoument.getElementById("f_name").value,
             amount: docoument.getElementById("price").value,
@@ -29,29 +30,76 @@
 //             buyer_tel: "010-4242-4242",
 //             buyer_addr: "서울특별시 강남구 신사동",
 //             buyer_postcode: "01181"
+=======
+            merchant_uid: 'merchant_' + new Date().getTime(),
+            name: $("#f_name").val(),
+            amount: $("#price").val(),
+			buyer_email: $("#id").val(),
+            buyer_name: $("#id").val(),
+            buyer_tel: $("#phone").val(),
+//              buyer_addr: "서울특별시 강남구 신사동",
+//              buyer_postcode: "01181"
+>>>>>>> Stashed changes
         }, function (rsp) { // callback
             	if (rsp.success) { // 결제 성공 시: 결제 승인 또는 가상계좌 발급에 성공한 경우
+            		var status;
+        			var imp_uid;
+        			var paid_amount;
+//         			var apply_num;
+//                     var pay_at;
+                    var merchant_uid;
+                	var r_num;
+        			
+//             		alert("결제성공" + msg);
+        		
                     // jQuery로 HTTP 요청
+<<<<<<< Updated upstream
                     jQuery.ajax({
                         url: "", // 예: https://www.myservice.com/payments/complete
                         method: "POST",
                         headers: { "Content-Type": "application/json" },
+=======
+                    $.ajax({
+                        url: "${pageContext.request.contextPath}/reservation/reservComplete", // 예: https://www.myservice.com/payments/complete
+                        type: 'POST',
+                        dataType: 'json',
+>>>>>>> Stashed changes
                         data: {
+                        	r_num: ${reservDTO.r_num },
+                            status: rsp.status,
                             imp_uid: rsp.imp_uid,
+                            paid_amount: rsp.paid_amount,
+//                             apply_num: rsp.apply_num,
+//                             pay_at: rsp.pay_at,
                             merchant_uid: rsp.merchant_uid
                         }
-                    }).done(function (data) {
-                      // 가맹점 서버 결제 API 성공시 로직
-                    })
-                  } else {
-                    alert("결제에 실패하였습니다. 에러 내용: " +  rsp.error_msg);
-                  }
-        });
-      }
+                    }).done(function (payDTO){
+                    	 console.log('success');
+                    	 location.href="${pageContext.request.contextPath}/reservation/select";
+                    	
+                    });
+                        
+//                         success: function(){
+// 	                      // 가맹점 서버 결제 API 성공시 로직
+// 	                      console.log('success');
+// 	                      location.href="${pageContext.request.contextPath}/reservation/select";
+// 	                    }
+//                         ,error:function(request,status,error){            
+// 							alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);          
+// 						}
+//                  	});
+        		} else {
+        			alert("결제에 실패하였습니다. 에러 내용: " + rsp.error_msg);
+        		}
+       		}
+        )
+   	 }
+    
 </script>
 </head>
 <body>
-<FORM>
+<form method ="POST">
+	<input name="r_num" type="hidden" id = "r_num" value="${reservDTO.r_num }" >
 	<section id="container">
 		<!-- Contents -->
 		<div class="content">
@@ -90,9 +138,7 @@
 										<th>예약일자</th>
 										<td>
 										<input name="r_date" type="text" id="selectedDate2" value="${reservDTO.r_date }" readonly  style="width:100%; border:0 solid black;">
-										
 										</td>
-										
 									</tr>
 									<tr>
 										<th>선택구장</th>
@@ -121,7 +167,7 @@
 							</span>
 
 							<div class="btn_wrap">
-								<button type="button" class="btn_big gray" onclick="requestPay()">결제하기</button>
+								<input type="button" class="btn_big gray" onclick="requestPay()" value="결제">
 							</div>
 
 						</div>
@@ -131,6 +177,6 @@
 		</div>
 			<!-- //Contents -->
 	</section>
-</FORM>
+</form>
 </body>
 </html>

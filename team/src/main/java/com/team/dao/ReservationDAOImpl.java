@@ -11,6 +11,7 @@ import com.team.domain.DateDTO;
 import com.team.domain.FieldDTO;
 import com.team.domain.MemberDTO;
 import com.team.domain.ReservDTO;
+import com.team.domain.payDTO;
 
 @Repository
 public class ReservationDAOImpl implements ReservationDAO{
@@ -58,5 +59,14 @@ public class ReservationDAOImpl implements ReservationDAO{
 		return sqlSession.selectOne(namespace+".getReservation",s_id);
 	}
 	
+	@Override
+	public void payUpdate(payDTO payDTO) {
+		sqlSession.selectOne(namespace+".payUpdate",payDTO);
+	}
 	
+	@Override
+	public void payInsert(payDTO payDTO) {
+		sqlSession.selectOne(namespace+".payInsert",payDTO);
+		
+	}
 }

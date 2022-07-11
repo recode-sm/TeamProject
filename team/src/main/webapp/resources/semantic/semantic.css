@@ -47,6 +47,17 @@ input[type="password"] {
   -moz-appearance: none;
   /* mobile firefox too! */
 }
+input[type="text"] {
+  width: auto;
+  height: 30px;
+  font-size: 17px;
+  border: 0;
+  border-radius: 15px;
+  outline: none;
+  padding-left: 16px;
+  background-color: #ffffff;
+}
+
 
 /*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
 

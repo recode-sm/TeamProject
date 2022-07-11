@@ -11,6 +11,7 @@ import com.team.domain.DateDTO;
 import com.team.domain.FieldDTO;
 import com.team.domain.MemberDTO;
 import com.team.domain.ReservDTO;
+import com.team.domain.payDTO;
 
 @Service
 public class ReservationServiceImpl implements ReservationService{
@@ -64,6 +65,18 @@ public class ReservationServiceImpl implements ReservationService{
 	public List<ReservDTO> getReservList(String id) {
 	
 		return reservationDAO.getReservList(id);
+	}
+	
+	@Override
+	public void payUpdate(payDTO payDTO) {
+		
+		reservationDAO.payUpdate(payDTO);
+	}
+
+	@Override
+	public void payInsert(payDTO payDTO) {
+		
+		reservationDAO.payInsert(payDTO);
 	}
 
 }

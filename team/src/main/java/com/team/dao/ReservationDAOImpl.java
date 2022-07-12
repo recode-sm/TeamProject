@@ -75,4 +75,23 @@ public class ReservationDAOImpl implements ReservationDAO{
 		sqlSession.selectOne(namespace+".payInsert",payDTO);
 		
 	}
+	
+	@Override
+	public void reservationCancel(String r_num) {
+		sqlSession.selectOne(namespace+".reservationCancel",r_num);
+		
+	}
+	
+	@Override
+	public payDTO reservationGet(String r_num) {
+		return sqlSession.selectOne(namespace+".reservationGet",r_num);
+		
+	}
+	
+	@Override
+	public void reservationUpdate(String r_num) {
+		sqlSession.selectOne(namespace+".reservationUpdate",r_num);
+		
+	}
+	
 }

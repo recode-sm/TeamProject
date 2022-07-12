@@ -167,13 +167,12 @@ public class MemberController {
 		// 회원 리스트 페이지(list.jsp)로 이동
 		return "member/list";
 	}
+	
 	@RequestMapping(value = "/reservation/Check_C", method = RequestMethod.GET)
 	public String reserCheck_C(HttpSession session,HttpServletRequest request,Model model) throws Exception{
 		// DB 작업
 		String id=(String)session.getAttribute("id");
 			return "/reservation/reservCheck_C";
-		
-		
 	}
 
 	@RequestMapping(value = "/reservation/CheckPro", method = RequestMethod.POST)
@@ -190,4 +189,36 @@ public class MemberController {
 			return "member/pass_msg";
 		}
 	}
+	
+	@RequestMapping(value = "/member/updatePass", method = RequestMethod.GET)
+	public String updatePass () {
+
+		return "/member/updatePass";
+	}
+	
+	@RequestMapping(value = "/member/updatePassPro", method = RequestMethod.POST)
+	public String updatePassPro (HttpSession session, HttpServletRequest request, MemberDTO memberDTO) {
+		
+		String id = (String)session.getAttribute("id");
+		String pass = request.getParameter("pass");
+		String updatePass = request.getParameter("updatePass");
+		
+		MemberDTO memberDTO2 = memberService.getMember(id);
+		String checkPass = memberDTO2.getPass();
+		
+		if (checkPass.equals(pass)) {
+
+			memberDTO.setId(id);
+			memberDTO.setPass(updatePass);
+			memberService.updatePass(memberDTO);
+			
+			return "redirect:/member/update";
+			
+		} else { 
+			
+			return "member/pass_msg";
+		}
+	}
+
+
 }

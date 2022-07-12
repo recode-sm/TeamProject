@@ -94,9 +94,6 @@
     
   </script>
 	<script type="text/javascript">
-	$(document).ready(function() {
-		$('html').addClass('memb');
-	});
 	
 	function CheckEmail(mStr){
 		var frm = document.frmJoin;

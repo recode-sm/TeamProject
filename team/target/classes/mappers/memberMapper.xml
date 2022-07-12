@@ -31,4 +31,8 @@
 		SELECT * FROM member 
 	</select>
 
+	<update id="updatePass">
+		update member set pass=#{pass} where id=#{id}
+	</update>
+	
 </mapper>

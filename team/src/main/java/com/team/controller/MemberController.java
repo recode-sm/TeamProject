@@ -166,7 +166,13 @@ public class MemberController {
 	public String reserCheck_C(HttpSession session,HttpServletRequest request,Model model) throws Exception{
 		// DB 작업
 		String id=(String)session.getAttribute("id");
+		
+		if(id!=null) {
 			return "/reservation/reservCheck_C";
+		}else {
+			return "/reservation/login_msg";
+		}
+			
 		
 		
 	}

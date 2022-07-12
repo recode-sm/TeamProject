@@ -7,15 +7,15 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 	<title>HM FUTSAL PARK</title>
 	<meta name="keywords" content="HM FUTSAL PARK">
-	<meta name="description" content="�����̾� ǲ���� HMǲ����ũ, ���� 11�� ����, ��� ����, ���� �Ը� �� ��ȸ �� ���� ��ȸ ����">
+	<meta name="description" content="     ̾  ǲ     HMǲ    ũ,      11       ,         ,       Ը       ȸ           ȸ     ">
 	<meta property="og:type" content="website">
 	<meta property="og:image" content="https://hmfutsalpark.com/images/common/link_profile.png">
 	<meta property="og:title" content="HM FUTSAL PARK">
-	<meta property="og:description" content="�����̾� ǲ���� HMǲ����ũ">
+	<meta property="og:description" content="     ̾  ǲ     HMǲ    ũ">
 	<meta property="og:url" content="https://hmfutsalpark.com">
 	<meta http-equiv="X-UA-Compatible" content="IE=chrome">
 
-	<!-- ����css -->
+	<!--     css -->
 	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/resources/css/common.css">
 	<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700" rel="stylesheet">
 
@@ -54,14 +54,160 @@
 	</script>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 
-	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/resources/css/content.css">
-</head>
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/resources/css/content.css">
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script>
+    function sample4_execDaumPostcode() {
+        new daum.Postcode({
+            oncomplete: function(data) {
+                // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
 
-<script type="text/javascript">
+                // 도로명 주소의 노출 규칙에 따라 주소를 표시한다.
+                // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+                var roadAddr = data.roadAddress; // 도로명 주소 변수
+                var extraRoadAddr = ''; // 참고 항목 변수
+
+                // 법정동명이 있을 경우 추가한다. (법정리는 제외)
+                // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+                if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+                    extraRoadAddr += data.bname;
+                }
+                // 건물명이 있고, 공동주택일 경우 추가한다.
+                if(data.buildingName !== '' && data.apartment === 'Y'){
+                   extraRoadAddr += (extraRoadAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+                }
+                // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+                if(extraRoadAddr !== ''){
+                    extraRoadAddr = ' (' + extraRoadAddr + ')';
+                }
+
+                // 우편번호와 주소 정보를 해당 필드에 넣는다.
+                document.getElementById('sample4_postcode').value = data.zonecode;
+                document.getElementById("sample4_roadAddress").value = roadAddr;
+                
+       
+                var guideTextBox = document.getElementById("guide");
+              
+            }
+        }).open();
+    }
+    
+  </script>
+	<script type="text/javascript">
 	$(document).ready(function() {
 		$('html').addClass('memb');
 	});
+	
+	function CheckEmail(mStr){
+		var frm = document.frmJoin;
+		if (mStr !== "etc") {
+			frm.email2.readOnly = true;
+			frm.email2.value = mStr;
+		} else {
+			frm.email2.value = "";
+			frm.email2.readOnly = false;
+			frm.email2.focus();
+		}
+	}
+
+	function checkForm(){
+		var frm = document.frmJoin;
+		var regExp = /^(?=.*[a-zA-z])(?=.*[0-9])(?=.*[$`~!@$!%*#^?&\\(\\)\-_=+]).{8,16}$/;
+		var pass = document.getElementById('pass').value;
+	 
+		if (frm.id.value == "") {
+			alert("[이메일]을 입력하세요.");
+			frm.id.focus();
+			return false;
+		}
+		var pos2 = frm.id.value.indexOf('@');
+		if (pos2 == -1) {
+			alert("[이메일]을 형식 입력하세요.");
+			frm.id.focus();
+			return false;
+		}
+		
+		if (regExp.test(pass) == false ) {
+			alert("[비밀번호]는 8~16자 사이 숫자,영문자,특수문자를 포함하여 주십시오");
+			frm.pass.focus();
+			return false;
+		}
+		if (frm.pass.value != frm.pass1.value) {
+			alert("[비밀번호]가 일치하지 않습니다.");
+			frm.pass1.focus();
+			return false;
+		}
+		if (frm.name.value == "") {
+			alert("[이름]을 입력하세요.");
+			frm.name.focus();
+			return false;
+		}
+		if (frm.phone.value == "") {
+			alert("[핸드폰번호]를 입력하세요.");
+			frm.phone.focus();
+			return false;
+		}
+		if (frm.postcode.value==""){
+			alert("[주소]를 입력하세요.");
+			frm.postcode.focus();
+			return false;
+		}
+		frm.submit();
+	}
+
+
 </script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/jquery-3.6.0.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	// id="dup" 클릭했을때  dupcheck2.jsp 페이지에 id="id" val() 값을 가지고 가서
+	// 아이디 중복체크한 출력결과를 가져와서 id="dupdiv"에 출력
+	$('#id').keyup(function(){
+		$.ajax({
+			url:'${pageContext.request.contextPath}/member/dupcheck',
+			type:'GET',
+			data:{'id':$('#id').val()},
+			success:function(rdata){
+				if(rdata=="iddup"){		
+					rdata="아이디 중복";
+					$('#dupdiv').html(rdata).css("color", "red");
+				}else{
+					rdata="아이디 사용가능";
+					$('#dupdiv').html(rdata).css("color", "blue");
+					
+				}
+				
+			}
+		});
+	});
+	
+	$('#pass').keyup(function(){
+		var regExp = /^(?=.*[a-zA-z])(?=.*[0-9])(?=.*[$`~!@$!%*#^?&\\(\\)\-_=+]).{8,16}$/;
+		var pass = document.getElementById('pass').value;
+		if(regExp.test(pass)==true ){
+			$('#passdiv').html("사용 가능한 비밀번호 입니다").css("color", "blue")
+		}else{
+			$('#passdiv').html("8~16자 사이 숫자,영문자,특수문자를 포함하여 주십시오").css("color", "red")
+		}
+		
+	});
+	
+	
+	$('#pass1').keyup(function(){
+		var pass = document.getElementById('pass').value;
+		if(pass != $('#pass1').val()) {
+			$('#passdiv1').html("비밀번호가 일치하지 않습니다").css("color", "red");
+		}else{
+			$('#passdiv1').html("비밀번호가 일치합니다").css("color", "blue");
+		}
+	});
+	
+});
+</script>
+
+</head>
+
+
 
 <body>
 <div id="wrapper"> 
@@ -75,34 +221,52 @@
 				<form name="frmJoin" action="<%=request.getContextPath() %>/member/insertPro" method="post" >
 				<div class="join_wrap info">
 					<dl>
+					
 						<dt>아이디(이메일) <span>(필수)</span></dt>
 						<dd>
-							<input type="text"  name="id" style=" width:100%" />
-							<span class="t_help">이미 사용중이거나 탈퇴한 이메일 입니다.</span>
+							<input type="text"  id="id" name="id" style="width:100%" placeholder="ex) kim@gmail.com, kim@naver.com"/>
+							<div id="dupdiv"></div>
+	
 						</dd>
+						
 						<dt>비밀번호 <span>(필수)</span></dt>
 						<dd>
-							<input type="password"  name="pass" style="width:100%" />
-							<span class="t_help">필수 항목 입니다.</span>
+							<input type="password"  id="pass"  name="pass" style="width:100%" />
+							<div id="passdiv"></div>
 						</dd>
+						
 						<dt>비밀번호 재확인 <span>(필수)</span></dt>
 						<dd>
-							<input type="password"  name="pass1" style="width:100%" />
-							<span class="t_help">비밀번호는 숫자, 영문, 특수문자 조합으로 8~12자리를 사용해야 합니다.</span>
+							<input type="password" id="pass1" name="pass1" style="width:100%" />
+							<div id="passdiv1"></div>
 						</dd>
+						
 						<dt>이름 <span>(필수)</span></dt>
 						<dd>
 							<input type="text"  name="name" style="width:100%" />
 							<span class="t_help">필수 항목 입니다.</span>
 						</dd>
+						
 						<dt>휴대전화 <span>(필수)</span></dt>
 						<dd> 
-							<div class="phone">
-							<input type="text"  name="htel1" maxlength=3 class="numberOnly" /><span>-</span>
-							<input type="text"  name="htel2" maxlength=4 class="numberOnly" /><span>-</span>
-							<input type="text"  name="htel3" maxlength=4 class="numberOnly" />
+							<input type="text"  name="phone" placeholder="ex) 010-1234-5678" style="width:100%" />
 							<span class="t_help">필수 항목 입니다.</span>
-							</div>
+						</dd>
+						
+						<dt>주소 <span>(필수)</span></dt>
+						<dd>
+							<input type="text" name="postcode" id="sample4_postcode" placeholder="우편번호" style="width:50%">
+							<input type="button" value="주소검색" onclick="sample4_execDaumPostcode()" style="width:15%">
+						</dd>
+						<dd> 
+							<input type="text" name="address" id="sample4_roadAddress" style="width:100%">
+							<span class="t_help">필수 항목 입니다.</span>
+						</dd>
+						
+						<dt>상세주소 <span>(선택)</span></dt>
+						<dd>
+							<input type="text"  name="address2" style="width:100%" />
+						</dd>
  					</dl>
  					</div>
  					
@@ -118,69 +282,6 @@
 				</div>
 			</div>
 	</section>
- 
-<script type="text/javascript">
-function CheckEmail(mStr){
-	var frm = document.frmJoin;
-	if (mStr !== "etc") {
-		frm.email2.readOnly = true;
-		frm.email2.value = mStr;
-	} else {
-		frm.email2.value = "";
-		frm.email2.readOnly = false;
-		frm.email2.focus();
-	}
-}
-
-function checkForm(){
-	var frm = document.frmJoin;
- 
-	if (frm.id.value == "") {
-		alert("[이메일]을 입력하세요.");
-		frm.id.focus();
-		return;
-	}
-	var pos2 = frm.id.value.indexOf('@');
-	if (pos2 == -1) {
-		alert("[이메일]을 형식 입력하세요.");
-		frm.id.focus();
-		return;
-	}
-	
-	if (frm.pass.value.length < 4) {
-		alert("[비밀번호]는 4이상 입력되어야 합니다.");
-		frm.pass.focus();
-		return;
-	}
-	if (frm.pass.value !== frm.pass1.value) {
-		alert("[비밀번호]가 일치하지 않습니다.");
-		frm.pass1.focus();
-		return;
-	}
-	if (frm.name.value == "") {
-		alert("[이름]을 입력하세요.");
-		frm.name.focus();
-		return;
-	}
-	if (frm.htel1.value == "") {
-		alert("[핸드폰번호]를 입력하세요.");
-		frm.htel1.focus();
-		return;
-	}
-	if (frm.htel2.value == "") {
-		alert("[핸드폰번호]를 입력하세요.");
-		frm.htel2.focus();
-		return;
-	}
-	if (frm.htel3.value == "") {
-		alert("[핸드폰번호]를 입력하세요.");
-		frm.htel3.focus();
-		return;
-	} 	
-	frm.submit();
-}
-
-</script>
 	<!-- Footer -->
 	<footer id="footer">
 		<div class="footer_wrap">

@@ -44,19 +44,20 @@ public class ReservationController {
 			// id 세션값 가져오기
 			int select03 = Integer.parseInt(request.getParameter("select03"));
 			String id = (String)session.getAttribute("id");
-			
-			FieldDTO fieldDTO = reservationService.getFiled(select03);
-			// phone 값 가져오기
-			MemberDTO memberDTO = reservationService.getPhone(id);
-			System.out.println(fieldDTO.getF_name());
-			System.out.println(fieldDTO.getF_num());
-			System.out.println(fieldDTO.getPrice());
-			model.addAttribute("fieldDTO",fieldDTO);
-			model.addAttribute("memberDTO", memberDTO);
+		if(select03 == 0) {
+				return "reservation/sel_msg";
+			}else {
 
-		// 예약 페이지
-		// /WEB-INF/views/reservation/reservation.jsp	
-		return "reservation/reservation";
+				FieldDTO fieldDTO = reservationService.getFiled(select03);
+				// phone 값 가져오기
+				MemberDTO memberDTO = reservationService.getPhone(id);
+				System.out.println(fieldDTO.getF_name());
+				System.out.println(fieldDTO.getF_num());
+				System.out.println(fieldDTO.getPrice());
+				model.addAttribute("fieldDTO",fieldDTO);
+				model.addAttribute("memberDTO", memberDTO);
+				return "reservation/reservation";
+			}
 	}
 	
 	@RequestMapping(value = "/reservation/select", method = RequestMethod.GET)

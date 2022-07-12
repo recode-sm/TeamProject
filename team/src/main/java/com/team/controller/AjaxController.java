@@ -16,16 +16,20 @@ import org.springframework.web.bind.annotation.RestController;
 import com.team.domain.CommentDTO;
 import com.team.domain.DateDTO;
 import com.team.domain.FieldDTO;
+import com.team.domain.MemberDTO;
 import com.team.domain.payDTO;
 import com.team.service.CommentService;
+import com.team.service.MemberService;
 import com.team.service.ReservationService;
+
 
 @RestController
 public class AjaxController {
 	
 	@Inject
 	private ReservationService reservationService;
-	private CommentService commentService; 
+	@Inject
+	private MemberService memberService;
 	
 	@RequestMapping(value = "/reservation/select_sel", method = RequestMethod.GET)
 	public ResponseEntity<List<FieldDTO>> list_sel(HttpServletRequest request) throws Exception {
@@ -112,5 +116,23 @@ public class AjaxController {
 		reservationService.payInsert(payDTO);
 		
 		return payDTO;
+	}
+	
+	@RequestMapping(value = "/member/dupcheck", method = RequestMethod.GET)
+	public ResponseEntity<String> dupcheck(HttpServletRequest request) {
+		ResponseEntity<String> entity=null;
+		String result="";
+		String id = request.getParameter("id");
+		System.out.println(id);
+		MemberDTO memberDTO=memberService.getMember(id);
+		if(memberDTO!=null) {
+			//아이디 있음 => 아이디 중복
+			result="iddup";
+		}else if(memberDTO==null) {
+			//아이디 없음 => 아이디 사용가능
+			result="idok";
+		}
+		entity=new ResponseEntity<String>(result,HttpStatus.OK);
+		return entity;
 	}
 }

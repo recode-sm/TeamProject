@@ -11,6 +11,7 @@ public class MemberDTO {
 	private String email;
 	private String postcode;
 	private String address;
+	private String address2;
 	private Timestamp date;
 
 	
@@ -61,6 +62,12 @@ public class MemberDTO {
 	}
 	public void setAddress(String address) {
 		this.address = address;
+	}
+	public String getAddress2() {
+		return address2;
+	}
+	public void setAddress2(String address2) {
+		this.address2 = address2;
 	}
 	public Timestamp getDate() {
 		return date;

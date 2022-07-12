@@ -4,10 +4,11 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<title>HM FUTSAL PARK</title>
+<meta charset="UTF-8">
 	<title>HM FUTSAL PARK</title>
 	<!-- 공통css -->
 	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/resources/css/common.css">
+	<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700" rel="stylesheet">
 	<!-- //공통css -->
 	
 	<!-- 공통js -->
@@ -128,14 +129,7 @@
 									<tr><th>구장정보</th><th>내용</th></tr>
 <!-- 									<tr><td>구장번호</td><td><input type="text" name="f_num" style="width: 100%;"></td></tr> -->
 									<tr><td>구장이름</td><td><input type="text" name="f_name" style="width: 100%;"></td></tr>
-									<tr><td>구(지역)</td>
-									<td>
-										<select name="district">
-										<option >구장지역 선택</option>
-										<option value="서울">서울</option>
-										<option value="부산">부산</option>
-										</select>									
-									</td></tr>
+									<tr><td>주소(구)</td><td><input type="text" name="district" style="width: 100%;"></td></tr>
 									<tr><td>상세주소</td><td><input type="text" name="f_address" style="width: 100%;"></td></tr>
 									<tr><td>약관</td><td><textarea rows="" cols="" name="terms" style="width: 100%;"></textarea></td></tr>
 									<tr><td>가격</td><td><input type="text" name="price" style="width: 100%;"></td></tr>			

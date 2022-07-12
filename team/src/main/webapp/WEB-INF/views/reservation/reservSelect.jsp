@@ -95,7 +95,7 @@
 		        datatype : 'json',
 		        success:function(rdata){
 		        	$('#select03').find("option").remove();
-		        	$('#select03').append("<option value="0">"+"전체"+"</option>");
+		        	$('#select03').append("<option value=0>"+"전체"+"</option>");
 		        	$.each(rdata,function(index,item){
 						$('#select03').append("<option value="+item.f_num+">"+item.f_name+"</option>");
 		        	});
@@ -153,7 +153,7 @@
 							<span class="select" style="width:100%" >
 								<label for="select03">구장선택</label>
 								<select id="select03" name="select03" >
-									<option value="0">구장선택</option>
+									<option value=0>구장선택</option>
 								</select>
 							</span>
 					

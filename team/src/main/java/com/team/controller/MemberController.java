@@ -63,12 +63,7 @@ public class MemberController {
 	}
 	
 	@RequestMapping(value = "/member/main", method = RequestMethod.GET)
-	public String main (HttpSession session, Model model) {
-		String id = (String)session.getAttribute("id");
-		
-		MemberDTO memberDTO = memberService.getMember(id);
-		
-		model.addAttribute("memberDTO", memberDTO);
+	public String main () {
 		
 		// 메인 페이지(home.jsp)로 이동
 		return "home";
@@ -171,7 +166,13 @@ public class MemberController {
 	public String reserCheck_C(HttpSession session,HttpServletRequest request,Model model) throws Exception{
 		// DB 작업
 		String id=(String)session.getAttribute("id");
+		
+		if(id!=null) {
 			return "/reservation/reservCheck_C";
+		}else {
+			return "/reservation/login_msg";
+		}
+			
 		
 		
 	}

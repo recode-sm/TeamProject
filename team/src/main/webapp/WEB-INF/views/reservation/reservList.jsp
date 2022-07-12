@@ -123,7 +123,7 @@
 											<td id = "status">결제완료</td>
 											<td><input type="button" value="결제취소"></td>
 											</c:if>
-											<c:if test="${reservList.status eq 'cancle' }">
+											<c:if test="${reservList.status eq 'cancel' }">
 											<td id = "status">결제취소</td>
 											<td></td>
 											</c:if>

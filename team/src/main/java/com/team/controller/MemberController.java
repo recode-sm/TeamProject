@@ -63,7 +63,12 @@ public class MemberController {
 	}
 	
 	@RequestMapping(value = "/member/main", method = RequestMethod.GET)
-	public String main () {
+	public String main (HttpSession session, Model model) {
+		String id = (String)session.getAttribute("id");
+		
+		MemberDTO memberDTO = memberService.getMember(id);
+		
+		model.addAttribute("memberDTO", memberDTO);
 		
 		// 메인 페이지(home.jsp)로 이동
 		return "home";

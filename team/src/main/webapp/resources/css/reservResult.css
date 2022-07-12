@@ -299,7 +299,6 @@ table	th,	table	td	{border:0 none}
 .table_wrap table tbody .phone input	{width:31.333333%}
 .table_wrap table tbody .phone span	{display:inline-block; width:3%; font-size:11px; text-align:center; vertical-align:middle;}
 
-
 .table_wrap table tbody tr th	{background:#f0f1f3; color:#2c3c57; font-size:18px; font-weight:700; line-height:28px; text-align:center;}
 .table_wrap table tbody tr td	{padding:18px 0; height:20px; color:#2a2a2a; font-size:18px; line-height:28px; text-align:center; word-break:keep-all;}
 .table_wrap table tbody tr td.al_left	{padding-left:20px; text-align:left}

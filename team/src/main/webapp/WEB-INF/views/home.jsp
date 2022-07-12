@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     
 <!DOCTYPE html>
 <html >
@@ -41,11 +42,15 @@
 			<nav>
 				<div class="util">
 					<ul>
-
 						<li class="login">
+						<c:if test="${ empty sessionScope.id }">
 							<a href="<%=request.getContextPath() %>/member/login">MEMBER LOGIN</a> |
+						</c:if> 
+						<c:if test="${!empty sessionScope.id}">
+							<a href="#">${id}님 반갑습니다</a>
 							<a href="<%=request.getContextPath() %>/member/logout">MEMBER LOGOUT</a> |
-							<a href="<%=request.getContextPath() %>/member/info">MEMBER INFO</a> 
+							<a href="<%=request.getContextPath() %>/member/info">MEMBER INFO</a>
+						</c:if>
 						</li>
 						
 					</ul>
@@ -63,11 +68,12 @@
 					<ul>
 						<li><a href="<%=request.getContextPath() %>/locate/locate"><span>BRANCH</span><span class="ov">지점</span></a></li>
 						<li><a href="<%=request.getContextPath() %>/reservation/select"><span>RESERVATION</span><span class="ov">대관</span></a></li>
-						<li><a href="/comm/match/match_apply.asp"><span>MATCHING</span><span class="ov">매치/용병</span></a></li>
-						<li><a href="/hcup/eng/hcup.asp"><span>H-CUP</span><span class="ov">H-컵</span></a></li>
-						<li><a href="/league/league.asp"><span>H-LEAGUE</span><span class="ov">H-리그</span></a></li>
-						<li><a href="<%=request.getContextPath() %>/notice/notice"><span>CUSTOMER</span><span class="ov">고객센터</span></a></li>
-						<li><a href="/about/company.asp"><span>HNS</span><span class="ov">에이치엔에스</span></a></li>
+							<li><a href="<%=request.getContextPath() %>/reservation/Check_C"><span>CONFIRM</span><span class="ov">예약확인</span></a></li>
+						<li><a href="<%=request.getContextPath() %>/notice/list"><span>COMMUNITY</span><span class="ov">커뮤니티</span></a></li>
+						<li><a href="<%=request.getContextPath() %>/qna/list"><span>Q&A</span><span class="ov">문의하기</span></a></li>
+<!-- 						<li><a href="/league/league.asp"><span>H-LEAGUE</span><span class="ov">H-리그</span></a></li> -->
+						<li><a href="<%=request.getContextPath() %>/notice/notice"><span>NOTICE</span><span class="ov">공지사항</span></a></li>
+<!-- 						<li><a href="/about/company.asp"><span>HNS</span><span class="ov">에이치엔에스</span></a></li> -->
 					</ul>
 				</div>
 

@@ -17,7 +17,7 @@
 	<div id="wrapper">
 		<section id="container">
 			<!-- Contents -->
-		<form action="<%=request.getContextPath() %>/member/deletePro">
+		<form action="<%=request.getContextPath() %>/member/deletePro" method="post">
 			<div class="content">
 				<div class="rese_wrap cal">
 					<div class="fl_wrap">

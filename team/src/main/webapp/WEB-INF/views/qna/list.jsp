@@ -11,6 +11,7 @@
 	<!-- 공통css 코드 변경 후 적용이 안바뀌면 확장자 뒤에 ?after붙여주세요 --> 
 	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/resources/css/common.css?after3">
 	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/resources/css/content.css?after9">
+	<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700" rel="stylesheet">
 	<!-- //공통css -->
 	<!-- 공통js -->
 	<script type="text/javascript" src="/team/resources/js/libs/jquery.min.js"></script>

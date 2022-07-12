@@ -118,7 +118,7 @@
 				<h2>대관</h2>
 				
 					<video id="video01" autoplay="" playsinline="" muted="" loop="" height="460" width="100%" title="video element"> 
-						<source src="<%=request.getContextPath() %>/resources/files/banner/reservation.mp4" type="video/mp4"> 
+						<source src="<%=request.getContextPath() %>/resources/files/banner/reservation1.mp4" type="video/mp4"> 
 <!-- 						574 134 -->
 					</video>
 				

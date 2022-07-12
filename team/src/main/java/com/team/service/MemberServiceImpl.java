@@ -48,6 +48,12 @@ public class MemberServiceImpl implements MemberService {
 	public List<MemberDTO> getMemberList() {
 		return memberDAO.getMemberList();
 	}
+
+	@Override
+	public void updatePass(MemberDTO memberDTO) {
+		memberDAO.updatePass(memberDTO);
+	}
+	
 	
 	
 }

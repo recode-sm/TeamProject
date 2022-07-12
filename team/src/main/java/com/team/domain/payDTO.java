@@ -10,7 +10,14 @@ public class payDTO {
 	private Timestamp p_date;
 	private String merchant_uid;
 	private String status;
+	private String amount;
 	
+	public String getAmount() {
+		return amount;
+	}
+	public void setAmount(String amount) {
+		this.amount = amount;
+	}
 	public int getPaid_amount() {
 		return paid_amount;
 	}

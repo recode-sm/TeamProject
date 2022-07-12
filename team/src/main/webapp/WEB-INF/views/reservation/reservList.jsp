@@ -106,15 +106,27 @@
 									<col style="" />
 								</colgroup>
 								<tbody>
-								<tr><th>아이디</th><th>구장명</th><th>예약날짜</th><th>예약시간</th><th>결제가격</th></tr>
+								<tr><th>아이디</th><th>구장명</th><th>예약날짜</th><th>예약시간</th><th>결제가격</th><th>결제정보</th><th></th></tr>
 								<c:forEach var="reservList" items="${reservList}">
 									<tr>
 										
-										<td id = "memberName" name="id">${reservList.id }</td>
-										<td id = "fieldName" name="f_name">${reservList.f_name }</td>
-										<td id = "date" name="r_date">${reservList.r_date }</td>
-										<td id = "time" name="start_time">${reservList.time }</td>
-										<td id = "price" name="total_price">${reservList.total_price }원</td>
+										<td id = "memberName">${reservList.id }</td>
+										<td id = "fieldName">${reservList.f_name }</td>
+										<td id = "date">${reservList.r_date }</td>
+										<td id = "time">${reservList.time }</td>
+										<td id = "price">${reservList.total_price }원</td>
+											<c:if test="${reservList.status eq null }">
+											<td id = "status">결제중</td>
+											<td><input type="button" value="결제/예약취소" onclick="location.href='<%=request.getContextPath() %>/reservation/reservResult?r_num=${reservList.r_num }'" ></td>
+											</c:if>
+											<c:if test="${reservList.status eq 'paid' }">
+											<td id = "status">결제완료</td>
+											<td><input type="button" onclick="location.href='<%=request.getContextPath() %>/reservation/token?r_num=${reservList.r_num }'" value="결제취소"></td>
+											</c:if>
+											<c:if test="${reservList.status eq 'cancel' }">
+											<td id = "status">결제취소</td>
+											<td></td>
+											</c:if>
 									</tr>
 								</c:forEach>
 								</tbody>
@@ -123,213 +135,9 @@
 						</div>
 					</div>
 			</section>
-			
 		
 			<!-- //Contents -->
 
-
-<script>
-// $(function(){
-// 	getCalendar('2022-06-16'); 
-// 	getTime();
-// });
-
-// function addCommas(str){
-// 	str = ""+str+"";
-// 	var retValue = "";
-// 	for(i=0; i<str.length; i++){
-// 		if(i > 0 && (i%3)==0) {
-// 			retValue = str.charAt(str.length - i -1) + "," + retValue;
-// 		}
-// 		else {
-// 			retValue = str.charAt(str.length - i -1) + retValue;
-// 		}
-// 	}
-// 	return retValue;
-// }
-
-// function delCommas(str){
-// 	str = ""+str+"";
-// 	var retValue = "";
-// 	retValue = str.replace(",","");
-// 	retValue = retValue.replace(",",""); 
-// 	return retValue;
-// }
-
-// function getCalendar(v){
-// 	var stadium_code = document.form.stadium_code.value; 
-// 	$.get("ajax_calendar.asp?stadium_code="+stadium_code+"&reqdate="+v , function(r){ 
-// 		$("#calendarDiv").html(r);
-// 	});
-// }
-
-// function getCalendarByStadium(e){
-// 	var stadium_code = e.value;
-// 	var v; 
-// 	v = $("#regdate").text();
-// 	v = v.replace(".","-");
-// 	v = v.replace(".","-"); 
- 
-// 	$.get("ajax_calendar.asp?stadium_code="+stadium_code+"&reqdate="+v , function(r){ 
-// 		$("#calendarDiv").html(r);
-// 	});
-// }
-
-// function getTime(){
-// 	var reqdate = document.form.reg_date.value;
-// 	var stadium_code = document.form.stadium_code.value;
-// 	//window.open("ajax_time.asp?reqdate="+reqdate+"&stadium_code="+stadium_code );
-// 	$.get("ajax_time.asp?reqdate="+reqdate+"&stadium_code="+stadium_code+"&branch_code=HM0009", function(r){ 
-// 		$("#timeDiv").html(r);
-// 		calc();
-// 	}); 
-// } 
-
-// function showStadiumName(e){
-// 	$("#stadiumBottom").text($(e).find("option[value='" + $(e).val() + "']").text());
-// }
-
-// function chgDate(e, v){
-// 	var nv = v.replace("-",".");
-// 	nv = nv.replace("-",".");
-// 	$("#regdate").text(nv);
-// 	$("#dateBottom").text(nv);
-// 	document.form.reg_date.value=v;
-// 	getTime(); 
-// 	$(".buts").removeClass("on");
-// 	$(e).parent().children(".buts").addClass("on");
-// }
-
-// function setTime(e){ 
-// 	if ($(e).parent().children(".r_time_no_check").prop("checked"))
-// 	{
-// 		$(e).removeClass("on");
-// 		$(e).parent().children(".r_time_no_check").prop("checked",false);
-// 	}else{
-// 		$(e).addClass("on");
-// 		$(e).parent().children(".r_time_no_check").prop("checked",true);
-
-// 	}
-// 	calc();
-// }
-
-// function calc(){
-// 	var rent_price = 0 ;
-// 	var rent_count = 0 ;
-// 	var shour
-// 	var timestr = "";
-// 	var optstr = "";
-
-// 	$(".r_time_no_check:checkbox:checked").each(function(){
-// 		rent_price = rent_price + parseInt($(this).attr("alt"));
-
-// 		var t = $(this).val().split("|");
-// 		var stime = t[1];
-// 		var etime = t[2];
-// 		timestr = timestr + stime + "~" + etime + "<BR>";
-
-// 		rent_count ++;
-// 	});
-
-// 	var option_price = 0 ;
-// 	$(".opt_total").each(function(){
-// 		option_price = option_price + parseInt($(this).val()); 
-// 	});
-	
-// 	$(".opt_cnt").each(function(){
-// 		if (parseInt($(this).val())>0)
-// 		{
-// 			optstr = optstr + $(this).parent().children(".opt_name").val() + " : " + $(this).val() + "<BR>"; 
-// 		}
-// 	});
-
-// 	var total_price = rent_price + option_price;
-
-// 	$("#rentPriceView").text(addCommas(rent_price));
-// 	$("#rentCountView").text(addCommas(rent_count));
-// 	$("#optionPriceView").text(addCommas(option_price)); 
-// 	$("#totalPriceView").text(addCommas(total_price));
-
-// 	$("#priceBottom").text(addCommas(total_price));
-// 	$("#timeBottom").html(timestr);
-// 	$("#optionBottom").html(optstr);
-// 	document.form.total_price.value=total_price;
-// }
-
-// function selOpt1(e){
-// 	var c;
-// 	var opts = e.value;  
-// 	var optArr = opts.split("||");
-// 	$(e).parent().parent().children(".opt_idx").val(optArr[0]); 
-// 	$(e).parent().parent().children(".opt_price").val(optArr[1]);  
-// 	$(e).parent().parent().children(".opt_name").val(optArr[2]);  
-// 	var price = parseInt(optArr[1]); 
-
-// 	var cnt = parseInt($(e).parent().parent().children(".opt_c").val()); 
-// 	$(e).parent().parent().children(".price").children(".priceView").text(addCommas(price*cnt)); 
-// 	$(e).parent().parent().children(".opt_total").val(price*cnt);  
-
-// 	c = e.text();
-// 	$(e).parent().parent().find("label").text(c);
-
-// 	calc();
-// }
-// function selOpt2(e){
-// 	var cnt = parseInt(e.value);  
-// 	$(e).parent().children(".opt_cnt").val(cnt);  
-
-// 	var price = parseInt($(e).parent().children(".opt_price").val()); 
-// 	$(e).parent().children(".price").children(".priceView").text(addCommas(price*cnt)); 
-// 	$(e).parent().children(".opt_total").val(price*cnt);  
-	
-// 	calc();
-// }
-
-// function cloneOpt(e, v){  
-// 	var a,b;
-
-// 	a=$(".opt_list").length;
-// 	a++;
-
-// 	var clon = $(e).parent().parent().parent().clone();
-
-// 	clon.find("label").attr("for","opt"+a);
-// 	clon.find("select").attr("id","opt"+a);
-
-//  	clon.find(".opt_idx").val("");
-// 	clon.find(".opt_name").val("");
-// 	clon.find(".opt_price").val("0");
-// 	clon.find(".opt_cnt").val("0");
-// 	clon.find(".opt_c").val("0"); 
-// 	clon.find(".priceView").text("0"); 
-
-// 	clon.attr('data-id', 1);
-
-// 	b = clon.find("select option:eq(0)").text();
-// 	clon.find("select option:eq(0)").prop("selected", true);
-// 	clon.find("label").text(b);
-
-// 	$(e).parent().parent().parent().parent().append(clon);  
-// }
-// function removeOpt(e){
-// 	var a =$(e).parent().parent().parent().attr("data-id");
-// 	if(a > 0) {
-// 		$(e).parent().parent().parent().remove(); 
-// 		calc();
-// 	}
-// }
-
-// function tog(v){
-// 	$("."+v).toggle();
-// }
-
-// function ok(){ 
-// 	document.form.target="HiddenFrame";
-// 	document.form.action="rese_form_ok.asp";
-// 	document.form.submit();
-// }
-
-</script>
 	<!-- Footer -->
 		<jsp:include page="../include/footer.jsp"></jsp:include>
 	<!-- //Footer -->

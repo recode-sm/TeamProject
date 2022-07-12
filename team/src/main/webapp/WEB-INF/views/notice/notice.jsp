@@ -62,7 +62,7 @@
 
 			<div class="tab_wrap">
 				<ul class="t03">
-					<li class="on"><a href="comm_notice.asp">공지사항</a></li>
+					<li><a href="<%=request.getContextPath() %>/notice/notice">공지사항</a></li>
 					<li><a href="<%=request.getContextPath() %>/qna/list">Q&A</a></li>
 					<li><a href="<%=request.getContextPath() %>/notice/list">커뮤니티</a></li>
 				</ul>

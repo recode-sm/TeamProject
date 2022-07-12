@@ -5,20 +5,22 @@
 <mapper namespace="com.team.member.MemberMapper">
 
 	<insert id="insertMember">
-		INSERT INTO member(id, pass, name, phone, team, email, postcode, address, date) 
-		VALUES(#{id}, #{pass}, #{name}, #{phone}, #{team}, #{email}, #{postcode}, #{address}, #{date})
+		INSERT INTO member(id, pass, name, phone, postcode, address, address2, date) 
+		VALUES(#{id}, #{pass}, #{name}, #{phone}, #{postcode}, #{address}, #{address2}, #{date})
 	</insert>
 
 	<select id="userCheck" resultType="com.team.domain.MemberDTO">
 		SELECT * FROM member WHERE id=#{id} and pass=#{pass}
 	</select>
-	
+		
 	<select id="getMember" resultType="com.team.domain.MemberDTO">
 		SELECT * FROM member WHERE id=#{id}
 	</select>
 	
 	<update id="updateMember">
-		UPDATE member SET name=#{name} WHERE id=#{id}
+		UPDATE member 
+		SET pass=#{pass}, name=#{name}, phone=#{phone}, postcode=#{postcode}, address=#{address}, address2=#{address2}
+		WHERE id=#{id}
 	</update>
 	
 	<delete id="deleteMember">

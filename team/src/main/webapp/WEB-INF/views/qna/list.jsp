@@ -6,11 +6,36 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Q&A</title>
+<title>BS RESERVATION</title>
+	<link href="<%=request.getContextPath() %>/resources/img/logo_1m.png" rel="shortcut icon" type="image/x-icon">
 	<!-- 공통css 코드 변경 후 적용이 안바뀌면 확장자 뒤에 ?after붙여주세요 --> 
 	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/resources/css/common.css?after3">
 	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/resources/css/content.css?after9">
 	<!-- //공통css -->
+	<!-- 공통js -->
+	<script type="text/javascript" src="/team/resources/js/libs/jquery.min.js"></script>
+	<script type="text/javascript" src="/team/resources/js/libs/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/team/resources/js/datepicker.js"></script>
+	<script type="text/javascript" src="/team/resources/js/common/common.js"></script>
+	<script type="text/javascript" src="/team/resources/js/common/form_check.js"></script>
+	<!-- //공통js -->
+ 
+	<link rel="stylesheet" href="/team/resources/themes/classic.css">
+	<link rel="stylesheet" href="/team/resources/themes/classic.date.css">
+	<link rel="stylesheet" href="/team/resources/themes/classic.time.css">
+	<link rel="stylesheet" type="text/css" href="/team/resources/css/content.css">
+	
+	<script src="/admincms/js/pickadate.js-3.5.6/lib/picker.js"></script>
+	<script src="/admincms/js/pickadate.js-3.5.6/lib/picker.date.js"></script>
+	<script src="/admincms/js/pickadate.js-3.5.6/lib/picker.time.js"></script>
+	<script src="/admincms/js/pickadate.js-3.5.6/lib/legacy.js"></script>
+	
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-116234591-1"></script>
+	
+	
+	
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 
 <body>
@@ -31,7 +56,7 @@
 				</div>
 				<div class="tab_wrap">
 					<ul class="t03">
-						<li><a href="comm_notice.asp">공지사항</a></li>
+						<li><a href="<%=request.getContextPath() %>/notice/notice">공지사항</a></li>
 						<li class="on"><a href="<%=request.getContextPath() %>/qna/list">Q&A</a></li>
 						<li><a href="<%=request.getContextPath() %>/notice/list">커뮤니티</a></li>
 					</ul>
@@ -54,7 +79,7 @@
 					</div>
 				</div>
 					
-				<div class="paper_wrap">		
+				<div class="pager_wrap">		
 					<!-- 로그인 제어 -->
 					<div class="btn_wrap right">
 						<c:if test ="${ ! empty sessionScope.id }">

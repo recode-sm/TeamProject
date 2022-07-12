@@ -7,15 +7,15 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 	<title>HM FUTSAL PARK</title>
 	<meta name="keywords" content="HM FUTSAL PARK">
-	<meta name="description" content="�����̾� ǲ���� HMǲ����ũ, ���� 11�� ����, ��� ����, ���� �Ը� �� ��ȸ �� ���� ��ȸ ����">
+	<meta name="description" content="     ̾  ǲ     HMǲ    ũ,      11       ,         ,       Ը       ȸ           ȸ     ">
 	<meta property="og:type" content="website">
 	<meta property="og:image" content="https://hmfutsalpark.com/images/common/link_profile.png">
 	<meta property="og:title" content="HM FUTSAL PARK">
-	<meta property="og:description" content="�����̾� ǲ���� HMǲ����ũ">
+	<meta property="og:description" content="     ̾  ǲ     HMǲ    ũ">
 	<meta property="og:url" content="https://hmfutsalpark.com">
 	<meta http-equiv="X-UA-Compatible" content="IE=chrome">
 
-	<!-- ����css -->
+	<!--     css -->
 	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/resources/css/common.css">
 	<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700" rel="stylesheet">
 
@@ -112,6 +112,8 @@
 
 	function checkForm(){
 		var frm = document.frmJoin;
+		var regExp = /^(?=.*[a-zA-z])(?=.*[0-9])(?=.*[$`~!@$!%*#^?&\\(\\)\-_=+]).{8,16}$/;
+		var pass = document.getElementById('pass').value;
 	 
 		if (frm.id.value == "") {
 			alert("[이메일]을 입력하세요.");
@@ -125,8 +127,8 @@
 			return false;
 		}
 		
-		if (frm.pass.value.length < 4) {
-			alert("[비밀번호]는 4이상 입력되어야 합니다.");
+		if (regExp.test(pass) == false ) {
+			alert("[비밀번호]는 8~16자 사이 숫자,영문자,특수문자를 포함하여 주십시오");
 			frm.pass.focus();
 			return false;
 		}
@@ -161,23 +163,45 @@ $(document).ready(function(){
 	// id="dup" 클릭했을때  dupcheck2.jsp 페이지에 id="id" val() 값을 가지고 가서
 	// 아이디 중복체크한 출력결과를 가져와서 id="dupdiv"에 출력
 	$('#id').keyup(function(){
-
 		$.ajax({
 			url:'${pageContext.request.contextPath}/member/dupcheck',
 			type:'GET',
 			data:{'id':$('#id').val()},
 			success:function(rdata){
-				if(rdata=="iddup"){
-					
+				if(rdata=="iddup"){		
 					rdata="아이디 중복";
+					$('#dupdiv').html(rdata).css("color", "red");
 				}else{
 					rdata="아이디 사용가능";
+					$('#dupdiv').html(rdata).css("color", "blue");
 					
 				}
-				$('#dupdiv').html(rdata);
+				
 			}
 		});
 	});
+	
+	$('#pass').keyup(function(){
+		var regExp = /^(?=.*[a-zA-z])(?=.*[0-9])(?=.*[$`~!@$!%*#^?&\\(\\)\-_=+]).{8,16}$/;
+		var pass = document.getElementById('pass').value;
+		if(regExp.test(pass)==true ){
+			$('#passdiv').html("사용 가능한 비밀번호 입니다").css("color", "blue")
+		}else{
+			$('#passdiv').html("8~16자 사이 숫자,영문자,특수문자를 포함하여 주십시오").css("color", "red")
+		}
+		
+	});
+	
+	
+	$('#pass1').keyup(function(){
+		var pass = document.getElementById('pass').value;
+		if(pass != $('#pass1').val()) {
+			$('#passdiv1').html("비밀번호가 일치하지 않습니다").css("color", "red");
+		}else{
+			$('#passdiv1').html("비밀번호가 일치합니다").css("color", "blue");
+		}
+	});
+	
 });
 </script>
 
@@ -207,14 +231,14 @@ $(document).ready(function(){
 						
 						<dt>비밀번호 <span>(필수)</span></dt>
 						<dd>
-							<input type="password"  name="pass" style="width:100%" />
-							<span class="t_help">필수 항목 입니다.</span>
+							<input type="password"  id="pass"  name="pass" style="width:100%" />
+							<div id="passdiv"></div>
 						</dd>
 						
 						<dt>비밀번호 재확인 <span>(필수)</span></dt>
 						<dd>
-							<input type="password"  name="pass1" style="width:100%" />
-							<span class="t_help">비밀번호는 숫자, 영문, 특수문자 조합으로 8~12자리를 사용해야 합니다.</span>
+							<input type="password" id="pass1" name="pass1" style="width:100%" />
+							<div id="passdiv1"></div>
 						</dd>
 						
 						<dt>이름 <span>(필수)</span></dt>

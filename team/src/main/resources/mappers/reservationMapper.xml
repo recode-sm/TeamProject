@@ -5,7 +5,7 @@
 <mapper namespace="com.team.reservation.reservationMapper">
 
 	<select id="getReserv" resultType="com.team.domain.ReservDTO">
-		select r.id,f.f_name,r.r_date,r.time,r.total_price,r.status
+		select r.r_num,r.id,f.f_name,r.r_date,r.time,r.total_price,r.status
 		from reservation r join field f ON r.f_num = f.f_num
 		where id=#{id}
 	</select>

@@ -87,40 +87,7 @@
 					<div class="loca_list">
 						<a href="#" class="btn_closed">전체지점닫기</a>
 							<ul>
-								<li><a href="${pageContext.request.contextPath}/locate/field">구장등록</a>
-								<li><a href="#">서울, 경기 지역</a>
-									<ul>
-										<li><a href="locate_info.asp?code=HM0048">더피치 인하점</a></li>
-										<li><a href="locate_info.asp?code=HM0001">동대문점</a></li>
-										<li><a href="locate_info.asp?code=HM0003">서수원점</a></li>
-										<li><a href="locate_info.asp?code=HM0034">시흥점</a></li>
-										<li><a href="locate_info.asp?code=HM0002">안산 고잔점</a></li>
-										<li><a href="locate_info.asp?code=HM0045">인천 청라점</a></li>
-										<li><a href="locate_info.asp?code=HM0004">일산점</a></li>
-									</ul></li>
-								<li><a href="#">대전, 충청 지역</a>
-								<ul>
-										<li><a href="locate_info.asp?code=HM0049">더피치 천안신방점</a></li>
-									</ul></li>
-								<li><a href="#">부산, 경상 지역</a>
-								<ul>
-										<li><a href="locate_info.asp?code=HM0031">부산 북구점</a></li>
-										<li><a href="locate_info.asp?code=HM0008">울산 남구점</a></li>
-										<li><a href="locate_info.asp?code=HM0024">울산 북구점</a></li>
-										<li><a href="locate_info.asp?code=HM0009">창원점</a></li>
-									</ul></li>
-								<li><a href="#">광주, 전라 지역</a>
-								<ul>
-										<li><a href="locate_info.asp?code=HM0010">전주 완산점</a></li>
-									</ul></li>
-								<li><a href="#">제주 지역</a>
-								<ul>
-										<li><a href="locate_info.asp?code=HM0033">가천대학교 운동장</a></li>
-										<li><a href="locate_info.asp?code=HM0028">GLOBAL
-												ARENA (Japan)</a></li>
-										<li><a href="locate_info.asp?code=HM0032">Seogwipo,
-												JEJU</a></li>
-									</ul></li>
+								<li><a href="${pageContext.request.contextPath}/locate/field">구장등록</a>							
 							</ul>
 						</div>
 				</div>
@@ -132,7 +99,7 @@
 						<div class="cont">
 								<div class="info">
 									<span class="thumb">
-										<img src="${pageContext.request.contextPath}/resources/img/${fieldDTO.f_img}" alt="" />
+										<img src="${pageContext.request.contextPath}/resources/files/images/${fieldDTO.f_img}" alt="" />
 <!-- 										<div class="ov"> -->
 <!-- 											<ul> -->
 <!-- 											<li>#인조잔디</li><li>#국제규격</li><li>#탈의실</li><li>#주차장(무료)</li><li>#풋살화 대여</li><li>#Ex) A구장 6:6/ 7:7 구장  /  B구장 5:5 / 6:6 구장 /  C구장 3:3구장</li> -->
@@ -142,10 +109,9 @@
 									<div class="t_wrap">
 										<p class="tit">${fieldDTO.f_name }</p>
 										<p class="t01">${fieldDTO.f_address }</p>
-										<p class="t02"><a href="tel:010-6252-1007" class="tel">010-6252-1007</a> / <a href="tel:010-9505-6646" class="tel">010-9505-6646</a></p>
+										<p class="t02">${fieldDTO.price }원</p>
 										<div class="btn_wrap">
-											<a href="${pageContext.request.contextPath}/reservation/reservation?f_num=${fieldDTO.f_num}" class="btn_rese"><span>예약하기</span></a>
-<!-- 											<a href="/locate/locate_info.asp?code=HM0001" class="btn_info"><span>지점소개</span></a> -->
+											<a href="${pageContext.request.contextPath}/reservation/reservation?select02=${fieldDTO.district }&select03=${fieldDTO.f_num }" class="btn_rese"><span>예약하기</span></a>
 										</div>
 									</div>
 								</div>

@@ -9,6 +9,7 @@
 	
 	<!-- 공통css -->
 	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/resources/css/common.css">
+	<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700" rel="stylesheet">
 	<!-- //공통css -->
 	
 	<!-- 공통js -->
@@ -62,8 +63,8 @@
 
 			<div class="tab_wrap">
 				<ul class="t03">
-					<li class="on"><a href="comm_notice.asp">공지사항</a></li>
-					<li><a href="comm_faq.asp">FAQ</a></li>
+					<li><a href="<%=request.getContextPath() %>/notice/notice">공지사항</a></li>
+					<li><a href="<%=request.getContextPath() %>/qna/list">Q&A</a></li>
 					<li><a href="<%=request.getContextPath() %>/notice/list">커뮤니티</a></li>
 				</ul>
 			</div>

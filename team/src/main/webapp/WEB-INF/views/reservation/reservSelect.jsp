@@ -95,7 +95,7 @@
 		        datatype : 'json',
 		        success:function(rdata){
 		        	$('#select03').find("option").remove();
-		        	$('#select03').append("<option>"+"전체"+"</option>");
+		        	$('#select03').append("<option value=0>"+"전체"+"</option>");
 		        	$.each(rdata,function(index,item){
 						$('#select03').append("<option value="+item.f_num+">"+item.f_name+"</option>");
 		        	});
@@ -118,7 +118,7 @@
 				<h2>대관</h2>
 				
 					<video id="video01" autoplay="" playsinline="" muted="" loop="" height="460" width="100%" title="video element"> 
-						<source src="<%=request.getContextPath() %>/resources/files/banner/reservation.mp4" type="video/mp4"> 
+						<source src="<%=request.getContextPath() %>/resources/files/banner/reservation1.mp4" type="video/mp4"> 
 <!-- 						574 134 -->
 					</video>
 				
@@ -153,7 +153,7 @@
 							<span class="select" style="width:100%" >
 								<label for="select03">구장선택</label>
 								<select id="select03" name="select03" >
-									<option value="">구장선택</option>
+									<option value=0>구장선택</option>
 								</select>
 							</span>
 					

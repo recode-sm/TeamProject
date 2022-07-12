@@ -7,7 +7,7 @@
 			<h1><a href="<%=request.getContextPath() %>"><span class="hide">HM FUTSAL PARK</span></a></h1>
 			<button type="button" class="btn_nav"><span class="hide">Nav button</span></button>
 <!-- 		nav 상단바 제일 끝으로 고정 수정해줌 -->
-			<nav style="position: fixed; top:0;">
+			<nav>
 				<div class="nav_wrap">
 					<ul>
 						<li>

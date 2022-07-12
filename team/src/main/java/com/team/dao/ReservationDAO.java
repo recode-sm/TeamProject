@@ -20,4 +20,7 @@ public interface ReservationDAO {
 	public ReservDTO getReservation(String s_id);
 	public void payUpdate(payDTO payDTO);
 	public void payInsert(payDTO payDTO);
+	public void reservationCancel(String r_num);
+	public payDTO reservationGet(String r_num);
+	public void reservationUpdate(String r_num);
 }

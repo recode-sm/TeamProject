@@ -31,7 +31,7 @@
 				</div>
 				<div class="tab_wrap">
 					<ul class="t03">
-						<li><a href="comm_notice.asp">공지사항</a></li>
+						<li><a href="<%=request.getContextPath() %>/notice/notice">공지사항</a></li>
 						<li class="on"><a href="<%=request.getContextPath() %>/qna/list">Q&A</a></li>
 						<li><a href="<%=request.getContextPath() %>/notice/list">커뮤니티</a></li>
 					</ul>
@@ -54,7 +54,7 @@
 					</div>
 				</div>
 					
-				<div class="paper_wrap">		
+				<div class="pager_wrap">		
 					<!-- 로그인 제어 -->
 					<div class="btn_wrap right">
 						<c:if test ="${ ! empty sessionScope.id }">

@@ -9,6 +9,13 @@ public class ReservDTO {
 	private String time;
 	private String total_price;
 	private String phone;
+	private String status;
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
 	public String getPhone() {
 		return phone;
 	}

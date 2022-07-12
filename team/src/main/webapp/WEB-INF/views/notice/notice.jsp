@@ -9,7 +9,6 @@
 	
 	<!-- 공통css -->
 	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/resources/css/common.css">
-	<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700" rel="stylesheet">
 	<!-- //공통css -->
 	
 	<!-- 공통js -->

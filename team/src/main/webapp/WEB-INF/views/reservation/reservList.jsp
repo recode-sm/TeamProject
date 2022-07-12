@@ -117,11 +117,11 @@
 										<td id = "price">${reservList.total_price }원</td>
 											<c:if test="${reservList.status eq null }">
 											<td id = "status">결제중</td>
-											<td><input type="button" value="결제/예약취소" onclick="location.href='<%=request.getContextPath() %>/reservation/reservResult?r_num='" + ${reservList.r_num }></td>
+											<td><input type="button" value="결제/예약취소" onclick="location.href='<%=request.getContextPath() %>/reservation/reservResult?r_num=${reservList.r_num }'" ></td>
 											</c:if>
 											<c:if test="${reservList.status eq 'paid' }">
 											<td id = "status">결제완료</td>
-											<td><input type="button" value="결제취소"></td>
+											<td><input type="button" onclick="location.href='<%=request.getContextPath() %>/reservation/token?r_num=${reservList.r_num }'" value="결제취소"></td>
 											</c:if>
 											<c:if test="${reservList.status eq 'cancel' }">
 											<td id = "status">결제취소</td>
@@ -135,7 +135,6 @@
 						</div>
 					</div>
 			</section>
-			
 		
 			<!-- //Contents -->
 

@@ -64,7 +64,7 @@
 .locate_wrap .list_wrap .cont .info .t_wrap .btn_wrap a	{display:inline-block; width:200px; height:68px; line-height:68px; text-align:center; border-radius:5px}
 .locate_wrap .list_wrap .cont .info .t_wrap .btn_wrap a span	{display:inline-block; padding-left:44px; color:#fff; font-size:20px; line-height:68px}
 .locate_wrap .list_wrap .cont .info .t_wrap .btn_wrap a.btn_rese	{background:#2c3c57}
-.locate_wrap .list_wrap .cont .info .t_wrap .btn_wrap a.btn_rese span	{background:url('/images/content/icon_btn_rese.png') no-repeat 0 center}
+.locate_wrap .list_wrap .cont .info .t_wrap .btn_wrap a.btn_rese span	{background:url('../img/icon_btn_rese.png') no-repeat 0 center}
 .locate_wrap .list_wrap .cont .info .t_wrap .btn_wrap a.btn_info	{margin-left:10px; background:#8ba6d5}
 .locate_wrap .list_wrap .cont .info .t_wrap .btn_wrap a.btn_info span	{padding-left:52px; background:url('/images/content/icon_btn_info.png') no-repeat 0 center}
 .locate_wrap .list_wrap .cont .info .t_wrap .btn_wrap a:hover	{background:#003f96 !important}
@@ -120,7 +120,7 @@
 
 /* 대관 */
 .rese_wrap .rese_start	{margin:0 auto; max-width:800px}
-.rese_wrap .rese_start .tit	{padding-left:113px; background:#2c3c57 url('/images/content/bg_rese_start.png') no-repeat 0 0; color:#fff; font-size:28px; line-height:113px; text-align:center; border-radius:15px 15px 0 0; letter-spacing:-0.4px}
+.rese_wrap .rese_start .tit	{padding-left:0px; background:#2c3c57 url('/images/content/bg_rese_start.png') no-repeat 0 0; color:#fff; font-size:28px; line-height:113px; text-align:center; border-radius:15px 15px 0 0; letter-spacing:-0.4px}
 .rese_wrap .rese_start .start_wrap		{padding:93px 0 87px 0; border:2px solid #bfc4cc; border-top:0; background:#f2f2f2; border-radius:0 0 15px 15px;}
 .rese_wrap .rese_start .start_wrap	.cont	{margin:0 auto; width:390px}
 .rese_wrap .rese_start .start_wrap	.cont .select	{margin-top:14px; height:47px}

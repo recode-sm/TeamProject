@@ -13,6 +13,12 @@
 	<title>memberInfo</title>	
 	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/resources/css/reservResult.css">
 	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/resources/css/content.css?v=201811160138">
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('html').addClass('memb');
+	});
+</script>
+
 </head>
 
 <body>

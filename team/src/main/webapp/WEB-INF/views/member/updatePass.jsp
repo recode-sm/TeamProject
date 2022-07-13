@@ -15,6 +15,12 @@
 	<script type="text/javascript" src="<%=request.getContextPath() %>/resources/js/libs/jquery.min.js"></script>
 	<script type="text/javascript" src="<%=request.getContextPath() %>/resources/js/common/common.js"></script>
 	<script type="text/javascript" src="<%=request.getContextPath() %>/resources/js/common/form_check.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('html').addClass('memb');
+	});
+</script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/jquery-3.6.0.js"></script>
 	<script type="text/javascript">
 	$(document).ready (function () {
@@ -87,10 +93,10 @@
 								<div class="table_wrap">
 								<table class="table_tbody">
 								<tbody>
-									<tr><th>기존 비밀번호</th>		<td><input type="password" id="pass" name="pass"></td></tr>
-									<tr><th>새 비밀번호</th>		<td><input type="password" id="updatePass" name="updatePass">
+									<tr><th>기존 비밀번호</th>		<td><input type="password" id="pass" name="pass" onkeypress="if(event.keyCode == 13){ checkForm(); return;}"></td></tr>
+									<tr><th>새 비밀번호</th>		<td><input type="password" id="updatePass" name="updatePass" onkeypress="if(event.keyCode == 13){ checkForm(); return;}">
 																	<div id="passdiv"></div></td></tr>
-									<tr><th>비밀번호 확인</th>		<td><input type="password" id="updatePass2" name="updatePass2">
+									<tr><th>비밀번호 확인</th>		<td><input type="password" id="updatePass2" name="updatePass2" onkeypress="if(event.keyCode == 13){ checkForm(); return;}">
 																	<div id="passdiv2"></div></td></tr>
 								</tbody>	
 								</table>

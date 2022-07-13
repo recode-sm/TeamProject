@@ -71,30 +71,23 @@
 	<h2>지점현황</h2>
 	
 		<video id="video01" autoplay="" playsinline="" muted="" loop="" height="460" width="100%" title="video element"> 
-			<source src="/files/banner/6202205075528114.mp4" type="video/mp4"> 
+			<source src="<%=request.getContextPath() %>/resources/files/banner/locate.mp4" type="video/mp4"> 
 		</video>
+		
 	
 </div>
+<c:if test="${ sessionScope.id eq 'admin' }">
+<div class="tab_wrap">
+	<ul>				
+		<li class="off"><a href="${pageContext.request.contextPath}/locate/field">구장등록</a></li>										
+	</ul>
+</div>
+</c:if>
+
+
 
 			<div class="locate_wrap">
 				
-				<!-- 전체지점 보기 -->
-				<div class="loca_view">
-					<div class="btn_wrap">
-						<a href="#" class="open"><span>전체지점보기</span></a>
-						<a href="#" class="closed"><span>전체지점닫기</span></a>
-
-					</div>
-						
-					<div class="loca_list">
-						<a href="#" class="btn_closed">전체지점닫기</a>
-							<ul>
-								<li><a href="${pageContext.request.contextPath}/locate/field">구장등록</a>							
-							</ul>
-						</div>
-				</div>
-				<!-- //전체지점 보기 -->
-
 				<div class="list_wrap">
 					
 					<c:forEach var="fieldDTO" items="${fieldList }">
@@ -102,11 +95,6 @@
 								<div class="info">
 									<span class="thumb">
 										<img src="${pageContext.request.contextPath}/resources/files/images/${fieldDTO.f_img}" alt="" />
-<!-- 										<div class="ov"> -->
-<!-- 											<ul> -->
-<!-- 											<li>#인조잔디</li><li>#국제규격</li><li>#탈의실</li><li>#주차장(무료)</li><li>#풋살화 대여</li><li>#Ex) A구장 6:6/ 7:7 구장  /  B구장 5:5 / 6:6 구장 /  C구장 3:3구장</li> -->
-<!-- 											</ul> -->
-<!-- 										</div> -->
 									</span>
 									<div class="t_wrap">
 										<p class="tit">${fieldDTO.f_name }</p>
@@ -114,6 +102,10 @@
 										<p class="t02">${fieldDTO.price }원</p>
 										<div class="btn_wrap">
 											<a href="${pageContext.request.contextPath}/reservation/reservation?select02=${fieldDTO.district }&select03=${fieldDTO.f_num }" class="btn_rese"><span>예약하기</span></a>
+											<c:if test="${ sessionScope.id eq 'admin' }">
+											<a href="${pageContext.request.contextPath}/locate/fieldUpdate?f_num=${fieldDTO.f_num }" class="btn_info"><span>구장수정</span></a>
+											</c:if>
+											
 										</div>
 									</div>
 								</div>

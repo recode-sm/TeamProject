@@ -13,4 +13,14 @@
 		select * from field
 	</select>
 	
+	<select id="getField" resultType="com.team.domain.FieldDTO">
+		select * from field where f_num=#{f_num}
+	</select>
+	
+	<update id="fieldUpdatePro">
+		UPDATE field 
+		SET f_address=#{f_address}, terms=#{terms}
+		WHERE f_num=#{f_num}
+	</update>
+	
 </mapper>

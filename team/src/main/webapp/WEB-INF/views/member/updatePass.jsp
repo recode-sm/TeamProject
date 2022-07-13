@@ -3,6 +3,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>BS RESERVATION</title>
+   <link href="<%=request.getContextPath() %>/resources/img/logo_1m.png" rel="shortcut icon" type="image/x-icon">
 <meta charset="UTF-8">
 <title>member/updatePass</title>
 	<!-- 공통css 코드 변경 후 적용이 안바뀌면 확장자 뒤에 ?after붙여주세요 --> 

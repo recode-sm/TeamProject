@@ -282,13 +282,7 @@ $(document).ready(function(){
 			</div>
 	</section>
 	<!-- Footer -->
-	<footer id="footer">
-		<div class="footer_wrap">
-			<span class="logo"></span>
-			<p class="info">서울시 성동구 왕십리로 58 FORHU 709호(성수동 1가)<span>TEL : 02-332-7807</span><span>FAX : 02-2061-0373</span></p>
-			<p class="copy">COPYRIGHTⓒHNS. ALLRIGHT RESERVED</p>
-		</div>
-	</footer>
+		<jsp:include page="../include/footer.jsp"></jsp:include>
 	<!-- //Footer -->
 </div>
 

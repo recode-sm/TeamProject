@@ -10,7 +10,7 @@
 					<li><a href="/member/emailcollection.asp">이메일무단수집거부</a></li>
 				</ul>
 			</div>
-			<p class="info">서울시 성동구 왕십리로 58 FORHU 709호(성수동 1가)<span>TEL : 02-332-7807</span><span>FAX : 02-2061-0373</span></p>
-			<p class="copy">COPYRIGHTⓒHNS. ALLRIGHT RESERVED</p>
+			<p class="info">부산광역시 부산진구 동천로 109 삼한골든게이트빌딩 7층<span>TEL : 051-803-0909</span><span>FAX :  051-803-0979</span></p>
+			<p class="copy">Copyright © 부산 아이티윌. All rights reserved.</p>
 		</div>
 	</footer>

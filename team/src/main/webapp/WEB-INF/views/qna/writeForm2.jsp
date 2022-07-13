@@ -4,6 +4,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>BS RESERVATION</title>
+   <link href="<%=request.getContextPath() %>/resources/img/logo_1m.png" rel="shortcut icon" type="image/x-icon">
 <meta charset="UTF-8">
 <title>write</title>
 	<!-- 공통css -->
@@ -34,7 +36,7 @@
 					<h2>Q&A</h2>
 					
 					<video id="video01" autoplay="" playsinline="" muted="" loop="" height="460" width="100%" title="video element"> 
-						<source src="<%=request.getContextPath() %>/resources/files/banner/13202205134697811.mp4" type="video/mp4"> 
+						<source src="<%=request.getContextPath() %>/resources/files/banner/community.mp4" type="video/mp4">  
 					</video>
 				</div>
 				<div class="tab_wrap">

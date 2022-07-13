@@ -4,6 +4,8 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+<title>BS RESERVATION</title>
+   <link href="<%=request.getContextPath() %>/resources/img/logo_1m.png" rel="shortcut icon" type="image/x-icon">
 <meta charset="UTF-8">
 	<title>HM FUTSAL PARK</title>
 	<!-- 공통css -->
@@ -97,7 +99,7 @@
 	<h2>지점등록</h2>
 	
 		<video id="video01" autoplay="" playsinline="" muted="" loop="" height="460" width="100%" title="video element"> 
-			<source src="/files/banner/6202205075528114.mp4" type="video/mp4"> 
+			<source src="<%=request.getContextPath() %>/resources/files/banner/locate.mp4" type="video/mp4"> 
 		</video>
 	
 </div>

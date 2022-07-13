@@ -83,7 +83,7 @@
 				<div class="mv">
 					
 						<video id="video01" class="pblock" autoplay="" playsinline="" muted="" loop="" title=""> 
-							<source src="<%=request.getContextPath() %>/resources/files/banner/920220513468113.mp4" type="video/mp4"> 
+							<source src="<%=request.getContextPath() %>/resources/files/banner/main.mp4" type="video/mp4"> 
 						</video>
 					
 						<video id="video02" class="mblock" autoplay="" playsinline="" muted="" loop="" title=""> 

@@ -10,7 +10,11 @@
 <title>jsp4/list.jsp</title>
 </head>
 <body>
-
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('html').addClass('memb');
+	});
+</script>
 <c:if test="${ empty sessionScope.id }">
 	<c:redirect url="/member/login"/>
 </c:if>

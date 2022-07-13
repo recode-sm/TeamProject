@@ -57,14 +57,14 @@
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 
 	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/resources/css/content.css">
-</head>
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/jquery-3.6.0.js"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
 		$('html').addClass('memb');
 	});
 </script>
 <script type="text/javascript">
+</head>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/jquery-3.6.0.js"></script>
 $(function(){
 	  // 쿠키값 읽어오기
 	  var id = getCookie("Cookie_id");

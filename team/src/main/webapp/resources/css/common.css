@@ -211,7 +211,8 @@ a.rollover:hover img.on		{display:none;}
 /* Footer */
 #wrapper #footer	{position:relative; margin-top:110px; padding:63px 0 85px 0; background:#414141;}
 #wrapper #footer .footer_wrap	{position:relative; margin:0 auto; width:1200px}
-#wrapper #footer .footer_wrap .logo	{position:absolute; top:17px; left:0; width:268px; height:50px; background:url('../img/logo_footer.png') no-repeat 0 0;}
+/* #wrapper #footer .footer_wrap .logo	{position:absolute; top:17px; left:0; width:268px; height:50px; background:url('../img/logo_footer1.png') no-repeat 0 0;} */
+#wrapper #footer .footer_wrap .logo	{position:absolute; top:17px; left:0; width:268px; height:50px; background:url('../img/logo_footer_m.png') no-repeat 0 0; background-size: 150px;}
 #wrapper #footer .footer_wrap .foot_util	{padding-left:365px}
 #wrapper #footer .footer_wrap .foot_util ul	{margin:0 auto; max-width:1100px;}
 #wrapper #footer .footer_wrap .foot_util ul:after	{content:""; display:block; clear:both}

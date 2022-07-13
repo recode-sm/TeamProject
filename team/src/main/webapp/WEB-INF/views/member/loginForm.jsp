@@ -64,6 +64,64 @@
 		$('html').addClass('memb');
 	});
 </script>
+<script type="text/javascript">
+$(function(){
+	  // 쿠키값 읽어오기
+	  var id = getCookie("Cookie_id");
+	  if(id){
+	    $("#id").val(id);
+	    $("#id_mem").attr("checked", true);
+	  }
+	});
+
+</script>
+<script type="text/javascript">
+function OLoginM() { 
+	var str = EmptyChk(document.frmLogin.id.value);
+	var str2 = EmptyChk(document.frmLogin.pass.value);
+	var mem = $('#idsave').is(":checked");
+	var id = $('#id').val();
+	
+	if (str < 3) {
+		alert("아이디를 입력하여 주십시오.");
+		document.frmLogin.id.focus();
+		return false;
+	}
+	else if (str2 < 4) {
+		alert("비밀번호를 입력하여 주십시오.");
+		document.frmLogin.pass.focus();
+		return false; 
+	}else if(mem){
+		setCookie("Cookie_mail", id, 7);
+	}
+	document.frmLogin.submit();
+}
+function setCookie(cookieName, value, exdays){
+	  var exdate = new Date();
+	  exdate.setDate(exdate.getDate() + exdays);	// 쿠키 저장 기간
+	  var cookieValue = escape(value) + ((exdays==null) ? "" : "; expires=" + exdate.toGMTString());
+	  document.cookie = cookieName + "=" + cookieValue;
+	}
+function getCookie(cookieName) {
+	  cookieName = cookieName + '=';
+	  var cookieData = document.cookie;
+	  var start = cookieData.indexOf(cookieName);
+	  var cookieValue = '';
+	  
+	  if(start != -1){
+	    start += cookieName.length;
+	    var end = cookieData.indexOf(';', start);
+	  if(end == -1)end = cookieData.length;
+	  	cookieValue = cookieData.substring(start, end);
+	  }
+	  return unescape(cookieValue);
+	}
+function deleteCookie(cookieName){
+	  var expireDate = new Date();
+	  expireDate.setDate(expireDate.getDate() - 1);
+	  document.cookie = cookieName + "= " + "; expires=" + expireDate.toGMTString();
+	}
+</script>
 
 <body>
 <div id="wrapper"> 
@@ -78,11 +136,11 @@
 				<div class="login_wrap">
 					<dl>
 						<dt><label for="id">아이디</label></dt>
-						<dd><input type=text name='id' value="" size='120' maxlength='120' style='width:100%' placeholder='이메일' tabindex=1></dd>
+						<dd><input type=text name='id' value="" size='120' maxlength='120' style='width:100%' placeholder='이메일' tabindex=1 onkeypress="if(event.keyCode == 13){ OLoginM(); return;}"></dd>
 						<dt><label for="pass">패스워드</label></dt>
-						<dd><input type=password name='pass' value="" size='12' maxlength='50' style='width:100%' placeholder='비밀번호' tabindex=2></dd>
+						<dd><input type=password name='pass' value="" size='12' maxlength='50' style='width:100%' placeholder='비밀번호' tabindex=2 onkeypress="if(event.keyCode == 13){ OLoginM(); return;}"></dd>
 					</dl> 
-						<span class="chk"><input type="checkbox" name="id_mem" checked id="idsave"><label for="idsave">아이디 저장</label></span>
+						<span class="chk"><input type="checkbox" name="id_mem" id="idsave" checked><label>아이디 저장</label></span>
 						<input type="button" value="로그인" onclick="OLoginM()" class="btn_middle">
 <!-- 						<a href="#" onclick="OLoginM();" class="btn_middle" >로그인</a> -->
 					<div class="btn_wrap">
@@ -93,25 +151,6 @@
 		</div>
 	</form>
 </section>
-
-<script type="text/javascript">
-function OLoginM() { 
-	var str = EmptyChk(document.frmLogin.id.value);
-	var str2 = EmptyChk(document.frmLogin.pass.value);
-	if (str < 3) {
-		alert("아이디를 입력하여 주십시오.");
-		document.frmLogin.id.focus();
-		return false;
-	}
-	else if (str2 < 4) {
-		alert("비밀번호를 입력하여 주십시오.");
-		document.frmLogin.pass.focus();
-		return false; 
-	}
-	document.frmLogin.submit();
-
-}
-</script>
 	<!-- Footer -->
 	<footer id="footer">
 		<div class="footer_wrap">

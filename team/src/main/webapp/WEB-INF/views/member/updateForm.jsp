@@ -13,7 +13,11 @@
 	<!-- //공통css -->
 </head>
 <body>
-
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('html').addClass('memb');
+	});
+</script>
 <div id="wrapper">
 	<section id="container">
 		<!-- Contents -->

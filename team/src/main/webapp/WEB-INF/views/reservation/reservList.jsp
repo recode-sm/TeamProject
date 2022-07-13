@@ -4,6 +4,8 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+<title>BS RESERVATION</title>
+   <link href="<%=request.getContextPath() %>/resources/img/logo_1m.png" rel="shortcut icon" type="image/x-icon">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 	<title>HM FUTSAL PARK</title>
@@ -83,7 +85,7 @@
 				<h2>예약확인</h2>
 				
 					<video id="video01" autoplay="" playsinline="" muted="" loop="" height="460" width="100%" title="video element"> 
-						<source src="<%=request.getContextPath() %>/resources/files/banner/reservation.mp4" type="video/mp4"> 
+						<source src="<%=request.getContextPath() %>/resources/files/banner/reservation1.mp4" type="video/mp4"> 
 <!-- 						574 134 -->
 					</video>
 				
@@ -117,11 +119,11 @@
 										<td id = "price">${reservList.total_price }원</td>
 											<c:if test="${reservList.status eq null }">
 											<td id = "status">결제중</td>
-											<td><input type="button" value="결제/예약취소" onclick="location.href='<%=request.getContextPath() %>/reservation/reservResult?r_num='" + ${reservList.r_num }></td>
+											<td><input type="button" value="결제/예약취소" onclick="location.href='<%=request.getContextPath() %>/reservation/reservResult?r_num=${reservList.r_num }'" ></td>
 											</c:if>
 											<c:if test="${reservList.status eq 'paid' }">
 											<td id = "status">결제완료</td>
-											<td><input type="button" value="결제취소"></td>
+											<td><input type="button" onclick="location.href='<%=request.getContextPath() %>/reservation/token?r_num=${reservList.r_num }'" value="결제취소"></td>
 											</c:if>
 											<c:if test="${reservList.status eq 'cancel' }">
 											<td id = "status">결제취소</td>
@@ -135,7 +137,6 @@
 						</div>
 					</div>
 			</section>
-			
 		
 			<!-- //Contents -->
 

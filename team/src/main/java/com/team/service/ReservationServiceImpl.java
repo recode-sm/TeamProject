@@ -78,5 +78,23 @@ public class ReservationServiceImpl implements ReservationService{
 		
 		reservationDAO.payInsert(payDTO);
 	}
+	
+	@Override
+	public void reservationCancel(String r_num) {
+		
+		reservationDAO.reservationCancel(r_num);
+		
+	}
 
+	@Override
+	public payDTO reservationGet(String r_num) {
+		
+		return reservationDAO.reservationGet(r_num);
+	}
+	
+	@Override
+	public void reservationUpdate(String r_num) {
+
+		reservationDAO.reservationUpdate(r_num);
+	}
 }

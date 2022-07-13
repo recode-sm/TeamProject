@@ -3,6 +3,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>BS RESERVATION</title>
+   <link href="<%=request.getContextPath() %>/resources/img/logo_1m.png" rel="shortcut icon" type="image/x-icon">
 	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/resources/css/reservResult.css">
 	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/resources/css/content.css?v=201811160138">
 <meta charset="UTF-8">
@@ -71,6 +73,7 @@
 //                  	});
         		} else {
         			alert("결제에 실패하였습니다. 에러 내용: " + rsp.error_msg);
+        			location.href="${pageContext.request.contextPath}/reservation/select";
         		}
        		}
         )
@@ -148,7 +151,8 @@
 							</span>
 
 							<div class="btn_wrap">
-								<input type="button" class="btn_big gray" onclick="requestPay()" value="결제">
+								<input type="button" class="btn_big gray" onclick="requestPay()" value="결제" style="width:49%">
+								<input type="button" class="btn_big gray" onclick="location.href='<%=request.getContextPath() %>/reservation/cancel?r_num='+${reservDTO.r_num}" value="취소" style="width:49%">
 							</div>
 
 						</div>

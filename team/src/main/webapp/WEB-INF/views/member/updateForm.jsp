@@ -3,9 +3,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>BS RESERVATION</title>
+   <link href="<%=request.getContextPath() %>/resources/img/logo_1m.png" rel="shortcut icon" type="image/x-icon">
 <meta charset="UTF-8">
-<title>member/updateForm.jsp</title>
-<!-- 공통css 코드 변경 후 적용이 안바뀌면 확장자 뒤에 ?after붙여주세요 --> 
+<title>member/updateForm</title>
+	<!-- 공통css 코드 변경 후 적용이 안바뀌면 확장자 뒤에 ?after붙여주세요 --> 
 	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/resources/css/reservResult.css?after3">
 	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/resources/css/content.css?v=201811160138">
 	<!-- //공통css -->
@@ -25,27 +27,26 @@
 								<div class="table_wrap">
 								<table class="table_tbody">
 								<tbody>
-									<tr><th>아이디</th>		<td><input type="text" name="id" value="${ memberDTO.id }" readonly></td>
-									<tr><th>기존 비밀번호</th>	<td><input type="password" name="pass"></td>
-<!-- 									<tr><th>변경할 비밀번호</th>	<td><input type="password" name="pass"></td> -->
-<!-- 									<tr><th>비밀번호 확인</th>	<td><input type="password" name="pass"></td> -->
-									<tr><th>이름</th>			<td><input type="text" name="name" value="${ memberDTO.name }"></td>
-									<tr><th>전화번호</th>		<td><input type="text" name="phone" value="${ memberDTO.phone }"></td>
-									<tr><th>우편번호</th>		<td><input type="text" name="postcode" value="${ memberDTO.postcode }"></td>
-									<tr><th>주소</th>			<td><input type="text" name="address" value="${ memberDTO.address }"></td>
-									<tr><th>상세주소</th>		<td><input type="text" name="address2" value="${ memberDTO.address2 }"></td>
+									<tr><th>아이디</th>		<td><input type="text" name="id" value="${ memberDTO.id }" readonly></td></tr>
+									<tr><th>비밀번호</th>		<td><input type="password" name="pass"></td></tr>
+									<tr><th>이름</th>			<td><input type="text" name="name" value="${ memberDTO.name }"></td></tr>
+									<tr><th>전화번호</th>		<td><input type="text" name="phone" value="${ memberDTO.phone }"></td></tr>
+									<tr><th>우편번호</th>		<td><input type="text" name="postcode" value="${ memberDTO.postcode }"></td></tr>
+									<tr><th>주소</th>			<td><input type="text" name="address" value="${ memberDTO.address }"></td></tr>
+									<tr><th>상세주소</th>		<td><input type="text" name="address2" value="${ memberDTO.address2 }"></td></tr>
 								</tbody>	
 								</table>
 									<div class="btn_wrap">
 									<input type="submit" class="btn_middle" value="수정완료">
+									<input type="button" class="btn_middle" onclick="location.href='<%=request.getContextPath() %>/member/updatePass'" value="비밀번호 변경">
 									<input type="button" class="btn_middle" onclick="location.href='<%=request.getContextPath() %>/member/main'" value="메인이동">
 									</div>
 								</div>
 							</form>
 						</div>
 					</div>
-					</div>
 				</div>
+			</div>
 		</div>
 	</section>
 </div>

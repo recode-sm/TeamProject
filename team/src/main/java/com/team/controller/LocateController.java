@@ -65,4 +65,26 @@ public class LocateController {
 		// /WEB-INF/views/notice/notice.jsp
 		return "redirect:/";
 	}
+	
+	@RequestMapping(value = "/locate/fieldUpdate", method = RequestMethod.GET)
+	public String fieldUpdate(HttpServletRequest request, Model model) throws IOException {
+		int f_num = Integer.parseInt(request.getParameter("f_num"));
+		FieldDTO fieldDTO = new FieldDTO();
+		
+		fieldDTO = fieldService.getField(f_num);
+		
+		model.addAttribute("fieldDTO",fieldDTO);
+		// /WEB-INF/views/notice/notice.jsp
+		return "locate/fieldUpdate";
+	}
+	
+	@RequestMapping(value = "/locate/fieldUpdatePro", method = RequestMethod.POST)
+	public String fieldUpdatePro(HttpServletRequest request, FieldDTO fieldDTO) throws IOException {
+		
+		fieldService.fieldUpdatePro(fieldDTO);
+
+		// /WEB-INF/views/notice/notice.jsp
+		return "redirect:/locate/locate";
+	}
+	
 }

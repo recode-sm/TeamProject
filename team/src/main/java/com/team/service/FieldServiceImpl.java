@@ -8,14 +8,14 @@ import com.team.dao.FieldDAO;
 import com.team.domain.FieldDTO;
 
 @Service
-public class FieldServiceImpl implements FieldService{
-	
+public class FieldServiceImpl implements FieldService {
+
 	@Inject
 	private FieldDAO fieldDAO;
-	
+
 	@Override
 	public void insertFeild(FieldDTO fieldDTO) {
-		fieldDAO.insertFeild(fieldDTO);		
+		fieldDAO.insertFeild(fieldDTO);
 	}
 
 	@Override
@@ -23,8 +23,14 @@ public class FieldServiceImpl implements FieldService{
 		return fieldDAO.getFieldList();
 	}
 
-	
+	@Override
+	public FieldDTO getField(int f_num) {
+		return fieldDAO.getField(f_num);
+	}
 
+	@Override
+	public void fieldUpdatePro(FieldDTO fieldDTO) {
+		fieldDAO.fieldUpdatePro(fieldDTO);
+	}
 
-	
 }

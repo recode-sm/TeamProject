@@ -4,6 +4,12 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.team.reservation.reservationMapper">
 
+	<select id="getReserv" resultType="com.team.domain.ReservDTO">
+		select r.r_num, r.id,f.f_name,r.r_date,r.time,r.total_price,r.status
+		from reservation r join field f ON r.f_num = f.f_num
+		where id=#{id}
+	</select>
+	
 	<select id="getFeildList_sel" resultType="com.team.domain.FieldDTO">
 		select distinct district from field order by district
 	</select>
@@ -45,5 +51,18 @@
 		insert into pay(imp_uid,merchant_uid,paid_amount,r_num,p_date) 
 		values (#{imp_uid},#{merchant_uid},#{paid_amount},#{r_num},#{p_date})
 	</insert>
+	
+	<delete id="reservationCancel">
+		delete from reservation where r_num=#{r_num}
+	</delete>
+	
+	<select id="reservationGet" resultType="com.team.domain.payDTO">
+		select * from pay where r_num=#{r_num}
+	</select>
+	
+	<update id="reservationUpdate">
+		update reservation set status='cancel' where r_num=#{r_num}
+	</update>
+	
 	
 </mapper>

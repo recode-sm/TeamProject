@@ -23,7 +23,7 @@
 	</select>
 	
 	<select id="getField" resultType="com.team.domain.FieldDTO">
-		select f_num,f_name,price from field where f_num=#{f_num}
+		select f_num,f_name,price,f_img from field where f_num=#{f_num}
 	</select>
 	
 	<insert id="insertReserv">

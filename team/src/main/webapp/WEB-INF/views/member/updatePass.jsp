@@ -3,12 +3,15 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>BS RESERVATION</title>
+   <link href="<%=request.getContextPath() %>/resources/img/logo_1m.png" rel="shortcut icon" type="image/x-icon">
 <meta charset="UTF-8">
 <title>member/updatePass</title>
 	<!-- 공통css 코드 변경 후 적용이 안바뀌면 확장자 뒤에 ?after붙여주세요 --> 
 	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/resources/css/reservResult.css?after3">
 	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/resources/css/content.css?v=201811160138">
 	<!-- //공통css -->
+	
 	<script type="text/javascript" src="<%=request.getContextPath() %>/resources/js/libs/jquery.min.js"></script>
 	<script type="text/javascript" src="<%=request.getContextPath() %>/resources/js/common/common.js"></script>
 	<script type="text/javascript" src="<%=request.getContextPath() %>/resources/js/common/form_check.js"></script>
@@ -22,9 +25,11 @@
 			var updatePass = document.getElementById('updatePass').value;
 			
 			if (regExp.test(updatePass) == true) {
-				$('#passdiv').html("사용 가능한 비밀번호").css("color", "blue");
+				$('#passdiv').html("사용 가능한 비밀번호").css({"font-size":"13px", "color":"blue"});
+				
 			} else {
-				$('#passdiv').html("비밀번호는 8~16자 사이로 숫자,영문자,특수문자를 포함해야 합니다").css("color", "red");
+				$('#passdiv').html("비밀번호는 8~16자 사이로 숫자,영문자,특수문자를 포함해야 합니다").css({"font-size":"13px", "color":"red"});
+				
 			}
 			
 		});
@@ -33,9 +38,11 @@
 			var updatePass2 = document.getElementById('updatePass2').value;
 			
 			if (regExp.test(updatePass2) == true) {
-				$('#passdiv2').html("비밀번호 일치").css("color", "blue");
-			} else {
-				$('#passdiv2').html("비밀번호 불일치").css("color", "red");
+				$('#passdiv2').html("비밀번호 일치").css({"font-size":"13px", "color":"blue"});
+				
+			} else {			
+				$('#passdiv2').html("비밀번호 불일치").css({"font-size":"13px", "color":"red"});
+			
 			}
 			
 		});
@@ -81,10 +88,10 @@
 								<table class="table_tbody">
 								<tbody>
 									<tr><th>기존 비밀번호</th>		<td><input type="password" id="pass" name="pass"></td></tr>
-									<tr><th>새 비밀번호</th>		<td><input type="password" id="updatePass" name="updatePass"></td>
-																<td><div id="passdiv"></div></td></tr>
-									<tr><th>비밀번호 확인</th>		<td><input type="password" id="updatePass2" name="updatePass2"></td>
-																<td><div id="passdiv2"></div></td></tr>
+									<tr><th>새 비밀번호</th>		<td><input type="password" id="updatePass" name="updatePass">
+																	<div id="passdiv"></div></td></tr>
+									<tr><th>비밀번호 확인</th>		<td><input type="password" id="updatePass2" name="updatePass2">
+																	<div id="passdiv2"></div></td></tr>
 								</tbody>	
 								</table>
 									<div class="btn_wrap">

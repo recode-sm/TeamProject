@@ -3,6 +3,8 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+<title>BS RESERVATION</title>
+   <link href="<%=request.getContextPath() %>/resources/img/logo_1m.png" rel="shortcut icon" type="image/x-icon">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 	<title>HM FUTSAL PARK</title>
@@ -76,11 +78,10 @@
 				<div class="login_wrap">
 					<dl>
 						<dt><label for="id">아이디</label></dt>
-						<dd><input type=text name='id' value="" size='120' maxlength='120' style='width:100%' placeholder='이메일' tabindex=1></dd>
+						<dd><input type=text name='id' value="" size='120' maxlength='120' style='width:100%' placeholder='이메일' tabindex=1 onkeypress="if(event.keyCode == 13){ OLoginM(); return;}"></dd>
 						<dt><label for="pass">패스워드</label></dt>
-						<dd><input type=password name='pass' value="" size='12' maxlength='50' style='width:100%' placeholder='비밀번호' tabindex=2></dd>
+						<dd><input type=password name='pass' value="" size='12' maxlength='50' style='width:100%' placeholder='비밀번호' tabindex=2 onkeypress="if(event.keyCode == 13){ OLoginM(); return;}"></dd>
 					</dl> 
-						<span class="chk"><input type="checkbox" name="id_mem" checked id="idsave"><label for="idsave">아이디 저장</label></span>
 						<input type="button" value="로그인" onclick="OLoginM()" class="btn_middle">
 <!-- 						<a href="#" onclick="OLoginM();" class="btn_middle" >로그인</a> -->
 					<div class="btn_wrap">

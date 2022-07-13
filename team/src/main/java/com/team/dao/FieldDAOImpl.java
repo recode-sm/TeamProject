@@ -26,5 +26,15 @@ public class FieldDAOImpl implements FieldDAO {
 		return sqlSession.selectList(namespace + ".getFieldList");
 	}
 
-	
+	@Override
+	public FieldDTO getField(int f_num) {
+		return sqlSession.selectOne(namespace + ".getField", f_num);
+	}
+
+	@Override
+	public void fieldUpdatePro(FieldDTO fieldDTO) {
+		sqlSession.update(namespace + ".fieldUpdatePro", fieldDTO);
+
+	}
+
 }

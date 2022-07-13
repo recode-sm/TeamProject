@@ -47,6 +47,12 @@ public class MemberDAOImpl implements MemberDAO {
 		return sqlSession.selectList(namespace + ".getMemberList");
 	}
 
+	@Override
+	public void updatePass(MemberDTO memberDTO) {
+		sqlSession.update(namespace + ".updatePass", memberDTO);
+	}
+	
+
 	
 
 }

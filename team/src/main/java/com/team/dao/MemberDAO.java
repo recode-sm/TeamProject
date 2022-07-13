@@ -23,4 +23,7 @@ public interface MemberDAO {
 	
 	// 전체 회원 정보 가져오기
 	public List<MemberDTO> getMemberList();
+	
+	// 비밀번호 변경
+	public void updatePass(MemberDTO memberDTO);
 }

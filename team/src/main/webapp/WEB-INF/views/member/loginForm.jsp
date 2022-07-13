@@ -58,8 +58,8 @@
 
 	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/resources/css/content.css">
 </head>
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/jquery-3.6.0.js"></script>
-<script type="text/javascript">
+
+<script language="Javascript">
 	$(document).ready(function() {
 		$('html').addClass('memb');
 	});
@@ -70,7 +70,7 @@ $(function(){
 	  var id = getCookie("Cookie_id");
 	  if(id){
 	    $("#id").val(id);
-	    $("#idsave").attr("checked", true);
+	    $("#id_mem").attr("checked", true);
 	  }
 	});
 
@@ -92,13 +92,10 @@ function OLoginM() {
 		document.frmLogin.pass.focus();
 		return false; 
 	}else if(mem){
-		setCookie("Cookie_id", id, 7);
-	}else{				// 체크가 해제 된 경우 (false)
-	    deleteCookie("Cookie_id");
+		setCookie("Cookie_mail", id, 7);
 	}
 	document.frmLogin.submit();
 }
-
 function setCookie(cookieName, value, exdays){
 	  var exdate = new Date();
 	  exdate.setDate(exdate.getDate() + exdays);	// 쿠키 저장 기간
@@ -135,16 +132,16 @@ function deleteCookie(cookieName){
 			<input type=hidden name=c_type value="">
 		<div class="content">
 			<div class="member_wrap">
-				<h1 onclick="document.location.href='<%=request.getContextPath() %>/';"><span class="hide">HM SPORTS</span></h1>
 				<div class="login_wrap">
 					<dl>
 						<dt><label for="id">아이디</label></dt>
-						<dd><input type=text id="id" name='id' value="" size='120' maxlength='120' style='width:100%' placeholder='이메일' tabindex=1 onkeypress="if(event.keyCode == 13){ OLoginM(); return;}"></dd>
+						<dd><input type=text name='id' value="" size='120' maxlength='120' style='width:100%' placeholder='이메일' tabindex=1 onkeypress="if(event.keyCode == 13){ OLoginM(); return;}"></dd>
 						<dt><label for="pass">패스워드</label></dt>
 						<dd><input type=password name='pass' value="" size='12' maxlength='50' style='width:100%' placeholder='비밀번호' tabindex=2 onkeypress="if(event.keyCode == 13){ OLoginM(); return;}"></dd>
 					</dl> 
-						<span class="chk"><input type="checkbox" name="id_mem" id="idsave"><label for="idsave">아이디 저장</label></span>
+						<span class="chk"><input type="checkbox" name="id_mem" id="idsave" checked><label>아이디 저장</label></span>
 						<input type="button" value="로그인" onclick="OLoginM()" class="btn_middle">
+<!-- 						<a href="#" onclick="OLoginM();" class="btn_middle" >로그인</a> -->
 					<div class="btn_wrap">
 						<a href="insert" class="join">회원가입</a>
 					</div>

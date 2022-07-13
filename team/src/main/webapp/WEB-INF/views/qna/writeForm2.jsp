@@ -4,6 +4,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>BS RESERVATION</title>
+   <link href="<%=request.getContextPath() %>/resources/img/logo_1m.png" rel="shortcut icon" type="image/x-icon">
 <meta charset="UTF-8">
 <title>write</title>
 	<!-- 공통css -->

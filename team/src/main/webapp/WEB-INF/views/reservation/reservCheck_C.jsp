@@ -137,9 +137,9 @@
 					
 
 							<div class="btn_wrap">
-								
+									<input type="submit" class="btn_big" value="예약 확인하기">
 							</div>
-							<input type="submit" class="btn_big" value="예약 확인하기">
+						
 						</div>
 						
 					</div>

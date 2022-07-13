@@ -4,6 +4,8 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+<title>BS RESERVATION</title>
+   <link href="<%=request.getContextPath() %>/resources/img/logo_1m.png" rel="shortcut icon" type="image/x-icon">
 <meta charset="UTF-8">
 	<title>HM FUTSAL PARK</title>
 	<!-- 공통css -->

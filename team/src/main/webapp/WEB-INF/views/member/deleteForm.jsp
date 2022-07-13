@@ -6,6 +6,8 @@
     
 <!DOCTYPE html>
 <html>
+<title>BS RESERVATION</title>
+   <link href="<%=request.getContextPath() %>/resources/img/logo_1m.png" rel="shortcut icon" type="image/x-icon">
 <head>
 	<meta charset="UTF-8">
 	<title>memberInfo</title>	

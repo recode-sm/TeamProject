@@ -3,6 +3,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>BS RESERVATION</title>
+   <link href="<%=request.getContextPath() %>/resources/img/logo_1m.png" rel="shortcut icon" type="image/x-icon">
 	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/resources/css/common.css">
 	<link rel="stylesheet" href="<%=request.getContextPath() %>/resources/themes/classic.css">
 	<link rel="stylesheet" href="<%=request.getContextPath() %>/resources/themes/classic.date.css">

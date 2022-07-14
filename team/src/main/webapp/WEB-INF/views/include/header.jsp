@@ -19,19 +19,20 @@
 						<li><a href="<%=request.getContextPath() %>/reservation/select">대관</a></li>
 <!-- 						<li><a href="/comm/match/match_apply.asp">매치/용병</a></li> -->
 <!-- 						<li><a href="/league/league.asp" class="f_hvn">H-LEAGUE</a></li> -->
-						<li><a href="<%=request.getContextPath() %>/notice/notice">고객센터</a></li>
-<!-- 						<li><a href="/about/company.asp" class="f_hvn">HNS</a></li> -->
+						<li><a href="<%=request.getContextPath() %>/notice/list">게시판</a></li>
+						<li><a href="<%=request.getContextPath() %>/qna/list">QnA</a></li>
+<%-- 						<li><a href="<%=request.getContextPath() %>/notice/notice">공지사항</a></li> --%>
 					</ul>
 				</div>
 				<div class="util">
 					<ul>
 						<c:if test="${ empty sessionScope.id }">
 						<li class="login"><a href="<%=request.getContextPath() %>/member/login">MEMBER LOGIN</a> |</li>
-						<li class="logout"><a href="<%=request.getContextPath() %>/member/insert">MEMBER JOIN</a> |</li>
+						<li class="login"><a href="<%=request.getContextPath() %>/member/insert">MEMBER JOIN</a> |</li>
 						</c:if>
 						<c:if test="${! empty sessionScope.id }">
 						<li class="login"><a href="<%=request.getContextPath() %>/member/info">MEMBER INFO</a> |</li>
-						<li class="logout"><a href="<%=request.getContextPath() %>/member/logout">MEMBER LOGOUT</a> |</li>
+						<li class="login"><a href="<%=request.getContextPath() %>/member/logout">MEMBER LOGOUT</a> |</li>
 						</c:if>
 <!-- 							<li class="login"> -->
 						

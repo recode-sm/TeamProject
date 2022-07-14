@@ -17,9 +17,6 @@
 	<script type="text/javascript" src="<%=request.getContextPath() %>/resources/js/common/form_check.js"></script>
 
 <script type="text/javascript">
-	$(document).ready(function() {
-		$('html').addClass('memb');
-	});
 </script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/jquery-3.6.0.js"></script>
 	<script type="text/javascript">

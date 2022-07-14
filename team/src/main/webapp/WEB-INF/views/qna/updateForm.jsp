@@ -65,15 +65,15 @@
 					</video>
 				</div>
 				<div class="tab_wrap">
-					<ul class="t03">
-						<li><a href="<%=request.getContextPath() %>/notice/notice">공지사항</a></li>
+					<ul class="t02">
+					<li><a href="<%=request.getContextPath() %>/notice/list">게시판</a></li>
 						<li class="on"><a href="<%=request.getContextPath() %>/qna/list">Q&A</a></li>
-						<li><a href="<%=request.getContextPath() %>/notice/list">커뮤니티</a></li>
+						
 					</ul>
 				</div>
 				
 				<div class="notice_wrap_view">
-					<h3 class="h_tit">Q&A</h3>
+					<h3 class="h_tit">글수정</h3>
 					<div class="view_wrap">
 						<form action="${pageContext.request.contextPath}/qna/updatePro" method="post">
 							<div class="top">
@@ -82,7 +82,7 @@
 									<dt>제목</dt>		<p class="tit"><input type="text" name="subject" value="${questionDTO.subject}"></p>
 									<dt>글번호</dt>	<dd>${questionDTO.q_num}</dd>
 								    <dt>등록일</dt>	<dd><fmt:formatDate pattern="yyyy-MM-dd" value="${questionDTO.q_date}"/></dd>
-									<dt>글쓴이</dt>	<dd><input type="text" name="id" value="${questionDTO.id}" readonly></dd>
+									<dt>글쓴이</dt>	<dd>${questionDTO.id}</dd>
 								    <dt>조회수</dt>	<dd>${questionDTO.readcount}</dd>
 								</dl>
 							</div>

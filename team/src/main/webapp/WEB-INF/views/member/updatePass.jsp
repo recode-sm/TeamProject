@@ -23,10 +23,10 @@
 	$(document).ready (function () {
 
 		var regExp = /^(?=.*[a-zA-z])(?=.*[0-9])(?=.*[$`~!@$!%*#^?&\\(\\)\-_=+]).{8,16}$/;
-		var updatePass = document.getElementById('updatePass').value;
-		var updatePass2 = document.getElementById('updatePass2').value;
+		
+		
 		$('#updatePass').keyup(function () {
-			
+			var updatePass = document.getElementById('updatePass').value;
 			if (regExp.test(updatePass) == true) {
 				$('#passdiv').html("사용 가능한 비밀번호").css({"font-size":"13px", "color":"blue"});
 				
@@ -38,8 +38,8 @@
 		});
 		
 		$('#updatePass2').keyup(function () {
-			
-			
+			var updatePass = document.getElementById('updatePass').value;
+			var updatePass2 = document.getElementById('updatePass2').value;
 			if (updatePass == updatePass2) {
 				$('#passdiv2').html("비밀번호 일치").css({"font-size":"13px", "color":"blue"});
 				

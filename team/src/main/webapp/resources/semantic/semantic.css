@@ -48,10 +48,10 @@ input[type="password"] {
   /* mobile firefox too! */
 }
 input[type="text"] {
-  width: auto;
+  width: 70%;
   height: 30px;
   font-size: 17px;
-  border: 0;
+  border:1px solid #bbb;
   border-radius: 15px;
   outline: none;
   padding-left: 16px;

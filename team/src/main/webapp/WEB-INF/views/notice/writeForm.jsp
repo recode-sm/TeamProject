@@ -56,7 +56,7 @@
 <!-- Contents -->
 	<div class="content">
 		<div class="sub_top">
-			<h2>커뮤니티</h2>
+			<h2>게시판</h2>
 				
 		<video id="video01" autoplay="" playsinline="" muted="" loop="" height="460" width="100%" title="video element"> 
 		<source src="<%=request.getContextPath() %>/resources/files/banner/community.mp4" type="video/mp4">  
@@ -65,10 +65,10 @@
 		</div>
 
 		<div class="tab_wrap">
-			<ul class="t03">
-				<li><a href="<%=request.getContextPath() %>/notice/notice">공지사항</a></li>
+			<ul class="t02">
+			<li class="on"><a href="<%=request.getContextPath() %>/notice/list">게시판</a></li>
 				<li><a href="<%=request.getContextPath() %>/qna/list">Q&A</a></li>
-				<li class="on"><a href="<%=request.getContextPath() %>/notice/list">커뮤니티</a></li>
+				
 			</ul>
 		</div>
 		
@@ -80,7 +80,7 @@
 				<div class="top">
 					<dl>
 						<dt>제목</dt>		<p class="tit"><input type="text" name="subject" placeholder="제목을 입력하세요"></p>
-						<dt>글쓴이</dt> 	<dd><input type="text" name="id" value="${ id }" readonly></dd>
+						<dt>글쓴이</dt> 	<dd>${ id }</dd>
 					</dl>
 				</div>
 				<div class="info_text" style="word-break: break-all;">

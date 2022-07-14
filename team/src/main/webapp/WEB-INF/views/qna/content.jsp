@@ -65,10 +65,10 @@
 					</video>
 				</div>
 				<div class="tab_wrap">
-					<ul class="t03">
-						<li><a href="<%=request.getContextPath() %>/notice/notice">공지사항</a></li>
+					<ul class="t02">
+					<li><a href="<%=request.getContextPath() %>/notice/list">게시판</a></li>
 						<li class="on"><a href="<%=request.getContextPath() %>/qna/list">Q&A</a></li>
-						<li><a href="<%=request.getContextPath() %>/notice/list">커뮤니티</a></li>
+						
 					</ul>
 				</div>
 				

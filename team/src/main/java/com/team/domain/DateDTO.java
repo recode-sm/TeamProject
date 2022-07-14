@@ -4,7 +4,7 @@ public class DateDTO {
 	
 	private int t_num;
 	private String time;
-	private int status;
+	private String status;
 	private String date;
 	private int f_num;
 	
@@ -20,10 +20,10 @@ public class DateDTO {
 	public void setTime(String time) {
 		this.time = time;
 	}
-	public int getStatus() {
+	public String getStatus() {
 		return status;
 	}
-	public void setStatus(int status) {
+	public void setStatus(String status) {
 		this.status = status;
 	}
 	public String getDate() {

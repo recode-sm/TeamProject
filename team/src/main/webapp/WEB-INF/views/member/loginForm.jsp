@@ -9,15 +9,15 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 	<title>HM FUTSAL PARK</title>
 	<meta name="keywords" content="HM FUTSAL PARK">
-	<meta name="description" content="�����̾� ǲ���� HMǲ����ũ, ���� 11�� ����, ��� ����, ���� �Ը� �� ��ȸ �� ���� ��ȸ ����">
+	<meta name="description" content="">
 	<meta property="og:type" content="website">
 	<meta property="og:image" content="https://hmfutsalpark.com/images/common/link_profile.png">
 	<meta property="og:title" content="HM FUTSAL PARK">
-	<meta property="og:description" content="�����̾� ǲ���� HMǲ����ũ">
+	<meta property="og:description" content="">
 	<meta property="og:url" content="https://hmfutsalpark.com">
 	<meta http-equiv="X-UA-Compatible" content="IE=chrome">
 
-	<!-- ����css -->
+	<!-- 공통css -->
 	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/resources/css/common.css">
 	<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700" rel="stylesheet">
 
@@ -70,7 +70,7 @@ $(function(){
 	  var id = getCookie("Cookie_id");
 	  if(id){
 	    $("#id").val(id);
-	    $("#id_mem").attr("checked", true);
+	    $("#idsave").attr("checked", true);
 	  }
 	});
 
@@ -92,7 +92,9 @@ function OLoginM() {
 		document.frmLogin.pass.focus();
 		return false; 
 	}else if(mem){
-		setCookie("Cookie_mail", id, 7);
+		setCookie("Cookie_id", id, 7);
+	}else{
+		deleteCookie("Cookie_id");
 	}
 	document.frmLogin.submit();
 }
@@ -135,11 +137,11 @@ function deleteCookie(cookieName){
 				<div class="login_wrap">
 					<dl>
 						<dt><label for="id">아이디</label></dt>
-						<dd><input type=text name='id' value="" size='120' maxlength='120' style='width:100%' placeholder='이메일' tabindex=1 onkeypress="if(event.keyCode == 13){ OLoginM(); return;}"></dd>
+						<dd><input type=text id="id" name="id" value="" size='120' maxlength='120' style='width:100%' placeholder='이메일' tabindex=1 onkeypress="if(event.keyCode == 13){ OLoginM(); return;}"></dd>
 						<dt><label for="pass">패스워드</label></dt>
 						<dd><input type=password name='pass' value="" size='12' maxlength='50' style='width:100%' placeholder='비밀번호' tabindex=2 onkeypress="if(event.keyCode == 13){ OLoginM(); return;}"></dd>
 					</dl> 
-						<span class="chk"><input type="checkbox" name="id_mem" id="idsave" checked><label>아이디 저장</label></span>
+						<span class="chk"><input type="checkbox" name="id_mem" id="idsave"><label for="idsave">아이디 저장</label></span>
 						<input type="button" value="로그인" onclick="OLoginM()" class="btn_middle">
 <!-- 						<a href="#" onclick="OLoginM();" class="btn_middle" >로그인</a> -->
 					<div class="btn_wrap">

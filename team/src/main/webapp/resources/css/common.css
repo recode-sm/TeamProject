@@ -371,8 +371,9 @@ table	th,	table	td	{border:0 none}
 .table_wrap .t_right span em	{color:#589b00; font-style:normal}
 
 .table_wrap table	{border:1px solid #636363; border-top:0; border-left:0}
+.table_wrap table th {padding-top :15px; padding-bottom :15px;}
 .table_wrap table th,
-.table_wrap table td	{border-top:1px solid #636363; border-left:1px solid #636363; font-size:12px; vertical-align:middle}
+.table_wrap table td	{border-top:0px solid #636363; border-left:0px solid #636363;  border-bottom:1px solid #d5d8dd;font-size:12px; vertical-align:middle}
 .table_wrap table thead tr th	{padding:21px 0; height:22px; background:#f0f1f3; color:#383838; font-size:22px; line-height:22px; text-align:center;}
 .table_wrap table thead tr th span	{display:block; position:relative;}
 
@@ -381,7 +382,7 @@ table	th,	table	td	{border:0 none}
 .table_wrap table tbody .phone span	{display:inline-block; width:3%; font-size:11px; text-align:center; vertical-align:middle;}
 
 
-.table_wrap table tbody tr th	{background:#f0f1f3; color:#2c3c57; font-size:18px; font-weight:700; line-height:28px; text-align:center;}
+.table_wrap table tbody tr th	{background:#ffff; color:#2c3c57; font-size:18px; font-weight:700; line-height:28px; text-align:center;}
 .table_wrap table tbody tr td	{padding:18px 0; height:20px; color:#2a2a2a; font-size:18px; line-height:28px; text-align:center; word-break:keep-all;}
 .table_wrap table tbody tr td.al_left	{padding-left:20px; text-align:left}
 .table_wrap table tbody tr td .btn_s	{margin:-2px 0}

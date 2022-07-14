@@ -589,8 +589,8 @@
 
 /* 공지사항 */
 .notice_wrap	{}
-.notice_wrap.list table tbody tr td:nth-child(3),
-.notice_wrap.list table tbody tr td:nth-child(4)	{color:#a7a7a7}
+/* .notice_wrap.list table tbody tr td:nth-child(3), */
+/* .notice_wrap.list table tbody tr td:nth-child(4)	{color:#a7a7a7} */
 
 /* QnA */
 .qna_wrap.list	{max-width:1200px !important}

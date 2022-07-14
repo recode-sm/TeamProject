@@ -138,8 +138,10 @@
 .rese_wrap .rese_start .start_wrap  .cont .fl_wrap dl dd input	{height:38px}
 
 .rese_wrap.cal	{padding:0 !important}
-.rese_wrap .fl_wrap .fl_left		{width:584px}
+.rese_wrap .fl_wrap .fl_left	{width:584px}
 .rese_wrap .fl_wrap .fl_right	{width:584px}
+.rese_wrap .fl_wrap .fl_auto	{width:auto;}
+
 
 .rese_wrap .fl_wrap .fl_left .thumb	{position:relative;}
 .rese_wrap .fl_wrap .fl_left .thumb .tag	{position:absolute}
@@ -241,6 +243,18 @@
 .rese_wrap .fl_wrap .fl_right .int_wrap .table_wrap table tbody tr:first-child th	{padding-top:25px}
 .rese_wrap .fl_wrap .fl_right .int_wrap .table_wrap table tbody tr:first-child td	{padding-top:16px}
 .rese_wrap .fl_wrap .fl_right .int_wrap .table_wrap table tbody tr:last-child td	{padding-bottom:16px}
+
+.rese_wrap .fl_wrap .fl_auto .int_wrap	{margin-top:15px}
+.rese_wrap .fl_wrap .fl_auto .int_wrap .tit	{padding-left:18px; background:#2c3c57; color:#fff; font-size:20px; line-height:70px;}
+.rese_wrap .fl_wrap .fl_auto .int_wrap .table_wrap	{margin:0}
+.rese_wrap .fl_wrap .fl_auto .int_wrap .table_wrap table	{border:1px solid #c4c4c4; border-top:0}
+.rese_wrap .fl_wrap .fl_auto .int_wrap .table_wrap table tbody tr th	{padding:20px 20px; border:0; font-size:16px; text-align:left; vertical-align:top}
+.rese_wrap .fl_wrap .fl_auto .int_wrap .table_wrap table tbody tr td	{padding:3px 16px; border:0; height:49px; font-size:16px; text-align:left}
+.rese_wrap .fl_wrap .fl_auto .int_wrap .table_wrap table tbody tr td .price	{font-weight:700}
+.rese_wrap .fl_wrap .fl_auto .int_wrap .table_wrap table tbody tr td textarea	{width:100%; height:100px}
+.rese_wrap .fl_wrap .fl_auto .int_wrap .table_wrap table tbody tr:first-child th	{padding-top:25px}
+.rese_wrap .fl_wrap .fl_auto .int_wrap .table_wrap table tbody tr:first-child td	{padding-top:16px}
+.rese_wrap .fl_wrap .fl_auto .int_wrap .table_wrap table tbody tr:last-child td	{padding-bottom:16px}
 
 
 .rese_wrap .fl_wrap .fl_right .int_wrap .table_wrap table tbody .phone	{font-size:0; line-height:0}

@@ -4,7 +4,7 @@
  * 설명	:공통 CSS
  * 작성일	:2018.01.11
 ************************************************************************/
-
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap');
 @font-face {font-family:"HN_Th"; src:url('/font/HelveticaNeueLTStd-Th.eot'); src:local('☺'), url('/font/HelveticaNeueLTStd-Th.eot?#iefix') format("embedded-opentype"), url('/font/HelveticaNeueLTStd-Th.woff') format("woff"), url('/font/HelveticaNeueLTStd-Th.ttf') format("truetype"); }
 @font-face {font-family:"HN_Bd"; src:url('/font/HelveticaNeueLTStd-Bd.eot'); src:local('☺'), url('/font/HelveticaNeueLTStd-Bd.eot?#iefix') format("embedded-opentype"), url('/font/HelveticaNeueLTStd-Bd.woff') format("woff"), url('/font/HelveticaNeueLTStd-Bd.ttf') format("truetype"); }
 @font-face {font-family:"HN_hvc"; src:url('/font/HelveticaNeue-HeavyCond.eot'); src:local('☺'), url('/font/HelveticaNeue-HeavyCond.eot?#iefix') format("embedded-opentype"), url('/font/HelveticaNeue-HeavyCond.woff') format("woff"), url('/font/HelveticaNeue-HeavyCond.ttf') format("truetype"); }
@@ -18,7 +18,7 @@
 *	{margin:auto; padding:0;}
 html,body	{min-height:100%; height:100%}
 html	{min-height:100%}
-body	{*overflow-y:; min-width:320px; color:#403d3f; font-size:18px; font-family:'Nanum Gothic','NanumBarunGothic','AppleGothic','Dotum', sans-serif; font-weight:normal; line-height:26px; -webkit-text-size-adjust:none; word-spacing:0; letter-spacing:-0.3px}
+body	{*overflow-y:; min-width:320px; color:#403d3f; font-size:18px;  font-family: 'Noto Sans KR', sans-serif; font-weight:normal; line-height:26px; -webkit-text-size-adjust:none; word-spacing:0; letter-spacing:-0.3px}
 body.hidden	{overflow:hidden; padding-right:17px}
 
 a			{color:#000; text-decoration:none}
@@ -237,13 +237,13 @@ button.dis:hover	span	span	{background-position:right 0}
 .cancel	{background:#868686 !important}
 .red	{background:#e3212b !important}
 
-.btn_base	{position:relative; display:inline-block; padding:0 15px; min-width:180px; background:#2c3c57; color:#fff; font-size:18px; line-height:47px; text-align:center; vertical-align:middle; box-sizing:border-box; -moz-box-sizing:border-box; -webkit-transition:all 0.25s ease-out; -moz-transition:all 0.25s ease-out; -ms-transition:all 0.25s ease-out; -o-transition:all 0.25s ease-out; transition:all 0.25s ease-out;}
+.btn_base	{position:relative; display:inline-block; padding:0 15px; min-width:180px; border:0; border-radius:5px; background:#2c3c57; color:#fff; font-size:18px; line-height:47px; text-align:center; vertical-align:middle; box-sizing:border-box; -moz-box-sizing:border-box; -webkit-transition:all 0.25s ease-out; -moz-transition:all 0.25s ease-out; -ms-transition:all 0.25s ease-out; -o-transition:all 0.25s ease-out; transition:all 0.25s ease-out;}
 .btn_base:hover	{background:#003f96 !important}
 
-.btn_middle	{position:relative; display:inline-block; padding:0 15px; min-width:180px; background:#2c3c57; color:#fff; font-size:20px; line-height:60px; text-align:center; vertical-align:middle; box-sizing:border-box; -moz-box-sizing:border-box; -webkit-transition:all 0.25s ease-out; -moz-transition:all 0.25s ease-out; -ms-transition:all 0.25s ease-out; -o-transition:all 0.25s ease-out; transition:all 0.25s ease-out;}
+.btn_middle	{position:relative; display:inline-block; padding:0 15px; min-width:180px; border:0; border-radius:5px; background:#2c3c57; color:#fff; font-size:20px; line-height:60px; text-align:center; vertical-align:middle; box-sizing:border-box; -moz-box-sizing:border-box; -webkit-transition:all 0.25s ease-out; -moz-transition:all 0.25s ease-out; -ms-transition:all 0.25s ease-out; -o-transition:all 0.25s ease-out; transition:all 0.25s ease-out;}
 .btn_middle:hover	{background:#003f96 !important}
 
-.btn_middle_2 {position:relative; display:inline-block; padding:0 15px; min-width:100px; border:0; background:#808080; color:#fff; font-size:15px; line-height:41px; text-align:center; vertical-align:middle; box-sizing:border-box; -moz-box-sizing:border-box; -webkit-transition:all 0.25s ease-out; -moz-transition:all 0.25s ease-out; -ms-transition:all 0.25s ease-out; -o-transition:all 0.25s ease-out; transition:all 0.25s ease-out;}
+.btn_middle_2	{position:relative; display:inline-block; padding:0 15px; min-width:100px; border:0; border-radius:5px; background:#808080; color:#fff; font-size:15px; line-height:41px; text-align:center; vertical-align:middle; box-sizing:border-box; -moz-box-sizing:border-box; -webkit-transition:all 0.25s ease-out; -moz-transition:all 0.25s ease-out; -ms-transition:all 0.25s ease-out; -o-transition:all 0.25s ease-out; transition:all 0.25s ease-out;}
 .btn_middle_2:hover	{background:#003f96 !important}
 
 .btn_big	{position:relative; display:inline-block; padding:0 15px; width:333px; background:#2c3c57; color:#fff; font-size:23px; line-height:80px; text-align:center; vertical-align:middle; box-sizing:border-box; -moz-box-sizing:border-box; -webkit-transition:all 0.25s ease-out; -moz-transition:all 0.25s ease-out; -ms-transition:all 0.25s ease-out; -o-transition:all 0.25s ease-out; transition:all 0.25s ease-out;}
@@ -301,6 +301,7 @@ table	th,	table	td	{border:0 none}
 .table_wrap table tbody .phone	{font-size:0; line-height:0}
 .table_wrap table tbody .phone input	{width:31.333333%}
 .table_wrap table tbody .phone span	{display:inline-block; width:3%; font-size:11px; text-align:center; vertical-align:middle;}
+
 
 .table_wrap table tbody tr th	{background:#f0f1f3; color:#2c3c57; font-size:18px; font-weight:700; line-height:28px; text-align:center;}
 .table_wrap table tbody tr td	{padding:18px 0; height:20px; color:#2a2a2a; font-size:18px; line-height:28px; text-align:center; word-break:keep-all;}

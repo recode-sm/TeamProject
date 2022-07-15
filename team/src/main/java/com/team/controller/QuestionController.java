@@ -133,6 +133,6 @@ public class QuestionController {
 	public String delete(HttpServletRequest request, Model model) {
 		int q_num = Integer.parseInt(request.getParameter("q_num"));
 		questionService.deleteBoard(q_num);
-		return "/qna/list";
+		return "redirect:/qna/list";
 	}
 }

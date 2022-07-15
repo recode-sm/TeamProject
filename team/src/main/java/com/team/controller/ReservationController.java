@@ -45,8 +45,12 @@ public class ReservationController {
 			int select03 = Integer.parseInt(request.getParameter("select03"));
 			String id = (String)session.getAttribute("id");
 		if(select03 == 0) {
-				return "reservation/sel_msg";
-			}else {
+			return "reservation/sel_msg";
+		} else if (id == null) {
+			return "reservation/login_msg";
+		}
+
+		else {
 
 				FieldDTO fieldDTO = reservationService.getFiled(select03);
 				// phone 값 가져오기

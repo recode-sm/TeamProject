@@ -5,13 +5,7 @@
  * 작성일	:2018.01.11
 ************************************************************************/
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap');
-@font-face {font-family:"HN_Th"; src:url('/font/HelveticaNeueLTStd-Th.eot'); src:local('☺'), url('/font/HelveticaNeueLTStd-Th.eot?#iefix') format("embedded-opentype"), url('/font/HelveticaNeueLTStd-Th.woff') format("woff"), url('/font/HelveticaNeueLTStd-Th.ttf') format("truetype"); }
-@font-face {font-family:"HN_Bd"; src:url('/font/HelveticaNeueLTStd-Bd.eot'); src:local('☺'), url('/font/HelveticaNeueLTStd-Bd.eot?#iefix') format("embedded-opentype"), url('/font/HelveticaNeueLTStd-Bd.woff') format("woff"), url('/font/HelveticaNeueLTStd-Bd.ttf') format("truetype"); }
-@font-face {font-family:"HN_hvc"; src:url('/font/HelveticaNeue-HeavyCond.eot'); src:local('☺'), url('/font/HelveticaNeue-HeavyCond.eot?#iefix') format("embedded-opentype"), url('/font/HelveticaNeue-HeavyCond.woff') format("woff"), url('/font/HelveticaNeue-HeavyCond.ttf') format("truetype"); }
 
-@font-face {font-family:"NanumBarunGothicL"; src:url('/font/NanumBarunGothicWebLight.eot'); src:local('☺'), url('/font/NanumBarunGothicWebLight.eot?#iefix') format("embedded-opentype"), url('/font/NanumBarunGothicWebLight.woff') format("woff"), url('/font/NanumBarunGothicWebLight.ttf') format("truetype"); }
-@font-face {font-family:"NanumBarunGothic"; src:url('/font/NanumBarunGothicWeb.eot'); src:local('☺'), url('/font/NanumBarunGothicWeb.eot?#iefix') format("embedded-opentype"), url('/font/NanumBarunGothicWeb.woff') format("woff"), url('/font/NanumBarunGothicWeb.ttf') format("truetype"); }
-@font-face {font-family:"NanumBarunGothicB"; src:url('/font/NanumBarunGothicWebBold.eot'); src:local('☺'), url('/font/NanumBarunGothicWebBold.eot?#iefix') format("embedded-opentype"), url('/font/NanumBarunGothicWebBold.woff') format("woff"), url('/font/NanumBarunGothicWebBold.ttf') format("truetype"); }
 
 
 /* common */
@@ -62,12 +56,12 @@ table th	{font-weight:normal}
 /* form */
 fieldset	{border:0 none}
 label	{}
-input	{box-sizing:border-box; -moz-box-sizing:border-box;}
+input	{box-sizing:border-box; -moz-box-sizing:border-box; font-family: 'Noto Sans KR', sans-serif;}
 input[type='text'],	input[type='password']	{height:45px; margin:0; padding:3px 9px 3px 9px; border:1px solid #ddd; background:#fff; color:#383838; font-size:16px; line-height:43px; vertical-align:middle;}
 input[type='text'],	input[type='password']	{-webkit-border-radius:0; -webkit-appearance:none; outline:none}
 input[type='text']:disabled	{background:#f8f8f8}
 input[type='text']:focus,	input[type='password']:focus	{border:1px solid #bbb}
-input[type=submit], input[type=button]	{cursor:pointer}
+input[type=submit], input[type=button]	{cursor:pointer; font-family: 'Noto Sans KR', sans-serif;  border-radius: 5px; border: 0;}
 ::-webkit-input-placeholder	{padding:2px 0 0 0; color:#bebebe; box-sizing:border-box; -moz-box-sizing:border-box;}
 :-ms-input-placeholder {color:#bebebe;}
 input[placeholder]	{line-height:1em !important}

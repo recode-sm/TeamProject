@@ -73,7 +73,7 @@
 		<div class="notice_wrap list">
 			<h3 class="h_tit">글목록</h3>
 
-			<div class="table_wrap list">
+			<div class="table_wrap list" style="cursor:pointer;">
 				<table>
 					<tr><th scope="col">번호</th><th scope="col">글쓴이</th><th scope="col">제목</th><th scope="col">등록일</th><th scope="col">조회</th></tr>
 					<c:forEach var="boardDTO" items="${boardList}">

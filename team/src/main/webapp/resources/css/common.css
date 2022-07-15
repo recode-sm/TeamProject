@@ -371,8 +371,9 @@ table	th,	table	td	{border:0 none}
 .table_wrap .t_right span em	{color:#589b00; font-style:normal}
 
 .table_wrap table	{border:1px solid #636363; border-top:0; border-left:0}
+.table_wrap table th {padding-top :15px; padding-bottom :15px;}
 .table_wrap table th,
-.table_wrap table td	{border-top:1px solid #636363; border-left:1px solid #636363; font-size:12px; vertical-align:middle}
+.table_wrap table td	{border-top:0px solid #636363; border-left:0px solid #636363;  border-bottom:1px solid #d5d8dd;font-size:12px; vertical-align:middle}
 .table_wrap table thead tr th	{padding:21px 0; height:22px; background:#f0f1f3; color:#383838; font-size:22px; line-height:22px; text-align:center;}
 .table_wrap table thead tr th span	{display:block; position:relative;}
 
@@ -381,7 +382,7 @@ table	th,	table	td	{border:0 none}
 .table_wrap table tbody .phone span	{display:inline-block; width:3%; font-size:11px; text-align:center; vertical-align:middle;}
 
 
-.table_wrap table tbody tr th	{background:#f0f1f3; color:#2c3c57; font-size:18px; font-weight:700; line-height:28px; text-align:center;}
+.table_wrap table tbody tr th	{background:#ffff; color:#2c3c57; font-size:18px; font-weight:700; line-height:28px; text-align:center;}
 .table_wrap table tbody tr td	{padding:18px 0; height:20px; color:#2a2a2a; font-size:18px; line-height:28px; text-align:center; word-break:keep-all;}
 .table_wrap table tbody tr td.al_left	{padding-left:20px; text-align:left}
 .table_wrap table tbody tr td .btn_s	{margin:-2px 0}
@@ -507,195 +508,6 @@ table	th,	table	td	{border:0 none}
 	#wrapper #header nav .nav_wrap ul li:first-child a	{width:118px}
 
 	#wrapper #header nav .util	{right:20px; margin:0}
-}
-
-@media screen and (max-width:1360px)	{
-	#wrapper #container .content > div	{padding:0 20px}
-
-	/* Header */
-	#wrapper #header nav .util li.face	{display:none}
-	#wrapper #header nav .util li.insta	{display:none}
-
-	.content .sub_top h2	{margin-left:0; left:20px}
-}
-
-
-
-@media screen and (max-width:1216px)	{
-	/* Header */
-	#wrapper #header .header	{height:85px; background:rgba(0, 0, 0, 0.45); -webkit-transition:all 0.3s ease-out; -moz-transition:all 0.3s ease-out; -ms-transition:all 0.3s ease-out; -o-transition:all 0.3s ease-out; transition:all 0.3s ease-out;}
-	#wrapper #header .header h1	{top:23px !important; left:19px; width:201px !important; height:38px !important}
-	#wrapper #header .header h1 a	{width:201px !important; height:38px !important; background:url('../img/logo_m.png') no-repeat 0 0 !important; background-size:100% auto !important}
-	#wrapper #header .header .btn_nav	{display:block; position:absolute; top:0; right:0; width:66px; height:85px; background:url('../img/btn_nav.png') no-repeat center center; background-size:41px auto}
-
-	#wrapper #header nav	{overflow-y:auto; position:fixed; top:85px !important; right:0; bottom:0; left:auto; padding-left:56px; width:490px; height:auto; background:rgba(0, 0, 0, 0.85); box-sizing:border-box; -moz-box-sizing:border-box; -webkit-transform:translate3d(100%, 0, 0); -moz-transform:translate3d(100%, 0, 0); -o-transform:translate3d(100%, 0, 0); -ms-transform:translate3d(100%, 0, 0); transform:translate3d(100%, 0, 0);}
-	#wrapper #header nav .nav_wrap	{position:relative; left:auto; padding-top:133px; width:auto;}
-	#wrapper #header nav .nav_wrap ul	{border-top:4px solid #dbdbdb; border-bottom:4px solid #dbdbdb}
-	#wrapper #header nav .nav_wrap ul li	{display:block; position:relative; padding:0 0 0 10px !important;}
-	#wrapper #header nav .nav_wrap ul li a	{height:90px; font-size:34px; line-height:90px}
-	#wrapper #header nav .nav_wrap ul li a.f_hvn	{font-size:34px;}
-	#wrapper #header nav .nav_wrap ul li a:after	{display:none}
-	#wrapper #header nav .nav_wrap ul li a:hover	{color:#5c9de6;}
-
-	#wrapper #header nav .nav_wrap ul li:first-child	{position:absolute; right:0; left:0; bottom:-94px}
-	#wrapper #header nav .nav_wrap ul li a.aia	{width:146px}
-	#wrapper #header nav .nav_wrap ul li a.face	{display:block; position:absolute; top:10px; right:90px; width:70px; height:70px; background:url('../img/icon_facebook.png') no-repeat center center; background-size:46px 46px}
-	#wrapper #header nav .nav_wrap ul li a.insta	{display:block; position:absolute; top:10px; right:20px; width:70px; height:70px; background:url('../img/icon_instagram.png') no-repeat center center; background-size:46px 46px}
-
-	#wrapper #header nav .util	{position:absolute; top:0; right:0; left:56px; width:auto}
-	#wrapper #header nav .util li.login	{display:block; margin:0; padding:0; border:0;}
-	#wrapper #header nav .util li.login a	{display:block; margin-right:14px; padding-right:86px; font-size:30px; font-family:'HN_hvc'; height:133px; background:url(../img/icon_login_m.png') no-repeat center right; background-size:50px auto; line-height:133px; text-align:right}
-
-	#wrapper #header nav .util li.logout	{display:block; margin:0; padding:0; border:0;}
-	#wrapper #header nav .util li.logout a	{margin-right:14px; font-size:30px; font-family:'HN_hvc'; height:133px; background-size:50px auto; line-height:133px; text-align:right}
-	#wrapper #header nav .util li.logout a.mypage	{padding-right:70px; background-size:auto 44px;}
-	#wrapper #header nav .util li.logout a.logout	{padding-right:86px; margin-left:20px; background-size:auto 44px;}
-
-	#wrapper #header .header.open	{background:#2c3c57}
-	#wrapper #header .header.open nav	{-webkit-transform:translate3d(0, 0, 0); -moz-transform:translate3d(0, 0, 0); -o-transform:translate3d(0, 0, 0); -ms-transform:translate3d(0, 0, 0); transform:translate3d(0, 0, 0);}
-
-	/* Footer */
-	#wrapper #footer	{padding:30px 0 15px 0}
-	#wrapper #footer .footer_wrap	{width:auto; font-size:0; line-height:0; text-align:center}
-	#wrapper #footer .footer_wrap .logo	{display:none}
-	#wrapper #footer .footer_wrap .foot_util	{padding:0;}
-	#wrapper #footer .footer_wrap .foot_util ul	{display:inline-block}
-	#wrapper #footer .footer_wrap .foot_util ul li:last-child	{padding-right:0}
-	#wrapper #footer .footer_wrap .info		{display:none}
-	#wrapper #footer .footer_wrap .copy		{margin-top:15px; padding:0}
-
-	/* Tab */
-	.content .tab_wrap ul.t03 li	{width:33.33333333% !important}
-
-
-}
-
-
-@media screen and (max-width:960px){
-	body.hidden	{padding-right:0}
-	#wrapper #container .content > div	{padding:0 10px}
-
-	.pblock	{display:none}
-	.mblock	{display:block !important}
-
-	/* form */
-	.select	{height:38px}
-	.select:after	{right:7px; background-size:8px auto;}
-	.select label	{height:36px; font-size:14px; line-height:36px}
-	.select select	{height:36px; font-size:14px; line-height:36px}
-	input[type='text'], input[type='password']	{height:25px; font-size:14px; line-height:23px}
-	textarea	{font-size:14px;}
-
-	.chk	{font-size:12px}
-	.chk label	{padding-left:25px; background-size:18px auto}
-	.chk input[type=checkbox]:checked + label	{background-size:18px auto}
-
-	/* button */
-	.btn_base	{padding:0 7px; min-width:120px; height:32px; font-size:12px; line-height:32px}
-	.btn_middle	{padding:0 7px; min-width:90px; height:31px; font-size:13px; line-height:31px}
-	.btn_big		{padding:0 7px; width:150px; font-size:16px; line-height:40px;}
-	.abs_rt {margin-top: 20px;}
-
-	/* Header */
-	#wrapper #header .header	{height:55px;}
-	#wrapper #header .header h1	{top:16px !important; left:10px; width:135px !important; height:26px !important}
-	#wrapper #header .header h1 a	{width:135px !important; height:26px !important;}
-	#wrapper #header .header .btn_nav	{width:50px; height:55px; background-size:28px auto}
-
-	#wrapper #header nav	{top:55px !important; padding-left:28px; width:245px;}
-	#wrapper #header nav .nav_wrap	{padding-top:66px;}
-	#wrapper #header nav .nav_wrap ul	{padding:8px 0; border-top:2px solid #dbdbdb; border-bottom:2px solid #dbdbdb}
-	#wrapper #header nav .nav_wrap ul li	{padding:0 0 0 5px !important;}
-	#wrapper #header nav .nav_wrap ul li a	{height:45px; font-size:17px; line-height:45px}
-	#wrapper #header nav .nav_wrap ul li a.f_hvn	{font-size:17px;}
-
-	#wrapper #header nav .nav_wrap ul li:first-child	{bottom:-47px}
-	#wrapper #header nav .nav_wrap ul li a.aia	{width:73px}
-	#wrapper #header nav .nav_wrap ul li a.face	{top:5px; right:35px; width:35px; height:35px; background-size:23px 23px}
-	#wrapper #header nav .nav_wrap ul li a.insta	{top:5px; right:0; width:35px; height:35px; background-size:23px 23px}
-
-	#wrapper #header nav .util	{left:28px;}
-	#wrapper #header nav .util li.login a	{margin-right:7px; padding-right:43px; font-size:15px; height:66px; background-size:25px auto; line-height:66px;}
-
-	#wrapper #header nav .util li.logout a	{margin-right:7px; font-size:15px; height:66px; background-size:50px auto; line-height:66px; }
-	#wrapper #header nav .util li.logout a.mypage	{padding-right:35px; background-size:auto 22px;}
-	#wrapper #header nav .util li.logout a.logout	{padding-right:43px; margin-left:10px; background-size:auto 22px;}
-
-
-	/* Footer */
-	#wrapper #footer	{margin-top:60px; padding:15px 0 10px 0}
-	#wrapper #footer .footer_wrap .foot_util ul li	{padding:0 15px}
-	#wrapper #footer .footer_wrap .foot_util ul li a	{font-size:12px;}
-	#wrapper #footer .footer_wrap .copy		{margin-top:7px; padding:0; line-height:16px}
-
-	/* Sub top */
-	.content .sub_top	{margin-bottom:30px !important; height:230px}
-	.content .sub_top video	{width:960px; height:231px}
-	.content .sub_top h2	{bottom:10px; left:10px; font-size:40px; line-height:45px}
-
-
-	/* Tab */
-	.content > .tab_wrap	{margin:-30px 0 30px 0 !important}
-	.content > .tab_wrap ul li > a	{font-size:15px; line-height:44px}
-	.tab_wrap ul li > a	{font-size:14px; line-height:43px}
-	.tab_wrap ul li.on > a:after	{display:none}
-
-	/* Table */
-	.table_wrap	{margin-top:7px}
-	.table_wrap .tb	{display:none}
-	.table_wrap table thead tr th	{padding:11px 0; font-size:15px}
-	.table_wrap table tbody tr th	{padding:6px 0; height:32px; font-size:12px; line-height:16px}
-	.table_wrap table tbody tr td	{padding:6px 0; height:32px; font-size:12px; line-height:16px}
-
-	.table_wrap.list table thead tr th	{padding:7px 0; height:21px; font-size:12px; line-height:21px;}
-	.table_wrap.list table tbody tr td	{padding:6px 0; height:22px; font-size:12px; line-height:22px}
-	.table_wrap.list table tbody tr td.al_left	{padding:6px 5px}
-	.table_wrap.list table tbody tr td a.tit	{height:22px; line-height:22px}
-	.table_wrap.list table tbody tr td a.tit.secret	{padding-right:15px; background-size:9px auto}
-	.table_wrap.list table tbody tr td .state	{width:37px; font-size:11px; line-height:22px; border-radius:3px}
-
-	/* 페이징 */
-	.pager_wrap	{margin-top:35px;}
-	.pager_wrap .search	{margin-bottom:20px;}
-	.pager_wrap .search .select	{width:44px; height:24px;}
-	.pager_wrap .search .select label		{left:5px; right:10px; font-size:12px; height:22px; line-height:22px; letter-spacing:0}
-	.pager_wrap .search .select select	{height:22px; line-height:22px}
-	.pager_wrap .search .select:after		{right:0}
-	.pager_wrap .search input		{width:119px; height:24px; font-size:12px}
-	.pager_wrap .search button	{width:35px; height:24px; background-size:12px auto}
-
-	.pager_wrap a	{margin-left:4px; width:40px; height:20px; font-size:12px; line-height:20px;}
-
-	.pager_wrap a.btn_page.prev	{background-size:5px auto}
-	.pager_wrap a.btn_page.next	{background-size:5px auto}
-
-	.pager_wrap .page	{display:inline-block; margin:0 10px; text-align:center; vertical-align:top}
-	.pager_wrap .page a	{position:relative; width:20px; height:20px;}
-	.pager_wrap .page a:first-child	{margin:0}
-	.pager_wrap .page a.on	{border:1px solid #2c3c57; background:#2c3c57; color:#fff; text-decoration:none}
-
-	/* 공통 팝업 */
-	.layer_popup	{margin:0 auto; padding:23px 10px; right:10px; left:10px; width:auto; -webkit-transform:translate3d(0, -50%, 0); -moz-transform:translate3d(0, -50%, 0); -o-transform:translate3d(0, -50%, 0); -ms-transform:translate3d(0, -50%, 0); transform:translate3d(0, -50%, 0);}
-	.layer_popup .btn_closed	{width:30px; height:30px; background-size:40px 40px !important}
-
-	.layer_popup .layer_cont	{margin-top:15px; padding:0;}
-	.layer_popup .layer_cont .btn_wrap	{margin-top:7px}
-	.layer_popup .layer_cont .btn_wrap.side	{text-align:right}
-	.layer_popup .layer_cont .btn_wrap.side button	{margin:0; width:49%;}
-	.layer_popup .layer_cont .btn_wrap.side button:first-child	{float:left}
-	
-	.layer_popup .table_wrap table thead tr th	{padding:7px 0; font-size:14px}
-	.layer_popup .table_wrap table tbody tr th	{height:19px}
-	.layer_popup .table_wrap table tbody tr td	{padding:7px 7px; height:25px}
-	.layer_popup .table_wrap table tbody tr td.al_left	{padding:7px 7px}
-
-	.layer_popup .table_wrap.small table thead tr th	{padding:5px 0; font-size:12px}
-	.layer_popup .table_wrap table tbody tr td div {overflow-y:auto; max-height:100px}
-	.layer_popup .layer_cont .table_wrap .t01 {width:25%}
-}
-
-@media screen and (max-width:360px){
-	.layer_popup .layer_cont	{overflow-y:auto; max-height:450px;}
 }
 
 

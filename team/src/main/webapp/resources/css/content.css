@@ -66,7 +66,7 @@
 .locate_wrap .list_wrap .cont .info .t_wrap .btn_wrap a.btn_rese	{background:#2c3c57}
 .locate_wrap .list_wrap .cont .info .t_wrap .btn_wrap a.btn_rese span	{background:url('../img/icon_btn_rese.png') no-repeat 0 center}
 .locate_wrap .list_wrap .cont .info .t_wrap .btn_wrap a.btn_info	{margin-left:10px; background:#8ba6d5}
-.locate_wrap .list_wrap .cont .info .t_wrap .btn_wrap a.btn_info span	{padding-left:52px; background:url('/images/content/icon_btn_info.png') no-repeat 0 center}
+.locate_wrap .list_wrap .cont .info .t_wrap .btn_wrap a.btn_info span	{padding-left:52px; background:url('../img/icon_btn_info.png') no-repeat 0 center}
 .locate_wrap .list_wrap .cont .info .t_wrap .btn_wrap a:hover	{background:#003f96 !important}
 
 .locate_wrap .list_wrap .cont:nth-child(2n)	{background:#f0f0f0}
@@ -222,7 +222,7 @@
 .rese_wrap .fl_wrap .fl_right .info_wrap .t_wrap.match .match_list ul li .select		{width:70%}
 .rese_wrap .fl_wrap .fl_right .info_wrap .t_wrap.match .match_list ul li textarea {width:100%; height:100px; font-size:14px;}
 
-.rese_wrap .fl_wrap .fl_right .info_wrap .t_wrap.match .match_list .phone	{font-size:0; line-height:0 font-size:14px;}
+.rese_wrap .fl_wrap .fl_right .info_wrap .t_wrap.match .match_list .phone	{font-size:0; line-height:0; font-size:14px; }
 .rese_wrap .fl_wrap .fl_right .info_wrap .t_wrap.match .match_list .phone input	{width:20%}
 .rese_wrap .fl_wrap .fl_right .info_wrap .t_wrap.match .match_list .phone span:first-child	{width:14%;}
 .rese_wrap .fl_wrap .fl_right .info_wrap .t_wrap.match .match_list .phone span	{display:inline-block; width:2%; font-size:14px; vertical-align:middle;}
@@ -1682,11 +1682,11 @@
 
 
 /* 아이패드 프로 리그 이미지 */
-@media screen and (max-width:1024px)	{
-	.league_locate_wrap .view_wrap .charge_wrap .cont img {width:100%;}
-	.league_cont .league_info .info_cont .league_btn ul li	{width:100%}
-}
+/* @media screen and (max-width:1024px)	{ */
+/* 	.league_locate_wrap .view_wrap .charge_wrap .cont img {width:100%;} */
+/* 	.league_cont .league_info .info_cont .league_btn ul li	{width:100%} */
+/* } */
 
-.league_cont .flex-video {position: relative;padding-top: 1.5625rem;padding-bottom: 56.55%;height: 0;overflow: hidden;}
-.league_cont .flex-video iframe {position: absolute;width: 100%;height: 100%;display: block;}
+/* .league_cont .flex-video {position: relative;padding-top: 1.5625rem;padding-bottom: 56.55%;height: 0;overflow: hidden;} */
+/* .league_cont .flex-video iframe {position: absolute;width: 100%;height: 100%;display: block;} */
 

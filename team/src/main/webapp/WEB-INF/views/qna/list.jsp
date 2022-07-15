@@ -37,6 +37,7 @@
 	
 	
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
 </head>
 
 <body>
@@ -68,10 +69,16 @@
 					
 					<div class="table_wrap list">
 						<table border="1">
-							<tr><th>번호</th><th>글쓴이</th><th>제목</th><th>등록일</th><th>조회</th></tr>
+							<tr><th>글쓴이</th><th>제목</th><th>등록일</th><th>조회</th></tr>
 							<c:forEach var="questionDTO" items="${boardList}">
-							<tr onclick="location.href='<%=request.getContextPath() %>/qna/listPro?q_num=${questionDTO.q_num }'"><td>${questionDTO.q_num}</td><td>${questionDTO.id}</td>
-								<td>${questionDTO.subject}</a></td>
+							<tr onclick="location.href='<%=request.getContextPath() %>/qna/listPro?q_num=${questionDTO.q_num }'"><td>${questionDTO.id}</td>
+								<c:if test="${ questionDTO.group_layer eq 0 }">
+								<td>[질문글]${questionDTO.subject}</td>	
+								</c:if>
+								<c:if test="${ questionDTO.group_layer eq -1 }">
+								<td style="padding-left:50px">└ [답변글]${questionDTO.subject}</td>
+								</c:if>
+								
 							    <td><fmt:formatDate pattern="yyyy-MM-dd" value="${questionDTO.q_date}"/></td>
 							    <td>${questionDTO.readcount}</td></tr>
 							</c:forEach>

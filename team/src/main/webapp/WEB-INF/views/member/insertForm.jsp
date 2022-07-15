@@ -57,6 +57,11 @@
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/resources/css/content.css">
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('html').addClass('memb');
+	});
+</script>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script>
     function sample4_execDaumPostcode() {
@@ -214,8 +219,6 @@ $(document).ready(function(){
 	<section id="container">
 		<!-- Contents -->
 		<div class="content">
-			<div class="member_wrap">
-				<h1 onclick ="document.location.href='<%=request.getContextPath() %>/';"><span class="hide">HM SPORTS</span></h1>
 
 				<form name="frmJoin" action="<%=request.getContextPath() %>/member/insertPro" method="post" >
 				<div class="join_wrap info">
@@ -275,11 +278,10 @@ $(document).ready(function(){
 					</form>
 					
 					<div class="bot_info">
-						<span class="logo"><em class="hide">HM SPORTS</em></span>
-						<p class="copy">COPYRIGHT©  HM SPORTS. ALLRIGHT RESERVED</p>
+						<span class="logo"><em class="hide">부산 아이티윌</em></span>
+						<p class="copy">Copyright © 부산 아이티윌. All rights reserved.</p>
 					</div>
 				</div>
-			</div>
 	</section>
 	<!-- Footer -->
 		<jsp:include page="../include/footer.jsp"></jsp:include>

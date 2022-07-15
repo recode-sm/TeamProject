@@ -27,12 +27,12 @@
 				<div class="util">
 					<ul>
 						<c:if test="${ empty sessionScope.id }">
-						<li class="login"><a href="<%=request.getContextPath() %>/member/login">MEMBER LOGIN</a> |</li>
-						<li class="login"><a href="<%=request.getContextPath() %>/member/insert">MEMBER JOIN</a> |</li>
+						<li class="login"><a href="<%=request.getContextPath() %>/member/login">LOGIN</a> |</li>
+						<li class="login"><a href="<%=request.getContextPath() %>/member/insert">JOIN</a> |</li>
 						</c:if>
 						<c:if test="${! empty sessionScope.id }">
 						<li class="login"><a href="<%=request.getContextPath() %>/member/info">MEMBER INFO</a> |</li>
-						<li class="login"><a href="<%=request.getContextPath() %>/member/logout">MEMBER LOGOUT</a> |</li>
+						<li class="login"><a href="<%=request.getContextPath() %>/member/logout">LOGOUT</a> |</li>
 						</c:if>
 <!-- 							<li class="login"> -->
 						

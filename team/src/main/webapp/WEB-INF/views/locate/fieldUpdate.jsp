@@ -117,7 +117,7 @@
 							</div>
 							<div style="float: left;">
 								<table border="1" style="width: 500px; height: 300px;">
-									<tr><th>구장정보</th><th>내용</th></tr>
+									<tr><td style="font-weight: bold;">구장정보</td><th style="font-weight: bold;">내용</th></tr>
 									<tr><td>구장번호</td><td><input type="text" name="f_num" style="width: 100%; border: none;" value="${fieldDTO.f_num }"></td></tr>
 									<tr><td>구장이름</td><td><input type="text" name="f_name" style="width: 100%; border: none;" value="${fieldDTO.f_name }" readonly></td></tr>
 									<tr><td>주소(구)</td><td><input type="text" name="district" style="width: 100%; border: none;" value="${fieldDTO.district }" readonly></td></tr>

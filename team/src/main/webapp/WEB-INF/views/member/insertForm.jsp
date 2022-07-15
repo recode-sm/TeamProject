@@ -277,7 +277,7 @@ $(document).ready(function(){
 					</div>
 					</form>
 					
-					<div class="bot_info">
+					<div class="bot_info" style="text-align: center;"><br><br>
 						<span class="logo"><em class="hide">부산 아이티윌</em></span>
 						<p class="copy">Copyright © 부산 아이티윌. All rights reserved.</p>
 					</div>

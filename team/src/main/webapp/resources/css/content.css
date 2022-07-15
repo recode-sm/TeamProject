@@ -64,9 +64,9 @@
 .locate_wrap .list_wrap .cont .info .t_wrap .btn_wrap a	{display:inline-block; width:200px; height:68px; line-height:68px; text-align:center; border-radius:5px}
 .locate_wrap .list_wrap .cont .info .t_wrap .btn_wrap a span	{display:inline-block; padding-left:44px; color:#fff; font-size:20px; line-height:68px}
 .locate_wrap .list_wrap .cont .info .t_wrap .btn_wrap a.btn_rese	{background:#2c3c57}
-.locate_wrap .list_wrap .cont .info .t_wrap .btn_wrap a.btn_rese span	{background:url('/images/content/icon_btn_rese.png') no-repeat 0 center}
+.locate_wrap .list_wrap .cont .info .t_wrap .btn_wrap a.btn_rese span	{background:url('../img/icon_btn_rese.png') no-repeat 0 center}
 .locate_wrap .list_wrap .cont .info .t_wrap .btn_wrap a.btn_info	{margin-left:10px; background:#8ba6d5}
-.locate_wrap .list_wrap .cont .info .t_wrap .btn_wrap a.btn_info span	{padding-left:52px; background:url('/images/content/icon_btn_info.png') no-repeat 0 center}
+.locate_wrap .list_wrap .cont .info .t_wrap .btn_wrap a.btn_info span	{padding-left:52px; background:url('../img/icon_btn_info.png') no-repeat 0 center}
 .locate_wrap .list_wrap .cont .info .t_wrap .btn_wrap a:hover	{background:#003f96 !important}
 
 .locate_wrap .list_wrap .cont:nth-child(2n)	{background:#f0f0f0}
@@ -120,7 +120,7 @@
 
 /* 대관 */
 .rese_wrap .rese_start	{margin:0 auto; max-width:800px}
-.rese_wrap .rese_start .tit	{padding-left:113px; background:#2c3c57 url('/images/content/bg_rese_start.png') no-repeat 0 0; color:#fff; font-size:28px; line-height:113px; text-align:center; border-radius:15px 15px 0 0; letter-spacing:-0.4px}
+.rese_wrap .rese_start .tit	{padding-left:0px; background:#2c3c57 url('/images/content/bg_rese_start.png') no-repeat 0 0; color:#fff; font-size:28px; line-height:113px; text-align:center; border-radius:15px 15px 0 0; letter-spacing:-0.4px}
 .rese_wrap .rese_start .start_wrap		{padding:93px 0 87px 0; border:2px solid #bfc4cc; border-top:0; background:#f2f2f2; border-radius:0 0 15px 15px;}
 .rese_wrap .rese_start .start_wrap	.cont	{margin:0 auto; width:390px}
 .rese_wrap .rese_start .start_wrap	.cont .select	{margin-top:14px; height:47px}
@@ -138,8 +138,10 @@
 .rese_wrap .rese_start .start_wrap  .cont .fl_wrap dl dd input	{height:38px}
 
 .rese_wrap.cal	{padding:0 !important}
-.rese_wrap .fl_wrap .fl_left		{width:584px}
+.rese_wrap .fl_wrap .fl_left	{width:584px}
 .rese_wrap .fl_wrap .fl_right	{width:584px}
+.rese_wrap .fl_wrap .fl_auto	{width:auto;}
+
 
 .rese_wrap .fl_wrap .fl_left .thumb	{position:relative;}
 .rese_wrap .fl_wrap .fl_left .thumb .tag	{position:absolute}
@@ -220,7 +222,7 @@
 .rese_wrap .fl_wrap .fl_right .info_wrap .t_wrap.match .match_list ul li .select		{width:70%}
 .rese_wrap .fl_wrap .fl_right .info_wrap .t_wrap.match .match_list ul li textarea {width:100%; height:100px; font-size:14px;}
 
-.rese_wrap .fl_wrap .fl_right .info_wrap .t_wrap.match .match_list .phone	{font-size:0; line-height:0 font-size:14px;}
+.rese_wrap .fl_wrap .fl_right .info_wrap .t_wrap.match .match_list .phone	{font-size:0; line-height:0; font-size:14px; }
 .rese_wrap .fl_wrap .fl_right .info_wrap .t_wrap.match .match_list .phone input	{width:20%}
 .rese_wrap .fl_wrap .fl_right .info_wrap .t_wrap.match .match_list .phone span:first-child	{width:14%;}
 .rese_wrap .fl_wrap .fl_right .info_wrap .t_wrap.match .match_list .phone span	{display:inline-block; width:2%; font-size:14px; vertical-align:middle;}
@@ -241,6 +243,18 @@
 .rese_wrap .fl_wrap .fl_right .int_wrap .table_wrap table tbody tr:first-child th	{padding-top:25px}
 .rese_wrap .fl_wrap .fl_right .int_wrap .table_wrap table tbody tr:first-child td	{padding-top:16px}
 .rese_wrap .fl_wrap .fl_right .int_wrap .table_wrap table tbody tr:last-child td	{padding-bottom:16px}
+
+.rese_wrap .fl_wrap .fl_auto .int_wrap	{margin-top:15px}
+.rese_wrap .fl_wrap .fl_auto .int_wrap .tit	{padding-left:18px; background:#2c3c57; color:#fff; font-size:20px; line-height:70px;}
+.rese_wrap .fl_wrap .fl_auto .int_wrap .table_wrap	{margin:0}
+.rese_wrap .fl_wrap .fl_auto .int_wrap .table_wrap table	{border:1px solid #c4c4c4; border-top:0}
+.rese_wrap .fl_wrap .fl_auto .int_wrap .table_wrap table tbody tr th	{padding:20px 20px; border:0; font-size:16px; text-align:left; vertical-align:top}
+.rese_wrap .fl_wrap .fl_auto .int_wrap .table_wrap table tbody tr td	{padding:3px 16px; border:0; height:49px; font-size:16px; text-align:left}
+.rese_wrap .fl_wrap .fl_auto .int_wrap .table_wrap table tbody tr td .price	{font-weight:700}
+.rese_wrap .fl_wrap .fl_auto .int_wrap .table_wrap table tbody tr td textarea	{width:100%; height:100px}
+.rese_wrap .fl_wrap .fl_auto .int_wrap .table_wrap table tbody tr:first-child th	{padding-top:25px}
+.rese_wrap .fl_wrap .fl_auto .int_wrap .table_wrap table tbody tr:first-child td	{padding-top:16px}
+.rese_wrap .fl_wrap .fl_auto .int_wrap .table_wrap table tbody tr:last-child td	{padding-bottom:16px}
 
 
 .rese_wrap .fl_wrap .fl_right .int_wrap .table_wrap table tbody .phone	{font-size:0; line-height:0}
@@ -575,8 +589,8 @@
 
 /* 공지사항 */
 .notice_wrap	{}
-.notice_wrap.list table tbody tr td:nth-child(3),
-.notice_wrap.list table tbody tr td:nth-child(4)	{color:#a7a7a7}
+/* .notice_wrap.list table tbody tr td:nth-child(3), */
+/* .notice_wrap.list table tbody tr td:nth-child(4)	{color:#a7a7a7} */
 
 /* QnA */
 .qna_wrap.list	{max-width:1200px !important}
@@ -1668,11 +1682,11 @@
 
 
 /* 아이패드 프로 리그 이미지 */
-@media screen and (max-width:1024px)	{
-	.league_locate_wrap .view_wrap .charge_wrap .cont img {width:100%;}
-	.league_cont .league_info .info_cont .league_btn ul li	{width:100%}
-}
+/* @media screen and (max-width:1024px)	{ */
+/* 	.league_locate_wrap .view_wrap .charge_wrap .cont img {width:100%;} */
+/* 	.league_cont .league_info .info_cont .league_btn ul li	{width:100%} */
+/* } */
 
-.league_cont .flex-video {position: relative;padding-top: 1.5625rem;padding-bottom: 56.55%;height: 0;overflow: hidden;}
-.league_cont .flex-video iframe {position: absolute;width: 100%;height: 100%;display: block;}
+/* .league_cont .flex-video {position: relative;padding-top: 1.5625rem;padding-bottom: 56.55%;height: 0;overflow: hidden;} */
+/* .league_cont .flex-video iframe {position: absolute;width: 100%;height: 100%;display: block;} */
 

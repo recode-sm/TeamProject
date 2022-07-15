@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.team.reservation.reservationMapper">
+
+	<select id="getReserv" resultType="com.team.domain.ReservDTO">
+		select r.r_num, r.id,f.f_name,r.r_date,r.time,r.total_price,r.status
+		from reservation r join field f ON r.f_num = f.f_num
+		where id=#{id}
+	</select>
+	
+	<select id="getFeildList_sel" resultType="com.team.domain.FieldDTO">
+		select distinct district from field order by district
+	</select>
+
+	<select id="getFeildList_sel1" resultType="com.team.domain.FieldDTO">
+		select f_name, f_num, price from field where district = #{sel} order by f_name desc
+	</select>
+
+	<select id="getPhone" resultType="com.team.domain.MemberDTO">
+		select phone from member where id=#{id}
+	</select>
+	
+	<select id="getField" resultType="com.team.domain.FieldDTO">
+		select f_num,f_name,price,f_img from field where f_num=#{f_num}
+	</select>
+	
+	<insert id="insertReserv">
+		insert into reservation(id,f_num,time,r_date,total_price) 
+		values (#{id},#{f_num},#{time},#{r_date},#{total_price})
+	</insert>
+	
+<!-- 	조건절 구장(Field) 추가 필요, 확인해야함 -->
+	<select id="getDateList" resultType="com.team.domain.DateDTO">
+		select * from reservation where r_date=#{date} and f_num=#{f_num} and status!='cancel'
+	</select>
+	
+	<select id="getReservation" resultType="com.team.domain.ReservDTO">
+		select r.r_num,r.id,r.f_num,f.f_name,r.time,r.r_date,r.total_price,m.phone,r.status
+		 from reservation r join member m ON r.id=m.id
+		 join field f ON f.f_num=r.f_num
+		 where r.id=#{s_id} and r_num=(select max(r_num) from reservation where r.id=#{s_id})
+	</select>
+	
+	<update id="payUpdate">
+		update reservation set status=#{status} where r_num=#{r_num}
+	</update>
+	
+	<insert id="payInsert">
+		insert into pay(imp_uid,merchant_uid,paid_amount,r_num,p_date) 
+		values (#{imp_uid},#{merchant_uid},#{paid_amount},#{r_num},#{p_date})
+	</insert>
+	
+	<delete id="reservationCancel">
+		delete from reservation where r_num=#{r_num}
+	</delete>
+	
+	<select id="reservationGet" resultType="com.team.domain.payDTO">
+		select * from pay where r_num=#{r_num}
+	</select>
+	
+	<update id="reservationUpdate">
+		update reservation set status='cancel' where r_num=#{r_num}
+	</update>
+	
+	
+</mapper>

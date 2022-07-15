@@ -5,6 +5,7 @@ import java.util.List;
 import javax.inject.Inject;
 import org.springframework.stereotype.Service;
 import com.team.domain.BoardDTO;
+import com.team.domain.CommentDTO;
 import com.team.domain.PageDTO;
 import com.team.dao.BoardDAO;
 
@@ -77,5 +78,14 @@ public class BoardServiceImpl implements BoardService {
 	public void updateReadcount(int b_num) {
 		boardDAO.updateReadcount(b_num);
 	}
+	
+	@Override
+	public BoardDTO userCheck(BoardDTO boardDTO2) {
+		return boardDAO.userCheck(boardDTO2);
+	}
 
+	@Override
+	public List<CommentDTO> getCommentList(int b_num){
+		return boardDAO.getCommentList(b_num);
+	}
 }

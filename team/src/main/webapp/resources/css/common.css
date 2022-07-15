@@ -74,13 +74,13 @@ input[placeholder]	{line-height:1em !important}
 
 
 .chk {display:inline-block; margin-right:17px; font-size:16px; font-weight:400; line-height:27px;}
-.chk label	{display:block; padding-left:42px; background:url('/images/common/bg_chk.png') no-repeat 0 center; color:#383838}
+.chk label	{display:block; padding-left:42px; background:url('../img/bg_chk.png') no-repeat 0 center; color:#383838}
 .chk label:hover	{color:#414141}
 .chk input[type=checkbox]	{position:absolute; left:-9999px; visibility:hidden;}
-.chk input[type=checkbox]:checked + label	{background:url('/images/common/bg_chk_on.png') no-repeat 0 center; color:#383838}
+.chk input[type=checkbox]:checked + label	{background:url('../img/bg_chk_on.png') no-repeat 0 center; color:#383838}
 
 .chk.bg label	{background:url('/images/common/bg_chk_th.png') no-repeat 4px center;}
-.chk.bg input[type=checkbox]:checked + label	{background:url('/images/common/bg_chk_th_on.png') no-repeat 4px center;}
+.chk.bg input[type=checkbox]:checked + label	{background:url('../img/bg_chk_th_on.png') no-repeat 4px center;}
 
 .chk_typeb {display:inline-block; margin-left:8px;}
 .chk_typeb label	{display:block; padding:0 11px; color:#414141; color:#666; font-size:13px; line-height:30px; border:1px solid #d1d9dc; background:#fff; border-radius:20px; cursor:pointer}
@@ -89,17 +89,17 @@ input[placeholder]	{line-height:1em !important}
 .chk_typeb input[type=checkbox]:checked + label	{border:1px solid #1b64bc; background:#1b64bc; color:#fff}
 
 .rdo	{display:inline-block; margin-right:10px; width:auto; color:#414141; line-height:24px; font-size:14px;}
-.rdo label	{display:block; padding-left:25px; background:url('/images/common/bg_rdo.png') no-repeat 4px center; color:#414141}
+.rdo label	{display:block; padding-left:25px; background:url('../img/bg_rdo.png') no-repeat 4px center; color:#414141}
 .rdo label:hover	{color:#888}
 .rdo input[type=radio]	{position:absolute; left:-9999px; visibility:hidden;}
-.rdo input[type=radio]:checked + label	{background:url('/images/common/bg_rdo_on.png') no-repeat 4px center; color:#414141}
+.rdo input[type=radio]:checked + label	{background:url('../img/bg_rdo_on.png') no-repeat 4px center; color:#414141}
 
 input.txt	{height:24px; margin:0; padding:7px 9px 7px 9px; border:1px solid #999; background:#fff; color:#4c4c4c; font-size:13px; line-height:24px; vertical-align:middle}
 input.txt:focus	{border-color:#000}
 select	{margin:0; border:1px solid #999; line-height:22px; height:22px; color:#a6a6a6; font-weight:bold;}
 
 .select {display:inline-block; position:relative; padding:0; height:40px; border:1px solid #e0e0e0; background:#fff; box-sizing:border-box; -moz-box-sizing:border-box}
-.select:after	{content:""; display:block; position:absolute; right:12px; top:50%; margin-top:-4px; width:13px; height:8px; background:url('/images/common/select_arrow.png') no-repeat center center; background-size:11px auto;}
+.select:after	{content:""; display:block; position:absolute; right:12px; top:50%; margin-top:-4px; width:13px; height:8px; background:url('../img/select_arrow.png') no-repeat center center; background-size:11px auto;}
 .select label {position:absolute; top:0px; right:20px; bottom:0; left:10px; color:#404040; font-size:16px; line-height:38px; text-align:left;}
 .select select {position:relative; z-index:1; padding:0 4px; width:100%; height:38px; line-height:38px; vertical-align:top; opacity:0; filter:alpha(opacity=0);}
 
@@ -166,7 +166,8 @@ a.rollover:hover img.on		{display:none;}
 #wrapper #header	{position:fixed; z-index:90; top:0; right:0; left:0;}
 #wrapper #header .header	{position:relative; margin:0 auto;}
 #wrapper #header .header h1	{display:block; position:absolute; z-index:10; top:0; left:0; top:0; left:50%; margin-left:-896px; width:185px; height:184px; -webkit-transition:all 0.3s ease-out; -moz-transition:all 0.3s ease-out; -ms-transition:all 0.3s ease-out; -o-transition:all 0.3s ease-out; transition:all 0.3s ease-out;}
-#wrapper #header .header h1 a	{display:block; width:185px; height:184px; background:url('/images/common/logo.jpg') no-repeat 0 0; -webkit-transition:all 0.3s ease-out; -moz-transition:all 0.3s ease-out; -ms-transition:all 0.3s ease-out; -o-transition:all 0.3s ease-out; transition:all 0.3s ease-out;}
+/* #wrapper #header .header h1 a	{display:block; width:185px; height:184px; background:url('../img/logo.png') no-repeat 0 0; -webkit-transition:all 0.3s ease-out; -moz-transition:all 0.3s ease-out; -ms-transition:all 0.3s ease-out; -o-transition:all 0.3s ease-out; transition:all 0.3s ease-out;} */
+#wrapper #header .header h1 a	{display:block; width:185px; height:185px; background:url('../img/logo_1.png') no-repeat center center; -webkit-transition:all 0.3s ease-out; -moz-transition:all 0.3s ease-out; -ms-transition:all 0.3s ease-out; -o-transition:all 0.3s ease-out; transition:all 0.3s ease-out;}
 #wrapper #header .header .btn_nav	{display:none}
 
 #wrapper #header nav	{position:absolute; top:65px; right:0; left:0; height:85px; background:rgba(0, 0, 0, 0.46); -webkit-transition:all 0.3s ease-out; -moz-transition:all 0.3s ease-out; -ms-transition:all 0.3s ease-out; -o-transition:all 0.3s ease-out; transition:all 0.3s ease-out;}
@@ -178,9 +179,9 @@ a.rollover:hover img.on		{display:none;}
 /*#wrapper #header nav .nav_wrap ul li	{display:inline-block; position:relative; padding:0 38px; vertical-align:top; -webkit-transition:all 0.3s ease-out; -moz-transition:all 0.3s ease-out; -ms-transition:all 0.3s ease-out; -o-transition:all 0.3s ease-out; transition:all 0.3s ease-out;}*/
 /*CHAMPIONSHIP 적용시*/
 #wrapper #header nav .nav_wrap ul li	{display:inline-block; position:relative; padding:0 30px; vertical-align:top; -webkit-transition:all 0.3s ease-out; -moz-transition:all 0.3s ease-out; -ms-transition:all 0.3s ease-out; -o-transition:all 0.3s ease-out; transition:all 0.3s ease-out;}
-/* #wrapper #header nav .nav_wrap ul li:first-child	{padding-left:0;} */
-/* #wrapper #header nav .nav_wrap ul li:first-child a	{width:146px; background:url('/images/common/nav_aia.png') no-repeat center center; background-size:100% auto} */
-/* #wrapper #header nav .nav_wrap ul li:first-child a:after	{display:none} */
+#wrapper #header nav .nav_wrap ul li:first-child	{padding-left:0;}
+#wrapper #header nav .nav_wrap ul li:first-child a	{width:146px; background:url('../img/nav_aia.png') no-repeat center center; background-size:100% auto}
+#wrapper #header nav .nav_wrap ul li:first-child a:after	{display:none}
 #wrapper #header nav .nav_wrap ul li a.face	{display:none}
 #wrapper #header nav .nav_wrap ul li a.insta	{display:none}
 #wrapper #header nav .nav_wrap ul li a	{display:block; height:85px; color:#fff; font-size:20px; font-weight:700; line-height:85px; text-decoration:none; -webkit-transition:all 0.3s ease-out; -moz-transition:all 0.3s ease-out; -ms-transition:all 0.3s ease-out; -o-transition:all 0.3s ease-out; transition:all 0.3s ease-out;}
@@ -192,17 +193,17 @@ a.rollover:hover img.on		{display:none;}
 #wrapper #header nav .util li	{display:inline-block; margin-left:19px; height:44px; vertical-align:top}
 #wrapper #header nav .util li:first-child	{margin-left:0}
 #wrapper #header nav .util li a	{display:block; width:44px; height:44px; line-height:44px}
-#wrapper #header nav .util li.face a	{background:url('/images/common/icon_facebook.png') no-repeat center center; background-size:27px 27px}
-#wrapper #header nav .util li.insta a	{background:url('/images/common/icon_instagram.png') no-repeat center center; background-size:27px 27px}
+#wrapper #header nav .util li.face a	{background:url('../img/icon_facebook.png') no-repeat center center; background-size:27px 27px}
+#wrapper #header nav .util li.insta a	{background:url('../img/icon_instagram.png') no-repeat center center; background-size:27px 27px}
 #wrapper #header nav .util li.login	{margin-left:24px; padding-left:24px; border-left:2px solid #b1b1b1}
-#wrapper #header nav .util li.login a	{padding-right:32px; width:auto; background:url('/images/common/icon_login.png') no-repeat right center; color:#fff; font-size:12px;}
+#wrapper #header nav .util li.login a	{padding-right:32px; width:auto; background:url('../img/icon_login.png') no-repeat right center; color:#fff; font-size:12px;}
 #wrapper #header nav .util li.logout	{margin-left:24px; padding-left:24px; border-left:2px solid #dcdcdc}
 #wrapper #header nav .util li.logout a	{display:inline-block; width:auto; color:#fff; font-size:12px;}
-#wrapper #header nav .util li.logout a.mypage	{padding-right:27px; background:url('/images/common/icon_mypage.png') no-repeat right center; background-size:auto 18px;}
-#wrapper #header nav .util li.logout a.logout	{padding-right:32px; margin-left:20px; background:url('/images/common/icon_logout.png') no-repeat right center; background-size:auto 18px;}
+#wrapper #header nav .util li.logout a.mypage	{padding-right:27px; background:url('../img/icon_mypage.png') no-repeat right center; background-size:auto 18px;}
+#wrapper #header nav .util li.logout a.logout	{padding-right:32px; margin-left:20px; background:url('../images/icon_logout.png') no-repeat right center; background-size:auto 18px;}
 
 #wrapper #header.fixed .header h1	{top:0; width:85px; height:85px}
-#wrapper #header.fixed .header h1 a	{width:85px; height:85px; background:url('/images/common/logo_t.png') no-repeat 0 0;}
+#wrapper #header.fixed .header h1 a	{width:85px; height:85px; background:url('../img/logo_1m.png') no-repeat 0 0;}
 #wrapper #header.fixed nav	{top:0}
 #wrapper #header.fixed nav .nav_wrap	{margin-left:-770px}
 
@@ -210,7 +211,8 @@ a.rollover:hover img.on		{display:none;}
 /* Footer */
 #wrapper #footer	{position:relative; margin-top:110px; padding:63px 0 85px 0; background:#414141;}
 #wrapper #footer .footer_wrap	{position:relative; margin:0 auto; width:1200px}
-#wrapper #footer .footer_wrap .logo	{position:absolute; top:17px; left:0; width:268px; height:50px; background:url('/images/common/logo_footer.png') no-repeat 0 0;}
+/* #wrapper #footer .footer_wrap .logo	{position:absolute; top:17px; left:0; width:268px; height:50px; background:url('../img/logo_footer1.png') no-repeat 0 0;} */
+#wrapper #footer .footer_wrap .logo	{position:absolute; top:17px; left:0; width:268px; height:50px; background:url('../img/logo_footer_m.png') no-repeat 0 0; background-size: 150px;}
 #wrapper #footer .footer_wrap .foot_util	{padding-left:365px}
 #wrapper #footer .footer_wrap .foot_util ul	{margin:0 auto; max-width:1100px;}
 #wrapper #footer .footer_wrap .foot_util ul:after	{content:""; display:block; clear:both}
@@ -262,7 +264,7 @@ a.rollover:hover img.on		{display:none;}
 .layer_popup h1.title	{padding-top:58px; color:#000; font-size:34px; line-height:50px; text-align:center}
 .layer_popup h1.title.line	{margin:0 -50px; padding:0 50px; border-bottom:1px solid #e1e1e1; font-size:20px; font-family:'Nanum Gothic','AppleGothic','Dotum', sans-serif; font-weight:400; line-height:44px; text-align:left}
 .layer_popup h1.h_bar	{}
-.layer_popup .btn_closed	{display:block; position:absolute; top:0; right:0; width:60px; height:60px; background:url('/images/common/btn_pop_closed.png') no-repeat center center}
+.layer_popup .btn_closed	{display:block; position:absolute; top:0; right:0; width:60px; height:60px; background:url('../img/btn_pop_closed.png') no-repeat center center}
 .layer_popup .layer_cont	{margin-top:25px; padding:0 10px}
 .layer_popup .layer_cont .btn_wrap	{margin-top:25px}
 .layer_popup .layer_cont .btn_wrap.side	{text-align:center}
@@ -326,7 +328,7 @@ button.dis:hover	span	span	{background-position:right 0}
 .btn_big:hover	{background:#003f96 !important}
 
 .btn_red	{display:inline-block; position:relative; margin-top:38px; padding:0 32px; height:60px; background:#d20c26; color:#fff; font-size:18px; line-height:60px; text-align:center}
-.btn_red.go span	{display:inline-block; padding-right:20px; background:url('/images/common/btn_find_arr.png') no-repeat right center; line-height:60px}
+.btn_red.go span	{display:inline-block; padding-right:20px; background:url('../img/btn_find_arr.png') no-repeat right center; line-height:60px}
 
 
 /* Button Align */
@@ -369,8 +371,9 @@ table	th,	table	td	{border:0 none}
 .table_wrap .t_right span em	{color:#589b00; font-style:normal}
 
 .table_wrap table	{border:1px solid #636363; border-top:0; border-left:0}
+.table_wrap table th {padding-top :15px; padding-bottom :15px;}
 .table_wrap table th,
-.table_wrap table td	{border-top:1px solid #636363; border-left:1px solid #636363; font-size:12px; vertical-align:middle}
+.table_wrap table td	{border-top:0px solid #636363; border-left:0px solid #636363;  border-bottom:1px solid #d5d8dd;font-size:12px; vertical-align:middle}
 .table_wrap table thead tr th	{padding:21px 0; height:22px; background:#f0f1f3; color:#383838; font-size:22px; line-height:22px; text-align:center;}
 .table_wrap table thead tr th span	{display:block; position:relative;}
 
@@ -379,7 +382,7 @@ table	th,	table	td	{border:0 none}
 .table_wrap table tbody .phone span	{display:inline-block; width:3%; font-size:11px; text-align:center; vertical-align:middle;}
 
 
-.table_wrap table tbody tr th	{background:#f0f1f3; color:#2c3c57; font-size:18px; font-weight:700; line-height:28px; text-align:center;}
+.table_wrap table tbody tr th	{background:#ffff; color:#2c3c57; font-size:18px; font-weight:700; line-height:28px; text-align:center;}
 .table_wrap table tbody tr td	{padding:18px 0; height:20px; color:#2a2a2a; font-size:18px; line-height:28px; text-align:center; word-break:keep-all;}
 .table_wrap table tbody tr td.al_left	{padding-left:20px; text-align:left}
 .table_wrap table tbody tr td .btn_s	{margin:-2px 0}
@@ -393,7 +396,7 @@ table	th,	table	td	{border:0 none}
 .table_wrap.list table tbody tr td	{padding:9px 0; height:32px; border:0; border-bottom:1px solid #d5d8dd; color:#383838; font-size:16px; line-height:32px}
 .table_wrap.list table tbody tr td.al_left	{padding:9px 10px}
 .table_wrap.list table tbody tr td a.tit	{overflow:hidden; display:inline-block; color:#2c3c57; height:32px; line-height:32px; vertical-align:top}
-.table_wrap.list table tbody tr td a.tit.secret	{padding-right:25px; background:url('/images/common/icon_secret.png') no-repeat right center}
+.table_wrap.list table tbody tr td a.tit.secret	{padding-right:25px; background:url('../img/icon_secret.png') no-repeat right center}
 .table_wrap.list table tbody tr td .state	{display:inline-block; width:56px; background:#2c3c57; font-size:16px; color:#fff; line-height:32px; vertical-align:top; border-radius:5px}
 .table_wrap.list table tbody tr td .state.wait	{background:#b73535}
 .table_wrap.list table tbody tr td .state.end	{background:#b73535}
@@ -414,7 +417,7 @@ table	th,	table	td	{border:0 none}
 .table_wrap.form table tbody tr td .rdo label	{background-position:4px 8px}
 .table_wrap.form table tbody tr td .chk	{line-height:29px}
 .table_wrap.form table tbody tr td .chk label	{background-position:4px 8px}
-.table_wrap.form table tbody tr td .btn_calendar	{display:inline-block; margin-right:3px; width:30px; height:29px; background:url('/images/common/btn_calendar.jpg') no-repeat 0 0; vertical-align:top}
+.table_wrap.form table tbody tr td .btn_calendar	{display:inline-block; margin-right:3px; width:30px; height:29px; background:url('../img/btn_calendar.jpg') no-repeat 0 0; vertical-align:top}
 .table_wrap.form table tbody tr td .chk_wrap.mr0 .chk	{margin-right:0}
 .table_wrap.form table tbody tr td .info	{position:relative;}
 .table_wrap.form table tbody tr td .info dl:after	{content:""; display:block; clear:both}
@@ -465,14 +468,14 @@ table	th,	table	td	{border:0 none}
 .pager_wrap .search .select label		{height:41px; line-height:41px; letter-spacing:0}
 .pager_wrap .search .select select	{height:41px; line-height:41px}
 .pager_wrap .search input		{width:235px; height:43px; border:1px solid #d0d0d0; border-left:0; border-right:0}
-.pager_wrap .search button	{width:69px; height:43px; vertical-align:top; background:#2c3c57 url('/images/common/icon_search.png') no-repeat center center}
+.pager_wrap .search button	{width:69px; height:43px; vertical-align:top; background:#2c3c57 url('../img/icon_search.png') no-repeat center center}
 
 .pager_wrap a	{display:inline-block; margin-left:8px; width:79px; height:41px; border:1px solid #cecece; background:#fff; color:#afafaf; font-size:16px; line-height:41px; vertical-align:top; letter-spacing:0}
 .pager_wrap a:hover	{border:1px solid #2c3c57; color:#2c3c57; text-decoration:none}
 
 .pager_wrap a.btn_page	{}
-.pager_wrap a.btn_page.prev	{margin:0; background:#fff url('/images/common/icn_page_prev.png') no-repeat center center;}
-.pager_wrap a.btn_page.next	{margin:0; background:#fff url('/images/common/icn_page_next.png') no-repeat center center;}
+.pager_wrap a.btn_page.prev	{margin:0; background:#fff url('../img/icn_page_prev.png') no-repeat center center;}
+.pager_wrap a.btn_page.next	{margin:0; background:#fff url('../img/icn_page_next.png') no-repeat center center;}
 
 .pager_wrap .page	{display:inline-block; margin:0 22px; text-align:center; vertical-align:top}
 .pager_wrap .page a	{position:relative; width:41px; height:41px;}
@@ -492,7 +495,7 @@ table	th,	table	td	{border:0 none}
 @media screen and (max-width:1860px)	{
 	/* Header */
 	#wrapper #header .header h1	{top:65px; left:7px; margin:0; width:85px; height:85px}
-	#wrapper #header .header h1 a	{width:85px; height:85px; background:url('/images/common/logo_t.png') no-repeat 0 0;}
+	#wrapper #header .header h1 a	{width:85px; height:85px; background:url('../img/logo_1m.png') no-repeat 0 0;}
 
 	#wrapper #header nav .nav_wrap	{left:125px; margin:0 !important; width:900px}
 	/*hcup*/
@@ -505,198 +508,6 @@ table	th,	table	td	{border:0 none}
 	#wrapper #header nav .nav_wrap ul li:first-child a	{width:118px}
 
 	#wrapper #header nav .util	{right:20px; margin:0}
-}
-
-@media screen and (max-width:1360px)	{
-	#wrapper #container .content > div	{padding:0 20px}
-
-	/* Header */
-	#wrapper #header nav .util li.face	{display:none}
-	#wrapper #header nav .util li.insta	{display:none}
-
-	.content .sub_top h2	{margin-left:0; left:20px}
-}
-
-
-
-@media screen and (max-width:1216px)	{
-	/* Header */
-	#wrapper #header .header	{height:85px; background:rgba(0, 0, 0, 0.45); -webkit-transition:all 0.3s ease-out; -moz-transition:all 0.3s ease-out; -ms-transition:all 0.3s ease-out; -o-transition:all 0.3s ease-out; transition:all 0.3s ease-out;}
-	#wrapper #header .header h1	{top:23px !important; left:19px; width:201px !important; height:38px !important}
-	#wrapper #header .header h1 a	{width:201px !important; height:38px !important; background:url('/images/common/logo_m.png') no-repeat 0 0 !important; background-size:100% auto !important}
-	#wrapper #header .header .btn_nav	{display:block; position:absolute; top:0; right:0; width:66px; height:85px; background:url('/images/common/btn_nav.png') no-repeat center center; background-size:41px auto}
-
-	#wrapper #header nav	{overflow-y:auto; position:fixed; top:85px !important; right:0; bottom:0; left:auto; padding-left:56px; width:490px; height:auto; background:rgba(0, 0, 0, 0.85); box-sizing:border-box; -moz-box-sizing:border-box; -webkit-transform:translate3d(100%, 0, 0); -moz-transform:translate3d(100%, 0, 0); -o-transform:translate3d(100%, 0, 0); -ms-transform:translate3d(100%, 0, 0); transform:translate3d(100%, 0, 0);}
-	#wrapper #header nav .nav_wrap	{position:relative; left:auto; padding-top:133px; width:auto;}
-	#wrapper #header nav .nav_wrap ul	{border-top:4px solid #dbdbdb; border-bottom:4px solid #dbdbdb}
-	#wrapper #header nav .nav_wrap ul li	{display:block; position:relative; padding:0 0 0 10px !important;}
-	#wrapper #header nav .nav_wrap ul li a	{height:90px; font-size:34px; line-height:90px}
-	#wrapper #header nav .nav_wrap ul li a.f_hvn	{font-size:34px;}
-	#wrapper #header nav .nav_wrap ul li a:after	{display:none}
-	#wrapper #header nav .nav_wrap ul li a:hover	{color:#5c9de6;}
-
-	#wrapper #header nav .nav_wrap ul li:first-child	{position:absolute; right:0; left:0; bottom:-94px}
-	#wrapper #header nav .nav_wrap ul li a.aia	{width:146px}
-	#wrapper #header nav .nav_wrap ul li a.face	{display:block; position:absolute; top:10px; right:90px; width:70px; height:70px; background:url('/images/common/icon_facebook.png') no-repeat center center; background-size:46px 46px}
-	#wrapper #header nav .nav_wrap ul li a.insta	{display:block; position:absolute; top:10px; right:20px; width:70px; height:70px; background:url('/images/common/icon_instagram.png') no-repeat center center; background-size:46px 46px}
-
-	#wrapper #header nav .util	{position:absolute; top:0; right:0; left:56px; width:auto}
-	#wrapper #header nav .util li.login	{display:block; margin:0; padding:0; border:0;}
-	#wrapper #header nav .util li.login a	{display:block; margin-right:14px; padding-right:86px; font-size:30px; font-family:'HN_hvc'; height:133px; background:url('/images/common/icon_login_m.png') no-repeat center right; background-size:50px auto; line-height:133px; text-align:right}
-
-	#wrapper #header nav .util li.logout	{display:block; margin:0; padding:0; border:0;}
-	#wrapper #header nav .util li.logout a	{margin-right:14px; font-size:30px; font-family:'HN_hvc'; height:133px; background-size:50px auto; line-height:133px; text-align:right}
-	#wrapper #header nav .util li.logout a.mypage	{padding-right:70px; background-size:auto 44px;}
-	#wrapper #header nav .util li.logout a.logout	{padding-right:86px; margin-left:20px; background-size:auto 44px;}
-
-	#wrapper #header .header.open	{background:#2c3c57}
-	#wrapper #header .header.open nav	{-webkit-transform:translate3d(0, 0, 0); -moz-transform:translate3d(0, 0, 0); -o-transform:translate3d(0, 0, 0); -ms-transform:translate3d(0, 0, 0); transform:translate3d(0, 0, 0);}
-
-	/* Footer */
-	#wrapper #footer	{padding:30px 0 15px 0}
-	#wrapper #footer .footer_wrap	{width:auto; font-size:0; line-height:0; text-align:center}
-	#wrapper #footer .footer_wrap .logo	{display:none}
-	#wrapper #footer .footer_wrap .foot_util	{padding:0;}
-	#wrapper #footer .footer_wrap .foot_util ul	{display:inline-block}
-	#wrapper #footer .footer_wrap .foot_util ul li:last-child	{padding-right:0}
-	#wrapper #footer .footer_wrap .info		{display:none}
-	#wrapper #footer .footer_wrap .copy		{margin-top:15px; padding:0}
-
-	/* Tab */
-	.content .tab_wrap ul.t03 li	{width:33.33333333% !important}
-
-
-}
-
-
-@media screen and (max-width:960px){
-	body.hidden	{padding-right:0}
-	#wrapper #container .content > div	{padding:0 10px}
-
-	.pblock	{display:none}
-	.mblock	{display:block !important}
-
-	/* form */
-	.select	{height:38px}
-	.select:after	{right:7px; background-size:8px auto;}
-	.select label	{height:36px; font-size:14px; line-height:36px}
-	.select select	{height:36px; font-size:14px; line-height:36px}
-	input[type='text'], input[type='password']	{height:25px; font-size:14px; line-height:23px}
-	textarea	{font-size:14px;}
-
-	.chk	{font-size:12px}
-	.chk label	{padding-left:25px; background-size:18px auto}
-	.chk input[type=checkbox]:checked + label	{background-size:18px auto}
-
-	/* button */
-	.btn_base	{padding:0 7px; min-width:120px; height:32px; font-size:12px; line-height:32px}
-	.btn_middle	{padding:0 7px; min-width:90px; height:31px; font-size:13px; line-height:31px}
-	.btn_big		{padding:0 7px; width:150px; font-size:16px; line-height:40px;}
-	.abs_rt {margin-top: 20px;}
-
-	/* Header */
-	#wrapper #header .header	{height:55px;}
-	#wrapper #header .header h1	{top:16px !important; left:10px; width:135px !important; height:26px !important}
-	#wrapper #header .header h1 a	{width:135px !important; height:26px !important;}
-	#wrapper #header .header .btn_nav	{width:50px; height:55px; background-size:28px auto}
-
-	#wrapper #header nav	{top:55px !important; padding-left:28px; width:245px;}
-	#wrapper #header nav .nav_wrap	{padding-top:66px;}
-	#wrapper #header nav .nav_wrap ul	{padding:8px 0; border-top:2px solid #dbdbdb; border-bottom:2px solid #dbdbdb}
-	#wrapper #header nav .nav_wrap ul li	{padding:0 0 0 5px !important;}
-	#wrapper #header nav .nav_wrap ul li a	{height:45px; font-size:17px; line-height:45px}
-	#wrapper #header nav .nav_wrap ul li a.f_hvn	{font-size:17px;}
-
-	#wrapper #header nav .nav_wrap ul li:first-child	{bottom:-47px}
-	#wrapper #header nav .nav_wrap ul li a.aia	{width:73px}
-	#wrapper #header nav .nav_wrap ul li a.face	{top:5px; right:35px; width:35px; height:35px; background-size:23px 23px}
-	#wrapper #header nav .nav_wrap ul li a.insta	{top:5px; right:0; width:35px; height:35px; background-size:23px 23px}
-
-	#wrapper #header nav .util	{left:28px;}
-	#wrapper #header nav .util li.login a	{margin-right:7px; padding-right:43px; font-size:15px; height:66px; background-size:25px auto; line-height:66px;}
-
-	#wrapper #header nav .util li.logout a	{margin-right:7px; font-size:15px; height:66px; background-size:50px auto; line-height:66px; }
-	#wrapper #header nav .util li.logout a.mypage	{padding-right:35px; background-size:auto 22px;}
-	#wrapper #header nav .util li.logout a.logout	{padding-right:43px; margin-left:10px; background-size:auto 22px;}
-
-
-	/* Footer */
-	#wrapper #footer	{margin-top:60px; padding:15px 0 10px 0}
-	#wrapper #footer .footer_wrap .foot_util ul li	{padding:0 15px}
-	#wrapper #footer .footer_wrap .foot_util ul li a	{font-size:12px;}
-	#wrapper #footer .footer_wrap .copy		{margin-top:7px; padding:0; line-height:16px}
-
-	/* Sub top */
-	.content .sub_top	{margin-bottom:30px !important; height:230px}
-	.content .sub_top video	{width:960px; height:231px}
-	.content .sub_top h2	{bottom:10px; left:10px; font-size:40px; line-height:45px}
-
-
-	/* Tab */
-	.content > .tab_wrap	{margin:-30px 0 30px 0 !important}
-	.content > .tab_wrap ul li > a	{font-size:15px; line-height:44px}
-	.tab_wrap ul li > a	{font-size:14px; line-height:43px}
-	.tab_wrap ul li.on > a:after	{display:none}
-
-	/* Table */
-	.table_wrap	{margin-top:7px}
-	.table_wrap .tb	{display:none}
-	.table_wrap table thead tr th	{padding:11px 0; font-size:15px}
-	.table_wrap table tbody tr th	{padding:6px 0; height:32px; font-size:12px; line-height:16px}
-	.table_wrap table tbody tr td	{padding:6px 0; height:32px; font-size:12px; line-height:16px}
-
-	.table_wrap.list table thead tr th	{padding:7px 0; height:21px; font-size:12px; line-height:21px;}
-	.table_wrap.list table tbody tr td	{padding:6px 0; height:22px; font-size:12px; line-height:22px}
-	.table_wrap.list table tbody tr td.al_left	{padding:6px 5px}
-	.table_wrap.list table tbody tr td a.tit	{height:22px; line-height:22px}
-	.table_wrap.list table tbody tr td a.tit.secret	{padding-right:15px; background-size:9px auto}
-	.table_wrap.list table tbody tr td .state	{width:37px; font-size:11px; line-height:22px; border-radius:3px}
-
-
-	/* 페이징 */
-	.pager_wrap	{margin-top:35px;}
-	.pager_wrap .search	{margin-bottom:20px;}
-	.pager_wrap .search .select	{width:44px; height:24px;}
-	.pager_wrap .search .select label		{left:5px; right:10px; font-size:12px; height:22px; line-height:22px; letter-spacing:0}
-	.pager_wrap .search .select select	{height:22px; line-height:22px}
-	.pager_wrap .search .select:after		{right:0}
-	.pager_wrap .search input		{width:119px; height:24px; font-size:12px}
-	.pager_wrap .search button	{width:35px; height:24px; background-size:12px auto}
-
-	.pager_wrap a	{margin-left:4px; width:40px; height:20px; font-size:12px; line-height:20px;}
-
-	.pager_wrap a.btn_page.prev	{background-size:5px auto}
-	.pager_wrap a.btn_page.next	{background-size:5px auto}
-
-	.pager_wrap .page	{display:inline-block; margin:0 10px; text-align:center; vertical-align:top}
-	.pager_wrap .page a	{position:relative; width:20px; height:20px;}
-	.pager_wrap .page a:first-child	{margin:0}
-	.pager_wrap .page a.on	{border:1px solid #2c3c57; background:#2c3c57; color:#fff; text-decoration:none}
-
-
-
-	/* 공통 팝업 */
-	.layer_popup	{margin:0 auto; padding:23px 10px; right:10px; left:10px; width:auto; -webkit-transform:translate3d(0, -50%, 0); -moz-transform:translate3d(0, -50%, 0); -o-transform:translate3d(0, -50%, 0); -ms-transform:translate3d(0, -50%, 0); transform:translate3d(0, -50%, 0);}
-	.layer_popup .btn_closed	{width:30px; height:30px; background-size:40px 40px !important}
-
-	.layer_popup .layer_cont	{margin-top:15px; padding:0;}
-	.layer_popup .layer_cont .btn_wrap	{margin-top:7px}
-	.layer_popup .layer_cont .btn_wrap.side	{text-align:right}
-	.layer_popup .layer_cont .btn_wrap.side button	{margin:0; width:49%;}
-	.layer_popup .layer_cont .btn_wrap.side button:first-child	{float:left}
-	
-	.layer_popup .table_wrap table thead tr th	{padding:7px 0; font-size:14px}
-	.layer_popup .table_wrap table tbody tr th	{height:19px}
-	.layer_popup .table_wrap table tbody tr td	{padding:7px 7px; height:25px}
-	.layer_popup .table_wrap table tbody tr td.al_left	{padding:7px 7px}
-
-	.layer_popup .table_wrap.small table thead tr th	{padding:5px 0; font-size:12px}
-	.layer_popup .table_wrap table tbody tr td div {overflow-y:auto; max-height:100px}
-	.layer_popup .layer_cont .table_wrap .t01 {width:25%}
-}
-
-@media screen and (max-width:360px){
-	.layer_popup .layer_cont	{overflow-y:auto; max-height:450px;}
 }
 
 

@@ -29,10 +29,15 @@ public class MemberController {
 	@RequestMapping(value = "/member/insertPro", method = RequestMethod.POST)
 	public String insertPro (MemberDTO memberDTO) {
 		// DB에 회원정보 insert
-		memberService.insertMember(memberDTO);
-		
+		MemberDTO memberDTO2 = memberService.userCheck(memberDTO);
+		if (memberDTO2 != null) {
+			// 일치
+			return "member/insertMsg";	
+		} else {
+			memberService.insertMember(memberDTO);
+			return "redirect:/member/login";
+		}
 		// 로그인 페이지로 이동
-		return "redirect:/member/login";
 	}
 	
 	@RequestMapping(value = "/member/login", method = RequestMethod.GET)
@@ -58,25 +63,24 @@ public class MemberController {
 	}
 	
 	@RequestMapping(value = "/member/main", method = RequestMethod.GET)
-	public String main () {
+	public String main (HttpSession session, Model model) {
+		String id = (String)session.getAttribute("id");
 		
-		// 일단 main 으로 넘긴 뒤 추후에 home으로 변경
-		return "member/main";
+		MemberDTO memberDTO = memberService.getMember(id);
+		
+		model.addAttribute("memberDTO", memberDTO);
 		
 		// 메인 페이지(home.jsp)로 이동
-//		return "home";
+		return "home";
 	}
 	
 	@RequestMapping(value = "/member/logout", method = RequestMethod.GET)
 	public String logout (HttpSession session) {
 		// 로그아웃(세션 초기화)
 		session.invalidate();
-		
-		// 일단 main 으로 넘긴 뒤 추후에 home으로 변경
-		return "member/main";
-		
+				
 		// 메인 페이지(home.jsp)로 이동
-//		return "home";
+		return "home";
 
 	}
 	
@@ -163,4 +167,64 @@ public class MemberController {
 		// 회원 리스트 페이지(list.jsp)로 이동
 		return "member/list";
 	}
+	
+	@RequestMapping(value = "/reservation/Check_C", method = RequestMethod.GET)
+	public String reserCheck_C(HttpSession session,HttpServletRequest request,Model model) throws Exception{
+		// DB 작업
+		String id=(String)session.getAttribute("id");
+		
+		if(id!=null) {
+			return "/reservation/reservCheck_C";
+		}else {
+			return "/reservation/login_msg";
+		}
+			
+	}
+
+	@RequestMapping(value = "/reservation/CheckPro", method = RequestMethod.POST)
+	public String reservCheckPro(HttpServletRequest request,MemberDTO memberDTO) throws Exception{
+		request.getParameter("id");
+		MemberDTO memberDTO2 = memberService.userCheck(memberDTO);
+		
+		if(memberDTO2!=null) {
+			//아이디 비밀번호 일치
+			//수정작업
+			return "redirect:/reservation/list";
+		}else {
+			//아이디 비밀번호 틀림
+			return "member/pass_msg";
+		}
+	}
+	
+	@RequestMapping(value = "/member/updatePass", method = RequestMethod.GET)
+	public String updatePass () {
+
+		return "/member/updatePass";
+	}
+	
+	@RequestMapping(value = "/member/updatePassPro", method = RequestMethod.POST)
+	public String updatePassPro (HttpSession session, HttpServletRequest request, MemberDTO memberDTO) {
+		
+		String id = (String)session.getAttribute("id");
+		String pass = request.getParameter("pass");
+		String updatePass = request.getParameter("updatePass");
+		
+		MemberDTO memberDTO2 = memberService.getMember(id);
+		String checkPass = memberDTO2.getPass();
+		
+		if (checkPass.equals(pass)) {
+
+			memberDTO.setId(id);
+			memberDTO.setPass(updatePass);
+			memberService.updatePass(memberDTO);
+			
+			return "redirect:/member/update";
+			
+		} else { 
+			
+			return "member/pass_msg";
+		}
+	}
+
+
 }

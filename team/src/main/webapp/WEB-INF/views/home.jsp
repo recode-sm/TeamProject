@@ -20,13 +20,7 @@
 	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/resources/css/main.css">
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116234591-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'UA-116234591-1');
-</script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 </head>
 <script src="/js/libs/jquery.bxslider.js"></script>

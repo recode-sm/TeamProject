@@ -1,0 +1,343 @@
+!SESSION 2022-07-15 17:37:23.436 -----------------------------------------------
+eclipse.buildId=4.13.1.202201311654
+java.version=16.0.2
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Framework arguments:  -product org.springframework.boot.ide.branding.sts4
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.springframework.boot.ide.branding.sts4
+
+!ENTRY org.eclipse.mylyn.tasks.core 4 0 2022-07-15 17:37:27.556
+!MESSAGE Unexpected error while loading repository template extensions
+!SUBENTRY 1 org.eclipse.mylyn.tasks.core 4 0 2022-07-15 17:37:27.556
+!MESSAGE Could not load repository template extension contributed by 'org.eclipse.mylyn.bugzilla.ide' with connectorKind 'bugzilla'
+
+!ENTRY org.eclipse.jface 2 0 2022-07-15 17:37:27.631
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-07-15 17:37:27.631
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@1e86b2d1,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@65029fc,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-07-15 17:37:27.631
+!MESSAGE A conflict occurred for ALT+SHIFT+R:
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.rename.element,Rename - Refactoring ,
+		Rename the selected element,
+		Category(org.eclipse.jdt.ui.category.refactoring,Refactor - Java,Java Refactoring Actions,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@4865434e,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.rename,Rename,
+		Rename the selected item,
+		Category(org.eclipse.ui.category.file,File,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@3c6e407,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.egit.ui 2 0 2022-07-15 17:37:30.012
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\itwill'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-07-15 17:38:07.651
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-07-15 17:38:07.693
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-07-15 17:38:13.346
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-07-15 17:38:13.386
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-07-15 17:38:44.329
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-07-15 17:38:44.350
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-07-15 17:38:44.362
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-07-15 17:39:01.942
+!MESSAGE Using unsafe http transport to retrieve http://www.apache.org/dist/geronimo/eclipse/updates/, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-07-15 17:39:05.037
+!MESSAGE Using unsafe http transport to retrieve http://download.oracle.com/otn_software/oepe/oxygen/, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-07-15 17:39:05.286
+!MESSAGE Using unsafe http transport to retrieve http://download.oracle.com/otn_software/oepe/oxygen/content.xml.xz, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-07-15 17:39:05.427
+!MESSAGE Using unsafe http transport to retrieve http://download.oracle.com/otn_software/oepe/oxygen/, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-07-15 17:39:05.878
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/jetty/updates/jetty-wtp/, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-07-15 17:39:05.904
+!MESSAGE Using unsafe http transport to retrieve http://download.jboss.org/jbosstools/updates/webtools/photon/, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-07-15 17:39:06.150
+!MESSAGE Using unsafe http transport to retrieve http://download.oracle.com/otn_software/oepe/12.2.1.8/oxygen/repository, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-07-15 17:39:06.539
+!MESSAGE Using unsafe http transport to retrieve http://download.oracle.com/otn_software/oepe/12.2.1.8/oxygen/repository/tools, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-07-15 17:39:07.018
+!MESSAGE Using unsafe http transport to retrieve http://download.oracle.com/otn_software/oepe/library/javaee-5-doc, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-07-15 17:39:07.311
+!MESSAGE Using unsafe http transport to retrieve http://download.oracle.com/otn_software/oepe/library/javaee-6-doc, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-07-15 17:39:07.568
+!MESSAGE Using unsafe http transport to retrieve http://download.oracle.com/otn_software/oepe/library/javaee-7-doc, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-07-15 17:39:07.951
+!MESSAGE Using unsafe http transport to retrieve http://download.oracle.com/otn_software/oepe/library/oracle-adf-11.1.1.4-doc, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-07-15 17:39:08.191
+!MESSAGE Using unsafe http transport to retrieve http://download.oracle.com/otn_software/oepe/library/oracle-adf-11.1.1.5-doc, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-07-15 17:39:08.452
+!MESSAGE Using unsafe http transport to retrieve http://download.oracle.com/otn_software/oepe/library/oracle-adf-11.1.1.6-doc, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-07-15 17:39:08.680
+!MESSAGE Using unsafe http transport to retrieve http://download.oracle.com/otn_software/oepe/library/oracle-adf-11.1.1.7-doc, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-07-15 17:39:08.836
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/jetty/updates/jetty-wtp/content.xml.xz, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-07-15 17:39:09.023
+!MESSAGE Using unsafe http transport to retrieve http://download.oracle.com/otn_software/oepe/library/oracle-adf-12.1.2-doc, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-07-15 17:39:09.326
+!MESSAGE Using unsafe http transport to retrieve http://download.oracle.com/otn_software/oepe/library/oracle-adf-12.1.3-doc, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-07-15 17:39:09.641
+!MESSAGE Using unsafe http transport to retrieve http://download.oracle.com/otn_software/oepe/library/oracle-adf-12.2.1-doc, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-07-15 17:39:10.049
+!MESSAGE Using unsafe http transport to retrieve http://download.oracle.com/otn_software/oepe/library/oracle-maf-2-rt, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-07-15 17:39:10.235
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/jetty/updates/jetty-wtp/, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-07-15 17:39:10.284
+!MESSAGE Using unsafe http transport to retrieve http://download.oracle.com/otn_software/oepe/library/oracle-maf-2-examples, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-07-15 17:39:10.588
+!MESSAGE Using unsafe http transport to retrieve http://download.oracle.com/otn_software/oepe/library/oracle-maf-2.0.1.0.2-rt, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-07-15 17:39:10.816
+!MESSAGE Using unsafe http transport to retrieve http://download.oracle.com/otn_software/oepe/library/oracle-maf-2.0.1-examples, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-07-15 17:39:11.287
+!MESSAGE Using unsafe http transport to retrieve http://download.oracle.com/otn_software/oepe/library/oracle-maf-2.1.0.0.1-rt, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-07-15 17:39:11.647
+!MESSAGE Using unsafe http transport to retrieve http://download.oracle.com/otn_software/oepe/library/oracle-maf-2.1-examples, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-07-15 17:39:11.955
+!MESSAGE Using unsafe http transport to retrieve http://download.oracle.com/otn_software/oepe/library/oracle-maf-2.1.1.0.1-rt, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-07-15 17:39:12.400
+!MESSAGE Using unsafe http transport to retrieve http://download.oracle.com/otn_software/oepe/library/oracle-maf-2.1.1-examples, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-07-15 17:39:12.649
+!MESSAGE Using unsafe http transport to retrieve http://download.oracle.com/otn_software/oepe/library/oracle-maf-2.1.2.0.1-rt, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-07-15 17:39:12.934
+!MESSAGE Using unsafe http transport to retrieve http://download.oracle.com/otn_software/oepe/library/oracle-maf-2.1.2-examples, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-07-15 17:39:13.620
+!MESSAGE Using unsafe http transport to retrieve http://download.oracle.com/otn_software/oepe/library/oracle-maf-2.1.3-rt, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-07-15 17:39:13.850
+!MESSAGE Using unsafe http transport to retrieve http://download.oracle.com/otn_software/oepe/library/oracle-maf-2.1.3-examples, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-07-15 17:39:14.114
+!MESSAGE Using unsafe http transport to retrieve http://download.oracle.com/otn_software/oepe/library/oracle-maf-2.2.0.1-rt, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-07-15 17:39:14.344
+!MESSAGE Using unsafe http transport to retrieve http://download.oracle.com/otn_software/oepe/library/oracle-maf-2.2-examples, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-07-15 17:39:14.665
+!MESSAGE Using unsafe http transport to retrieve http://download.oracle.com/otn_software/oepe/library/oracle-maf-2.2.1-rt, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-07-15 17:39:14.846
+!MESSAGE Using unsafe http transport to retrieve http://download.oracle.com/otn_software/oepe/library/oracle-maf-2.2.1-examples, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-07-15 17:39:15.090
+!MESSAGE Using unsafe http transport to retrieve http://download.oracle.com/otn_software/oepe/library/oracle-maf-2.2.2-rt, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-07-15 17:39:15.326
+!MESSAGE Using unsafe http transport to retrieve http://download.oracle.com/otn_software/oepe/library/oracle-maf-2.2.2-examples, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-07-15 17:39:15.720
+!MESSAGE Using unsafe http transport to retrieve http://download.oracle.com/otn_software/oepe/library/oracle-maf-2.3.0.1-rt, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-07-15 17:39:15.966
+!MESSAGE Using unsafe http transport to retrieve http://download.oracle.com/otn_software/oepe/library/oracle-maf-2.3.0.0.1-examples, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-07-15 17:39:16.239
+!MESSAGE Using unsafe http transport to retrieve http://download.oracle.com/otn_software/oepe/library/oracle-maf-2.3.1-rt, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-07-15 17:39:16.480
+!MESSAGE Using unsafe http transport to retrieve http://download.oracle.com/otn_software/oepe/library/oracle-maf-2.3.1-examples, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-07-15 17:39:16.908
+!MESSAGE Using unsafe http transport to retrieve http://download.oracle.com/otn_software/oepe/library/oracle-maf-2.3.2-rt, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-07-15 17:39:17.192
+!MESSAGE Using unsafe http transport to retrieve http://download.oracle.com/otn_software/oepe/library/oracle-maf-2.3.2-examples, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-07-15 17:39:17.445
+!MESSAGE Using unsafe http transport to retrieve http://download.oracle.com/otn_software/oepe/library/oracle-maf-2.3.3-rt, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-07-15 17:39:17.777
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/jetty/updates/jetty-wtp/1.0.0.201108021218, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-07-15 17:39:17.820
+!MESSAGE Using unsafe http transport to retrieve http://download.oracle.com/otn_software/oepe/library/oracle-maf-2.3.3-examples, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-07-15 17:39:21.446
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/jetty/updates/jetty-wtp/1.0.0.201107261728, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-07-15 17:39:25.214
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/jetty/updates/jetty-wtp/1.0.0.201107261636, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-07-15 17:39:28.949
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/jetty/updates/jetty-wtp/1.0.0.201107211531, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-07-15 17:39:32.751
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/jetty/updates/jetty-wtp/1.0.0.201107011148, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-07-15 17:39:36.434
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/jetty/updates/jetty-wtp/1.0.0.201106170956, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-07-15 17:39:40.091
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/jetty/updates/jetty-wtp/1.0.0.201011170957, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-07-15 17:39:43.777
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/jetty/updates/jetty-wtp/1.0.0.201012081212, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-07-15 17:39:47.488
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/jetty/updates/jetty-wtp/1.0.0.201012221052, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-07-15 17:39:51.242
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/jetty/updates/jetty-wtp/1.0.0.201203011137, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-07-15 17:41:28.257
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-07-15 17:41:28.258
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-07-15 17:42:16.175
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-07-15 17:42:16.176
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-07-15 17:42:23.495
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-07-15 17:42:23.497
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-07-15 17:42:39.898
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-07-15 17:42:39.900
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-07-15 17:42:44.127
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-07-15 17:42:44.129
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-07-15 17:43:27.614
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-07-15 17:43:27.615
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-07-15 17:47:14.902
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-07-15 17:47:14.903
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-07-15 17:47:30.833
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-07-15 17:47:30.834
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-07-15 17:47:33.300
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-07-15 17:47:33.301
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-07-15 17:47:40.130
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-07-15 17:47:40.131
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-07-15 17:48:00.820
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-07-15 17:48:00.821
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-07-15 17:48:17.418
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-07-15 17:48:17.419
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-07-15 17:48:39.281
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-07-15 17:48:39.282
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-07-15 17:48:57.714
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-07-15 17:48:57.716
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-07-15 17:49:26.286
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-07-15 17:49:26.288
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-07-15 17:50:06.728
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-07-15 17:50:06.729
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!

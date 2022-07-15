@@ -42,8 +42,11 @@
 								</table>
 									<div class="btn_wrap">
 									<input type="submit" class="btn_middle" value="수정완료">
+									<input type="button" class="btn_middle" onclick="location.href='<%=request.getContextPath() %>/member/info'" value="수정 취소">
 									<input type="button" class="btn_middle" onclick="location.href='<%=request.getContextPath() %>/member/updatePass'" value="비밀번호 변경">
-									<input type="button" class="btn_middle" onclick="location.href='<%=request.getContextPath() %>/member/main'" value="메인이동">
+										<div class="btn_wrap">
+											<input type="button" class="btn_middle" onclick="location.href='<%=request.getContextPath() %>/member/main'" value="메인이동">
+										</div>
 									</div>
 								</div>
 							</form>

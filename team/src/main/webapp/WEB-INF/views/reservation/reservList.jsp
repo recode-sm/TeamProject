@@ -117,7 +117,7 @@
 										<td id = "date">${reservList.r_date }</td>
 										<td id = "time">${reservList.time }</td>
 										<td id = "price">${reservList.total_price }원</td>
-											<c:if test="${reservList.status eq null }">
+											<c:if test="${reservList.status eq 'npaid' }">
 											<td id = "status">결제중</td>
 											<td><input type="button" value="결제/예약취소" onclick="location.href='<%=request.getContextPath() %>/reservation/reservResult?r_num=${reservList.r_num }'" ></td>
 											</c:if>

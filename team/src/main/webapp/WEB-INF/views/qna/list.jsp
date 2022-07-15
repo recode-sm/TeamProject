@@ -37,6 +37,7 @@
 	
 	
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
 </head>
 
 <body>
@@ -56,10 +57,10 @@
 					</video>
 				</div>
 				<div class="tab_wrap">
-					<ul class="t03">
-						<li><a href="<%=request.getContextPath() %>/notice/notice">공지사항</a></li>
+					<ul class="t02">
+					<li><a href="<%=request.getContextPath() %>/notice/list">게시판</a></li>
 						<li class="on"><a href="<%=request.getContextPath() %>/qna/list">Q&A</a></li>
-						<li><a href="<%=request.getContextPath() %>/notice/list">커뮤니티</a></li>
+						
 					</ul>
 				</div>
 				
@@ -68,11 +69,16 @@
 					
 					<div class="table_wrap list">
 						<table border="1">
-							<tr><td>번호</td><td>글쓴이</td><td>제목</td><td>등록일</td><td>조회</td></tr>
+							<tr><th>글쓴이</th><th>제목</th><th>등록일</th><th>조회</th></tr>
 							<c:forEach var="questionDTO" items="${boardList}">
-							<tr><td>${questionDTO.q_num}</td><td>${questionDTO.id}</td>
-								<td><a href="${pageContext.request.contextPath}/qna/listPro?q_num=${questionDTO.q_num}">
-							    	 ${questionDTO.subject}</a></td>
+							<tr onclick="location.href='<%=request.getContextPath() %>/qna/listPro?q_num=${questionDTO.q_num }'"><td>${questionDTO.id}</td>
+								<c:if test="${ questionDTO.group_layer eq 0 }">
+								<td>[질문글]${questionDTO.subject}</td>	
+								</c:if>
+								<c:if test="${ questionDTO.group_layer eq -1 }">
+								<td style="padding-left:50px">└ [답변글]${questionDTO.subject}</td>
+								</c:if>
+								
 							    <td><fmt:formatDate pattern="yyyy-MM-dd" value="${questionDTO.q_date}"/></td>
 							    <td>${questionDTO.readcount}</td></tr>
 							</c:forEach>

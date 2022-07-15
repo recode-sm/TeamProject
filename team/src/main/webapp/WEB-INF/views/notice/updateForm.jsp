@@ -58,22 +58,22 @@
 		<!-- Contents -->
 			<div class="content">
 				<div class="sub_top">
-					<h2>Q&A</h2>
+					<h2>게시판</h2>
 					
 					<video id="video01" autoplay="" playsinline="" muted="" loop="" height="460" width="100%" title="video element"> 
 						<source src="<%=request.getContextPath() %>/resources/files/banner/community.mp4" type="video/mp4">  
 					</video>
 				</div>
 				<div class="tab_wrap">
-					<ul class="t03">
-						<li><a href="<%=request.getContextPath() %>/notice/notice">공지사항</a></li>
+					<ul class="t02">
+					<li class="on"><a href="<%=request.getContextPath() %>/notice/list">게시판</a></li>
 						<li ><a href="<%=request.getContextPath() %>/qna/list">Q&A</a></li>
-						<li class="on"><a href="<%=request.getContextPath() %>/notice/list">커뮤니티</a></li>
+						
 					</ul>
 				</div>
 				
 				<div class="notice_wrap_view">
-					<h3 class="h_tit">글쓰기</h3>
+					<h3 class="h_tit">글수정</h3>
 					<div class="view_wrap">
 						<form action="${pageContext.request.contextPath}/notice/updatePro" method="post">
 							<div class="top">
@@ -82,7 +82,7 @@
 									<dt>제목</dt>		<p class="tit"><input type="text" name="subject" value="${boardDTO.subject}"></p>
 									<dt>글번호</dt>	<dd>${boardDTO.b_num}</dd>
 								    <dt>등록일</dt>	<dd><fmt:formatDate pattern="yyyy-MM-dd" value="${boardDTO.b_date}"/></dd>
-									<dt>글쓴이</dt>	<dd><input type="text" name="id" value="${boardDTO.id}" readonly></dd>
+									<dt>글쓴이</dt>	<dd>${boardDTO.id}</dd>
 								    <dt>조회수</dt>	<dd>${boardDTO.readcount}</dd>
 								</dl>
 							</div>

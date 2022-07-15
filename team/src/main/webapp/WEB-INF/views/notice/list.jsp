@@ -53,17 +53,17 @@
 	<section id="container">
 		<div class="content">
 			<div class="sub_top">
-				<h2>커뮤니티</h2>
+				<h2>게시판</h2>
 				<video id="video01" autoplay="" playsinline="" muted="" loop="" height="460" width="100%" title="video element"> 
 				<source src="<%=request.getContextPath() %>/resources/files/banner/community.mp4" type="video/mp4"> 
 				</video>
 			</div>
 
 			<div class="tab_wrap">
-				<ul class="t03">
-				<li><a href="<%=request.getContextPath() %>/notice/notice">공지사항</a></li>
+				<ul class="t02">
+				<li class="on"><a href="<%=request.getContextPath() %>/notice/list">게시판</a></li>
 				<li><a href="<%=request.getContextPath() %>/qna/list">Q&A</a></li>
-				<li class="on"><a href="<%=request.getContextPath() %>/notice/list">커뮤니티</a></li>
+				
 				</ul>
 			</div>
 
@@ -71,14 +71,16 @@
 			<h3 class="h_tit">글목록</h3>
 
 			<div class="table_wrap list">
-				<table border="1">
-					<tr><td>번호</td><td>글쓴이</td><td>제목</td><td>등록일</td><td>조회</td></tr>
+				<table>
+					<tr><th scope="col">번호</th><th scope="col">글쓴이</th><th scope="col">제목</th><th scope="col">등록일</th><th scope="col">조회</th></tr>
 					<c:forEach var="boardDTO" items="${boardList}">
-						<tr><td>${boardDTO.b_num}</td><td>${boardDTO.id}</td>
-						<td><input type="hidden" value="${boardDTO.b_num }">
-						<a href="${pageContext.request.contextPath}/notice/listPro?b_num=${boardDTO.b_num}">${boardDTO.subject}</a></td>
+					<tr onclick="location.href='<%=request.getContextPath() %>/notice/listPro?b_num=${boardDTO.b_num }'">
+						<td >${boardDTO.b_num}</td>
+						<td>${boardDTO.id}</td>
+						<td><input type="hidden" value=${boardDTO.b_num }>${boardDTO.subject}</td>
    						<td><fmt:formatDate pattern="yyyy-MM-dd" value="${boardDTO.b_date }"/></td> 
-   						<td>${boardDTO.readcount}</td></tr>
+   						<td>${boardDTO.readcount}</td>
+   					</tr>
 					</c:forEach>
 				</table>
 			</div>

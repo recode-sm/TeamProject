@@ -45,15 +45,19 @@ public class ReservationController {
 			int select03 = Integer.parseInt(request.getParameter("select03"));
 			String id = (String)session.getAttribute("id");
 		if(select03 == 0) {
-				return "reservation/sel_msg";
-			}else {
+			return "reservation/sel_msg";
+		} else if (id == null) {
+			return "reservation/login_msg";
+		}
+
+		else {
 
 				FieldDTO fieldDTO = reservationService.getFiled(select03);
 				// phone 값 가져오기
 				MemberDTO memberDTO = reservationService.getPhone(id);
 				System.out.println(fieldDTO.getF_name());
 				System.out.println(fieldDTO.getF_num());
-				System.out.println(fieldDTO.getPrice());
+				System.out.println(fieldDTO.getPrice());	
 				model.addAttribute("fieldDTO",fieldDTO);
 				model.addAttribute("memberDTO", memberDTO);
 				return "reservation/reservation";
@@ -69,17 +73,22 @@ public class ReservationController {
 	
 	@RequestMapping(value = "/reservation/reservationPro", method = RequestMethod.POST)
 	public String reservationPro(HttpServletRequest request,Model model) throws Exception{
-		ReservDTO reservDTO = new ReservDTO();
-		reservDTO.setF_num(Integer.parseInt(request.getParameter("f_num")));
-//		reservDTO.setF_name(request.getParameter("f_name"));
-		reservDTO.setId(request.getParameter("id"));
-		reservDTO.setR_date(request.getParameter("r_date"));
-		reservDTO.setTime(request.getParameter("time"));
-		reservDTO.setTotal_price(request.getParameter("price"));
-		
-		reservationService.insertReserv(reservDTO);
-		
-		return "redirect:/reservation/reservResult";
+		String time = request.getParameter("time");
+		System.out.println("시간:"+time);
+		if(time == "") {
+			return "/reservation/sel2_msg";
+		}else {
+			ReservDTO reservDTO = new ReservDTO();
+			reservDTO.setF_num(Integer.parseInt(request.getParameter("f_num")));
+			reservDTO.setId(request.getParameter("id"));
+			reservDTO.setR_date(request.getParameter("r_date"));
+			reservDTO.setTime(request.getParameter("time"));
+			reservDTO.setTotal_price(request.getParameter("price"));
+			
+			reservationService.insertReserv(reservDTO);
+			
+			return "redirect:/reservation/reservResult";
+		}
 	}
 	
 	@RequestMapping(value = "/reservation/reservResult", method = RequestMethod.GET)
@@ -176,7 +185,7 @@ public class ReservationController {
 				reservationService.reservationUpdate(r_num);
 			}
 		    
-		return "redirect:/reservation/select";
+		return "reservation/cancel_msg";
 	}
 	
 	@RequestMapping(value = "/reservation/cancel", method = RequestMethod.GET)
@@ -186,7 +195,7 @@ public class ReservationController {
 		
 		reservationService.reservationCancel(r_num);
 		
-		return "redirect:/reservation/select";
+		return "reservation/cancel_msg";
 	}
 }
 

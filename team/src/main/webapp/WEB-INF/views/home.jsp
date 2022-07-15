@@ -20,13 +20,7 @@
 	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/resources/css/main.css">
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116234591-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'UA-116234591-1');
-</script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 </head>
 <script src="/js/libs/jquery.bxslider.js"></script>
@@ -46,12 +40,12 @@
 					<ul>
 						<li class="login">
 						<c:if test="${ empty sessionScope.id }">
-							<a href="<%=request.getContextPath() %>/member/login">MEMBER LOGIN</a> |
+							<a href="<%=request.getContextPath() %>/member/login" style="font-size: 20px; font-weight : 900;">LOGIN</a>
 						</c:if> 
 						<c:if test="${!empty sessionScope.id}">
-							<a href="#">${id}님 반갑습니다</a>
-							<a href="<%=request.getContextPath() %>/member/logout">MEMBER LOGOUT</a> |
-							<a href="<%=request.getContextPath() %>/member/info">MEMBER INFO</a>
+							<a href="#" style="font-size: 20px; font-weight : 900;" >${id}님</a>
+							<a href="<%=request.getContextPath() %>/member/logout" style="font-size: 20px; font-weight : 900;">LOGOUT</a>
+							<a href="<%=request.getContextPath() %>/member/info" style="font-size: 20px; font-weight : 900;">MEMBER INFO</a>
 						</c:if>
 						</li>
 						
@@ -74,7 +68,7 @@
 						<li><a href="<%=request.getContextPath() %>/notice/list"><span>COMMUNITY</span><span class="ov">커뮤니티</span></a></li>
 						<li><a href="<%=request.getContextPath() %>/qna/list"><span>Q&A</span><span class="ov">문의하기</span></a></li>
 <!-- 						<li><a href="/league/league.asp"><span>H-LEAGUE</span><span class="ov">H-리그</span></a></li> -->
-						<li><a href="<%=request.getContextPath() %>/notice/notice"><span>NOTICE</span><span class="ov">공지사항</span></a></li>
+<%-- 						<li><a href="<%=request.getContextPath() %>/notice/notice"><span>NOTICE</span><span class="ov">공지사항</span></a></li> --%>
 <!-- 						<li><a href="/about/company.asp"><span>HNS</span><span class="ov">에이치엔에스</span></a></li> -->
 					</ul>
 				</div>

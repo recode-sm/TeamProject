@@ -44,6 +44,21 @@
 	
 	
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+<script>
+$("#txtArea").on("keypress",function(e) {
+    var key = e.keyCode;
+
+    // If the user has pressed enter
+    if (key == 13) {
+        document.getElementById("txtArea").value =document.getElementById("txtArea").value + "\n";
+        return false;
+    }
+    else {
+        return true;
+    }
+});
+</script>
 </head>
 <body>
 	<!-- 로그인한 사용자만 글 쓸 수 있게 제어 -->
@@ -68,10 +83,10 @@
 					</video>
 				</div>
 				<div class="tab_wrap">
-					<ul class="t03">
-						<li><a href="<%=request.getContextPath() %>/notice/notice">공지사항</a></li>
+					<ul class="t02">
+					<li><a href="<%=request.getContextPath() %>/notice/list">게시판</a></li>
 						<li class="on"><a href="<%=request.getContextPath() %>/qna/list">Q&A</a></li>
-						<li><a href="<%=request.getContextPath() %>/notice/list">커뮤니티</a></li>
+						
 					</ul>
 				</div>
 				
@@ -82,11 +97,11 @@
 							<div class="top">
 								<dl>
 									<dt>제목</dt>		<p class="tit"><input type="text" name="subject" placeholder="제목을 입력하세요"></p>
-									<dt>글쓴이</dt>	<dd><input type="text" name="id" value="${ id }" readonly></dd>
+									<dt>글쓴이</dt>	<dd><input type="text" name="id" value=${id } readonly style="width:100%; border:0px;"></dd>
 								</dl>
 							</div>
 							<div class="info_text" style="word-break: break-all;">
-								<textarea name ="content" rows ="10" style="width:100%;"></textarea></div>
+								<textarea name ="content" id="txtArea" onkeypress="onTestChange();" rows ="10" style="width:100%;"></textarea></div>
 							<div class="btn_wrap right">	
 								<input type="submit" value="글쓰기" class="btn_middle" />
 								<input type="button" class="btn_middle" value="작성 취소" 

@@ -23,7 +23,7 @@
 	</select>
 	
 	<select id="getField" resultType="com.team.domain.FieldDTO">
-		select f_num,f_name,price from field where f_num=#{f_num}
+		select f_num,f_name,price,f_img from field where f_num=#{f_num}
 	</select>
 	
 	<insert id="insertReserv">
@@ -33,11 +33,11 @@
 	
 <!-- 	조건절 구장(Field) 추가 필요, 확인해야함 -->
 	<select id="getDateList" resultType="com.team.domain.DateDTO">
-		select * from reservation where r_date=#{date} and f_num=#{f_num}
+		select * from reservation where r_date=#{date} and f_num=#{f_num} and status!='cancel'
 	</select>
 	
 	<select id="getReservation" resultType="com.team.domain.ReservDTO">
-		select r.r_num,r.id,r.f_num,f.f_name,r.time,r.r_date,r.total_price,m.phone
+		select r.r_num,r.id,r.f_num,f.f_name,r.time,r.r_date,r.total_price,m.phone,r.status
 		 from reservation r join member m ON r.id=m.id
 		 join field f ON f.f_num=r.f_num
 		 where r.id=#{s_id} and r_num=(select max(r_num) from reservation where r.id=#{s_id})

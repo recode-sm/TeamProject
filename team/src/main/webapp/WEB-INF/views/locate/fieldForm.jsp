@@ -62,7 +62,11 @@
     font-size: 20px;
     line-height: 40px;
     border: 0px;
+    cursor: pointer;
+    margin-top: 12px;
 }
+
+
 </style>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -119,7 +123,7 @@
 									<img  id="preview" style="width:500px; height:300px; border-radius: 8px;"><br>
 								</span>
 								<span>
-									<label for="input-file" class="btn_rese"> 
+									<label for="input-file" class="but"> 
 										구장사진 등록
 									</label>	
 									<input type="file" name="f_img" id="input-file" onchange="readURL(this);" style="display: none;">
@@ -128,7 +132,7 @@
 							</div>
 							<div style="float: left;">
 								<table border="1" style="width: 500px; height: 300px;">
-									<tr><th>구장정보</th><th>내용</th></tr>
+									<tr><td style="font-weight: bold;">구장정보</td><th style="font-weight: bold;">내용</th></tr>
 <!-- 									<tr><td>구장번호</td><td><input type="text" name="f_num" style="width: 100%;"></td></tr> -->
 									<tr><td>구장이름</td><td><input type="text" name="f_name" style="width: 100%;"></td></tr>
 									<tr><td>주소(구)</td><td><input type="text" name="district" style="width: 100%;"></td></tr>

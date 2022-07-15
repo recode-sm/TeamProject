@@ -1,8 +1,9 @@
 
 @charset "utf-8"; 
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap');
 
 /* 컨텐츠 공통 */
-.h_tit	{position:relative; margin-bottom:45px; padding-bottom:24px; font-size:60px; font-family:'NanumBarunGothicL'; line-height:60px; text-align:center}
+.h_tit	{position:relative; margin-bottom:45px; padding-bottom:24px; font-size:60px; font-family:'Noto Sans KR', sans-serif; line-height:60px; text-align:center}
 .h_tit:after	{content:""; display:block; position:absolute; bottom:0; left:50%; margin-left:-49px; width:98px; height:2px; background:#bfc4cc;}
 
 .h_bar	{position:relative; padding-left:26px; color:#2c3c57; font-size:30px; line-height:40px; letter-spacing:-2px}
@@ -34,8 +35,8 @@
 .loca_view.on .loca_list	{max-height:775px; padding:15px 0 34px 0;}
 
 .loca_view .btn_wrap	{margin:0 auto; max-width:1200px}
-.loca_view .btn_wrap a	{width:430px; background:#192336; font-size:30px; line-height:85px; text-align:center}
-.loca_view .btn_wrap a span	{display:inline-block; padding-right:58px; background:url('/images/content/icon_loca_arr.png') no-repeat right center; color:#fff; font-weight:700}
+.loca_view .btn_wrap a	{width:430px; background:#192336; font-size:30px; line-height:85px; text-align:center; font-family: 'Noto Sans KR', sans-serif;}
+.loca_view .btn_wrap a span	{display:inline-block; padding-right:58px; background:url('/images/content/icon_loca_arr.png') no-repeat right center; color:#fff; font-weight:700; }
 .loca_view .btn_wrap a.closed span	{background:url('/images/content/icon_loca_arr_closed.png') no-repeat right center;}
 .loca_view .btn_wrap a.open		{display:block}
 .loca_view .btn_wrap a.closed	{display:none}

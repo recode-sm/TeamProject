@@ -40,12 +40,12 @@
 					<ul>
 						<li class="login">
 						<c:if test="${ empty sessionScope.id }">
-							<a href="<%=request.getContextPath() %>/member/login">LOGIN</a>
+							<a href="<%=request.getContextPath() %>/member/login" style="font-size: 20px; font-weight : 900;">LOGIN</a>
 						</c:if> 
 						<c:if test="${!empty sessionScope.id}">
-							<a href="#">${id}님 반갑습니다</a>
-							<a href="<%=request.getContextPath() %>/member/logout">LOGOUT</a>
-							<a href="<%=request.getContextPath() %>/member/info">MEMBER INFO</a>
+							<a href="#" style="font-size: 20px; font-weight : 900;" >${id}님</a>
+							<a href="<%=request.getContextPath() %>/member/logout" style="font-size: 20px; font-weight : 900;">LOGOUT</a>
+							<a href="<%=request.getContextPath() %>/member/info" style="font-size: 20px; font-weight : 900;">MEMBER INFO</a>
 						</c:if>
 						</li>
 						

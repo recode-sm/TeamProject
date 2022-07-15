@@ -243,6 +243,9 @@ button.dis:hover	span	span	{background-position:right 0}
 .btn_middle	{position:relative; display:inline-block; padding:0 15px; min-width:180px; background:#2c3c57; color:#fff; font-size:20px; line-height:60px; text-align:center; vertical-align:middle; box-sizing:border-box; -moz-box-sizing:border-box; -webkit-transition:all 0.25s ease-out; -moz-transition:all 0.25s ease-out; -ms-transition:all 0.25s ease-out; -o-transition:all 0.25s ease-out; transition:all 0.25s ease-out;}
 .btn_middle:hover	{background:#003f96 !important}
 
+.btn_middle_2 {position:relative; display:inline-block; padding:0 15px; min-width:100px; border:0; background:#808080; color:#fff; font-size:15px; line-height:41px; text-align:center; vertical-align:middle; box-sizing:border-box; -moz-box-sizing:border-box; -webkit-transition:all 0.25s ease-out; -moz-transition:all 0.25s ease-out; -ms-transition:all 0.25s ease-out; -o-transition:all 0.25s ease-out; transition:all 0.25s ease-out;}
+.btn_middle_2:hover	{background:#003f96 !important}
+
 .btn_big	{position:relative; display:inline-block; padding:0 15px; width:333px; background:#2c3c57; color:#fff; font-size:23px; line-height:80px; text-align:center; vertical-align:middle; box-sizing:border-box; -moz-box-sizing:border-box; -webkit-transition:all 0.25s ease-out; -moz-transition:all 0.25s ease-out; -ms-transition:all 0.25s ease-out; -o-transition:all 0.25s ease-out; transition:all 0.25s ease-out;}
 .btn_big:hover	{background:#003f96 !important}
 

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.itwillbs.team.fieldMapper">
+
+	<insert id="insertField">
+		insert into field(f_name,district,f_address,terms,f_img,price) 
+		values(#{f_name},#{district},#{f_address},#{terms},#{f_img},#{price})
+	</insert>
+	
+	<select id="getFieldList" resultType="com.team.domain.FieldDTO">
+		select * from field
+	</select>
+	
+	<select id="getField" resultType="com.team.domain.FieldDTO">
+		select * from field where f_num=#{f_num}
+	</select>
+	
+	<update id="fieldUpdatePro">
+		UPDATE field 
+		SET f_address=#{f_address}, terms=#{terms}
+		WHERE f_num=#{f_num}
+	</update>
+	
+</mapper>

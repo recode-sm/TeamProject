@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+	<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
@@ -99,19 +99,14 @@
 						
 				</ul>
 			</div>
+<div class="notice_wrap list">
+			<h3 class="h_tit">예약목록</h3>
 
-						<div class="int_wrap">
-							<div class="table_wrap">
-								<table>
-								<colgroup>
-									<col style="width:25%" />
-									<col style="" />
-								</colgroup>
-								<tbody>
-								<tr><th>아이디</th><th>구장명</th><th>예약날짜</th><th>예약시간</th><th>결제가격</th><th>결제정보</th><th></th></tr>
+			<div class="table_wrap list">
+				<table>
+				<tr><th>아이디</th><th>구장명</th><th>예약날짜</th><th>예약시간</th><th>결제가격</th><th>결제정보</th><th>결제/취소</th></tr>
 								<c:forEach var="reservList" items="${reservList}">
 									<tr>
-										
 										<td id = "memberName">${reservList.id }</td>
 										<td id = "fieldName">${reservList.f_name }</td>
 										<td id = "date">${reservList.r_date }</td>
@@ -131,11 +126,11 @@
 											</c:if>
 									</tr>
 								</c:forEach>
-								</tbody>
-								</table>
-							</div>
-						</div>
-					</div>
+				</table>
+			</div>
+
+		</div>
+			</div>
 			</section>
 		
 			<!-- //Contents -->

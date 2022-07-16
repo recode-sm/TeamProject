@@ -7,19 +7,12 @@
    <link href="<%=request.getContextPath() %>/resources/img/logo_1m.png" rel="shortcut icon" type="image/x-icon">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-	<title>HM FUTSAL PARK</title>
-	<meta name="keywords" content="HM FUTSAL PARK">
-	<meta name="description" content="     ̾  ǲ     HMǲ    ũ,      11       ,         ,       Ը       ȸ           ȸ     ">
 	<meta property="og:type" content="website">
-	<meta property="og:image" content="https://hmfutsalpark.com/images/common/link_profile.png">
-	<meta property="og:title" content="HM FUTSAL PARK">
-	<meta property="og:description" content="     ̾  ǲ     HMǲ    ũ">
-	<meta property="og:url" content="https://hmfutsalpark.com">
 	<meta http-equiv="X-UA-Compatible" content="IE=chrome">
 
 	<!--     css -->
-	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/resources/css/common.css">
-	<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/resources/css/reservResult.css?after3">
+	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/resources/css/content.css?v=201811160138">
 
 	<link rel="apple-touch-icon" sizes="57x57" href="<%=request.getContextPath() %>/resources/loginimg/apple-icon-57x57.png">
 	<link rel="apple-touch-icon" sizes="60x60" href="<%=request.getContextPath() %>/resources/loginimg/apple-icon-60x60.png">
@@ -120,17 +113,10 @@
 		var pass = document.getElementById('pass').value;
 	 
 		if (frm.id.value == "") {
-			alert("[이메일]을 입력하세요.");
+			alert("아이디를 입력하세요.");
 			frm.id.focus();
 			return false;
-		}
-		var pos2 = frm.id.value.indexOf('@');
-		if (pos2 == -1) {
-			alert("[이메일]을 형식 입력하세요.");
-			frm.id.focus();
-			return false;
-		}
-		
+		}		
 		if (regExp.test(pass) == false ) {
 			alert("[비밀번호]는 8~16자 사이 숫자,영문자,특수문자를 포함하여 주십시오");
 			frm.pass.focus();
@@ -156,6 +142,11 @@
 			frm.postcode.focus();
 			return false;
 		}
+		if($("#emailCheck2").text() != "인증번호가 일치합니다."){
+			alert("[이메일 인증]을 확인해주세요.");
+			$('#e_num').focus();
+			return false;
+		}
 		frm.submit();
 	}
 
@@ -163,7 +154,9 @@
 </script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/jquery-3.6.0.js"></script>
 <script type="text/javascript">
+
 $(document).ready(function(){
+	
 	// id="dup" 클릭했을때  dupcheck2.jsp 페이지에 id="id" val() 값을 가지고 가서
 	// 아이디 중복체크한 출력결과를 가져와서 id="dupdiv"에 출력
 	$('#id').keyup(function(){
@@ -206,6 +199,43 @@ $(document).ready(function(){
 		}
 	});
 	
+	var code = "";
+	$('#ebtn').click(function(){
+		var email = $('#email').val();
+		console.log(email)
+		$.ajax({
+			type:"GET",
+			url:'${pageContext.request.contextPath}/member/mailCheck?email='+email,
+			cache:false,
+			success:function(data){
+				if(data=='error'){
+					alert("이메일 주소가 올바르지 않습니다. 유효한 이메일 주소를 입력해주세요.");
+					$("#email").attr("autofocus",true);
+					$("#emailCheck").text("유효한 이메일 주소를 입력해주세요.");
+					$("#emailCheck").css("color","red");
+				}else{	        		
+					alert("인증번호 발송이 완료되었습니다.\n입력한 이메일에서 인증번호 확인을 해주십시오.");
+	        		$("#e_num").attr("disabled",false);
+	        		$("#emailCheck").text("인증번호를 입력한 뒤 이메일 인증을 눌러주십시오.");
+	        		$("#emailCheck").css("color","green");
+	        		code = data;
+	        	}
+			}
+		});
+	});
+	
+	$("#Checkbtn").click(function(){
+		if($("#e_num").val() == code){
+			$("#emailCheck2").text("인증번호가 일치합니다.");
+			$("#emailCheck2").css("color","green");
+			$("#e_num").attr("disabled",true);
+			//$("#sm_email").attr("disabled",true);
+		}else{
+			$("#emailCheck2").text("인증번호가 일치하지 않습니다. 확인해주시기 바랍니다.");
+			$("#emailCheck2").css("color","red");
+			$("#e_num").attr("autofocus",true);
+		}
+	});
 });
 </script>
 
@@ -224,14 +254,14 @@ $(document).ready(function(){
 				<div class="join_wrap info">
 					<dl>
 					
-						<dt>아이디(이메일) <span>(필수)</span></dt>
+						<dt>아이디</dt>
 						<dd>
-							<input type="text"  id="id" name="id" style="width:100%" placeholder="ex) kim@gmail.com, kim@naver.com"/>
+							<input type="text"  id="id" name="id" style="width:100%"/>
 							<div id="dupdiv"></div>
 	
 						</dd>
 						
-						<dt>비밀번호 <span>(필수)</span></dt>
+						<dt>비밀번호<span>(필수)</span></dt>
 						<dd>
 							<input type="password"  id="pass"  name="pass" style="width:100%" />
 							<div id="passdiv"></div>
@@ -249,6 +279,20 @@ $(document).ready(function(){
 							<span class="t_help">필수 항목 입니다.</span>
 						</dd>
 						
+						<dt>이메일 <span>(필수)</span></dt>
+						<dd>
+							<input type="text"  name="email" id="email" style="width:70%" />
+							<input type="button" class="btn_middle_2" id="ebtn" value="인증번호 받기"><br>							
+							<div id="emailCheck"></div>
+						</dd>
+						
+						<dt>인증번호</dt>
+						<dd>
+							<input type="text"  name="e_num" id="e_num" style="width:70%" disabled maxlength="6"/>
+							<input type="button" class="btn_middle_2" id="Checkbtn" value="이메일 인증">
+							<div id="emailCheck2"></div>
+						</dd>
+							
 						<dt>휴대전화 <span>(필수)</span></dt>
 						<dd> 
 							<input type="text"  name="phone" placeholder="ex) 010-1234-5678" style="width:100%" />
@@ -258,7 +302,7 @@ $(document).ready(function(){
 						<dt>주소 <span>(필수)</span></dt>
 						<dd>
 							<input type="text" name="postcode" id="sample4_postcode" placeholder="우편번호" style="width:50%">
-							<input type="button" value="주소검색" onclick="sample4_execDaumPostcode()" style="width:15%">
+							<input type="button" class="btn_middle_2" value="주소검색" onclick="sample4_execDaumPostcode()" style="width:15%">
 						</dd>
 						<dd> 
 							<input type="text" name="address" id="sample4_roadAddress" style="width:100%">
@@ -274,6 +318,7 @@ $(document).ready(function(){
  					
 					<div class="btn_wrap">
 						<input type="button" class="btn_middle"  onclick="checkForm()" value="가입하기">
+						<input type="button" class="btn_middle" onclick="location.href='<%=request.getContextPath() %>/member/login'" value="취소하기">
 					</div>
 					</form>
 					

@@ -54,7 +54,7 @@
 						    <input type="hidden" name="group_order" value="${ group_order }">
 							<div class="top">
 								<dl>
-									<dt>제목</dt>		<p class="tit"><input type="text" name="subject"></p>
+									<dt>제목</dt>		<p class="tit"><input type="text" name="subject" onkeypress="if(event.keyCode=='13'){event.preventDefault(); searchEvt();}"></p>
 									<dt>글쓴이</dt>	<dd><input type="text" name="id" value=${id } readonly style="width:100%; border:0px;"></dd>
 								</dl>
 							</div>

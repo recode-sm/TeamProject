@@ -79,7 +79,7 @@
 							<div class="top">
 								<input type="hidden" name="b_num" value="${boardDTO.b_num}">
 								<dl>
-									<dt>제목</dt>		<p class="tit"><input type="text" name="subject" value="${boardDTO.subject}"></p>
+									<dt>제목</dt>		<p class="tit"><input type="text" name="subject" value="${boardDTO.subject}" onkeypress="if(event.keyCode=='13'){event.preventDefault(); searchEvt();}"></p>
 									<dt>글번호</dt>	<dd>${boardDTO.b_num}</dd>
 								    <dt>등록일</dt>	<dd><fmt:formatDate pattern="yyyy-MM-dd" value="${boardDTO.b_date}"/></dd>
 									<dt>글쓴이</dt>	<dd>${boardDTO.id}</dd>

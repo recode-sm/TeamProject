@@ -17,7 +17,6 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<!-- 공통css -->
 	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/resources/css/common.css">
-	<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700" rel="stylesheet">
 
 	<link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-icon-57x57.png">
 	<link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-icon-60x60.png">

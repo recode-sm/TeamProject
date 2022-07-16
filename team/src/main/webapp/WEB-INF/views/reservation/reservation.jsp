@@ -539,10 +539,12 @@
 						<div id="calendarDiv"> 
 							<table id="calendar" align="center">
 								<tr>
-									<td align="center"><label onclick="javascript:prevCalendar(); tableinit();"> ◀ </label></td>
+									<td align="center" ><label style="cursor:pointer;" onclick="javascript:prevCalendar(); tableinit();"><font color ="gray"> ◀ </label></td>
 									<td colspan="5" align="center" id="calendarTitle">yyyy년 mm월</td>
-									<td align="center"><label onclick="javascript:nextCalendar(); tableinit();"> ▶ </label></td>
+									<td align="center" ><label style="cursor:pointer;" onclick="javascript:nextCalendar(); tableinit();"><font color ="gray"> ▶ </label></td>
 								</tr>
+								
+						
 								<tr>
 									<td align="center"><font color ="#F79DC2">일</td>
 									<td align="center">월</td>
@@ -570,7 +572,7 @@
 									<span class="tit">시간 선택</span>
 									<span class="t_help"><font color=red>*기본 2시간, 다중 선택은 불가능합니다.</font></span>
 								</div>
-									<table id="timeTable" align="center"></table>
+									<table id="timeTable" align="center" style="cursor: pointer;"></table>
 							</div>
 						</div>
 						
@@ -629,7 +631,7 @@
 
 							<span class="chk">
 								<input type="checkbox" id="chk01" title="" name="agree" value="Y">
-								<label for="chk01">예약자 정보 및 환불규정/주의사항을 모두 확인 했습니다.</label>
+								<label for="chk01" style="cursor:pointer;">예약자 정보 및 환불규정/주의사항을 모두 확인 했습니다.</label>
 							</span>
 
 							<div class="btn_wrap">

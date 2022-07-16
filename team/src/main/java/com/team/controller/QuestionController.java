@@ -106,6 +106,7 @@ public class QuestionController {
 		int q_num = Integer.parseInt(request.getParameter("q_num"));
 
 		QuestionDTO questionDTO = questionService.getBoard(q_num);
+		questionDTO.setContent(questionDTO.getContent().replace("\r\n", "<br>"));
 
 		model.addAttribute("questionDTO", questionDTO);
 

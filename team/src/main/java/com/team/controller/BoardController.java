@@ -33,6 +33,7 @@ public class BoardController {
 	public String insert(HttpSession session) {
 		// /WEB-INF/views/notice/writeForm.jsp
 		String id=(String)session.getAttribute("id");
+		
 		return "/notice/writeForm";
 	}
 
@@ -97,6 +98,8 @@ public class BoardController {
 		int b_num = Integer.parseInt(request.getParameter("b_num"));
 		String id=(String)session.getAttribute("id");
 		BoardDTO boardDTO = boardService.getBoard(b_num);
+//		줄바꿈
+		boardDTO.setContent(boardDTO.getContent().replace("\r\n", "<br>"));
 		model.addAttribute("boardDTO", boardDTO);
 		List<CommentDTO> commentList = boardService.getCommentList(b_num);
 		BoardDTO boardDTO2 = new BoardDTO();

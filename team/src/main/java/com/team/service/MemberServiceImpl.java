@@ -53,6 +53,13 @@ public class MemberServiceImpl implements MemberService {
 	public void updatePass(MemberDTO memberDTO) {
 		memberDAO.updatePass(memberDTO);
 	}
+
+	@Override
+	public void adminDeleteMember(String id) {
+		memberDAO.adminDeleteMember(id);
+	}
+	
+	
 	
 	
 	

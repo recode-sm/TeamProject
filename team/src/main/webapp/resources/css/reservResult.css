@@ -279,7 +279,7 @@ button.dis:hover	span	span	{background-position:right 0}
 /* table */
 table	{width:100%; border:0 none; border-collapse:collapse; border-spacing:0}
 table	caption	{width:0; height:0; line-height:0px; visibility:hidden}
-table	th,	table	td	{border:0 none}
+table	th,	table	td	{border:0 none;}
 
 .table_wrap	{margin-top:15px;}
 .table_wrap .t_right	{margin-top:-40px; margin-bottom:8px; font-size:15px; font-weight:300; line-height:30px; text-align:right}
@@ -288,7 +288,7 @@ table	th,	table	td	{border:0 none}
 
 .table_wrap table	{border:1px solid #636363; border-top:0; border-left:0}
 .table_wrap table th,
-.table_wrap table td	{border-top:1px solid #636363; border-left:1px solid #636363; font-size:12px; vertical-align:middle}
+.table_wrap table td	{border-top:1px solid #636363; border-left:1px solid #636363; font-size:12px; vertical-align:middle; text-align: center;}
 .table_wrap table thead tr th	{padding:21px 0; height:22px; background:#f0f1f3; color:#383838; font-size:22px; line-height:22px; text-align:center;}
 .table_wrap table thead tr th span	{display:block; position:relative;}
 
@@ -307,7 +307,7 @@ table	th,	table	td	{border:0 none}
 .table_wrap.list table	{border:0; border-top:2px solid #2c3c57;}
 .table_wrap.list table tbody tr:hover td	{background:#f0f1f3}
 .table_wrap.list table thead tr th	{padding:16px 0; border:0; border-bottom:1px solid #d5d8dd; background:#fff; height:21px; color:#2c3c57; font-size:18px; font-weight:700; line-height:21px;}
-.table_wrap.list table tbody tr th	{}
+.table_wrap.list table tbody{}
 .table_wrap.list table tbody tr td	{padding:9px 0; height:32px; border:0; border-bottom:1px solid #d5d8dd; color:#383838; font-size:16px; line-height:32px}
 .table_wrap.list table tbody tr td.al_left	{padding:9px 10px}
 .table_wrap.list table tbody tr td a.tit	{overflow:hidden; display:inline-block; color:#2c3c57; height:32px; line-height:32px; vertical-align:top}

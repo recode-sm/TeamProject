@@ -89,11 +89,13 @@
 							<div class="info_text" style="word-break: break-all;">${questionDTO.content}</div>
 							<div class="btn_wrap right">	
 								<c:if test="${ !empty sessionScope.id }">
-									<c:if test="${ sessionScope.id eq questionDTO.id }">	
+									<c:if test="${sessionScope.id eq questionDTO.id}">
 										<input type="button" class="btn_middle" value="글수정" 
 										onclick="location.href='${pageContext.request.contextPath}/qna/update?q_num=${questionDTO.q_num}'">
+									</c:if>
+									<c:if test="${ sessionScope.id eq questionDTO.id or sessionScope.id eq 'admin' }">
 										<input type="button" class="btn_middle" value="글삭제" 
-										onclick="location.href='${pageContext.request.contextPath}/qna/delete?q_num=${questionDTO.q_num}'">										
+										onclick="location.href='${pageContext.request.contextPath}/qna/delete?q_num=${questionDTO.q_num}'">								
 									</c:if>
 								</c:if>
 								<input type="button" class="btn_middle" value="글목록" 

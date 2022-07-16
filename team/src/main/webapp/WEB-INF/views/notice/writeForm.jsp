@@ -88,7 +88,7 @@
 					</dl>
 				</div>
 				<div class="info_text" style="word-break: break-all;">
-					<textarea name ="content" rows ="10" style="width:100%;"></textarea>
+					<textarea name ="content" rows ="10" style="width:100%; white-space: pre-line;"></textarea>
 				</div>
 				<div class="btn_wrap right">	
 					<input type="submit" value="글쓰기" class="btn_middle" />

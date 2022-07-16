@@ -45,20 +45,20 @@
 	
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 
-<script>
-$("#txtArea").on("keypress",function(e) {
-    var key = e.keyCode;
+<!-- <script> -->
+// $("#txtArea").on("keypress",function(e) {
+//     var key = e.keyCode;
 
-    // If the user has pressed enter
-    if (key == 13) {
-        document.getElementById("txtArea").value =document.getElementById("txtArea").value + "\n";
-        return false;
-    }
-    else {
-        return true;
-    }
-});
-</script>
+//     // If the user has pressed enter
+//     if (key == 13) {
+//         document.getElementById("txtArea").value =document.getElementById("txtArea").value + "\n";
+//         return false;
+//     }
+//     else {
+//         return true;
+//     }
+// });
+<!-- </script> -->
 </head>
 <body>
 	<!-- 로그인한 사용자만 글 쓸 수 있게 제어 -->

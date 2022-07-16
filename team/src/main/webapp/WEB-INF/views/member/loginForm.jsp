@@ -59,7 +59,7 @@
 	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/resources/css/content.css">
 </head>
 
-<script language="Javascript">
+<script type="text/javascript">
 	$(document).ready(function() {
 		$('html').addClass('memb');
 	});

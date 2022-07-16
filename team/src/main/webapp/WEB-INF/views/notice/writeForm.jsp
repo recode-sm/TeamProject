@@ -40,6 +40,10 @@
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-116234591-1"></script>
 	
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+	
 	
 	
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
@@ -84,7 +88,7 @@
 					</dl>
 				</div>
 				<div class="info_text" style="word-break: break-all;">
-					<textarea name ="content" rows ="10" style="width:100%;"></textarea>
+					<textarea name ="content" rows ="10" style="width:100%; white-space: pre-line;"></textarea>
 				</div>
 				<div class="btn_wrap right">	
 					<input type="submit" value="글쓰기" class="btn_middle" />

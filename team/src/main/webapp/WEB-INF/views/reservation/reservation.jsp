@@ -7,44 +7,15 @@
    <link href="<%=request.getContextPath() %>/resources/img/logo_1m.png" rel="shortcut icon" type="image/x-icon">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-	<title>HM FUTSAL PARK</title>
-	<meta name="keywords" content="HM FUTSAL PARK">
-	<meta name="description" content="프리미엄 풋살장 HM풋살파크, 전국 11개 지점, 대관 예약, 전국 규모 컵 대회 및 리그 대회 주최">
-	<meta property="og:type" content="website">
-	<meta property="og:image" content="https://hmfutsalpark.com/images/common/link_profile.png">
-	<meta property="og:title" content="HM FUTSAL PARK">
-	<meta property="og:description" content="프리미엄 풋살장 HM풋살파크">
-	<meta property="og:url" content="https://hmfutsalpark.com">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
 	<!-- 공통css -->
 	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/resources/css/common.css">
 	<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700" rel="stylesheet">
 
-	<link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-icon-57x57.png">
-	<link rel="apple-touch-icon"  sizes="60x60" href="/favicon/apple-icon-60x60.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-icon-72x72.png">
-	<link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-icon-76x76.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="/favicon/apple-icon-114x114.png">
-	<link rel="apple-touch-icon" sizes="120x120" href="/favicon/apple-icon-120x120.png">
-	<link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-icon-144x144.png">
-	<link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple-icon-152x152.png">
-	<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-icon-180x180.png">
-	<link rel="icon" type="image/png" sizes="192x192"  href="/favicon/android-icon-192x192.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-	<link rel="manifest" href="/favicon/manifest.json">
-	<meta name="msapplication-TileColor" content="#2c3c57">
-	<meta name="msapplication-TileImage" content="/favicon/ms-icon-144x144.png">
-	<meta name="theme-color" content="#2c3c57">
-	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-	<!--[if lt IE 9]><script type="text/javascript" src="/js/libs/html5.js"></script><![endif]-->
-	<!--[if lt IE 9]><script type="text/javascript" src="/js/libs/respond.min.js"></script><![endif]-->
 	<!-- //공통css -->
 	<!-- 공통js -->
 	<script type="text/javascript" src="<%=request.getContextPath() %>/resources/js/libs/jquery.min.js"></script>
 	<script type="text/javascript" src="<%=request.getContextPath() %>/resources/js/libs/jquery-ui.min.js"></script>
-	<script type="text/javascript" src="<%=request.getContextPath() %>/resources/js/datepicker.js"></script>
 	<script type="text/javascript" src="<%=request.getContextPath() %>/resources/js/common/common.js"></script>
 	<script type="text/javascript" src="<%=request.getContextPath() %>/resources/js/common/form_check.js"></script>
 	<!-- //공통js -->
@@ -53,13 +24,6 @@
 	<link rel="stylesheet" href="<%=request.getContextPath() %>/resources/themes/classic.date.css">
 	<link rel="stylesheet" href="<%=request.getContextPath() %>/resources/themes/classic.time.css">
 	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/resources/css/content.css?v=201811160138">
-	
-	<script src="/admincms/js/pickadate.js-3.5.6/lib/picker.js"></script>
-	<script src="/admincms/js/pickadate.js-3.5.6/lib/picker.date.js"></script>
-	<script src="/admincms/js/pickadate.js-3.5.6/lib/picker.time.js"></script>
-	<script src="/admincms/js/pickadate.js-3.5.6/lib/legacy.js"></script>
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-116234591-1"></script>
 	
 	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 	<script>
@@ -547,21 +511,6 @@
 						<div class="thumb">
 							<span class="img"><img src="<%=request.getContextPath() %>/resources/files/images/${fieldDTO.f_img }" alt="" /></span>
 							<div class="tag">
-								
-<!-- 								<span>#인조잔디</span> -->
-								
-<!-- 								<span>#국제규격</span> -->
-								
-<!-- 								<span>#탈의실</span> -->
-								
-<!-- 								<span>#주차장(무료)</span> -->
-								
-<!-- 								<span>#음료수 판매</span> -->
-								
-<!-- 								<span>#조끼 대여</span> -->
-								
-<!-- 								<span>#풋살화 대여</span> -->
-								 
 							</div>
 							<p class="name">${fieldDTO.f_name }</p>
 						</div>
@@ -579,20 +528,8 @@
 								<p><span style="font-size: 11pt;">5. 무대설치 등은 담당부서와 협의를 거친 후 진행하시고, 시설물 훼손 또는 파손시 원상복구 및 변상하여야 합니다.</span></p>
 								<p><span style="font-size: 11pt; color: rgb(255, 0, 0);"><b>6. 행사시 폭죽(휴대용 불꽃류, 불기둥, 연막라인로켓 등) 등 시설물 파손 및 경기장 관리에 지장을 주는 장비 및 물품의 사용을 금지하며, 체육시설 내에서 흡연, 화기 사용, 유류반입, 음식물 및 물품의 판매행위를 금지합니다.</b></span></p>
 								<p><span style="font-size: 11pt;">6. 행사기간 중 안전을 위해 무대 등 행사관련 임시설치 시설물에 대한 지속적이고 철 저한 시설물 점검(특히, 행사 전· 후)을 하셔야 합니다.</span></p>
-<!-- 								<p><span style="font-size: 11pt;">7. 행사진행 및 경기장 출입 등 행사 참가자의 안전과 관련하여 반드시 전문 운영 및 안전요원을 배치하여야 하며, 경기장 시설설치, 비상대비 안전계획 및 주차· 차량질서 유도요원의 배치계획 등을 포함한 행사진행 세부계획서를 제출하여 주시 고, 또한 공연과 관련하여 발생하는 안전사고는 행사 주최 측에 책임이 있음을 알 려드리니 만약의 안전사고에 대비하여 행사에 따른 배상(대인· 대물)보험에 반드 시 가입하시고 가입증서를 행사 5일전까지 제출하여주시기 바랍니다.</span></p> -->
 								<p><span style="font-size: 11pt; color: rgb(255, 0, 0);"><b>7. 행사 참가자의 안전과 관련하여 실내체육관 주경기장 관람석 수용인원을 초과하지 않도록 행사계획을 철저히 수립하여 사전에 인원통제에 만전을 기하여 주시고 행 사장 입장계획(이동 동선) 수립과 함께행사장 입장 시 그룹별 입장 유도, 입장 대기선을 만드는 등 입장 시 안전에 각별한 주의를 하셔야 합니다.</b></span></p>
-<!-- 								<p><span style="font-size: 11pt;">9. 특히, 행사시 관람객에 대한 대중교통이용을 적극 홍보해 주시고 도로변 불법 주 차 행위 등 교통 혼란과 각종 안전사고 및 화재 등으로 인한 부상자 발생에 대비하 여 사전에 관할경찰서 및 소방서에 협조를 요청하셔야 합니다.</span></p> -->
-<!-- 								<p><span style="font-size: 11pt;">10. 기타 본 행사와 관련하여 우리 사업소의 시설물관리, 행사준비, 안전과 관련하여 수시로 요구하는 사항에 대해서는 적극 협조하셔야 합니다.</span></p> -->
-<!-- 								<p><span style="font-size: 11pt;">11. 행사종료 후 경기장 내· 외부, 관중석, 스탠드, 화장실, 복도 등에서 배출된 쓰 레기는 신속히 자체 수거 처리하여 되가져 가야 합니다.(자체 수거가 불가능 할 경우 청소용역계약서 사본 제출)</span></p> -->
-<!-- 								<p><span style="font-size: 11pt;">12. 사용자는 허가 없이 경기장 사용권을 양도하거나 전대할 수 없습니다.</span></p> -->
-<!-- 								<p><span style="font-size: 11pt;">13. 대관기간 중 대관 장소에 설치, 보관 중인 사용자의 물품, 장비 등이 멸실 또는 훼 손 되었을 경우 사업소장은 배상 책임을 지지 아니합니다.</span></p> -->
-<!-- 								<p><span style="font-size: 11pt;">14. 행사기간 중 안전을 위해 무대 등 행사관련 임시설치 시설물에 대한 지속적이고 철 저한 시설물 점검(특히, 행사 전· 후)을 하셔야 합니다.</span></p> -->
-<!-- 								<p><span style="font-size: 11pt; color: rgb(255, 0, 0);"><b>10. 경기장 이용시 발생하는 부상 및 상해, 개인 자산의 손괴 및 분실 등에 대한 책임은 본인에게 있습니다.(개인 및 팀은 의료 실비 보험 필수 가입)</b></span></p></li> -->
-							</ul>
-<!-- 							<p class="tit">환불규정</p> -->
-<!-- 							<ul> -->
-<!-- 								<li><div>1. 단순 대관날짜 변경은 불가하며 예약 취소 및 환불 규정에 의거해 환불 후 신규 대관일을 신청하셔야 합니다.</div><div>2. 대관 당일에는 취소가 불가합니다.</div><div>3. 환불 및 취소는 일일단위로 가능합니다.</div><div>- 30일 ~ 21일 전 : 100% 환불 / 20일 ~ 16일 전 : 80% 환불</div><div>- 15일 ~ 11일 전 : 60% 환불 / 10일 ~ 7일 전 : 50% 환불</div><div>- 6일 ~ 4일 전 : 30% 환불 / 3일 전 ~ 당일 : 환불 불가</div><div><br></div><div>4. 당일 환불은 천<span style="font-size: 10pt;">재지변으로</span><span style="font-size: 10pt;">&nbsp;</span><span style="font-size: 10pt;">인한 경우에만 100% 환불됩니다.</span></div><div>(호우경보, 대설경보, 태풍주의보, 태풍경보만 적용)</div><div><br></div><div>5. 우천시 예약시간 1시간전 기준&nbsp;<span style="color: rgb(255, 0, 0);">시간당 5mm</span> 이상일시 연기 가능</div></li> -->
-<!-- 							</ul> -->
+								</ul>
 						</div> 
 					</div>
 
@@ -602,10 +539,12 @@
 						<div id="calendarDiv"> 
 							<table id="calendar" align="center">
 								<tr>
-									<td align="center"><label onclick="javascript:prevCalendar(); tableinit();"> ◀ </label></td>
+									<td align="center" ><label style="cursor:pointer;" onclick="javascript:prevCalendar(); tableinit();"><font color ="gray"> ◀ </label></td>
 									<td colspan="5" align="center" id="calendarTitle">yyyy년 mm월</td>
-									<td align="center"><label onclick="javascript:nextCalendar(); tableinit();"> ▶ </label></td>
+									<td align="center" ><label style="cursor:pointer;" onclick="javascript:nextCalendar(); tableinit();"><font color ="gray"> ▶ </label></td>
 								</tr>
+								
+						
 								<tr>
 									<td align="center"><font color ="#F79DC2">일</td>
 									<td align="center">월</td>
@@ -633,13 +572,7 @@
 									<span class="tit">시간 선택</span>
 									<span class="t_help"><font color=red>*기본 2시간, 다중 선택은 불가능합니다.</font></span>
 								</div>
-									<table id="timeTable" align="center"></table>
-<!-- 							<div class="t_wrap total"> -->
-<!-- 								<span class="tit">합계</span> -->
-<!-- 								<span class="total"><b id="totalPrice"></b>원  -->
-<!-- 								<span class="i_txt">(구장대여 <b id="rentCountView">0</b>시간 <b id="rentPriceView">0</b>원 + 옵션선택 <b id="optionPriceView">0</b>원)</span> -->
-<!-- 								</span> -->
-<!-- 							</div> -->
+									<table id="timeTable" align="center" style="cursor: pointer;"></table>
 							</div>
 						</div>
 						
@@ -659,24 +592,19 @@
 										<th scope="row">신청자</th>
 										<td id = "memberName">
 <!-- 										<input type="text"  name="cm_name" placeholder="이름을 입력하세요" style="width:100%"> -->
-											<input type="text" name="id" readonloy value="${id }">
+											<input type="text" name="id" readonly value="${id }" style="width:70%; border:0px;">
 										</td>
 									</tr>
 									<tr>
 										<th scope="row">연락처</th>
 										<td id = "memberPhone" >
-<!-- 											<div class="phone"> -->
-<!-- 											<input type="text"  name="htel1" maxlength=3 value="" class="numberOnly" /><span>-</span> -->
-<!-- 											<input type="text"  name="htel2" maxlength=4 value="" class="numberOnly" /><span>-</span> -->
-<!-- 											<input type="text"  name="htel3" maxlength=4 value="" class="numberOnly" /> -->
-<!-- 											</div> -->
-											<input type="text" name="phone" readonloy value="${memberDTO.phone }">
+											<input type="text" name="phone" readonly value="${memberDTO.phone }" style="width:70%; border:0px;">
 										</td>
 									</tr>
 									<tr>
 										<th scope="row" >예약일자</th>
 										<td>
-										<input name="r_date" type="text" id="selectedDate2" value="" readonly>
+										<input name="r_date" type="text" id="selectedDate2" value="" placeholder="선택된 날짜가 없습니다" readonly style="width:70%; border:0px;">
 										
 										</td>
 										
@@ -684,35 +612,26 @@
 									<tr>
 										<th scope="row" >선택구장</th>
 										<td id="stadiumBottom">
-										<input type="text" name="f_name" readonly value="${fieldDTO.f_name }">
+										<input type="text" name="f_name" readonly value="${fieldDTO.f_name }" style="width:70%; border:0px;">
 										</td>
 									</tr>
 									<tr>
 										<th scope="row">예약시간</th>
-										<td><input type="text" id="selectedTime" name="time" value="선택된 시간이 없습니다"></td>
-										
+										<td><input type="text" id="selectedTime" name="time" value="" placeholder="선택된 시간이 없습니다" readonly style="width:70%; border:0px;"></td>
 									</tr>
 									<tr>
 										<th>총 결제금액</th>
 										<td>
-										<input type="text" name="price" id="price" readonly value="${fieldDTO.price}">원</td>
+										<input type="text" name="price" id="price" readonly value="${fieldDTO.price}" style="width:70%; border:0px;"></td>
 										
 									</tr>
-<!-- 									<tr> -->
-<!-- 										<th scope="row">메모</th> -->
-<!-- 										<td> -->
-<!-- 											<span class="textarea"> -->
-<!-- 												<textarea name="r_memo" rows="" cols=""></textarea> -->
-<!-- 											</span> -->
-<!-- 										</td> -->
-<!-- 									</tr> -->
 								</tbody>
 								</table>
 							</div>
 
 							<span class="chk">
 								<input type="checkbox" id="chk01" title="" name="agree" value="Y">
-								<label for="chk01">예약자 정보 및 환불규정/주의사항을 모두 확인 했습니다.</label>
+								<label for="chk01" style="cursor:pointer;">예약자 정보 및 환불규정/주의사항을 모두 확인 했습니다.</label>
 							</span>
 
 							<div class="btn_wrap">

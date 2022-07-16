@@ -44,6 +44,21 @@
 	
 	
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+<!-- <script> -->
+// $("#txtArea").on("keypress",function(e) {
+//     var key = e.keyCode;
+
+//     // If the user has pressed enter
+//     if (key == 13) {
+//         document.getElementById("txtArea").value =document.getElementById("txtArea").value + "\n";
+//         return false;
+//     }
+//     else {
+//         return true;
+//     }
+// });
+<!-- </script> -->
 </head>
 <body>
 	<!-- 로그인한 사용자만 글 쓸 수 있게 제어 -->
@@ -86,7 +101,7 @@
 								</dl>
 							</div>
 							<div class="info_text" style="word-break: break-all;">
-								<textarea name ="content" rows ="10" style="width:100%;"></textarea></div>
+								<textarea name ="content" id="txtArea" onkeypress="onTestChange();" rows ="10" style="width:100%;"></textarea></div>
 							<div class="btn_wrap right">	
 								<input type="submit" value="글쓰기" class="btn_middle" />
 								<input type="button" class="btn_middle" value="작성 취소" 

@@ -20,7 +20,7 @@
 <!-- 						<li><a href="/comm/match/match_apply.asp">매치/용병</a></li> -->
 <!-- 						<li><a href="/league/league.asp" class="f_hvn">H-LEAGUE</a></li> -->
 						<li><a href="<%=request.getContextPath() %>/notice/list">게시판</a></li>
-						<li><a href="<%=request.getContextPath() %>/qna/list">QnA</a></li>
+						<li><a href="<%=request.getContextPath() %>/qna/list">Q&A</a></li>
 <%-- 						<li><a href="<%=request.getContextPath() %>/notice/notice">공지사항</a></li> --%>
 					</ul>
 				</div>

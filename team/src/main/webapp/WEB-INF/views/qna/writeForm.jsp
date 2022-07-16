@@ -44,21 +44,6 @@
 	
 	
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-
-<!-- <script> -->
-// $("#txtArea").on("keypress",function(e) {
-//     var key = e.keyCode;
-
-//     // If the user has pressed enter
-//     if (key == 13) {
-//         document.getElementById("txtArea").value =document.getElementById("txtArea").value + "\n";
-//         return false;
-//     }
-//     else {
-//         return true;
-//     }
-// });
-<!-- </script> -->
 </head>
 <body>
 	<!-- 로그인한 사용자만 글 쓸 수 있게 제어 -->
@@ -96,7 +81,7 @@
 						<form action="${pageContext.request.contextPath}/qna/writePro" method="post">
 							<div class="top">
 								<dl>
-									<dt>제목</dt>		<p class="tit"><input type="text" name="subject" placeholder="제목을 입력하세요"></p>
+									<dt>제목</dt>		<p class="tit"><input type="text" name="subject" onkeypress="if(event.keyCode=='13'){event.preventDefault(); searchEvt();}" placeholder="제목을 입력하세요"></p>
 									<dt>글쓴이</dt>	<dd><input type="text" name="id" value=${id } readonly style="width:100%; border:0px;"></dd>
 								</dl>
 							</div>

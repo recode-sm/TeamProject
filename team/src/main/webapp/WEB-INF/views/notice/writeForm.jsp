@@ -83,7 +83,7 @@
 			<form action="${pageContext.request.contextPath}/notice/writePro" method="post">
 				<div class="top">
 					<dl>
-						<dt>제목</dt>		<p class="tit"><input type="text" name="subject" placeholder="제목을 입력하세요"></p>
+						<dt>제목</dt>		<p class="tit"><input type="text" name="subject" placeholder="제목을 입력하세요" onkeypress="if(event.keyCode=='13'){event.preventDefault(); searchEvt();}"></p>
 						<dt>글쓴이</dt> 	<dd><input type="text" name="id" value=${id } readonly style="width:100%; border:0px;"></dd>
 					</dl>
 				</div>

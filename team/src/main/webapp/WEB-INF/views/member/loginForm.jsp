@@ -145,7 +145,8 @@ function deleteCookie(cookieName){
 						<input type="button" value="로그인" onclick="OLoginM()" class="btn_middle">
 <!-- 						<a href="#" onclick="OLoginM();" class="btn_middle" >로그인</a> -->
 					<div class="btn_wrap">
-						<a href="insert" class="join">회원가입</a>
+						<a href="<%=request.getContextPath() %>/member/insert" class="join">회원가입</a>
+						<a href="<%=request.getContextPath() %>/" class="join">메인으로</a>					
 					</div>
 				</div>
 			</div>

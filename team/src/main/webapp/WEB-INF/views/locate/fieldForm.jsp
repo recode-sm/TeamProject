@@ -62,6 +62,8 @@
     font-size: 20px;
     line-height: 40px;
     border: 0px;
+    cursor: pointer;
+    margin-top: 12px;
 }
 
 
@@ -121,7 +123,7 @@
 									<img  id="preview" style="width:500px; height:300px; border-radius: 8px;"><br>
 								</span>
 								<span>
-									<label for="input-file" class="btn_rese"> 
+									<label for="input-file" class="but"> 
 										구장사진 등록
 									</label>	
 									<input type="file" name="f_img" id="input-file" onchange="readURL(this);" style="display: none;">

@@ -92,8 +92,10 @@
 
 <div class="btn_wrap right">
 	<c:if test="${ !empty sessionScope.id }">
-		<c:if test="${ (sessionScope.id eq boardDTO.id)}">
+		<c:if test="${ sessionScope.id eq boardDTO.id}">
 		<a href="${pageContext.request.contextPath}/notice/update?b_num=${boardDTO.b_num}" class="btn_middle">수정</a>
+		</c:if>
+		<c:if test="${ sessionScope.id eq boardDTO.id or sessionScope.id eq 'admin' }">
 		<a href="${pageContext.request.contextPath}/notice/delete?b_num=${boardDTO.b_num}" class="btn_middle">삭제</a>
 		</c:if>
 	</c:if>

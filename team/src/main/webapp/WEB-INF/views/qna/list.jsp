@@ -64,10 +64,10 @@
 					</ul>
 				</div>
 				
-				<div class="notice_wrap list">
+				<div class="notice_wrap list" >
 					<h3 class="h_tit">글목록</h3>
 					
-					<div class="table_wrap list">
+					<div class="table_wrap list" style="cursor:pointer;">
 						<table border="1">
 							<tr><th>글쓴이</th><th>제목</th><th>등록일</th><th>조회</th></tr>
 							<c:forEach var="questionDTO" items="${boardList}">

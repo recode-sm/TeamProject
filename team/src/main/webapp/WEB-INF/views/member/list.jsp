@@ -22,10 +22,10 @@
 	border-radius: 5px;
 	background: #8ba6d5;
 	color: #fff;
-    font-size: 20px;
-    line-height: 40px;
-    border: 0px;
-    cursor: pointer;
+	font-size: 16px;
+	line-height: 40px;
+	border: 0px;
+	cursor: pointer;
 }
 
 
@@ -52,6 +52,7 @@
 					<div class="fl_auto">
 						<div class="int_wrap">
 							<p class="tit">회원 목록</p>
+							
 							<div class="table_wrap">
 								<table class="table_tbody">
 									<tbody >
@@ -63,13 +64,14 @@
 										</tr>
 		
 										<c:forEach var="memberDTO" items="${ memberList }">
-											<tr><td>${ memberDTO.id }</td><td>${ memberDTO.pass }</td>
-												<td>${ memberDTO.name }</td><td>${ memberDTO.phone }</td>
-												<td>${ memberDTO.postcode }</td><td>${ memberDTO.address }</td>
+											<tr><td style="width: 100px;"><input type="text" class="inputId" name="id" value="${ memberDTO.id }" readonly="readonly"></td>
+												<td>${ memberDTO.pass }</td>
+												<td>${ memberDTO.name }</td>
+												<td>${ memberDTO.phone }</td>
+												<td>${ memberDTO.postcode }</td>
+												<td>${ memberDTO.address }</td>
 												<td><fmt:formatDate pattern="yyyy-MM-dd" value="${ memberDTO.date }"/></td>
-												<c:if test="${sessionScope.id eq 'admin'}">
-												<td><input type="button" class="but" onclick="location.href='<%=request.getContextPath() %>/member/delete'" value="회원정보삭제"></td>
-												</c:if>
+												<td><input type="button" class="but" onclick="location.href='${pageContext.request.contextPath}/member/deleteAdmin?id=${ memberDTO.id }'" value="회원정보삭제"></td>
 											</tr>
 										</c:forEach>
 									</tbody>

@@ -337,7 +337,7 @@ button.dis:hover	span	span	{background-position:right 0}
 .btn_wrap.side button:first-child	{float:left}
 
 .btn_wrap.right	{font-size:0; line-height:0; text-align:right}
-.btn_wrap.right a	{float:none; margin:0 0 0 5px;}
+.btn_wrap.right a	{float:none; margin:0 0 0 5px; border-radius: 5px;}
 .btn_wrap.right a:first-child	{margin:0}
 .btn_wrap.right button	{float:none; margin:0 0 0 5px;}
 .btn_wrap.right button:first-child	{margin:0}

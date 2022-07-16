@@ -51,6 +51,11 @@ public class MemberDAOImpl implements MemberDAO {
 	public void updatePass(MemberDTO memberDTO) {
 		sqlSession.update(namespace + ".updatePass", memberDTO);
 	}
+
+	@Override
+	public void adminDeleteMember(String id) {
+		sqlSession.delete(namespace + ".deleteMember", id);
+	}
 	
 
 	

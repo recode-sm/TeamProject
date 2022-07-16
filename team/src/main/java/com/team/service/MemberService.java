@@ -26,4 +26,8 @@ public interface MemberService {
 	
 	// 비밀번호 변경
 	public void updatePass(MemberDTO memberDTO);
+	
+	// 관리자가 특정 회원 삭제
+	public void adminDeleteMember(String id);
+
 }

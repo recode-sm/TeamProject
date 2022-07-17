@@ -64,7 +64,7 @@
 										</tr>
 		
 										<c:forEach var="memberDTO" items="${ memberList }">
-											<tr><td style="width: 100px;"><input type="text" class="inputId" name="id" value="${ memberDTO.id }" readonly="readonly"></td>
+											<tr><td style="width: 100px;"><input type="text" class="inputId" name="id" value="${ memberDTO.id }" readonly="readonly" style="border:0px; text-align:center"></td>
 												<td>${ memberDTO.pass }</td>
 												<td>${ memberDTO.name }</td>
 												<td>${ memberDTO.phone }</td>

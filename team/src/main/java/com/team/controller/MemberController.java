@@ -128,7 +128,7 @@ public class MemberController {
 			return "member/msg";
 		}
 	}
-	
+		
 	@RequestMapping(value = "/member/delete", method = RequestMethod.GET)
 	public String delete(HttpSession session, Model model) {
 		
@@ -155,6 +155,16 @@ public class MemberController {
 		}
 	}
 	
+	@RequestMapping(value = "/member/deleteAdmin", method = RequestMethod.GET)
+	public String deleteAdmin (HttpServletRequest request) {
+
+		String id = request.getParameter("id");
+			
+		memberService.adminDeleteMember(id);
+		
+		return "redirect:/member/list";
+	}
+
 	@RequestMapping(value = "/member/list", method = RequestMethod.GET)
 	public String list(HttpSession session, Model model) {
 		

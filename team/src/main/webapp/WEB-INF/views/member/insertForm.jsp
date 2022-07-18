@@ -109,7 +109,7 @@
 
 	function checkForm(){
 		var frm = document.frmJoin;
-		var regExp = /^(?=.*[a-zA-z])(?=.*[0-9])(?=.*[$`~!@$!%*#^?&\\(\\)\-_=+]).{8,16}$/;
+		var regExp = /^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,16}$/;
 		var pass = document.getElementById('pass').value;
 	 
 		if (frm.id.value == "") {
@@ -179,7 +179,7 @@ $(document).ready(function(){
 	});
 	
 	$('#pass').keyup(function(){
-		var regExp = /^(?=.*[a-zA-z])(?=.*[0-9])(?=.*[$`~!@$!%*#^?&\\(\\)\-_=+]).{8,16}$/;
+		var regExp = /^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,16}$/;
 		var pass = document.getElementById('pass').value;
 		if(regExp.test(pass)==true ){
 			$('#passdiv').html("사용 가능한 비밀번호 입니다").css("color", "blue")

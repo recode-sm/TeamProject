@@ -22,7 +22,7 @@
 	<script type="text/javascript">
 	$(document).ready (function () {
 
-		var regExp = /^(?=.*[a-zA-z])(?=.*[0-9])(?=.*[$`~!@$!%*#^?&\\(\\)\-_=+]).{8,16}$/;
+		var regExp = /^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,16}$/;
 		$('#updatePass').keyup(function () {
 			var updatePass = document.getElementById('updatePass').value;
 			var updatePass2 = document.getElementById('updatePass2').value;

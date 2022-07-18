@@ -5,8 +5,8 @@
 <mapper namespace="com.team.member.MemberMapper">
 
 	<insert id="insertMember">
-		INSERT INTO member(id, pass, name, phone, postcode, address, address2, date) 
-		VALUES(#{id}, #{pass}, #{name}, #{phone}, #{postcode}, #{address}, #{address2}, #{date})
+		INSERT INTO member(id, pass, name, phone, email ,postcode, address, address2, date) 
+		VALUES(#{id}, #{pass}, #{name}, #{phone},#{email} ,#{postcode}, #{address}, #{address2}, #{date})
 	</insert>
 
 	<select id="userCheck" resultType="com.team.domain.MemberDTO">

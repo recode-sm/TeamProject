@@ -137,7 +137,7 @@ function deleteCookie(cookieName){
 				<div class="login_wrap">
 					<dl>
 						<dt><label for="id">아이디</label></dt>
-						<dd><input type=text id="id" name="id" value="" size='120' maxlength='120' style='width:100%' placeholder='이메일' tabindex=1 onkeypress="if(event.keyCode == 13){ OLoginM(); return;}"></dd>
+						<dd><input type=text id="id" name="id" value="" size='120' maxlength='120' style='width:100%' placeholder='아이디' tabindex=1 onkeypress="if(event.keyCode == 13){ OLoginM(); return;}"></dd>
 						<dt><label for="pass">패스워드</label></dt>
 						<dd><input type=password name='pass' value="" size='12' maxlength='50' style='width:100%' placeholder='비밀번호' tabindex=2 onkeypress="if(event.keyCode == 13){ OLoginM(); return;}"></dd>
 					</dl> 
